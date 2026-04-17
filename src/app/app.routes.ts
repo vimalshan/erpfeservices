@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
 
 import { allowNonSuaadhyaUserGuard } from '@erp-services/data-access/settings/guards';
-import { authGuard, RouteConfig } from '../../libs/shared/src';
+import { authGuard, RouteConfig } from '../../libs/auditServices/shared/src';
 
 
 export const appRoutes: Route[] = [

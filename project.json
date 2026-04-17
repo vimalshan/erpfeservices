@@ -42,8 +42,8 @@
           "sourceMap": true,
           "fileReplacements": [
             {
-              "replace": "libs/environments/src/environment.ts",
-              "with": "libs/environments/src/environment.ts"
+              "replace": "libs/auditServices/environments/src/environment.ts",
+              "with": "libs/auditServices/environments/src/environment.ts"
             }
           ]
         },
@@ -87,8 +87,8 @@
           "sourceMap": true,
           "fileReplacements": [
             {
-              "replace": "libs/environments/src/environment.ts",
-              "with": "libs/environments/src/environment.ts"
+              "replace": "libs/auditServices/environments/src/environment.ts",
+              "with": "libs/auditServices/environments/src/environment.ts"
             }
           ]
         },
@@ -126,8 +126,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "libs/environments/src/environment.ts",
-              "with": "libs/environments/src/environment.ts"
+              "replace": "libs/auditServices/environments/src/environment.ts",
+              "with": "libs/auditServices/environments/src/environment.ts"
             }
           ],
           "outputHashing": "all"

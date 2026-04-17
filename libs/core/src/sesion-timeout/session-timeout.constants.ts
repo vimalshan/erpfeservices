@@ -1,4 +1,4 @@
-import { AuthTokenConstants } from "../../../shared/src";
+import { AuthTokenConstants } from "../../../auditServices/shared/src";
 
 
 export const SessionTimeout = {

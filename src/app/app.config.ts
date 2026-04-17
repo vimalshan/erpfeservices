@@ -58,16 +58,16 @@ import {
 } from './interceptors';
 import { apiInterceptor } from './interceptors/api.interceptor';
 import { TranslocoHttpLoader } from './transloco-http.loader';
-import { Language, LocaleService, registerLocales } from '../../libs/shared/src';
-import { appInitializer, loggingInitializer } from '../../libs/data-access/permissions/src';
-import { PreferenceState } from '../../libs/data-access/preferences/src/state';
-import { SettingsState } from '../../libs/data-access/settings/src/state/settings.state';
-import { OverviewSharedState } from '../../libs/data-access/overview-shared/src';
-import { CustomRouterStateSerializer } from '../../libs/data-access/router/src';
-import { environment } from '../../libs/environments/src';
-import { UnreadActionsState } from '../../libs/data-access/actions/src';
-import { UnreadNotificationsState } from '../../libs/data-access/notifications/src';
-import { GlobalState } from '../../libs/data-access/global/src/state/global.state';
+import { Language, LocaleService, registerLocales } from '../../libs/auditServices/shared/src';
+import { appInitializer, loggingInitializer } from '../../libs/auditServices/data-access/permissions/src';
+import { PreferenceState } from '../../libs/auditServices/data-access/preferences/src/state';
+import { SettingsState } from '../../libs/auditServices/data-access/settings/src/state/settings.state';
+import { OverviewSharedState } from '../../libs/auditServices/data-access/overview-shared/src';
+import { CustomRouterStateSerializer } from '../../libs/auditServices/data-access/router/src';
+import { environment } from '../../libs/auditServices/environments/src';
+import { UnreadActionsState } from '../../libs/auditServices/data-access/actions/src';
+import { UnreadNotificationsState } from '../../libs/auditServices/data-access/notifications/src';
+import { GlobalState } from '../../libs/auditServices/data-access/global/src/state/global.state';
 import { mySpinnerInterceptor } from '../../libs/core/src/spinner/spinner.interceptor';
 import { LoggingService, SpinnerService } from '../../libs/core/src';
 
