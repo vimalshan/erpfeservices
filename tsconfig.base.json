@@ -20,142 +20,142 @@
       "@erp-services/core": ["libs/core/src/index.ts"],
       "@erp-services/core/*": ["libs/core/src/*"],
       "@erp-services/data-access/actions": [
-        "libs/data-access/actions/src/index.ts"
+        "libs/auditServices/data-access/actions/src/index.ts"
       ],
       "@erp-services/data-access/actions/*": [
-        "libs/data-access/actions/src/*"
+        "libs/auditServices/data-access/actions/src/*"
       ],
       "@erp-services/data-access/audit": [
-        "libs/data-access/audit/src/index.ts"
+        "libs/auditServices/data-access/audit/src/index.ts"
       ],
-      "@erp-services/data-access/audit/*": ["libs/data-access/audit/src/*"],
+      "@erp-services/data-access/audit/*": ["libs/auditServices/data-access/audit/src/*"],
       "@erp-services/data-access/certificates": [
-        "libs/data-access/certificates/src/index.ts"
+        "libs/auditServices/data-access/certificates/src/index.ts"
       ],
       "@erp-services/data-access/certificates/*": [
-        "libs/data-access/certificates/src/*"
+        "libs/auditServices/data-access/certificates/src/*"
       ],
       "@erp-services/data-access/contracts": [
-        "libs/data-access/contracts/src/index.ts"
+        "libs/auditServices/data-access/contracts/src/index.ts"
       ],
       "@erp-services/data-access/contracts/*": [
-        "libs/data-access/contracts/src/*"
+        "libs/auditServices/data-access/contracts/src/*"
       ],
       "@erp-services/data-access/documents": [
-        "libs/data-access/documents/src/index.ts"
+        "libs/auditServices/data-access/documents/src/index.ts"
       ],
       "@erp-services/data-access/documents/*": [
-        "libs/data-access/documents/src/*"
+        "libs/auditServices/data-access/documents/src/*"
       ],
       "@erp-services/data-access/financials": [
-        "libs/data-access/financials/src/index.ts"
+        "libs/auditServices/data-access/financials/src/index.ts"
       ],
       "@erp-services/data-access/financials/*": [
-        "libs/data-access/financials/src/*"
+        "libs/auditServices/data-access/financials/src/*"
       ],
       "@erp-services/data-access/findings": [
-        "libs/data-access/findings/src/index.ts"
+        "libs/auditServices/data-access/findings/src/index.ts"
       ],
       "@erp-services/data-access/findings/*": [
-        "libs/data-access/findings/src/*"
+        "libs/auditServices/data-access/findings/src/*"
       ],
       "@erp-services/data-access/notifications": [
-        "libs/data-access/notifications/src/index.ts"
+        "libs/auditServices/data-access/notifications/src/index.ts"
       ],
       "@erp-services/data-access/notifications/*": [
-        "libs/data-access/notifications/src/*"
+        "libs/auditServices/data-access/notifications/src/*"
       ],
       "@erp-services/data-access/overview": [
-        "libs/data-access/overview/src/index.ts"
+        "libs/auditServices/data-access/overview/src/index.ts"
       ],
       "@erp-services/data-access/overview-shared": [
-        "libs/data-access/overview-shared/src/index.ts"
+        "libs/auditServices/data-access/overview-shared/src/index.ts"
       ],
       "@erp-services/data-access/overview-shared/*": [
-        "libs/data-access/overview-shared/src/*"
+        "libs/auditServices/data-access/overview-shared/src/*"
       ],
       "@erp-services/data-access/overview/*": [
-        "libs/data-access/overview/src/*"
+        "libs/auditServices/data-access/overview/src/*"
       ],
       "@erp-services/data-access/schedules": [
-        "libs/data-access/schedules/src/index.ts"
+        "libs/auditServices/data-access/schedules/src/index.ts"
       ],
       "@erp-services/data-access/schedules/*": [
-        "libs/data-access/schedules/src/*"
+        "libs/auditServices/data-access/schedules/src/*"
       ],
       "@erp-services/data-access/settings": [
-        "libs/data-access/settings/src/index.ts"
+        "libs/auditServices/data-access/settings/src/index.ts"
       ],
       "@erp-services/data-access/settings/*": [
-        "libs/data-access/settings/src/*"
+        "libs/auditServices/data-access/settings/src/*"
       ],
-      "@erp-services/environments": ["libs/environments/src/index.ts"],
-      "@erp-services/environments/*": ["libs/environments/src/*"],
+      "@erp-services/environments": ["libs/auditServices/environments/src/index.ts"],
+      "@erp-services/environments/*": ["libs/auditServices/environments/src/*"],
       "@erp-services/features/actions": [
-        "libs/features/actions/src/index.ts"
+        "libs/auditServices/features/actions/src/index.ts"
       ],
-      "@erp-services/features/audit": ["libs/features/audit/src/index.ts"],
+      "@erp-services/features/audit": ["libs/auditServices/features/audit/src/index.ts"],
       "@erp-services/features/certificates": [
-        "libs/features/certificates/src/index.ts"
+        "libs/auditServices/features/certificates/src/index.ts"
       ],
       "@erp-services/features/contracts": [
-        "libs/features/contracts/src/index.ts"
+        "libs/auditServices/features/contracts/src/index.ts"
       ],
       "@erp-services/features/external-apps": [
-        "libs/features/external-apps/src/index.ts"
+        "libs/auditServices/features/external-apps/src/index.ts"
       ],
       "@erp-services/features/financials": [
-        "libs/features/financials/src/index.ts"
+        "libs/auditServices/features/financials/src/index.ts"
       ],
       "@erp-services/features/findings": [
-        "libs/features/findings/src/index.ts"
+        "libs/auditServices/features/findings/src/index.ts"
       ],
-      "@erp-services/features/logout": ["libs/features/logout/src/index.ts"],
+      "@erp-services/features/logout": ["libs/auditServices/features/logout/src/index.ts"],
       "@erp-services/features/notifications": [
-        "libs/features/notifications/src/index.ts"
+        "libs/auditServices/features/notifications/src/index.ts"
       ],
       "@erp-services/features/overview": [
-        "libs/features/overview/src/index.ts"
+        "libs/auditServices/features/overview/src/index.ts"
       ],
       "@erp-services/features/profile": [
-        "libs/features/profile/src/index.ts"
+        "libs/auditServices/features/profile/src/index.ts"
       ],
       "@erp-services/features/schedules": [
-        "libs/features/schedules/src/index.ts"
+        "libs/auditServices/features/schedules/src/index.ts"
       ],
       "@erp-services/features/settings": [
-        "libs/features/settings/src/index.ts"
+        "libs/auditServices/features/settings/src/index.ts"
       ],
-      "@erp-services/features/upload": ["libs/features/upload/src/index.ts"],
+      "@erp-services/features/upload": ["libs/auditServices/features/upload/src/index.ts"],
       "@erp-services/features/welcome": [
-        "libs/features/welcome/src/index.ts"
+        "libs/auditServices/features/welcome/src/index.ts"
       ],
-      "@erp-services/data-access/global": ["libs/data-access/global/src/index.ts"],
-      "@erp-services/data-access/global/*": ["libs/data-access/global/src/*"],
+      "@erp-services/data-access/global": ["libs/auditServices/data-access/global/src/index.ts"],
+      "@erp-services/data-access/global/*": ["libs/auditServices/data-access/global/src/*"],
       "@erp-services/overview-shared": [
-        "libs/data-access/overview-shared/src/index.ts"
+        "libs/auditServices/data-access/overview-shared/src/index.ts"
       ],
       "@erp-services/overview-shared/*": [
-        "libs/data-access/overview-shared/src/*"
+        "libs/auditServices/data-access/overview-shared/src/*"
       ],
       "@erp-services/permissions": [
-        "libs/data-access/permissions/src/index.ts"
+        "libs/auditServices/data-access/permissions/src/index.ts"
       ],
       "@erp-services/permissions/*": [
-        "libs/data-access/permissions/src/*"
+        "libs/auditServices/data-access/permissions/src/*"
       ],
       "@erp-services/preferences": [
-        "libs/data-access/preferences/src/index.ts"
+        "libs/auditServices/data-access/preferences/src/index.ts"
       ],
       "@erp-services/preferences/*": [
-        "libs/data-access/preferences/src/*"
+        "libs/auditServices/data-access/preferences/src/*"
       ],
-      "@erp-services/router": ["libs/data-access/router/src/index.ts"],
-      "@erp-services/router/*": ["libs/data-access/router/src/*"],
-      "@erp-services/shared": ["libs/shared/src/index.ts"],
-      "@erp-services/shared/*": ["libs/shared/src/*"]
+      "@erp-services/router": ["libs/auditServices/data-access/router/src/index.ts"],
+      "@erp-services/router/*": ["libs/auditServices/data-access/router/src/*"],
+      "@erp-services/shared": ["libs/auditServices/shared/src/index.ts"],
+      "@erp-services/shared/*": ["libs/auditServices/shared/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"],
-  "include": ["src/**/*.d.ts", "../../libs/shared/src/**/*.ts"]
+  "include": ["src/**/*.d.ts", "../../libs/auditServices/shared/src/**/*.ts"]
 }

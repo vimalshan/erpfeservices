@@ -2,9 +2,9 @@ import { inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { LoggingService } from './logging.service';
-import { ProfileStoreService } from '../../../data-access/settings/src';
-import { RouteStoreService } from '../../../data-access/router/src';
-import { createRouteTitleMap,getRouteDataByPath,RouteConfig } from '../../../shared/src';
+import { ProfileStoreService } from '../../../auditServices/data-access/settings/src';
+import { RouteStoreService } from '../../../auditServices/data-access/router/src';
+import { createRouteTitleMap,getRouteDataByPath,RouteConfig } from '../../../auditServices/shared/src';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { DestroyRef, inject, Injectable, signal } from '@angular/core';
 
-import { AuthTokenConstants } from "../../../shared/src";
+import { AuthTokenConstants } from "../../../auditServices/shared/src";
 
 import { SESSION_STORAGE_KEYS } from './session-timeout.constants';
 import { TokenInfo } from './session-token-info.model';
