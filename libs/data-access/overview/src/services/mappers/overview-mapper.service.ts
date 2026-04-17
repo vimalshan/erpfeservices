@@ -1,4 +1,4 @@
-import { CardDataModel } from '@customer-portal/shared';
+import { CardDataModel } from '@erp-services/shared';
 
 import { OverviewCardsDto } from '../../dtos';
 import { OverviewCardPageInfoModel } from '../../models';

@@ -1,13 +1,13 @@
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 import {
   CustomTreeNode,
   ServiceDetailsMaster,
   SiteDetailsMaster,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import {
   ScheduleListCalendarFilterSitesDataDto,
@@ -20,7 +20,7 @@ export class ScheduleListCalendarMapperService {
   static statusMap: Record<string, number> = {
     Confirmed: 2,
     'To Be Confirmed': 7,
-    'To Be Confirmed By DNV': 8,
+    'To Be Confirmed By Suaadhya': 8,
   };
 
   static enrichScheduleItems(
@@ -398,7 +398,7 @@ export class ScheduleListCalendarMapperService {
         siteState: site?.siteState ?? '',
         reportingCountry: item.reportingCountry ?? '',
         projectNumber: item.projectNumber ?? '',
-        accountDNVId: item.accountDNVId ?? 0,
+        accountSuaadhyaId: item.accountSuaadhyaId ?? 0,
       };
     });
   }

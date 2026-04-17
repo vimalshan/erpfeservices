@@ -2,9 +2,9 @@ import { importProvidersFrom } from '@angular/core';
 import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 import { NgxsModule } from '@ngxs/store';
 
-import { DocumentsState } from '@customer-portal/data-access/documents/state/documents.state';
-import { InvoiceListState } from '@customer-portal/data-access/financials';
-import { Language } from '@customer-portal/shared';
+import { DocumentsState } from '@erp-services/data-access/documents/state/documents.state';
+import { InvoiceListState } from '@erp-services/data-access/financials';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

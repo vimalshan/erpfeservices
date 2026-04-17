@@ -2,19 +2,19 @@ import { runInInjectionContext, Signal, WritableSignal } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 import { MessageService } from 'primeng/api';
 
-import { LoggingService, ServiceNowService } from '@customer-portal/core';
+import { LoggingService, ServiceNowService } from '@erp-services/core';
 import {
   createScheduleListStoreServiceMock,
   ScheduleCalendarActionLocationTypes,
   ScheduleCalendarActionStoreService,
   ScheduleListStoreService,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 import {
   GridConfig,
   GridEventAction,
@@ -24,7 +24,7 @@ import {
   ObjectType,
   PageName,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { ScheduleCalendarEventService } from '../../services';
 import { ScheduleListComponent } from './schedule-list.component';

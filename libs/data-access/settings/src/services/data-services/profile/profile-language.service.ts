@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { catchError, map, Observable, of } from 'rxjs';
 
-import { Language } from '@customer-portal/shared';
+import { Language } from '@erp-services/shared';
 
 import { ProfileLanguageDto } from '../../../dtos';
 import {

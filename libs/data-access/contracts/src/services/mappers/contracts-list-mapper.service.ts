@@ -1,12 +1,12 @@
 import {
   convertToUtcDate,
   utcDateToPayloadFormat,
-} from '@customer-portal/shared/helpers/date';
-import { mapFilterConfigToValues } from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/date';
+import { mapFilterConfigToValues } from '@erp-services/shared/helpers/grid';
 import {
   FilteringConfig,
   GridFileActionType,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import {
   ContractListItemDto,

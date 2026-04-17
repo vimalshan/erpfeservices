@@ -2,7 +2,7 @@ import { Injectable, Signal } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 
-import { DoughnutChartModel } from '@customer-portal/shared';
+import { DoughnutChartModel } from '@erp-services/shared';
 
 import { LoadOverviewFinancialStatusData } from '../actions';
 import { OverviewFinancialStatusSelectors } from '../selectors';

@@ -1,8 +1,8 @@
 export default {
-  displayName: 'customer-portal',
+  displayName: 'erp-services',
   preset: 'jest-preset-angular',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/customer-portal',
+  coverageDirectory: '../../coverage/apps/erp-services',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

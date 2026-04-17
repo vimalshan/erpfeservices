@@ -29,7 +29,7 @@ export const GET_CERTIFICATE_DETAILS_QUERY = gql`
         qRCodeLink
         projectNumber
         reportingCountry
-        accountDNVId
+        accountSuaadhyaId
       }
     }
   }

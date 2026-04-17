@@ -12,8 +12,8 @@ $heading-m-pattern: string.unique-id();
 $heading-s-pattern: string.unique-id();
 
 %#{$heading-xxl-pattern} {
-  font-family: 'DNVDisplayRegular';
-  font-size: var(--dnv-font-heading-xxl);
+  font-family: 'SuaadhyaDisplayRegular';
+  font-size: var(--suaadhya-font-heading-xxl);
   font-weight: 400;
   line-height: 56px;
   letter-spacing: 0;
@@ -30,8 +30,8 @@ $heading-s-pattern: string.unique-id();
 }
 
 %#{$heading-xl-pattern} {
-  font-family: 'DNVDisplayRegular';
-  font-size: var(--dnv-font-heading-xl);
+  font-family: 'SuaadhyaDisplayRegular';
+  font-size: var(--suaadhya-font-heading-xl);
   font-weight: 400;
   line-height: 40px;
   letter-spacing: 0;
@@ -49,7 +49,7 @@ $heading-s-pattern: string.unique-id();
 
 %#{$heading-l-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-heading-l);
+  font-size: var(--suaadhya-font-heading-l);
   font-weight: 700;
   line-height: 32px;
   letter-spacing: 0;
@@ -67,7 +67,7 @@ $heading-s-pattern: string.unique-id();
 
 %#{$heading-m-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-heading-m);
+  font-size: var(--suaadhya-font-heading-m);
   font-weight: 700;
   line-height: 28px;
   letter-spacing: 0;
@@ -85,7 +85,7 @@ $heading-s-pattern: string.unique-id();
 
 %#{$heading-s-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-heading-s);
+  font-size: var(--suaadhya-font-heading-s);
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0;
@@ -114,7 +114,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$text-l-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-text-l);
+  font-size: var(--suaadhya-font-text-l);
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0;
@@ -122,7 +122,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$text-m-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-text-m);
+  font-size: var(--suaadhya-font-text-m);
   font-weight: 400;
   line-height: 17px;
   letter-spacing: 0;
@@ -130,7 +130,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$text-s-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-text-s);
+  font-size: var(--suaadhya-font-text-s);
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0;
@@ -138,7 +138,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$text-xs-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-text-xs);
+  font-size: var(--suaadhya-font-text-xs);
   font-weight: 400;
   line-height: 11px;
   letter-spacing: 0;
@@ -146,7 +146,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$label-l-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-label-l);
+  font-size: var(--suaadhya-font-label-l);
   font-weight: 700;
   line-height: 16px;
   letter-spacing: 0;
@@ -154,7 +154,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$label-m-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-label-m);
+  font-size: var(--suaadhya-font-label-m);
   font-weight: 700;
   line-height: 14px;
   letter-spacing: 0;
@@ -162,7 +162,7 @@ $label-s-pattern: string.unique-id();
 
 %#{$label-s-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-label-s);
+  font-size: var(--suaadhya-font-label-s);
   font-weight: 700;
   line-height: 12px;
   letter-spacing: 0;
@@ -176,7 +176,7 @@ $button-s-pattern: string.unique-id();
 
 %#{$button-l-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-button-l);
+  font-size: var(--suaadhya-font-button-l);
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 0;
@@ -184,7 +184,7 @@ $button-s-pattern: string.unique-id();
 
 %#{$button-s-pattern} {
   font-family: 'Nunito Sans';
-  font-size: var(--dnv-font-button-s);
+  font-size: var(--suaadhya-font-button-s);
   font-weight: 700;
   line-height: 17px;
   letter-spacing: 0;

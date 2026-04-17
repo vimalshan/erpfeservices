@@ -5,7 +5,7 @@ import {
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { FindingDocumentsListDto } from '../../dtos';
 import { FindingDocumentsListService } from './finding-documents-list.service';

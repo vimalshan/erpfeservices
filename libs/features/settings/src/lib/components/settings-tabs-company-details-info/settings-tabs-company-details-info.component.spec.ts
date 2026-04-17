@@ -3,18 +3,18 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslocoService } from '@jsverse/transloco';
 import { MessageService } from 'primeng/api';
 
-import { LoggingService, ServiceNowService } from '@customer-portal/core';
+import { LoggingService, ServiceNowService } from '@erp-services/core';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createMessageServiceMock,
   createTranslationServiceMock,
   Language,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { SettingsTabsCompanyDetailsInfoComponent } from './settings-tabs-company-details-info.component';
 

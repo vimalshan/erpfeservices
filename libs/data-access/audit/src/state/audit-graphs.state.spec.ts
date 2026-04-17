@@ -15,7 +15,7 @@ import {
   DoughnutChartModel,
   EMPTY_GRAPH_DATA,
   FilterValue,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   AUDIT_DAYS_BAR_CHART_DATA,

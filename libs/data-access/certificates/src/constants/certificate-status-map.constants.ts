@@ -1,4 +1,4 @@
-import { StatesClasses } from '@customer-portal/shared';
+import { StatesClasses } from '@erp-services/shared';
 
 export const enum CertificateStatus {
   Expired = 'Expired Date',

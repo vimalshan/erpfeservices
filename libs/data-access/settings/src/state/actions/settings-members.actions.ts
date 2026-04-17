@@ -1,6 +1,6 @@
 import { TreeNode } from 'primeng/api';
 
-import { GridConfig } from '@customer-portal/shared';
+import { GridConfig } from '@erp-services/shared';
 
 import {
   MemberAreasPermissions,

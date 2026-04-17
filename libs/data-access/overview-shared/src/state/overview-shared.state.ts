@@ -3,13 +3,13 @@ import { Navigate } from '@ngxs/router-plugin';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 
-import { AppPagesEnum } from '@customer-portal/shared/constants';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
+import { AppPagesEnum } from '@erp-services/shared/constants';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
 import {
   CalendarViewType,
   ToastSeverity,
-} from '@customer-portal/shared/models';
-import { FilterValue } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models';
+import { FilterValue } from '@erp-services/shared/models/grid';
 
 import {
   ClearNavigationFilters,

@@ -14,13 +14,13 @@ import multiMonthPlugin from '@fullcalendar/multimonth';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { CalendarModule } from 'primeng/calendar';
 
-import { OverviewUpcomingAuditStoreService } from '@customer-portal/data-access/overview';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
+import { OverviewUpcomingAuditStoreService } from '@erp-services/data-access/overview';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { CalendarViewType } from '@customer-portal/shared/models';
+} from '@erp-services/shared/components/button';
+import { CalendarViewType } from '@erp-services/shared/models';
 
 @Component({
   selector: 'lib-overview-upcoming-audits',

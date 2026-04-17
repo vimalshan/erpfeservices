@@ -5,7 +5,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { SidebarComponent } from '../sidebar';
 
 @Component({
-  selector: 'customer-portal-sidebar-mobile',
+  selector: 'erp-services-sidebar-mobile',
   imports: [CommonModule, SidebarModule, SidebarComponent],
   templateUrl: './sidebar-mobile.component.html',
   styleUrl: './sidebar-mobile.component.scss',

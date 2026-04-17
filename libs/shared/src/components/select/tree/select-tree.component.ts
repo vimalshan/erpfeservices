@@ -16,9 +16,10 @@ import { TreeNode } from 'primeng/api';
 import { TooltipModule } from 'primeng/tooltip';
 import { TreeNodeSelectEvent } from 'primeng/tree';
 import { TreeSelect, TreeSelectModule } from 'primeng/treeselect';
-import { CheckboxChangeEvent } from 'primeng/checkbox';
+import { CheckboxChangeEvent, CheckboxModule } from 'primeng/checkbox';
 
 import { SharedSelectTreeChangeEventOutput } from '../../../models';
+import { CustomTreeNode } from '../../../models';
 import {
   SHARED_SELECT_TREE_OPTION_OVERFLOW_LIMIT,
   SHARED_SELECT_TREE_OPTION_TOOLTIP_DEFAULT_DELAY_MS,
@@ -28,7 +29,7 @@ import {
 } from './select-tree.constants';
 
 @Component({
-  selector: 'shared-select-tree',
+  selector: 'shared-select-tree, shared-tree-dropdown',
   standalone: true,
   imports: [
     CommonModule,
@@ -36,6 +37,7 @@ import {
     TreeSelectModule,
     TooltipModule,
     FormsModule,
+    CheckboxModule,
   ],
   templateUrl: './select-tree.component.html',
   styleUrl: './select-tree.component.scss',
@@ -44,12 +46,19 @@ import {
 export class SharedSelectTreeComponent {
   public ariaLabel = input<string>();
   public isDisabled = input<boolean>(false);
-  public options = input.required<TreeNode[]>();
+  public options = input<TreeNode[]>([]);
   public placeholder = input<string>();
   public prefill = input<TreeNode[]>([]);
   public appendTo = input<HTMLElement | string>('');
 
+  // Alternative API (used by shared-tree-dropdown selector)
+  public nodes = input<CustomTreeNode[]>();
+  public selectedIds = input<number[]>();
+  public expandedState = input<Map<string, boolean>>();
+
   public changeEvent = output<SharedSelectTreeChangeEventOutput>();
+  public expandedStateChange = output<Map<string, boolean>>();
+  public selectionChange = output<{ changedNode?: CustomTreeNode; checked?: boolean; selectAll?: boolean }>();
 
   public optionsTotal = computed(
     () => this.getAllAvailableOptions(this.options()).length,

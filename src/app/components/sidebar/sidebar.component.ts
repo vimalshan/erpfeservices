@@ -4,10 +4,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
 
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 
 @Component({
-  selector: 'customer-portal-sidebar',
+  selector: 'erp-services-sidebar',
   imports: [
     CommonModule,
     RouterLink,

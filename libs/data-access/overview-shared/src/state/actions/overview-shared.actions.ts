@@ -1,5 +1,5 @@
-import { CalendarViewType } from '@customer-portal/shared/models';
-import { FilterValue } from '@customer-portal/shared/models/grid';
+import { CalendarViewType } from '@erp-services/shared/models';
+import { FilterValue } from '@erp-services/shared/models/grid';
 
 export class OverviewUpcomingSetSelectedDate {
   static readonly type = '[Overview Shared] Set Selected Date';

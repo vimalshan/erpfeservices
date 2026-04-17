@@ -1,18 +1,18 @@
 import { runInInjectionContext, signal, WritableSignal } from '@angular/core';
 
-import { CertificateListStoreService } from '@customer-portal/data-access/certificates';
+import { CertificateListStoreService } from '@erp-services/data-access/certificates';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 import {
   GridConfig,
   ObjectName,
   ObjectType,
   PageName,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { CertificateListComponent } from './certificate-list.component';
 

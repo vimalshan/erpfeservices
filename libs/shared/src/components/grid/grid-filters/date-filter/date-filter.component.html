@@ -7,9 +7,9 @@
           attr.aria-label="{{ t('blank') }}"
           [binary]="true"
           [disabled]="false"
-          [label]="t('blank')"
           [(ngModel)]="isBlankSelected"
           (onChange)="onChangeEmptyValue()"></p-checkbox>
+        <label>{{ t('blank') }}</label>
       </div>
     }
 

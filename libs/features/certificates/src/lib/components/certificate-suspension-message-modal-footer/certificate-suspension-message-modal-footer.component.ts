@@ -3,11 +3,11 @@ import { Component, OnDestroy } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { SettingsCoBrowsingStoreService } from '@customer-portal/data-access/settings';
+import { SettingsCoBrowsingStoreService } from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 
 @Component({
   selector: 'lib-certificate-suspension-message-modal-footer',
@@ -19,7 +19,7 @@ export class CertificateSuspensionMessageModalFooterComponent
   implements OnDestroy
 {
   sharedButtonType = SharedButtonType;
-  isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+  isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
 
   constructor(
     private ref: DynamicDialogRef,

@@ -18,9 +18,9 @@ export class CoBrowsingSelectors {
     return selectedCoBrowsingCompany;
   }
 
-  @Selector([CoBrowsingSelectors._isDnvUser])
-  static isDnvUser(isDnvUser: boolean) {
-    return isDnvUser;
+  @Selector([CoBrowsingSelectors._isSuaadhyaUser])
+  static isSuaadhyaUser(isSuaadhyaUser: boolean) {
+    return isSuaadhyaUser;
   }
 
   @Selector([SettingsState])
@@ -38,7 +38,7 @@ export class CoBrowsingSelectors {
   }
 
   @Selector([SettingsState])
-  private static _isDnvUser(state: SettingsStateModel): boolean {
-    return state.isDnvUser;
+  private static _isSuaadhyaUser(state: SettingsStateModel): boolean {
+    return state.isSuaadhyaUser;
   }
 }

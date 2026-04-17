@@ -136,6 +136,40 @@ export const formatDateToGivenZoneAndLocale = (
 export const isDateInPast = (date: string): boolean =>
   new Date(date).getTime() < new Date(new Date()).getTime();
 
+export const formatUtcToLocal = (
+  inputDateTime: string,
+  zone: string,
+  format = DEFAULT_DATE_FORMAT,
+): string => {
+  if (!inputDateTime) {
+    return '';
+  }
+
+  const localDateTime = DateTime.fromISO(inputDateTime, { zone: 'utc' }).setZone(zone);
+
+  return localDateTime.isValid ? localDateTime.toFormat(format) : '';
+};
+
+export const utcDateInPast = (date: string): boolean => {
+  if (!date) {
+    return false;
+  }
+
+  const utcDate = DateTime.fromISO(date, { zone: 'utc' });
+
+  return utcDate.isValid && utcDate < DateTime.utc();
+};
+
+export const utcDateInFuture = (date: string): boolean => {
+  if (!date) {
+    return false;
+  }
+
+  const utcDate = DateTime.fromISO(date, { zone: 'utc' });
+
+  return utcDate.isValid && utcDate > DateTime.utc();
+};
+
 export const calculateWeekRange = (date: Date): [Date, Date] => {
   const inputDate = new Date(date);
 

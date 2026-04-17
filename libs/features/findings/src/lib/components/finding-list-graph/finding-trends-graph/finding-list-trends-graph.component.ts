@@ -2,14 +2,14 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { FindingListGraphStoreService } from '@customer-portal/data-access/findings';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
-import { TreeTableComponent } from '@customer-portal/shared/components/tree-table';
+import { FindingListGraphStoreService } from '@erp-services/data-access/findings';
+import { ChartComponent } from '@erp-services/shared/components/chart';
+import { TreeTableComponent } from '@erp-services/shared/components/tree-table';
 import {
   ChartFilter,
   ChartTypeEnum,
   TrendsChartInterval,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { FINDINGS_GRAPH_LINE_OPTIONS } from './finding-graph-line-options.constants';
 

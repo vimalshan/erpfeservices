@@ -11,7 +11,7 @@ import {
   LoggingService,
   ScheduleParams,
   ServiceNowService,
-} from '@customer-portal/core';
+} from '@erp-services/core';
 import {
   ConfirmScheduleDetailsStoreService,
   SCHEDULE_STATUS_MAP,
@@ -20,12 +20,12 @@ import {
   ScheduleListStoreService,
   UpdateScheduleCalendarConfirmSuccess,
   UpdateScheduleCalendarRescheduleSuccess,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 import {
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { BasePreferencesComponent } from '@erp-services/preferences';
 import {
   ColumnDefinition,
   getToastContentBySeverity,
@@ -37,7 +37,7 @@ import {
   ObjectType,
   PageName,
   ToastSeverity,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { SCHEDULES_LIST_COLUMNS } from '../../constants';
 import { ScheduleCalendarEventService } from '../../services';
@@ -189,7 +189,7 @@ export class ScheduleListComponent
         projectNumber: schedule.projectNumber,
         language: this.profileLanguageStoreService.languageLabel(),
         service: schedule.service,
-        accountDNVId: schedule.accountDNVId,
+        accountSuaadhyaId: schedule.accountSuaadhyaId,
       };
 
       this.serviceNowService.openScheduleSupport(scheduleServiceNowParams);

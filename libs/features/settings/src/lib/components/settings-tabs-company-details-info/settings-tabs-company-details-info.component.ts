@@ -15,15 +15,15 @@ import {
   CompanySettingsParams,
   LoggingService,
   ServiceNowService,
-} from '@customer-portal/core';
+} from '@erp-services/core';
 import {
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsData,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { ToastSeverity } from '@customer-portal/shared/models';
+} from '@erp-services/data-access/settings';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { ToastSeverity } from '@erp-services/shared/models';
 
  import { AddressEntity } from '../../constants/settings-tabs-company-details.model';
 
@@ -50,7 +50,7 @@ export class SettingsTabsCompanyDetailsInfoComponent {
   );
 
   public isAccordionOpen = false;
-  public isDnvUser: Signal<boolean>;
+  public isSuaadhyaUser: Signal<boolean>;
 
   constructor(
     private profileLanguageStoreService: ProfileLanguageStoreService,
@@ -61,7 +61,7 @@ export class SettingsTabsCompanyDetailsInfoComponent {
     private loggingService: LoggingService,
     private readonly ts: TranslocoService,
   ) {
-    this.isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+    this.isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
   }
 
   onAccordionToggle(): void {
@@ -75,7 +75,7 @@ export class SettingsTabsCompanyDetailsInfoComponent {
         .find((entity) => entity.accountId === this.data()?.accountId);
       const companySettingsParams: CompanySettingsParams = {
         language: this.profileLanguageStoreService.languageLabel(),
-        accountDNVId: currentEntity?.accountDNVId ?? 0,
+        accountSuaadhyaId: currentEntity?.accountSuaadhyaId ?? 0,
         accountName: currentEntity?.organizationName ?? '',
         reportingCountry: currentEntity?.countryCode ?? '',
         accountAddress: this.formatAddress(currentEntity),

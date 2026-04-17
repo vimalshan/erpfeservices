@@ -6,9 +6,9 @@ import {
   CONTRACTS_LIST_SERVICE,
   ContractsListService,
   ContractsListState,
-} from '@customer-portal/data-access/contracts';
-import { DocumentsState } from '@customer-portal/data-access/documents/state/documents.state';
-import { Language } from '@customer-portal/shared';
+} from '@erp-services/data-access/contracts';
+import { DocumentsState } from '@erp-services/data-access/documents/state/documents.state';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

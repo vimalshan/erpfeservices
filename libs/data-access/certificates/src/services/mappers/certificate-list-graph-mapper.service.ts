@@ -1,13 +1,13 @@
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 import {
   CustomTreeNode,
   ServiceDetailsMaster,
   SiteDetailsMaster,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import {
   CertificateBySiteCity,

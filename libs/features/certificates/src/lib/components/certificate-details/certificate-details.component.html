@@ -13,7 +13,7 @@
         [value]="certificateDetails().header.status">
       </shared-status>
 
-      @if (!isDnvUser()) {
+      @if (!isSuaadhyaUser()) {
         <ng-container *sharedHasAdminPermission="'admin'">
           <shared-button
             class="request-changes-button"

@@ -9,7 +9,7 @@ import {
   NavigateFromOverviewCardToAuditListView,
   NavigateFromOverviewCardToFindingsListView,
   NavigateFromOverviewCardToScheduleListView,
-} from '@customer-portal/overview-shared';
+} from '@erp-services/overview-shared';
 import {
   CardDataModel,
   CardNavigationPayload,
@@ -21,7 +21,7 @@ import {
   getYearBoundsAsDates,
   SharedSelectMultipleDatum,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { OverviewFilterTypes } from '../constants';
 import { OverviewFilterDto } from '../dtos';

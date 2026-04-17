@@ -37,14 +37,14 @@
 
 .container-actions {
   display: grid;
-  column-gap: calc(var(--dnv-gutter-base-unitless) * 3 * 0.0625rem);
+  column-gap: calc(var(--suaadhya-gutter-base-unitless) * 3 * 0.0625rem);
   grid-template-columns: minmax(min-content, 1fr) auto;
   grid-template-areas:
     'action-buttons counter'
     'filter-list filter-buttons';
 
   @include mixins.respond-to(phone) {
-    gap: calc(var(--dnv-gutter-base-unitless) * 0.0625rem);
+    gap: calc(var(--suaadhya-gutter-base-unitless) * 0.0625rem);
     grid-template-columns: minmax(50%, 1fr);
     grid-template-areas:
       '. counter'
@@ -54,7 +54,7 @@
   }
 
   &.has-row-gap {
-    row-gap: calc(var(--dnv-gutter-base-unitless) * 3 * 0.0625rem);
+    row-gap: calc(var(--suaadhya-gutter-base-unitless) * 3 * 0.0625rem);
   }
 }
 
@@ -81,7 +81,7 @@
 .filter-buttons {
   grid-area: filter-buttons;
   display: flex;
-  gap: calc(var(--dnv-gutter-base-unitless) * 0.0625rem);
+  gap: calc(var(--suaadhya-gutter-base-unitless) * 0.0625rem);
 
   .grouping-button {
     border-color: transparent;
@@ -165,7 +165,7 @@
 
   .p-datatable {
     &.p-datatable-scrollable {
-      gap: calc(var(--dnv-gutter-base-unitless) * 3 * 0.0625rem);
+      gap: calc(var(--suaadhya-gutter-base-unitless) * 3 * 0.0625rem);
     }
 
     .p-datatable-header {
@@ -196,7 +196,7 @@
           border: none;
           text-align: right;
           padding: 0;
-          color: variables.$primary-dnv-medium-blue;
+          color: variables.$primary-suaadhya-medium-blue;
           background-color: transparent;
           font-size: utility.get-rem(16);
         }
@@ -297,7 +297,7 @@
     }
 
     .p-datatable-column-sorted {
-      color: variables.$basic-tones-dnv-dark;
+      color: variables.$basic-tones-suaadhya-dark;
     }
 
     .p-frozen-column {

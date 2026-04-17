@@ -2,7 +2,7 @@
   "name": "actions",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/features/actions/src",
-  "prefix": "customer-portal",
+  "prefix": "erp-services",
   "projectType": "library",
   "tags": ["type:feature", "domain:actions"],
   "targets": {

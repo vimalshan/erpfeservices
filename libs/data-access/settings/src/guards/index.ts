@@ -1,2 +1,2 @@
-export * from './allow-non-dnv-user.guard';
-export * from './allow-dnv-user.guard';
+export * from './allow-non-suaadhya-user.guard';
+export * from './allow-suaadhya-user.guard';

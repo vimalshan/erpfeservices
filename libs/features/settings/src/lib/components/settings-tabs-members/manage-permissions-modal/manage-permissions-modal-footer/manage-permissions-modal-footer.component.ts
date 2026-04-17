@@ -8,11 +8,11 @@ import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
 import { ConfirmationService } from 'primeng/api';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings/state/store-services';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings/state/store-services';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 
 @Component({
   selector: 'lib-new-member-modal-footer',

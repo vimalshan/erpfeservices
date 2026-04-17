@@ -6,12 +6,12 @@ import { TranslocoDirective } from '@jsverse/transloco';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { ErrorCardComponent } from '@customer-portal/shared/components/error-card';
-import { AuthService } from '@customer-portal/shared/services/auth';
+} from '@erp-services/shared/components/button';
+import { ErrorCardComponent } from '@erp-services/shared/components/error-card';
+import { AuthService } from '@erp-services/shared/services/auth';
 
 @Component({
-  selector: 'customer-portal-welcome',
+  selector: 'erp-services-welcome',
   imports: [
     CommonModule,
     SharedButtonComponent,

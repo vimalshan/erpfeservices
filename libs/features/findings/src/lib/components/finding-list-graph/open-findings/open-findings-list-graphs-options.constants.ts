@@ -1,6 +1,6 @@
 import { ChartOptions } from 'chart.js';
 
-import { ChartTypeEnum } from '@customer-portal/shared';
+import { ChartTypeEnum } from '@erp-services/shared';
 
 export const OPEN_FINDINGS_LIST_GRAPH_OPTIONS: ChartOptions<ChartTypeEnum.Bar> =
   {

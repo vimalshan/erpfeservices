@@ -1,7 +1,7 @@
 export enum TooltipThemes {
-  Dark = 'dnv-dark',
-  LightSm = 'dnv-light-sm',
-  LightMd = 'dnv-light-md',
+  Dark = 'suaadhya-dark',
+  LightSm = 'suaadhya-light-sm',
+  LightMd = 'suaadhya-light-md',
 }
 
 export enum TooltipPlacements {

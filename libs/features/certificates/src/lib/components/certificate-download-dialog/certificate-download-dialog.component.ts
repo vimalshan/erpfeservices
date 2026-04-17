@@ -19,12 +19,12 @@ import {
 import {
   CertificateDetailsStoreService,
   CertificateDownloadDialogData,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { LanguageOption } from '@customer-portal/shared/models';
+} from '@erp-services/shared/components/button';
+import { LanguageOption } from '@erp-services/shared/models';
 
 import { CertificateGuidelines } from '../../constants';
 

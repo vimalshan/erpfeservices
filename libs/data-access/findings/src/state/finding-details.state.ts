@@ -4,23 +4,23 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, forkJoin, switchMap, tap } from 'rxjs';
 
-import { LoggingService } from '@customer-portal/core';
-import { UnreadActionsStoreService } from '@customer-portal/data-access/actions/state';
+import { LoggingService } from '@erp-services/core';
+import { UnreadActionsStoreService } from '@erp-services/data-access/actions/state';
 import {
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
-import { RouteStoreService } from '@customer-portal/router';
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { getFilterOptionsForColumn } from '@customer-portal/shared/helpers/grid';
-import { ToastSeverity } from '@customer-portal/shared/models';
-import { FilterOptions, GridConfig } from '@customer-portal/shared/models/grid';
+} from '@erp-services/permissions';
+import { RouteStoreService } from '@erp-services/router';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { getFilterOptionsForColumn } from '@erp-services/shared/helpers/grid';
+import { ToastSeverity } from '@erp-services/shared/models';
+import { FilterOptions, GridConfig } from '@erp-services/shared/models/grid';
 
 import {
   FindingDetailsModel,
@@ -227,7 +227,7 @@ export class FindingDetailsState {
             timestamp: new Date().toISOString(),
           });
           ctx.dispatch(
-            new SendFindingResponsesFormSuccess(dto.request.isSubmitToDnv),
+            new SendFindingResponsesFormSuccess(dto.request.isSubmitToSuaadhya),
           );
           this.unreadActionsStoreService.loadUnreadActions();
         } else {
@@ -265,8 +265,8 @@ export class FindingDetailsState {
     const message = getToastContentBySeverity(ToastSeverity.Success);
 
     const translationKey = (() => {
-      if (action.isSubmitToDnv) {
-        return 'findings.findingDetails.responsesSendToDNVSuccess';
+      if (action.isSubmitToSuaadhya) {
+        return 'findings.findingDetails.responsesSendToSuaadhyaSuccess';
       }
 
       return 'findings.findingDetails.responsesSaveAsDraftSuccess';
@@ -376,7 +376,7 @@ export class FindingDetailsState {
       PermissionsList.Edit,
     )();
 
-    const isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser();
+    const isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser();
 
     return this.findingDocumentsListService
       .getFindingDocumentsList(header.auditNumber, findingNumber)
@@ -387,7 +387,7 @@ export class FindingDetailsState {
             FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
               findingListDto,
               hasFindingsEditPermission,
-              isDnvUser,
+              isSuaadhyaUser,
             );
 
           ctx.dispatch(new LoadFindingDocumentsListSuccess(findingDocuments));

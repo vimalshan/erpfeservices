@@ -1,8 +1,8 @@
 import { SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { mapApiResponseToPageName } from '@customer-portal/shared/helpers';
-import { convertToUtcDate } from '@customer-portal/shared/helpers/date';
+import { mapApiResponseToPageName } from '@erp-services/shared/helpers';
+import { convertToUtcDate } from '@erp-services/shared/helpers/date';
 
 import { NotificationListDto, NotificationsDto } from '../../dtos';
 import { NotificationModel } from '../../models';

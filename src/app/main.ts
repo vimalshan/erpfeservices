@@ -1,7 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { AppComponent } from './app.component';
 import { appConfig } from './app.config';

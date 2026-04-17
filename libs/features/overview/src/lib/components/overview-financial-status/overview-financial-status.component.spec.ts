@@ -1,9 +1,9 @@
 import {
   createOverviewSharedStoreServiceMock,
   OverviewFinancialStatusStoreService,
-} from '@customer-portal/data-access/overview';
-import { createOverviewFinancialStatusStoreServiceMock } from '@customer-portal/data-access/settings';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
+} from '@erp-services/data-access/overview';
+import { createOverviewFinancialStatusStoreServiceMock } from '@erp-services/data-access/settings';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
 
 import {
   customLegendBorderPlugin,

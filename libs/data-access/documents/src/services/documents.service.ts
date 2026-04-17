@@ -7,9 +7,9 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
-import { getContentType } from '@customer-portal/shared/helpers/download';
-import { FileUpload } from '@customer-portal/shared/models';
+import { environment } from '@erp-services/environments';
+import { getContentType } from '@erp-services/shared/helpers/download';
+import { FileUpload } from '@erp-services/shared/models';
 
 import { DocumentDeleteDto } from '../dtos/document-delete.dto';
 import { DocType } from '../models';

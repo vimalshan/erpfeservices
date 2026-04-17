@@ -4,9 +4,9 @@ import { TranslocoService } from '@jsverse/transloco';
 import { MessageService } from 'primeng/api';
 import { Observable, tap } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
-import { FileUploadToastHelper } from '@customer-portal/shared/helpers/toast';
-import { FileUpload } from '@customer-portal/shared/models';
+import { environment } from '@erp-services/environments';
+import { FileUploadToastHelper } from '@erp-services/shared/helpers/toast';
+import { FileUpload } from '@erp-services/shared/models';
 
 enum FileUploadErrors {
   Error_001 = 'findings.fileUpload.fileUploadWrongName',

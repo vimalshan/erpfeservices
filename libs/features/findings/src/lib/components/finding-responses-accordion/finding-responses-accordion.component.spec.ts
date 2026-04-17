@@ -3,8 +3,8 @@ import { TranslocoService } from '@jsverse/transloco';
 import {
   createFindingDetailsStoreServiceMock,
   FindingDetailsStoreService,
-} from '@customer-portal/data-access/findings';
-import { createTranslationServiceMock } from '@customer-portal/shared';
+} from '@erp-services/data-access/findings';
+import { createTranslationServiceMock } from '@erp-services/shared';
 
 import { FindingResponsesAccordionComponent } from './finding-responses-accordion.component';
 

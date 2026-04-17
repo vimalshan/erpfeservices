@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { AuditDetailsStoreService } from '@customer-portal/data-access/audit';
-import { GridComponent } from '@customer-portal/shared/components/grid';
-import { STATUS_STATES_MAP } from '@customer-portal/shared/constants';
-import { ColumnDefinition, GridConfig } from '@customer-portal/shared/models';
+import { AuditDetailsStoreService } from '@erp-services/data-access/audit';
+import { GridComponent } from '@erp-services/shared/components/grid';
+import { STATUS_STATES_MAP } from '@erp-services/shared/constants';
+import { ColumnDefinition, GridConfig } from '@erp-services/shared/models';
 
 import { AUDIT_SITES_LIST_COLUMNS } from '../../constants';
 

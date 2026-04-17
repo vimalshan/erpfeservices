@@ -8,13 +8,13 @@ import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   AuthService,
   createAuthServiceMock,
   createTranslationServiceMock,
   Language,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { NavbarSettingsComponent } from './navbar-settings.component';
 

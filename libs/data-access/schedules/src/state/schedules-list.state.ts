@@ -3,41 +3,41 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, take, tap } from 'rxjs';
 
-import { NavigateFromActionsListToScheduleListView } from '@customer-portal/data-access/actions/state/actions';
+import { NavigateFromActionsListToScheduleListView } from '@erp-services/data-access/actions/state/actions';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
-import { NavigateFromNotificationsListToScheduleListView } from '@customer-portal/data-access/notifications/state';
+} from '@erp-services/data-access/global';
+import { NavigateFromNotificationsListToScheduleListView } from '@erp-services/data-access/notifications/state';
 import {
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   ClearNavigationFilters,
   OverviewSharedStoreService,
-} from '@customer-portal/overview-shared';
+} from '@erp-services/overview-shared';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
+} from '@erp-services/permissions';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
 import {
   downloadFileFromByteArray,
   getFilterOptions,
   getToastContentBySeverity,  
   updateGridConfigBasedOnFilters,
-} from '@customer-portal/shared/helpers';
+} from '@erp-services/shared/helpers';
 import {
   FilterableColumnDefinition,
   ToastSeverity,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 import {
   FilterOptions,
   FilterValue,
   GridConfig,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { ScheduleStatusTypes } from '../constants';
 import { ScheduleListItemModel } from '../models';
@@ -56,7 +56,7 @@ import {
   UpdateScheduleListForReschedule,
   UpdateScheduleListStatusToConfirmed,
 } from './actions';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 
 export interface ScheduleListStateModel {
   schedules: ScheduleListItemModel[];
@@ -108,7 +108,7 @@ export class ScheduleListState {
             PermissionsList.Edit,
           )();
 
-        const isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser();
+        const isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser();
         const siteMasterList =
           this.globalSiteMasterStoreService.siteMasterList();
         const serviceMasterList =
@@ -118,7 +118,7 @@ export class ScheduleListState {
         const schedules = ScheduleListMapperService.mapToScheduleListItemModel(
           scheduleListDto,
           hasScheduleEditPermisssion,
-          isDnvUser,
+          isSuaadhyaUser,
           isAdminUser,
           siteMasterList,
           serviceMasterList,
@@ -273,7 +273,7 @@ export class ScheduleListState {
 
     const schedules = state.schedules.map((item) =>
       item.siteAuditId === siteAuditId
-        ? { ...item, status: ScheduleStatusTypes.ToBeConfirmedByDNV }
+        ? { ...item, status: ScheduleStatusTypes.ToBeConfirmedBySuaadhya }
         : item,
     );
 

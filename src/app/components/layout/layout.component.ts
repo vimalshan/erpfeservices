@@ -6,13 +6,13 @@ import { ConfirmationService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 
-import { SessionTimeoutService, SpinnerComponent } from '@customer-portal/core';
-import { CustomConfirmDialogComponent } from '@customer-portal/shared/components/custom-confirm-dialog';
-import { CustomToastComponent } from '@customer-portal/shared/components/custom-toast';
-import { AuthTokenConstants } from '@customer-portal/shared/constants';
-import { BreadcrumbService } from '@customer-portal/shared/services/breadcrumb';
-import { CoBrowsingSharedService } from '@customer-portal/shared/services/co-browsing';
-import { ScriptLoaderService } from '@customer-portal/shared/services/loader';
+import { SessionTimeoutService, SpinnerComponent } from '@erp-services/core';
+import { CustomConfirmDialogComponent } from '@erp-services/shared/components/custom-confirm-dialog';
+import { CustomToastComponent } from '@erp-services/shared/components/custom-toast';
+import { AuthTokenConstants } from '@erp-services/shared/constants';
+import { BreadcrumbService } from '@erp-services/shared/services/breadcrumb';
+import { CoBrowsingSharedService } from '@erp-services/shared/services/co-browsing';
+import { ScriptLoaderService } from '@erp-services/shared/services/loader';
 
 import { BreadcrumbComponent } from '../breadcrumb';
 import { FooterComponent } from '../footer';
@@ -22,7 +22,7 @@ import { SidebarComponent } from '../sidebar';
 import { SidebarMobileComponent } from '../sidebar-mobile';
 
 @Component({
-  selector: 'customer-portal-layout',
+  selector: 'erp-services-layout',
   standalone: true,
   imports: [
     ButtonModule,
@@ -44,9 +44,9 @@ import { SidebarMobileComponent } from '../sidebar-mobile';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
-  title = 'customer-portal';
+  title = 'erp-services';
   isLoggedIn = false;
-  isDnvUser = false;
+  isSuaadhyaUser = false;
   breadcrumbVisibility = false;
 
   constructor(
@@ -92,6 +92,6 @@ export class LayoutComponent implements OnInit {
   }
 
   private initializeUserState(): void {
-    this.isDnvUser = !!window.history.state?.isDnvUser;
+    this.isSuaadhyaUser = !!window.history.state?.isSuaadhyaUser;
   }
 }

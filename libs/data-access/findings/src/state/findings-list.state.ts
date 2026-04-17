@@ -7,24 +7,24 @@ import { catchError, take, tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
+} from '@erp-services/data-access/global';
 import {
   ClearNavigationFilters,
   OverviewSharedStoreService,
-} from '@customer-portal/overview-shared';
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
+} from '@erp-services/overview-shared';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
 import {
   downloadFileFromByteArray,
   getFilterOptions,
   getToastContentBySeverity,  
   updateGridConfigBasedOnFilters,
-} from '@customer-portal/shared/helpers';
+} from '@erp-services/shared/helpers';
 import {
   FilterableColumnDefinition,
   FilterOptions,
   GridConfig,
   ToastSeverity,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { FindingListItemModel } from '../models';
 import { FindingsListMapperService, FindingsListService } from '../services';
@@ -41,7 +41,7 @@ import {
   UpdateFilterOptions,
   UpdateGridConfig,
 } from './actions';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 
 export interface FindingsListStateModel {
   findingsItems: FindingListItemModel[];

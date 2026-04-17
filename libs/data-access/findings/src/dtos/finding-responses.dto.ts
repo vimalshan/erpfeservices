@@ -4,7 +4,7 @@ export interface FindingResponsesDto {
     rootCause: string;
     correctiveAction: string;
     correction: string;
-    isSubmitToDnv: boolean;
+    isSubmitToSuaadhya: boolean;
     respondId: number;
     isDraft: boolean;
     updatedOn: string;

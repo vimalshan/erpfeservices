@@ -1,6 +1,6 @@
 import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 
-import { Language } from '@customer-portal/shared';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

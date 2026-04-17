@@ -10,21 +10,21 @@ import {
   AuditChartFilterKey,
   AuditDaysNode,
   AuditListGraphStoreService,
-} from '@customer-portal/data-access/audit';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
-import { TreeTableComponent } from '@customer-portal/shared/components/tree-table';
-import { chartTotalPlugin } from '@customer-portal/shared/helpers/chart';
-import { getMonthStartEnd } from '@customer-portal/shared/helpers/date';
-import { formatFilter } from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/data-access/audit';
+import { ChartComponent } from '@erp-services/shared/components/chart';
+import { TreeTableComponent } from '@erp-services/shared/components/tree-table';
+import { chartTotalPlugin } from '@erp-services/shared/helpers/chart';
+import { getMonthStartEnd } from '@erp-services/shared/helpers/date';
+import { formatFilter } from '@erp-services/shared/helpers/grid';
 import {
   FilterValue,
   IndividualFilter,
   TreeColumnDefinition,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 import {
   ChartFilter,
   ChartTypeEnum,
-} from '@customer-portal/shared/models/chart';
+} from '@erp-services/shared/models/chart';
 
 import {
   AUDIT_DAYS_BAR_GRAPH_OPTIONS,

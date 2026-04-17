@@ -35,13 +35,13 @@
 .charts {
   grid-area: charts;
   display: grid;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     'chart-overdue chart-becoming-overdue'
     'chart-in-progress chart-early-stage';
-  padding-top: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  padding-top: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
 
   @include mixins.respond-to(phone) {
     grid-template-columns: 100%;
@@ -81,7 +81,7 @@
 .chart-bar {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
 }
 
 .header {
@@ -100,7 +100,7 @@
   @include mixins.respond-to(phone) {
     flex-direction: column;
     align-items: flex-start;
-    gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+    gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
   }
 }
 
@@ -109,12 +109,12 @@
   display: flex;
   font-size: utility.get-rem(12);
   font-weight: 700;
-  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
   line-height: utility.get-rem(16);
   letter-spacing: 0.5px;
   padding: 16px;
   text-transform: uppercase;
-  color: variables.$primary-dnv-medium-blue;
+  color: variables.$primary-suaadhya-medium-blue;
 
   &--overdue {
     background-color: variables.$chart-header-overdue-bg;

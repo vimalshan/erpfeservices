@@ -1,7 +1,7 @@
 import { Selector } from '@ngxs/store';
 import { TreeNode } from 'primeng/api';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared';
+import { SharedSelectMultipleDatum } from '@erp-services/shared';
 
 import { OverviewState, OverviewStateModel } from '../overview.state';
 

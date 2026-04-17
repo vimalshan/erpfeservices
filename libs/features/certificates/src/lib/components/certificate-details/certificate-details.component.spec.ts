@@ -9,17 +9,17 @@ import {
   LoggingService,
   ServiceNowService,
   SpinnerService,
-} from '@customer-portal/core';
+} from '@erp-services/core';
 import {
   CertificateDetailsStoreService,
   createCertificateDetailsStoreServiceMock,
   DocumentMark,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createDestroyRefMock,
   createDialogServiceMock,
@@ -31,7 +31,7 @@ import {
   LanguageOption,
   MessageSeverity,
   ToastSeverity,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { CertificateDownloadDialogComponent } from '../certificate-download-dialog';
 import { CertificateDetailsComponent } from './certificate-details.component';

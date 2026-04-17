@@ -1,9 +1,9 @@
 import { runInInjectionContext, signal } from '@angular/core';
 import { DatesSetArg } from '@fullcalendar/core';
 
-import { OverviewUpcomingAuditStoreService } from '@customer-portal/data-access/overview';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+import { OverviewUpcomingAuditStoreService } from '@erp-services/data-access/overview';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 
 import { OverviewUpcomingAuditsComponent } from './overview-upcoming-audits.component';
 

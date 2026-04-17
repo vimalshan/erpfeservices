@@ -1,7 +1,7 @@
 import { Selector } from '@ngxs/store';
 import { TreeNode } from 'primeng/api';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 
 import { ActionsModel } from '../../models';
 import { ActionsListState, ActionsListStateModel } from '../actions-list.state';

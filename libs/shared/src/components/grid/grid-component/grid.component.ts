@@ -189,6 +189,9 @@ export class GridComponent implements OnInit, AfterViewInit {
   @Input() displayColsReorderButton = false;
   @Input() displayFilterSummary = true;
   @Input() loading = false;
+  @Input() set isLoading(value: boolean) {
+    this.loading = value;
+  }
   @Input() paginator = true;
   @Input() rowHover = false;
   @Input() rows = this.defaultRowsPerPage;
@@ -211,6 +214,7 @@ export class GridComponent implements OnInit, AfterViewInit {
   @Input() shouldPersist = true;
   @Input() enableFileDownloadWithRowData = false;
   @Input() isDocumentsGrid = false;
+  @Input() isShowAddDocument = false;
   @Input({ required: true }) hasActiveFilters = false;
 
   @Output() gridConfigChangedEvent = new EventEmitter<GridConfig>();
@@ -246,6 +250,10 @@ export class GridComponent implements OnInit, AfterViewInit {
 
   get isGridEmpty(): boolean {
     return this.totalRecords === 0;
+  }
+
+  getExportButtonElement(): HTMLElement | undefined {
+    return this.dataTable?.el?.nativeElement?.querySelector('.pi-download')?.closest('button') ?? undefined;
   }
 
   @HostListener('window:resize', ['$event'])

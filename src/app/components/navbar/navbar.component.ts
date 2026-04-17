@@ -14,23 +14,23 @@ import {
   BaseServiceNowParams,
   LoggingService,
   ServiceNowService,
-} from '@customer-portal/core';
-import { UnreadActionsStoreService } from '@customer-portal/data-access/actions/state';
-import { UnreadNotificationsStoreService } from '@customer-portal/data-access/notifications/state';
+} from '@erp-services/core';
+import { UnreadActionsStoreService } from '@erp-services/data-access/actions/state';
+import { UnreadNotificationsStoreService } from '@erp-services/data-access/notifications/state';
 import {
   ProfileLanguageStoreService,
   ProfileStoreService,
-} from '@customer-portal/data-access/settings';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers';
-import { ToastSeverity } from '@customer-portal/shared/models';
-import { CoBrowsingSharedService } from '@customer-portal/shared/services';
+} from '@erp-services/data-access/settings';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers';
+import { ToastSeverity } from '@erp-services/shared/models';
+import { CoBrowsingSharedService } from '@erp-services/shared/services';
 
 import { NavbarButtonComponent } from '../navbar-button';
 import { NavbarDownloadComponent } from '../navbar-download';
 import { NavbarSettingsComponent } from '../navbar-settings';
 
 @Component({
-  selector: 'customer-portal-navbar',
+  selector: 'erp-services-navbar',
   imports: [
     CommonModule,
     TranslocoDirective,

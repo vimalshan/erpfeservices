@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 import {
   ConfirmScheduleDetailsStoreService,
   ScheduleCalendarActionStoreService,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 
 import { ScheduleCalendarRescheduleModalComponent } from './schedule-calendar-reschedule-modal.component';
 

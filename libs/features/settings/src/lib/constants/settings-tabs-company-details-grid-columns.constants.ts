@@ -2,7 +2,7 @@ import {
   CellType,
   ColumnDefinition,
   ColumnType,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 export const SETTINGS_TABS_COMPANY_DETAILS_GRID_COLUMNS: ColumnDefinition[] = [
   {

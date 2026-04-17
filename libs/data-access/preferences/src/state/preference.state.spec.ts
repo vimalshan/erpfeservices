@@ -8,7 +8,7 @@ import {
   ObjectName,
   ObjectType,
   PageName,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { PreferenceDto } from '../dtos';
 import { PreferenceModel } from '../models';

@@ -3,7 +3,7 @@ import { ServiceNowFeature } from './service-now.constants';
 
 export const featureContexts: ServiceNowFeatureContext[] = [
   {
-    feature: ServiceNowFeature.DNV_CERTIFICATE,
+    feature: ServiceNowFeature.SUAADHYA_CERTIFICATE,
     static: {},
     params: {
       id: 'id',
@@ -16,11 +16,11 @@ export const featureContexts: ServiceNowFeatureContext[] = [
       certificateID: 'certificateID',
       certificateStatus: 'certificateStatus',
       service: 'service',
-      accountDNVId: 'accountDNVId',
+      accountSuaadhyaId: 'accountSuaadhyaId',
     },
   },
   {
-    feature: ServiceNowFeature.DNV_INVOICE,
+    feature: ServiceNowFeature.SUAADHYA_INVOICE,
     static: {},
     params: {
       id: 'id',
@@ -30,11 +30,11 @@ export const featureContexts: ServiceNowFeatureContext[] = [
       projectNumber: 'projectNumber',
       invoice: 'invoice',
       status: 'status',
-      accountDNVId: 'accountDNVId',
+      accountSuaadhyaId: 'accountSuaadhyaId',
     },
   },
   {
-    feature: ServiceNowFeature.DNV_SCHEDULE,
+    feature: ServiceNowFeature.SUAADHYA_SCHEDULE,
     static: {},
     params: {
       id: 'id',
@@ -54,18 +54,18 @@ export const featureContexts: ServiceNowFeatureContext[] = [
       siteZip: 'siteZip',
       siteCountry: 'siteCountry',
       siteState: 'siteState',
-      accountDNVId: 'accountDNVId',
+      accountSuaadhyaId: 'accountSuaadhyaId',
     },
   },
   {
-    feature: ServiceNowFeature.DNV_COMPANY,
+    feature: ServiceNowFeature.SUAADHYA_COMPANY,
     static: {},
     params: {
       id: 'id',
       sys_id: 'sys_id',
       language: 'language',
       reportingCountry: 'reportingCountry',
-      accountDNVId: 'accountDNVId',
+      accountSuaadhyaId: 'accountSuaadhyaId',
       account_id: 'account_id',
       accountName: 'organizationName',
       accountAddress: 'accountAddress',

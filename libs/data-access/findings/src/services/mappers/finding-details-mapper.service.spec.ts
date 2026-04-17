@@ -1,4 +1,4 @@
-import { convertToUtcDate } from '@customer-portal/shared';
+import { convertToUtcDate } from '@erp-services/shared';
 
 import {
   FindingDetailsDto,
@@ -217,7 +217,7 @@ describe('FindingDetailsMapperService', () => {
         request: {
           findingNumber: 'FN-001',
           responseId: 'RESP-123',
-          isSubmitToDnv: true,
+          isSubmitToSuaadhya: true,
           rootCause: baseFormValue.rootCause,
           correctiveAction: baseFormValue.correctionAction,
           correction: baseFormValue.nonConformity,
@@ -246,7 +246,7 @@ describe('FindingDetailsMapperService', () => {
         request: {
           findingNumber: 'FN-002',
           responseId: null,
-          isSubmitToDnv: false,
+          isSubmitToSuaadhya: false,
           rootCause: baseFormValue.rootCause,
           correctiveAction: baseFormValue.correctionAction,
           correction: baseFormValue.nonConformity,
@@ -277,7 +277,7 @@ describe('FindingDetailsMapperService', () => {
           correctiveAction: 'Corrective Action',
           correction: 'Non Conformity',
           rootCause: 'Root Cause',
-          isSubmitToDnv: true,
+          isSubmitToSuaadhya: true,
           updatedOn: '2021-01-01T00:00:00Z',
           isDraft: false,
           respondId: 1,
@@ -312,7 +312,7 @@ describe('FindingDetailsMapperService', () => {
           correctiveAction: '',
           correction: '',
           rootCause: '',
-          isSubmitToDnv: false,
+          isSubmitToSuaadhya: false,
           updatedOn: '',
           isDraft: false,
           respondId: 0,
@@ -347,7 +347,7 @@ describe('FindingDetailsMapperService', () => {
           correctiveAction: null,
           correction: null,
           rootCause: null,
-          isSubmitToDnv: null,
+          isSubmitToSuaadhya: null,
           createdOn: null,
           isDraft: null,
           respondId: null,

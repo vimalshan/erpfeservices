@@ -13,7 +13,7 @@
 
   @include mixins.respond-to(tablet) {
     flex-wrap: wrap;
-    gap: get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+    gap: get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
   }
 }
 

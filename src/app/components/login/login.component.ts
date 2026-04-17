@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService, LoginRequest } from '@customer-portal/shared';
+import { AuthService, LoginRequest, LoginResponse } from '@erp-services/shared';
 
 @Component({
   selector: 'app-login',
@@ -132,7 +132,7 @@ export class LoginComponent {
     this.loginSuccess = false;
 
     this.authService.loginWithCredentials(this.loginRequest).subscribe({
-      next: (response) => {
+      next: (response: LoginResponse) => {
         console.log('Login successful:', response);
         
         // Store the login response and credentials
@@ -147,7 +147,7 @@ export class LoginComponent {
           this.router.navigate(['/dashboard']);
         }, 1000);
       },
-      error: (error) => {
+      error: (error: unknown) => {
         console.error('Login failed:', error);
         this.loginError = 'Login failed. Please check your credentials.';
         this.isLogging = false;

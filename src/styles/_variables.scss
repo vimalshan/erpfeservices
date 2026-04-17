@@ -1,40 +1,40 @@
 @use 'pattern/utility';
 
 :root {
-  --dnv-font-base-unitless: 12;
-  --dnv-font-base: 12px;
-  --dnv-font-heading-xxl: 48px;
-  --dnv-font-heading-xl: 36px;
-  --dnv-font-heading-l: 28px;
-  --dnv-font-heading-m: 24px;
-  --dnv-font-heading-s: 20px;
-  --dnv-font-text-l: 14px;
-  --dnv-font-text-m: 12px;
-  --dnv-font-text-s: 10px;
-  --dnv-font-text-xs: 8px;
-  --dnv-font-label-l: 12px;
-  --dnv-font-label-m: 10px;
-  --dnv-font-label-s: 8px;
-  --dnv-font-button-l: 14px;
-  --dnv-font-button-s: 12px;
-  --dnv-gutter-base-unitless: 8;
+  --suaadhya-font-base-unitless: 12;
+  --suaadhya-font-base: 12px;
+  --suaadhya-font-heading-xxl: 48px;
+  --suaadhya-font-heading-xl: 36px;
+  --suaadhya-font-heading-l: 28px;
+  --suaadhya-font-heading-m: 24px;
+  --suaadhya-font-heading-s: 20px;
+  --suaadhya-font-text-l: 14px;
+  --suaadhya-font-text-m: 12px;
+  --suaadhya-font-text-s: 10px;
+  --suaadhya-font-text-xs: 8px;
+  --suaadhya-font-label-l: 12px;
+  --suaadhya-font-label-m: 10px;
+  --suaadhya-font-label-s: 8px;
+  --suaadhya-font-button-l: 14px;
+  --suaadhya-font-button-s: 12px;
+  --suaadhya-gutter-base-unitless: 8;
 }
 
 /*
 Store all your global variables, such as colors, font sizes, breakpoints, and other reusable values.
 */
 
-$basic-tones-dnv-dark: #1a1a19;
-$basic-tones-dnv-light: #e6e6e5;
-$basic-tones-dnv-ultra-light: #f8f7f7;
-$basic-tones-dnv-medium: #908d89;
-$basic-tones-dnv-medium-light: #cccbc9;
-$basic-tones-dnv-white: #ffffff;
-$basic-tones-dnv-medium-dark: #4f4d4a;
-$basic-tones-dnv-medium-gray: #707070;
-$primary-dnv-dark-blue: #0f204b;
-$primary-dnv-medium-blue: #003591;
-$primary-dnv-sky-light-blue: #e9f7fc;
+$basic-tones-suaadhya-dark: #1a1a19;
+$basic-tones-suaadhya-light: #e6e6e5;
+$basic-tones-suaadhya-ultra-light: #f8f7f7;
+$basic-tones-suaadhya-medium: #908d89;
+$basic-tones-suaadhya-medium-light: #cccbc9;
+$basic-tones-suaadhya-white: #ffffff;
+$basic-tones-suaadhya-medium-dark: #4f4d4a;
+$basic-tones-suaadhya-medium-gray: #707070;
+$primary-suaadhya-dark-blue: #0f204b;
+$primary-suaadhya-medium-blue: #003591;
+$primary-suaadhya-sky-light-blue: #e9f7fc;
 $background-white: #fbf8f3;
 $table-body-row-even-bg: #fbfbfb;
 $active-filter-tag-bg: #f2fafd;
@@ -77,9 +77,9 @@ $default-border-radius: 10px;
 $button-border-radius: $default-border-radius;
 $border-radius-checkbox: 4px;
 $button-font-weight: 700;
-$button-primary-text: $basic-tones-dnv-white;
-$button-disabled-text: $basic-tones-dnv-medium-gray;
-$button-disabled-background: $basic-tones-dnv-light;
+$button-primary-text: $basic-tones-suaadhya-white;
+$button-disabled-text: $basic-tones-suaadhya-medium-gray;
+$button-disabled-background: $basic-tones-suaadhya-light;
 
 $breadcrumb-icon-separator-color: #696763;
 

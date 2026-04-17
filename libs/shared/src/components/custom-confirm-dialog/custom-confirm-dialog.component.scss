@@ -25,7 +25,7 @@
 
     .p-button {
       font-weight: 700;
-      background-color: variables.$primary-dnv-dark-blue;
+      background-color: variables.$primary-suaadhya-dark-blue;
 
       &.button {
         &--danger {
@@ -40,9 +40,9 @@
         }
 
         &--outlined {
-          background-color: variables.$basic-tones-dnv-white;
-          color: variables.$primary-dnv-dark-blue;
-          border-color: variables.$primary-dnv-dark-blue;
+          background-color: variables.$basic-tones-suaadhya-white;
+          color: variables.$primary-suaadhya-dark-blue;
+          border-color: variables.$primary-suaadhya-dark-blue;
         }
       }
     }

@@ -1,4 +1,4 @@
-import { InvoicesStatusStates } from '@customer-portal/shared';
+import { InvoicesStatusStates } from '@erp-services/shared';
 
 import { isInvoiceOverdueOrUnpaid } from './invoice.helpers';
 

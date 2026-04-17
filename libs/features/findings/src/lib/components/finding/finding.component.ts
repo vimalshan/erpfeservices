@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { SharedPageToggleComponent } from '@customer-portal/shared/components/page-toggle';
-import { SharedButtonToggleDatum } from '@customer-portal/shared/components/toggle';
+import { SharedPageToggleComponent } from '@erp-services/shared/components/page-toggle';
+import { SharedButtonToggleDatum } from '@erp-services/shared/components/toggle';
 
 @Component({
   selector: 'lib-finding',

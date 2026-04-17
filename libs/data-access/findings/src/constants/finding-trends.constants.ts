@@ -1,4 +1,4 @@
-import { BidirectionalMap } from '@customer-portal/shared/helpers/bidirectional-map';
+import { BidirectionalMap } from '@erp-services/shared/helpers/bidirectional-map';
 
 const currentYear = new Date().getFullYear();
 

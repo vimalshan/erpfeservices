@@ -1,6 +1,6 @@
 import { Selector } from '@ngxs/store';
 
-import { Language } from '@customer-portal/shared';
+import { Language } from '@erp-services/shared';
 
 import { SettingsState, SettingsStateModel } from '../settings.state';
 

@@ -8,16 +8,16 @@ import {
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
   SettingsTab,
-} from '@customer-portal/data-access/settings';
-import { environment } from '@customer-portal/environments';
-import { AppPagesEnum } from '@customer-portal/shared/constants';
-import { Language } from '@customer-portal/shared/models';
-import { AuthService } from '@customer-portal/shared/services';
+} from '@erp-services/data-access/settings';
+import { environment } from '@erp-services/environments';
+import { AppPagesEnum } from '@erp-services/shared/constants';
+import { Language } from '@erp-services/shared/models';
+import { AuthService } from '@erp-services/shared/services';
 
 import { NavbarButtonComponent } from '../navbar-button';
 
 @Component({
-  selector: 'customer-portal-navbar-settings',
+  selector: 'erp-services-navbar-settings',
   imports: [
     CommonModule,
     TranslocoDirective,
@@ -33,7 +33,7 @@ export class NavbarSettingsComponent {
   public isLanguagePickerVisible = false;
   public languages = signal([Language.English, Language.Italian]);
   public settingsTab = SettingsTab;
-  public isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+  public isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
 
   constructor(
     private readonly authService: AuthService,
@@ -46,7 +46,7 @@ export class NavbarSettingsComponent {
   onChangeLanguage(language: Language): void {
     this.translocoService.setActiveLang(language);
 
-    if (!this.isDnvUser()) {
+    if (!this.isSuaadhyaUser()) {
       this.profileLanguageStoreService.updateProfileLanguage(language);
     }
   }

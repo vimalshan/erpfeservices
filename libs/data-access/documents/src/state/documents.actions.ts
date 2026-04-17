@@ -1,6 +1,6 @@
 import { HttpResponse } from '@angular/common/http';
 
-import { FileUpload } from '@customer-portal/shared';
+import { FileUpload } from '@erp-services/shared';
 
 import { DocType } from '../models';
 import { BaseFileUploadErrors } from '../models/documents.model';

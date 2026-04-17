@@ -3,7 +3,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { Actions, ofActionSuccessful } from '@ngxs/store';
 import { BehaviorSubject } from 'rxjs';
 
-import { ObjectName, ObjectType, PageName } from '@customer-portal/shared';
+import { ObjectName, ObjectType, PageName } from '@erp-services/shared';
 
 import {
   LoadPreferenceFail,

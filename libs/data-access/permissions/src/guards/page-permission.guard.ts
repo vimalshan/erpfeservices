@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 
-import { isAuthenticated } from '@customer-portal/shared/helpers/guard';
+import { isAuthenticated } from '@erp-services/shared/helpers/guard';
 
 import { PagePermissionsService } from '../services';
 

@@ -1,4 +1,4 @@
-import { SiteModel } from '@customer-portal/shared';
+import { SiteModel } from '@erp-services/shared';
 
 export interface FindingDetailsDto {
   data: FindingDetailsItemDto;

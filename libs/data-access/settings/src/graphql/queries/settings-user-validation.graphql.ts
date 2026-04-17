@@ -7,7 +7,7 @@ export const SETTINGS_USER_VALIDATION_QUERY = gql`
         userIsActive
         termsAcceptanceRedirectUrl
         policySubCode
-        isDnvUser
+        isSuaadhyaUser
         userEmail
         veracityId
         portalLanguage

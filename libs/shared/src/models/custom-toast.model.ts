@@ -15,6 +15,7 @@ export enum ToastSeverity {
   FormIsMandatory = 'formIsMandatory',
   DataSubmitSuccess = 'dataSubmitSuccess',
   SomethingWentWrong = 'somethingWentWrong',
+  InitializationError = 'initializationError',
 }
 
 export enum ToastSeverityIcons {
@@ -42,6 +43,7 @@ export enum ToastSeveritySummary {
   FormIsMandatory = 'All fields are mandatory',
   DataSubmitSuccess = 'Data submitted successfully',
   SomethingWentWrong = 'Something went wrong! Please try again.',
+  InitializationError = 'Initialization error occurred.',
 }
 
 export interface ToastOptionModel {

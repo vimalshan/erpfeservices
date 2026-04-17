@@ -4,6 +4,8 @@ import { BaseApolloResponse } from "../../../../shared/src";
 export interface SiteMasterListModel
   extends BaseApolloResponse<SiteMasterListItemModel[]> {
   data: SiteMasterListItemModel[];
+  isSuccess: boolean;
+  message?: string;
 }
 
 export interface SiteMasterListItemModel {

@@ -1,10 +1,11 @@
 export * from './auth';
 export * from './co-browsing';
+export * from './dynamicstyle';
 export * from './loader';
 export * from './locale';
 export * from './breadcrumb';
 export { LocalAuthService, LoginCredentials, User } from './auth.service';
-export { AuthService } from './http-auth.service';
+export { LoginRequest, LoginResponse } from '../models/auth-login.model';
 export { UserService } from './user.service';
 export { RoleService } from './role.service';
 export { MenuService, MenuItem } from './menu.service';

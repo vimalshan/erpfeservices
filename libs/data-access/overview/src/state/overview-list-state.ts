@@ -7,15 +7,15 @@ import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
-import { SetNavigationFilters } from '@customer-portal/overview-shared';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getYearBoundsAsDates } from '@customer-portal/shared/helpers/date';
+} from '@erp-services/data-access/global';
+import { SetNavigationFilters } from '@erp-services/overview-shared';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getYearBoundsAsDates } from '@erp-services/shared/helpers/date';
 import {
   extractAppliedFilters,
   formatFilter,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   CardDataModel,
   CardNavigationPayload,
@@ -23,7 +23,7 @@ import {
   DrillDownFilterColumnMapping,
   FilterValue,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { OverviewFilterTypes } from '../constants';
 import { OverviewCompanyServiceSiteFilterResponse } from '../dtos';

@@ -78,9 +78,9 @@ full-calendar {
     }
 
     .fc .fc-button-primary {
-      background-color: variables.$basic-tones-dnv-white;
-      border-color: variables.$primary-dnv-medium-blue;
-      color: variables.$primary-dnv-medium-blue;
+      background-color: variables.$basic-tones-suaadhya-white;
+      border-color: variables.$primary-suaadhya-medium-blue;
+      color: variables.$primary-suaadhya-medium-blue;
     }
 
     .fc .fc-button {
@@ -103,14 +103,14 @@ full-calendar {
     }
 
     .fc .fc-button-group > .fc-button.fc-button-active {
-      color: variables.$basic-tones-dnv-white;
-      background-color: variables.$primary-dnv-medium-blue;
+      color: variables.$basic-tones-suaadhya-white;
+      background-color: variables.$primary-suaadhya-medium-blue;
       box-shadow: none;
     }
 
     .fc-col-header-cell {
       background-color: variables.$concrete;
-      color: variables.$primary-dnv-dark-blue;
+      color: variables.$primary-suaadhya-dark-blue;
       border: unset;
       padding: utility.get-rem(16);
       text-transform: uppercase;
@@ -138,7 +138,7 @@ full-calendar {
     }
 
     .fc .fc-day-other {
-      color: variables.$basic-tones-dnv-medium-dark;
+      color: variables.$basic-tones-suaadhya-medium-dark;
       background: rgba(243, 242, 242, 0.4);
     }
 
@@ -207,7 +207,7 @@ full-calendar {
     }
 
     .fc .fc-daygrid-day.fc-day-today {
-      background-color: variables.$primary-dnv-sky-light-blue;
+      background-color: variables.$primary-suaadhya-sky-light-blue;
     }
 
     .fc-more-popover {
@@ -216,10 +216,10 @@ full-calendar {
 
     .fc .fc-popover-header {
       padding: utility.get-rem(16) utility.get-rem(24);
-      background-color: variables.$basic-tones-dnv-white;
+      background-color: variables.$basic-tones-suaadhya-white;
       font-size: utility.get-rem(20);
       font-weight: 700;
-      color: variables.$primary-dnv-medium-blue;
+      color: variables.$primary-suaadhya-medium-blue;
       border-bottom: 1px solid variables.$sky-blue;
     }
 
@@ -287,7 +287,7 @@ full-calendar {
 
     .fc .fc-multiMonthYear-view {
       .fc-multimonth-title {
-        color: variables.$primary-dnv-medium-blue;
+        color: variables.$primary-suaadhya-medium-blue;
         font-size: utility.get-rem(20);
       }
 

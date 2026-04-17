@@ -1,13 +1,13 @@
 import { TreeNode } from 'primeng/api';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared/constants';
-import { buildStatusColorPalette } from '@customer-portal/shared/helpers/chart';
-import { TreeColumnDefinition } from '@customer-portal/shared/models';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared/constants';
+import { buildStatusColorPalette } from '@erp-services/shared/helpers/chart';
+import { TreeColumnDefinition } from '@erp-services/shared/models';
 import {
   BarChartModel,
   DoughnutChartModel,
-} from '@customer-portal/shared/models/chart';
+} from '@erp-services/shared/models/chart';
 
 import {
   CertificateBySiteCountry,

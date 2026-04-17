@@ -1,9 +1,9 @@
 import { CoBrowsingCompany } from '../../models';
 
-export class UpdateIsDnvUser {
-  static readonly type = '[Settings] Update Is Dnv User';
+export class UpdateIsSuaadhyaUser {
+  static readonly type = '[Settings] Update Is Suaadhya User';
 
-  constructor(public isDnvUser: boolean) {}
+  constructor(public isSuaadhyaUser: boolean) {}
 }
 
 export class GetCompanyList {

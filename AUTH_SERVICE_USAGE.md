@@ -19,7 +19,7 @@ The auth service has been updated to work with your local API at `http://localho
 ### 1. Basic Login with Credentials
 
 ```typescript
-import { AuthService, LoginRequest } from '@customer-portal/shared';
+import { AuthService, LoginRequest } from '@erp-services/shared';
 
 const loginRequest: LoginRequest = {
   userName: 'iyyanarmsec@gmail.com',

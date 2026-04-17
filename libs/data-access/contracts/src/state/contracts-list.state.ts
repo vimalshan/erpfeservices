@@ -3,20 +3,20 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, tap } from 'rxjs';
 
-import { NavigateFromNotificationsListToContractsListView } from '@customer-portal/data-access/notifications/state';
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { downloadFileFromByteArray } from '@customer-portal/shared/helpers/download';
+import { NavigateFromNotificationsListToContractsListView } from '@erp-services/data-access/notifications/state';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { downloadFileFromByteArray } from '@erp-services/shared/helpers/download';
 import {
   getFilterOptions,
   updateGridConfigBasedOnFilters,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   FilterableColumnDefinition,
   ToastSeverity,
-} from '@customer-portal/shared/models';
-import { FilterOptions, GridConfig } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models';
+import { FilterOptions, GridConfig } from '@erp-services/shared/models/grid';
 
 import { ContractsListItemModel } from '../models';
 import { ContractsListMapperService, ContractsListService } from '../services';

@@ -1,16 +1,16 @@
 import { Selector } from '@ngxs/store';
 
-import { FindingsStatusStates } from '@customer-portal/shared/constants';
+import { FindingsStatusStates } from '@erp-services/shared/constants';
 import {
   applyGridConfig,
   getNumberOfFilteredRecords,
   isAnyFilterActive,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   FilteringConfig,
   FilterOptions,
   LanguageOption,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import {
   FindingDetailsDescription,

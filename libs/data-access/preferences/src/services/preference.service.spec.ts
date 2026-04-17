@@ -1,7 +1,7 @@
 import { Apollo } from 'apollo-angular';
 import { of } from 'rxjs';
 
-import { ObjectName, ObjectType, PageName } from '@customer-portal/shared';
+import { ObjectName, ObjectType, PageName } from '@erp-services/shared';
 
 import { PreferenceDto } from '../dtos';
 import { GET_PREFERENCE_QUERY, SAVE_PREFERENCES_MUTATION } from '../graphql';

@@ -1,10 +1,10 @@
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { DocumentsStoreService } from '@customer-portal/data-access/documents';
+import { DocumentsStoreService } from '@erp-services/data-access/documents';
 
 import { AddDocumentsFooterComponent } from './add-documents-footer.component';
 
-jest.mock('@customer-portal/data-access/documents');
+jest.mock('@erp-services/data-access/documents');
 
 describe('AddDocumentsFooterComponent', () => {
   let component: AddDocumentsFooterComponent;

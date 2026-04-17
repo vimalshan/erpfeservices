@@ -1,13 +1,13 @@
 import { Selector } from '@ngxs/store';
 import { TreeNode } from 'primeng/api';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 import {
   BarChartModel,
   CustomTreeNode,
   DoughnutChartModel,
   TreeColumnDefinition,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { FindingListItemEnrichedDto } from '../../dtos';
 import { FindingTrendsGraphModel } from '../../models';

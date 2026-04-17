@@ -6,14 +6,14 @@ import {
 } from '@angular/core';
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
 
-import { AuditListGraphStoreService } from '@customer-portal/data-access/audit';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
-import { chartTotalPlugin } from '@customer-portal/shared/helpers/chart';
+import { AuditListGraphStoreService } from '@erp-services/data-access/audit';
+import { ChartComponent } from '@erp-services/shared/components/chart';
+import { chartTotalPlugin } from '@erp-services/shared/helpers/chart';
 import {
   ChartFilter,
   ChartTypeEnum,
-} from '@customer-portal/shared/models/chart';
-import { FilterValue } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/chart';
+import { FilterValue } from '@erp-services/shared/models/grid';
 
 import {
   AUDIT_STATUS_BAR_GRAPH_OPTIONS,

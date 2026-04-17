@@ -1,7 +1,7 @@
 import { ChartOptions } from 'chart.js';
 
-import { trimLabel } from '@customer-portal/shared/helpers/chart';
-import { ChartTypeEnum } from '@customer-portal/shared/models/chart';
+import { trimLabel } from '@erp-services/shared/helpers/chart';
+import { ChartTypeEnum } from '@erp-services/shared/models/chart';
 
 export const CERTIFICATES_BY_STATUS_GRAPH_OPTIONS: ChartOptions<ChartTypeEnum.Doughnut> =
   {

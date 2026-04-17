@@ -1,6 +1,6 @@
 <p-badge
-  [value]="value()?.toString()"
-  [severity]="severity()"
-  [size]="size()"
+  [value]="$any(value()?.toString() ?? '')"
+  [severity]="$any(severity())"
+  [size]="$any(size())"
   [class]="badgeClass()"
 ></p-badge>

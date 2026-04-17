@@ -4,12 +4,12 @@ import { Store } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 import { map, Observable } from 'rxjs';
 
-import { RouteStoreService } from '@customer-portal/router';
+import { RouteStoreService } from '@erp-services/router';
 import {
   FilteringConfig,
   FilterOptions,
   GridConfig,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   AuditDetailsModel,

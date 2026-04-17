@@ -6,7 +6,7 @@ import {
   FilterValue,
   SharedSelectTreeChangeEventOutput,
   TreeColumnDefinition,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { FindingChartFilterKey } from '../../constants';
 import { FindingTabs, FindingTrendsGraphModel } from '../../models';

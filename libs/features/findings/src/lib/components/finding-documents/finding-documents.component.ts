@@ -25,47 +25,47 @@ import {
   DocType,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   DocumentQueueService,
   DocumentsService,
-} from '@customer-portal/data-access/documents/services';
+} from '@erp-services/data-access/documents/services';
 import {
   DocumentsStoreService,
   UploadDocumentsSuccess,
-} from '@customer-portal/data-access/documents/state';
+} from '@erp-services/data-access/documents/state';
 import {
   FindingDetailsStoreService,
   FindingDocumentListItemModel,
   FindingsFileUploadService,
-} from '@customer-portal/data-access/findings';
+} from '@erp-services/data-access/findings';
 import {
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   AddDocumentsComponent,
   AddDocumentsFooterComponent,
-} from '@customer-portal/features/upload';
+} from '@erp-services/features/upload';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { buttonStyleClass } from '@customer-portal/shared/components/custom-confirm-dialog';
-import { GridComponent } from '@customer-portal/shared/components/grid';
-import { modalBreakpoints } from '@customer-portal/shared/constants';
-import { animateFlyToDownload } from '@customer-portal/shared/helpers/download';
-import { ErrorMessages } from '@customer-portal/shared/helpers/upload';
+} from '@erp-services/shared/components/button';
+import { buttonStyleClass } from '@erp-services/shared/components/custom-confirm-dialog';
+import { GridComponent } from '@erp-services/shared/components/grid';
+import { modalBreakpoints } from '@erp-services/shared/constants';
+import { animateFlyToDownload } from '@erp-services/shared/helpers/download';
+import { ErrorMessages } from '@erp-services/shared/helpers/upload';
 import {
   ColumnDefinition,
   GridConfig,
   GridFileActionEvent,
   GridFileActionType,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { FINDINGS_DOCUMENTS_COLUMNS } from '../../constants';
 
@@ -113,11 +113,11 @@ export class FindingDocumentsComponent implements OnDestroy, OnInit {
     PermissionCategories.Findings,
     PermissionsList.Edit,
   );
-  isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+  isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
 
   canAddDocument = computed(
     () =>
-      !this.isDnvUser() &&
+      !this.isSuaadhyaUser() &&
       this.isFindingOpenOrAccepted() &&
       this.hasFindingsEditPermission(),
   );

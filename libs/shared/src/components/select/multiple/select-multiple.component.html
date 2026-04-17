@@ -21,10 +21,10 @@
             binary="true"
             [checkboxIcon]="triState() === null ? 'pi pi-minus' : undefined"
             [indeterminate]="triState() === null"
-            [label]="t('all')"
             [ngModel]="triState()"
             (onChange)="onChangeTriState($event)">
           </p-checkbox>
+          <label>{{ t('all') }}</label>
         </div>
       }
     </ng-template>

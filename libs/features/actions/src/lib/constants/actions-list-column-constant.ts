@@ -2,7 +2,7 @@ import {
   CellType,
   ColumnDefinition,
   ColumnType,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 export const ACTIONS_LIST_COLUMNS: ColumnDefinition[] = [
   {

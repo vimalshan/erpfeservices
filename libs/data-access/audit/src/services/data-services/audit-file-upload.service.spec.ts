@@ -7,11 +7,11 @@ import { TestBed } from '@angular/core/testing';
 import { MessageService } from 'primeng/api';
 import { throwError } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 import {
   createMessageServiceMock,
   getTranslocoModule,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AuditFileUploadService } from './audit-file-upload.service';
 

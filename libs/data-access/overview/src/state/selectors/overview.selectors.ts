@@ -1,6 +1,6 @@
 import { Selector } from '@ngxs/store';
 
-import { CardDataModel } from '@customer-portal/shared';
+import { CardDataModel } from '@erp-services/shared';
 
 import { OverviewState, OverviewStateModel } from '../overview.state';
 

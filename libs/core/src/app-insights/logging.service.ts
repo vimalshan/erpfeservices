@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { Injectable } from '@angular/core';
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 
 

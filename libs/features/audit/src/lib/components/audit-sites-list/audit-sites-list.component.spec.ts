@@ -1,8 +1,8 @@
 import {
   AuditDetailsStoreService,
   createAuditDetailsStoreServiceMock,
-} from '@customer-portal/data-access/audit';
-import { GridConfig, SortingMode } from '@customer-portal/shared';
+} from '@erp-services/data-access/audit';
+import { GridConfig, SortingMode } from '@erp-services/shared';
 
 import { AuditSitesListComponent } from './audit-sites-list.component';
 

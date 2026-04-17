@@ -33,14 +33,14 @@ hr {
   grid-area: hr;
   width: 100%;
   border: 1px solid colors.get-color('SkyBlue80');
-  margin: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless))) 0;
+  margin: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless))) 0;
 }
 
 .heading {
   grid-area: heading;
   display: flex;
   align-items: center;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
 }
 
 .edit {
@@ -51,7 +51,7 @@ hr {
   grid-area: info;
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
   height: auto;
 
   &.is-accordion-closed {
@@ -73,7 +73,7 @@ hr {
 .grouping {
   display: grid;
   grid-template-columns: 50% auto;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
   align-items: center;
 }
 

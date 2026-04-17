@@ -24,7 +24,7 @@ export const actionsFilter = {
             'Cancelled',
             'Confirmed',
             'To Be Confirmed',
-            'To Be Confirmed by DNV',
+            'To Be Confirmed by Suaadhya',
           ],
           placeholderKey: 'All Services',
           selected: [],

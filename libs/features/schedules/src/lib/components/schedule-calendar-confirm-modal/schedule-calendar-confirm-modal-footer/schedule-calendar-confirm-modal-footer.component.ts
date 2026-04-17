@@ -3,16 +3,16 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { SettingsCompanyDetailsStoreService } from '@customer-portal/data-access/settings';
+import { SettingsCompanyDetailsStoreService } from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { Roles } from '@customer-portal/shared/constants';
+} from '@erp-services/shared/components/button';
+import { Roles } from '@erp-services/shared/constants';
 import {
   ADMIN_PERMISSION_CHECKER,
   HasAdminPermissionDirective,
-} from '@customer-portal/shared/directives/permissions';
+} from '@erp-services/shared/directives/permissions';
 
 import { SCHEDULE_LIST_SUPPORT } from '../../../constants';
 import { RequestChangesModel } from '../../../models';

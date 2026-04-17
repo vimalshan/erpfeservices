@@ -7,8 +7,8 @@ import {
   OverviewListState,
   OverviewUpcomingAuditsState,
   TrainingStatusState,
-} from '@customer-portal/data-access/overview';
-import { Language } from '@customer-portal/shared';
+} from '@erp-services/data-access/overview';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

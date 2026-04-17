@@ -1,6 +1,6 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   // Only intercept API requests that start with /api/authorize

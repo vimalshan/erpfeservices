@@ -2,12 +2,12 @@ import {
   CertificateDetailsStoreService,
   CertificateDocumentsListItemModel,
   createCertificateDetailsStoreServiceMock,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   createDocumentStoreServiceMock,
   DocType,
   DocumentsStoreService,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   FilterMode,
   FilterOperator,
@@ -16,7 +16,7 @@ import {
   GridFileActionType,
   SortingDirection,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { CertificateDocumentsComponent } from './certificate-documents.component';
 

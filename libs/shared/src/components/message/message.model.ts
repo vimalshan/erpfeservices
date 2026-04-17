@@ -9,7 +9,7 @@ export interface MessageModel {
 export enum MessageSeverity {
   Success = 'success',
   Info = 'info',
-  Alert = 'alert',
+  Alert = 'warn',
   Warn = 'warn',
   Error = 'error',
 }

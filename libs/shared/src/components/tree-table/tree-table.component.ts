@@ -31,6 +31,7 @@ export class TreeTableComponent<T extends { field: string }> {
   @Input() isGlobalGradient = true;
   @Input() hideZeroValues = false;
   @Input() isCellClickable = false;
+  @Input() isLoading = false;
 
   @Output() cellClicked = new EventEmitter<FilterValue>();
   @Output() rowClicked = new EventEmitter<T>();

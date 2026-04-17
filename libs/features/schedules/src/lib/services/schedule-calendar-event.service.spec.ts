@@ -8,11 +8,11 @@ import {
   ScheduleCalendarActionLocationTypes,
   ScheduleCalendarActionTypes,
   ScheduleStatus,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 import {
   createProfileStoreServiceMock,
   ProfileStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 
 import {
   ScheduleCalendarConfirmModalComponent,

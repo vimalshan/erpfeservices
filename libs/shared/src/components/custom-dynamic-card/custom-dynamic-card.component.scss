@@ -10,10 +10,10 @@
   border-radius: utility.get-rem(11);
   display: grid;
   gap: calc(
-    var(--dnv-gutter-base-unitless) / var(--dnv-font-base-unitless) * 1rem
+    var(--suaadhya-gutter-base-unitless) / var(--suaadhya-font-base-unitless) * 1rem
   );
   margin: calc(
-    var(--dnv-gutter-base-unitless) * 1 * 2 / var(--dnv-font-base-unitless) *
+    var(--suaadhya-gutter-base-unitless) * 1 * 2 / var(--suaadhya-font-base-unitless) *
       1rem
   );
   margin-left: 0;
@@ -140,7 +140,7 @@
 
   span {
     color: colors.get-color('UiBlack');
-    font-size: var(--dnv-font-text-l);
+    font-size: var(--suaadhya-font-text-l);
   }
 
   &:hover {

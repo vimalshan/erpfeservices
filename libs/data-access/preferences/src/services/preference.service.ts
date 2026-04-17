@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, throwError } from 'rxjs';
 
-import { BaseApolloService } from '@customer-portal/core';
+import { BaseApolloService } from '@erp-services/core';
 
 import { PreferenceDto, PreferenceSaveResponse } from '../dtos';
 import { GET_PREFERENCE_QUERY, SAVE_PREFERENCES_MUTATION } from '../graphql';

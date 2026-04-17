@@ -1,6 +1,6 @@
 import { ChartOptions } from 'chart.js';
 
-import { ChartTypeEnum } from '@customer-portal/shared';
+import { ChartTypeEnum } from '@erp-services/shared';
 
 export const FINDING_LIST_BY_STATUS_GRAPH_OPTIONS: ChartOptions<ChartTypeEnum.Doughnut> =
   {

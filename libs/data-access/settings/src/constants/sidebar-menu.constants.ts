@@ -1,4 +1,4 @@
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { SidebarGroup } from '../models';
 

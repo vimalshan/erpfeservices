@@ -81,7 +81,7 @@ describe('getScheduleDetails', () => {
         endDate: '02.02.2025',
         leadAuditor: 'John Doe',
         siteRepresentative: 'Jane Doe',
-        status: ScheduleStatus.ToBeConfirmedByDnv,
+        status: ScheduleStatus.ToBeConfirmedBySuaadhya,
         address: 'Address 1',
         auditType: 'Periodic Audit; P2',
         city: 'City 1',

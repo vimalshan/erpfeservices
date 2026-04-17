@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { map, Observable } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { ScheduleExcelPayloadDto, ScheduleListDto } from '../../../dtos';
 import { SCHEDULE_LIST_QUERY } from '../../../graphql';

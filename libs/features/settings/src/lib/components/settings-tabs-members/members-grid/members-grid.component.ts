@@ -16,34 +16,34 @@ import { combineLatest, filter, map, switchMap, take, tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
+} from '@erp-services/data-access/global';
 import {
   ProfileLanguageStoreService,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
-import { UpdateImpersonatedUser } from '@customer-portal/data-access/settings/state/actions';
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings/state/store-services';
-import { BasePreferencesComponent } from '@customer-portal/preferences/helpers';
-import { buttonStyleClass } from '@customer-portal/shared/components/custom-confirm-dialog';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/data-access/settings';
+import { UpdateImpersonatedUser } from '@erp-services/data-access/settings/state/actions';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings/state/store-services';
+import { BasePreferencesComponent } from '@erp-services/preferences/helpers';
+import { buttonStyleClass } from '@erp-services/shared/components/custom-confirm-dialog';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   AppPagesEnum,
   modalBreakpoints,
   ObjectName,
   ObjectType,
   PageName,
-} from '@customer-portal/shared/constants';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
+} from '@erp-services/shared/constants';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
 import {
   ColumnDefinition,
   GridConfig,
   GridEventAction,
   GridEventActionType,
   ToastSeverity,
-} from '@customer-portal/shared/models';
-import { CoBrowsingSharedService } from '@customer-portal/shared/services/co-browsing';
+} from '@erp-services/shared/models';
+import { CoBrowsingSharedService } from '@erp-services/shared/services/co-browsing';
 
 import { MEMBERS_LIST_COLUMNS } from '../../../constants';
 import {
@@ -63,7 +63,7 @@ export class MembersGridComponent
   implements OnInit, OnDestroy
 {
   public shouldPersist = input<boolean>(true);
-  public isDnvUser = input<boolean>(false);
+  public isSuaadhyaUser = input<boolean>(false);
 
   cols: ColumnDefinition[] = MEMBERS_LIST_COLUMNS;
   ref: DynamicDialogRef | undefined;
@@ -100,11 +100,11 @@ export class MembersGridComponent
   }
 
   ngOnInit(): void {
-    this.disableActionsForDNVUser();
+    this.disableActionsForSuaadhyaUser();
   }
 
-  disableActionsForDNVUser(): void {
-    this.cols = this.isDnvUser()
+  disableActionsForSuaadhyaUser(): void {
+    this.cols = this.isSuaadhyaUser()
       ? this.cols.filter((col) => col.field !== 'eventActions')
       : this.cols;
   }

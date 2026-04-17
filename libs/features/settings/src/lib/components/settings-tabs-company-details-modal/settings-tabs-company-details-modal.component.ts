@@ -26,7 +26,7 @@ import { tap } from 'rxjs';
 import {
   SettingsCompanyDetailsData,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 
 @Component({
   selector: 'lib-settings-tab-company-details-modal',

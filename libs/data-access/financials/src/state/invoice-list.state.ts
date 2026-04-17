@@ -4,27 +4,27 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, tap } from 'rxjs';
 
-import { NavigateFromNotificationsListToFinancialsListView } from '@customer-portal/data-access/notifications/state';
+import { NavigateFromNotificationsListToFinancialsListView } from '@erp-services/data-access/notifications/state';
 import {
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
+} from '@erp-services/data-access/settings';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
 import {
   downloadFileFromByteArray,
   getContentType,
   getToastContentBySeverity,
-} from '@customer-portal/shared/helpers';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
+} from '@erp-services/shared/helpers';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 import {
   getFilterOptions,
   updateGridConfigBasedOnFilters,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   FilterableColumnDefinition,
   ToastSeverity,
-} from '@customer-portal/shared/models';
-import { FilterOptions, GridConfig } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models';
+import { FilterOptions, GridConfig } from '@erp-services/shared/models/grid';
 
 import { InvoiceListDto } from '../dtos';
 import { InvoiceListItemModel } from '../models';
@@ -94,11 +94,11 @@ export class InvoiceListState {
       tap((items: InvoiceListDto) => {
         const isAdminUser =
           this.settingsCompanyDetailsStoreService.isUserAdmin();
-        const isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser();
+        const isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser();
         const invoices = InvoiceListMapperService.mapToInvoiceItemModel(
           items.data.items,
           isAdminUser,
-          isDnvUser,
+          isSuaadhyaUser,
         );
 
         if (invoices) {

@@ -12,17 +12,17 @@ import {
   AuditDetailsMapperService,
   AuditDetailsService,
   AuditDetailsStoreService,
-} from '@customer-portal/data-access/audit';
+} from '@erp-services/data-access/audit';
 import {
   DownloadFileNames,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
-import { DocumentQueueService } from '@customer-portal/data-access/documents/services';
-import { GridComponent } from '@customer-portal/shared/components/grid';
-import { STATUS_STATES_MAP } from '@customer-portal/shared/constants';
-import { animateFlyToDownload } from '@customer-portal/shared/helpers/download';
-import { ColumnDefinition, GridConfig } from '@customer-portal/shared/models';
+} from '@erp-services/data-access/documents';
+import { DocumentQueueService } from '@erp-services/data-access/documents/services';
+import { GridComponent } from '@erp-services/shared/components/grid';
+import { STATUS_STATES_MAP } from '@erp-services/shared/constants';
+import { animateFlyToDownload } from '@erp-services/shared/helpers/download';
+import { ColumnDefinition, GridConfig } from '@erp-services/shared/models';
 
 import { SUB_AUDIT_LIST_COLUMNS } from '../../constants';
 

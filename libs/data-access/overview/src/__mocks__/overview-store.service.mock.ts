@@ -1,6 +1,6 @@
 import { signal, WritableSignal } from '@angular/core';
 
-import { CardDataModel } from '@customer-portal/shared';
+import { CardDataModel } from '@erp-services/shared';
 
 const overviewCardsData = [
   {

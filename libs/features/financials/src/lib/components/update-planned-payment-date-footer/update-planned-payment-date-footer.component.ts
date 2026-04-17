@@ -3,11 +3,11 @@ import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { InvoiceListStoreService } from '@customer-portal/data-access/financials';
+import { InvoiceListStoreService } from '@erp-services/data-access/financials';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 
 @Component({
   selector: 'lib-update-planned-payment-date-footer',

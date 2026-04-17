@@ -1,18 +1,18 @@
 import { runInInjectionContext, signal, WritableSignal } from '@angular/core';
 
-import { AuditListStoreService } from '@customer-portal/data-access/audit';
+import { AuditListStoreService } from '@erp-services/data-access/audit';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 import {
   GridConfig,
   ObjectName,
   ObjectType,
   PageName,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AuditListComponent } from './audit-list.component';
 

@@ -1,7 +1,7 @@
 import { signal } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { InvoiceListStoreService } from '@customer-portal/data-access/financials';
+import { InvoiceListStoreService } from '@erp-services/data-access/financials';
 
 import { UpdatePlannedPaymentDateFooterComponent } from './update-planned-payment-date-footer.component';
 

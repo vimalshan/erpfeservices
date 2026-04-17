@@ -15,8 +15,8 @@ export class OverviewUpcomingAuditMapperService {
         end: date,
         color: '#FFE900',
       })),
-      ...dto.toBeConfirmedByDNV.map((date) => ({
-        title: 'To Be Confirmed by DNV',
+      ...dto.toBeConfirmedBySuaadhya.map((date) => ({
+        title: 'To Be Confirmed by Suaadhya',
         start: date,
         end: date,
         color: '#009FDA',

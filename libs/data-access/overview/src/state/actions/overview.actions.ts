@@ -1,4 +1,4 @@
-import { CardDataModel, CardNavigationPayload } from '@customer-portal/shared';
+import { CardDataModel, CardNavigationPayload } from '@erp-services/shared';
 
 import { OverviewCardPageInfoModel } from '../../models';
 

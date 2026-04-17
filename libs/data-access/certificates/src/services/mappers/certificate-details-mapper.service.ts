@@ -1,6 +1,6 @@
-import { CURRENT_DATE_FORMAT } from '@customer-portal/shared/constants';
-import { convertToUtcDate } from '@customer-portal/shared/helpers/date';
-import { GridFileActionType } from '@customer-portal/shared/models/grid';
+import { CURRENT_DATE_FORMAT } from '@erp-services/shared/constants';
+import { convertToUtcDate } from '@erp-services/shared/helpers/date';
+import { GridFileActionType } from '@erp-services/shared/models/grid';
 
 import {
   CertificateDetailsDto,
@@ -152,7 +152,7 @@ export class CertificateDetailsMapperService {
       certificateId: data.certificateId,
       certificateNumber: data.certificateNumber,
       newCertificateId: data?.newCertificateId,
-      accountDNVId: data?.accountDNVId,
+      accountSuaadhyaId: data?.accountSuaadhyaId,
       header: {
         creationDate: convertToUtcDate(data?.creationDate, CURRENT_DATE_FORMAT),
         documentMarks: data.documentMarks?.map((d) => ({

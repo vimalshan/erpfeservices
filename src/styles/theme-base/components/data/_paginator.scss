@@ -5,7 +5,7 @@
 
 .p-paginator {
   background: data.$paginatorBg;
-  color: variables.$basic-tones-dnv-medium-dark;
+  color: variables.$basic-tones-suaadhya-medium-dark;
   border: data.$paginatorBorder;
   border-width: data.$paginatorBorderWidth;
   padding: utility.get-rem(15) 0;
@@ -17,7 +17,7 @@
   .p-paginator-last {
     background-color: data.$paginatorElementBg;
     border: data.$paginatorElementBorder;
-    color: variables.$primary-dnv-medium-blue;
+    color: variables.$primary-suaadhya-medium-blue;
     min-width: data.$paginatorElementWidth;
     height: data.$paginatorElementHeight;
     margin: data.$paginatorElementMargin;
@@ -55,7 +55,7 @@
     }
 
     .p-dropdown-trigger-icon {
-      color: variables.$primary-dnv-dark-blue;
+      color: variables.$primary-suaadhya-dark-blue;
     }
   }
 
@@ -71,7 +71,7 @@
   .p-paginator-current {
     background-color: data.$paginatorElementBg;
     border: data.$paginatorElementBorder;
-    color: variables.$basic-tones-dnv-medium-dark;
+    color: variables.$basic-tones-suaadhya-medium-dark;
     min-width: data.$paginatorElementWidth;
     height: data.$paginatorElementHeight;
     margin: data.$paginatorElementMargin;
@@ -89,9 +89,9 @@
       border-radius: data.$paginatorElementBorderRadius;
 
       &.p-highlight {
-        background: variables.$primary-dnv-sky-light-blue;
+        background: variables.$primary-suaadhya-sky-light-blue;
         border-color: general.$highlightBg;
-        color: variables.$primary-dnv-medium-blue;
+        color: variables.$primary-suaadhya-medium-blue;
       }
 
       &:not(.p-highlight):hover {

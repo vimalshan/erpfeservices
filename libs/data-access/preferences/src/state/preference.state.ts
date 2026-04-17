@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Action, State, StateContext } from '@ngxs/store';
 import { catchError, tap } from 'rxjs';
 
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 
 import { PreferenceModel } from '../models';
 import { PreferenceMapperService, PreferenceService } from '../services';

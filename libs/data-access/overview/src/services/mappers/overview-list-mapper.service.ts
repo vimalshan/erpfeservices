@@ -1,9 +1,9 @@
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { CardDataModel, CustomTreeNode } from '@customer-portal/shared/models';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { CardDataModel, CustomTreeNode } from '@erp-services/shared/models';
 
 import {
   OverviewCardListItemDto,

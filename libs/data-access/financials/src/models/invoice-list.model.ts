@@ -1,4 +1,4 @@
-import { EventAction, GridFileAction } from '@customer-portal/shared';
+import { EventAction, GridFileAction } from '@erp-services/shared';
 
 export interface InvoiceListItemModel {
   actions: GridFileAction[];
@@ -16,5 +16,5 @@ export interface InvoiceListItemModel {
   status: string;
   reportingCountry: string;
   projectNumber: string;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
 }

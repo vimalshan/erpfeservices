@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { MultiSelectChangeEvent, MultiSelectModule } from 'primeng/multiselect';
 import { TooltipModule } from 'primeng/tooltip';
-import { CheckboxChangeEvent } from 'primeng/checkbox';
+import { CheckboxChangeEvent, CheckboxModule } from 'primeng/checkbox';
 
 import {
   SHARED_SELECT_MULTIPLE_OPTION_TOOLTIP_DEFAULT_DELAY_MS,
@@ -29,7 +29,7 @@ export interface SharedSelectMultipleDatum<T> {
 }
 
 @Component({
-  selector: 'shared-select-multiple',
+  selector: 'shared-select-multiple, shared-select-multiple-mod',
   standalone: true,
   imports: [
     CommonModule,
@@ -37,6 +37,7 @@ export interface SharedSelectMultipleDatum<T> {
     TranslocoDirective,
     MultiSelectModule,
     TooltipModule,
+    CheckboxModule,
   ],
   templateUrl: './select-multiple.component.html',
   styleUrl: './select-multiple.component.scss',

@@ -9,9 +9,9 @@ import { take } from 'rxjs';
 import {
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { environment } from '@customer-portal/environments';
-import { modalBreakpoints } from '@customer-portal/shared';
+} from '@erp-services/data-access/settings';
+import { environment } from '@erp-services/environments';
+import { modalBreakpoints } from '@erp-services/shared';
 
 import { ProfileSettingsFooterComponent } from '../profile-settings-footer';
 import { ProfileSettingsModalComponent } from '../profile-settings-modal';
@@ -26,7 +26,7 @@ import { ProfileSettingsModalComponent } from '../profile-settings-modal';
 })
 export class SettingsTabsPersonalInformationComponent {
   ref: DynamicDialogRef | undefined;
-  isDnvUser: Signal<boolean>;
+  isSuaadhyaUser: Signal<boolean>;
 
   constructor(
     public profileStoreService: ProfileStoreService,
@@ -36,7 +36,7 @@ export class SettingsTabsPersonalInformationComponent {
   ) {
     this.profileStoreService.loadProfileData();
     this.profileStoreService.loadUserRoles();
-    this.isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+    this.isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
   }
 
   onClickEditSettings(): void {

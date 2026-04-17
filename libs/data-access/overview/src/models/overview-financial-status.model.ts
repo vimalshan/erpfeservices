@@ -1,4 +1,4 @@
-import { DoughnutChartModel } from '@customer-portal/shared';
+import { DoughnutChartModel } from '@erp-services/shared';
 
 export interface DoughnutChartWithStatus extends DoughnutChartModel {
   message: string;

@@ -7,11 +7,11 @@ import {
   FindingDetailsDescription,
   FindingDetailsStoreService,
   FindingResponsesModel,
-} from '@customer-portal/data-access/findings';
-import { TagComponent } from '@customer-portal/shared/components/grid';
-import { LanguageSwitcherComponent } from '@customer-portal/shared/components/language-switcher';
-import { FINDINGS_TAG_STATES_MAP } from '@customer-portal/shared/constants';
-import { LanguageOption } from '@customer-portal/shared/models';
+} from '@erp-services/data-access/findings';
+import { TagComponent } from '@erp-services/shared/components/grid';
+import { LanguageSwitcherComponent } from '@erp-services/shared/components/language-switcher';
+import { FINDINGS_TAG_STATES_MAP } from '@erp-services/shared/constants';
+import { LanguageOption } from '@erp-services/shared/models';
 
 import { FindingRespondToComponent } from '../finding-respond-to/finding-respond-to.component';
 

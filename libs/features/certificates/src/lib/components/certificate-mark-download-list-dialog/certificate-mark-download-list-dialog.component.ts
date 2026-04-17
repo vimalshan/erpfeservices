@@ -14,26 +14,26 @@ import {
   CertificateDetailsStoreService,
   CertificatesDetailsService,
   CertificationMarksListItemModel,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
-import { DocumentQueueService } from '@customer-portal/data-access/documents/services';
-import { SettingsCoBrowsingStoreService } from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/documents';
+import { DocumentQueueService } from '@erp-services/data-access/documents/services';
+import { SettingsCoBrowsingStoreService } from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/shared/components/button';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   animateFlyToDownload,
   getContentType,
-} from '@customer-portal/shared/helpers/download';
+} from '@erp-services/shared/helpers/download';
 import {
   ColumnDefinition,
   GridFileActionType,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { CERTIFICATE_MARKS_LIST_COLUMNS } from '../../constants';
 

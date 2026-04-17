@@ -11,5 +11,5 @@ export enum ScheduleCalendarActionLocationTypes {
 
 export enum ScheduleStatusTypes {
   Confirmed = 'Confirmed',
-  ToBeConfirmedByDNV = 'To Be Confirmed By DNV',
+  ToBeConfirmedBySuaadhya = 'To Be Confirmed By Suaadhya',
 }

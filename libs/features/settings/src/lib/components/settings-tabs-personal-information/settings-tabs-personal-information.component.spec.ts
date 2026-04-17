@@ -6,12 +6,12 @@ import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createDialogServiceMock,
   createTranslationServiceMock,
   modalBreakpoints,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { ProfileSettingsFooterComponent } from '../profile-settings-footer';
 import { ProfileSettingsModalComponent } from '../profile-settings-modal';

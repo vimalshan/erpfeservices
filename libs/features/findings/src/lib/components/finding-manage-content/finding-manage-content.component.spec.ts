@@ -4,8 +4,8 @@ import {
   createFindingDetailsStoreServiceMock,
   FindingDetailsStoreService,
   FindingResponsesModel,
-} from '@customer-portal/data-access/findings';
-import { FINDINGS_TAG_STATES_MAP } from '@customer-portal/shared';
+} from '@erp-services/data-access/findings';
+import { FINDINGS_TAG_STATES_MAP } from '@erp-services/shared';
 
 import { FindingManageContentComponent } from './finding-manage-content.component';
 

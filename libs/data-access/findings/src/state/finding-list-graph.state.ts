@@ -7,21 +7,21 @@ import { catchError, tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared/constants';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared/constants';
 import {
   buildStatusColorPalette,
   shouldApplyFilter,
-} from '@customer-portal/shared/helpers/chart';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getDateMinusDays } from '@customer-portal/shared/helpers/date';
+} from '@erp-services/shared/helpers/chart';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getDateMinusDays } from '@erp-services/shared/helpers/date';
 import {
   extractAppliedFilters,
   formatFilter,
   formatFilterOnlyDate,
-} from '@customer-portal/shared/helpers/grid';
-import { getCurrentYearMinus5Range } from '@customer-portal/shared/helpers/time';
+} from '@erp-services/shared/helpers/grid';
+import { getCurrentYearMinus5Range } from '@erp-services/shared/helpers/time';
 import {
   BarChartModel,
   CustomTreeNode,
@@ -29,11 +29,11 @@ import {
   DrillDownFilterColumnMapping,
   SharedSelectTreeChangeEventOutput,
   TreeColumnDefinition,
-} from '@customer-portal/shared/models';
-import { CategoryStylesService } from '@customer-portal/shared/services/dynamicstyle';
+} from '@erp-services/shared/models';
+import { CategoryStylesService } from '@erp-services/shared/services/dynamicstyle';
 
 import { FindingChartFilterKey } from '../constants';
-import { FindingListItemEnrichedDto, FindingsTrendsGraphDto } from '../dtos';
+import { FindingListItemDto, FindingListItemEnrichedDto, FindingsTrendsGraphDto } from '../dtos';
 import {
   FindingStatus,
   FindingTabs,
@@ -248,7 +248,7 @@ export class FindingListGraphState {
       tap((findingListDto) => {
         const allFindingItems = findingListDto?.data || [];
 
-        const dedupedFindingItems = allFindingItems.map((item) => {
+        const dedupedFindingItems = allFindingItems.map((item: FindingListItemDto) => {
           if (Array.isArray(item.services)) {
             return { ...item, services: Array.from(new Set(item.services)) };
           }

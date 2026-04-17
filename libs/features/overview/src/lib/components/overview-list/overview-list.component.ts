@@ -11,21 +11,21 @@ import {
 import { FormsModule } from '@angular/forms';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { OverviewListStoreService } from '@customer-portal/data-access/overview';
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
+import { OverviewListStoreService } from '@erp-services/data-access/overview';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 import {
   PagePermissionsService,
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { SharedCustomDynamicCardComponent } from '@customer-portal/shared/components/custom-dynamic-card';
-import { NoDataComponent } from '@customer-portal/shared/components/no-data';
-import { CardNavigationPayload } from '@customer-portal/shared/models/card';
-import { BreadcrumbService } from '@customer-portal/shared/services/breadcrumb';
+} from '@erp-services/shared/components/button';
+import { SharedCustomDynamicCardComponent } from '@erp-services/shared/components/custom-dynamic-card';
+import { NoDataComponent } from '@erp-services/shared/components/no-data';
+import { CardNavigationPayload } from '@erp-services/shared/models/card';
+import { BreadcrumbService } from '@erp-services/shared/services/breadcrumb';
 
 import { OverviewFinancialStatusComponent } from '../overview-financial-status';
 import { OverviewTrainingStatusComponent } from '../overview-training-status';

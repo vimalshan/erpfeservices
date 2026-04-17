@@ -5,7 +5,7 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import {
   createProfileStoreServiceMock,
   ProfileStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 
 import { ProfileSettingsModalComponent } from './profile-settings-modal.component';
 

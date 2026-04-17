@@ -8,7 +8,7 @@ interface LinkModel {
   icon?: string;
 }
 @Component({
-  selector: 'customer-portal-footer',
+  selector: 'erp-services-footer',
   imports: [CommonModule, TranslocoDirective],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
@@ -17,27 +17,27 @@ interface LinkModel {
 export class FooterComponent {
   footerLeftLinks: LinkModel[] = [
     {
-      url: 'https://www.dnv.com/assurance',
+      url: 'https://www.suaadhya.com/assurance',
       label: 'footer.aboutUs',
     },
     {
-      url: 'https://www.dnv.com/privacy/',
+      url: 'https://www.suaadhya.com/privacy/',
       label: 'footer.privacyStatement',
     },
     {
-      url: 'https://www.dnv.com/terms/',
+      url: 'https://www.suaadhya.com/terms/',
       label: 'footer.termsOfUse',
     },
   ];
 
   footerRightLinks: LinkModel[] = [
     {
-      url: 'https://www.linkedin.com/showcase/dnv-assurance',
+      url: 'https://www.linkedin.com/showcase/suaadhya-assurance',
       label: 'footer.linkedin',
       icon: 'pi pi-linkedin',
     },
     {
-      url: 'https://www.dnv.com/system/copyright/',
+      url: 'https://www.suaadhya.com/system/copyright/',
       label: 'footer.copyright',
     },
   ];

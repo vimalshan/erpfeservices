@@ -81,6 +81,18 @@ export const RouteConfig = {
     i18nKey: 'logout',
     pageViewRequest: 'logout',
   },
+  Login: {
+    path: 'login',
+    title: 'Login',
+    i18nKey: 'login',
+    pageViewRequest: 'login',
+  },
+  Error: {
+    path: 'error',
+    title: 'Error',
+    i18nKey: 'error',
+    pageViewRequest: 'error',
+  },
 } as const;
 
 /**

@@ -8,7 +8,7 @@ import {
 import { ButtonModule } from 'primeng/button';
 
 @Component({
-  selector: 'customer-portal-navbar-button',
+  selector: 'erp-services-navbar-button',
   imports: [CommonModule, ButtonModule],
   templateUrl: './navbar-button.component.html',
   styleUrl: './navbar-button.component.scss',

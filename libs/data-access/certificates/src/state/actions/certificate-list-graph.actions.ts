@@ -1,7 +1,7 @@
 import {
   FilterValue,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { CertificateChartFilterKey } from '../../constants';
 import { CertificatesTabs } from '../../models';

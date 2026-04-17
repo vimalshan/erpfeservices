@@ -19,7 +19,7 @@ export interface CalendarScheduleModel {
   siteState: string;
   reportingCountry: string;
   projectNumber: string;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
 }
 
 export interface CalendarScheduleParams {

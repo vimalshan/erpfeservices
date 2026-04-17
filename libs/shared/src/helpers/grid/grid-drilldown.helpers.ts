@@ -44,6 +44,19 @@ export const formatFilter = (
   return [{ label: type, value: formattedFilter }];
 };
 
+export const formatFilterOnlyDate = (
+  payload: Date[],
+  type: string,
+): FilterValue[] => {
+  const formattedFilter = payload.map((item) => {
+    const value = dateToFormat(item);
+
+    return { label: value, value };
+  });
+
+  return [{ label: type, value: formattedFilter }];
+};
+
 export const extractAppliedFilters = (
   available: any[],
   selected: number[],

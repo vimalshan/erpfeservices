@@ -2,7 +2,7 @@ import {
   FilteringConfig,
   FilterMode,
   FilterOperator,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AuditListDto, SitesListDto } from '../../dtos';
 import { AuditDetailsMapperService } from './audit-details-mapper.service';

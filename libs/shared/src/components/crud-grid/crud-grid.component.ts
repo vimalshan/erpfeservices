@@ -147,7 +147,7 @@ export interface FormFieldConfig {
         <ng-template pTemplate="header">
           <tr>
             <th *ngFor="let col of config.columns" 
-                [pSortableColumn]="col.sortable ? col.field : null"
+                [pSortableColumn]="col.sortable ? col.field : undefined"
                 [style.width]="col.width">
               {{col.header}}
               <p-sortIcon *ngIf="col.sortable" [field]="col.field"></p-sortIcon>
@@ -163,7 +163,7 @@ export interface FormFieldConfig {
                 <p-tag 
                   *ngSwitchCase="'tag'" 
                   [value]="item[col.field]"
-                  [severity]="col.tagSeverity ? col.tagSeverity(item[col.field]) : 'info'">
+                  [severity]="$any(col.tagSeverity ? col.tagSeverity(item[col.field]) : 'info')">
                 </p-tag>
                 
                 <!-- Actions -->

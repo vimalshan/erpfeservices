@@ -8,7 +8,7 @@ export const LATEST_FINDING_RESPONSES_QUERY = gql`
         rootCause
         correctiveAction
         correction
-        isSubmitToDnv
+        isSubmitToSuaadhya
         updatedOn
         isDraft
         respondId

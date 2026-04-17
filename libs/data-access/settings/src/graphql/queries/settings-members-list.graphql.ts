@@ -1,8 +1,8 @@
 import { gql } from 'apollo-angular';
 
 export const SETTINGS_MEMBER_LIST_QUERY = gql`
-  query GetSettingsMemberList($accountDNVId: String) {
-    memberList(accountDNVId: $accountDNVId) {
+  query GetSettingsMemberList($accountSuaadhyaId: String) {
+    memberList(accountSuaadhyaId: $accountSuaadhyaId) {
       data {
         name
         email

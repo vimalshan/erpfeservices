@@ -1,19 +1,19 @@
 import {
   createOverviewStoreServiceMock,
   OverviewStoreService,
-} from '@customer-portal/data-access/overview';
+} from '@erp-services/data-access/overview';
 import {
   createProfileStoreServiceMock,
   ProfileStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createPagePermissionsServiceMock,
   PagePermissionsService,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   BreadcrumbService,
   CardNavigationPayload,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { OverviewComponent } from './overview.component';
 

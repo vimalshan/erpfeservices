@@ -2,11 +2,11 @@ import { importProvidersFrom } from '@angular/core';
 import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 import { NgxsModule } from '@ngxs/store';
 
-import { ContractsListState } from '@customer-portal/data-access/contracts';
-import { InvoiceListState } from '@customer-portal/data-access/financials';
-import { NotificationListState } from '@customer-portal/data-access/notifications/state';
-import { ScheduleListState } from '@customer-portal/data-access/schedules';
-import { Language } from '@customer-portal/shared';
+import { ContractsListState } from '@erp-services/data-access/contracts';
+import { InvoiceListState } from '@erp-services/data-access/financials';
+import { NotificationListState } from '@erp-services/data-access/notifications/state';
+import { ScheduleListState } from '@erp-services/data-access/schedules';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

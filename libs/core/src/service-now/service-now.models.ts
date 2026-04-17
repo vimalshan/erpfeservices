@@ -18,14 +18,14 @@ export interface CertificateParams extends BaseServiceNowParams {
   certificateStatus: string;
   service: string;
   projectNumber: string;
-  accountDNVId?: number;
+  accountSuaadhyaId?: number;
 }
 
 export interface InvoiceParams extends BaseServiceNowParams {
   invoice: string;
   status: string;
   projectNumber: string;
-  accountDNVId?: number;
+  accountSuaadhyaId?: number;
 }
 
 export interface ScheduleParams extends BaseServiceNowParams {
@@ -42,11 +42,11 @@ export interface ScheduleParams extends BaseServiceNowParams {
   siteState: string;
   service: string;
   projectNumber: string;
-  accountDNVId?: number;
+  accountSuaadhyaId?: number;
 }
 
 export interface CompanySettingsParams extends BaseServiceNowParams {
   accountName: string;
   accountAddress: string;
-  accountDNVId?: number;
+  accountSuaadhyaId?: number;
 }

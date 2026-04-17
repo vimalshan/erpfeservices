@@ -10,7 +10,7 @@
 
 p-tabview.p-element::ng-deep {
   .p-tabview-nav {
-    gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+    gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
     @include mixins.gutter-for(left);
 
     @include mixins.only-for(desktop) {
@@ -20,7 +20,7 @@ p-tabview.p-element::ng-deep {
 
   .p-tabview-nav-link {
     @extend %#{typography.$button-l-pattern};
-    padding: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless))) 0;
+    padding: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless))) 0;
     color: colors.get-color('SeaBlue');
   }
 

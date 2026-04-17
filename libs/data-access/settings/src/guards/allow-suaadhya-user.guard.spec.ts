@@ -8,12 +8,12 @@ import {
 
 import {
   createSettingsCoBrowsingStoreServiceMock,
-  isDnvUserMock,
+  isSuaadhyaUserMock,
 } from '../__mocks__';
 import { SettingsCoBrowsingStoreService } from '../state';
-import { allowDnvUserGuard } from './allow-dnv-user.guard';
+import { allowSuaadhyaUserGuard } from './allow-suaadhya-user.guard';
 
-describe('allowNonDnvUserGuard', () => {
+describe('allowNonSuaadhyaUserGuard', () => {
   let router: Router;
 
   const settingsCoBrowsingStoreServiceMock: Partial<SettingsCoBrowsingStoreService> =
@@ -44,13 +44,13 @@ describe('allowNonDnvUserGuard', () => {
     state = {} as RouterStateSnapshot;
   });
 
-  test('should allow navigation when user is a DNV user', () => {
+  test('should allow navigation when user is a Suaadhya user', () => {
     // Arrange
-    isDnvUserMock.set(true);
+    isSuaadhyaUserMock.set(true);
 
     TestBed.runInInjectionContext(() => {
       // Act
-      const result = allowDnvUserGuard(route, state);
+      const result = allowSuaadhyaUserGuard(route, state);
 
       // Assert
       expect(result).toBe(true);
@@ -58,16 +58,16 @@ describe('allowNonDnvUserGuard', () => {
     });
   });
 
-  test('should redirect to "" when user is not a DNV user', () => {
+  test('should redirect to "" when user is not a Suaadhya user', () => {
     // Arrange
-    isDnvUserMock.set(false);
+    isSuaadhyaUserMock.set(false);
 
     const fakeUrlTree = {} as UrlTree;
 
     // Act
 
     TestBed.runInInjectionContext(() => {
-      const result = allowDnvUserGuard(route, state);
+      const result = allowSuaadhyaUserGuard(route, state);
 
       // Assert
       expect(router.createUrlTree).toHaveBeenCalledWith(['']);

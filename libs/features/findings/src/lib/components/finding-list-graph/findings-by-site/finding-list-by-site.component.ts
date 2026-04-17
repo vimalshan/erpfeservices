@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { FindingListGraphStoreService } from '@customer-portal/data-access/findings';
-import { NoDataComponent } from '@customer-portal/shared/components/no-data';
-import { TreeTableComponent } from '@customer-portal/shared/components/tree-table';
-import { FilterValue, TreeNodeClick } from '@customer-portal/shared/models';
+import { FindingListGraphStoreService } from '@erp-services/data-access/findings';
+import { NoDataComponent } from '@erp-services/shared/components/no-data';
+import { TreeTableComponent } from '@erp-services/shared/components/tree-table';
+import { FilterValue, TreeNodeClick } from '@erp-services/shared/models';
 
 @Component({
   selector: 'lib-finding-list-by-site',

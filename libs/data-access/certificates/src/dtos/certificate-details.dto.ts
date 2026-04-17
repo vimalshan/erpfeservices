@@ -27,7 +27,7 @@ export interface CertificateDetailsDescriptionDto {
   qRCodeLink: string;
   projectNumber: string;
   reportingCountry: string;
-  accountDNVId:number;
+  accountSuaadhyaId:number;
 }
 
 export interface AdditionalScopeLanguage {

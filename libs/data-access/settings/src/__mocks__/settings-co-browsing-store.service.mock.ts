@@ -1,12 +1,12 @@
 import { signal, WritableSignal } from '@angular/core';
 
-export const isDnvUserMock: WritableSignal<boolean> = signal(false);
+export const isSuaadhyaUserMock: WritableSignal<boolean> = signal(false);
 
 export const createSettingsCoBrowsingStoreServiceMock = () => ({
-  updateIsDnvUser: jest.fn(),
+  updateIsSuaadhyaUser: jest.fn(),
   getCompanyList: jest.fn(),
   updateSelectedCobrowsingCompany: jest.fn(),
-  get isDnvUser() {
-    return isDnvUserMock;
+  get isSuaadhyaUser() {
+    return isSuaadhyaUserMock;
   },
 });

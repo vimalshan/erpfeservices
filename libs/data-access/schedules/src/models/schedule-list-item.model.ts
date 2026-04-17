@@ -1,4 +1,4 @@
-import { EventAction } from '@customer-portal/shared';
+import { EventAction } from '@erp-services/shared';
 
 export interface ScheduleListItemModel {
   scheduleId: number;
@@ -21,5 +21,5 @@ export interface ScheduleListItemModel {
   siteState: string;
   reportingCountry: string;
   projectNumber: string;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
 }

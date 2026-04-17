@@ -9,7 +9,7 @@
   .p-accordion-header {
     .p-accordion-header-link {
       padding: panel.$accordionHeaderPadding 0;
-      color: variables.$primary-dnv-medium-blue;
+      color: variables.$primary-suaadhya-medium-blue;
       font-weight: 600;
       border-radius: general.$borderRadius;
       transition: general.$listItemTransition;
@@ -42,7 +42,7 @@
 
   .p-accordion-content {
     padding: utility.get-rem(16);
-    background: variables.$basic-tones-dnv-white;
+    background: variables.$basic-tones-suaadhya-white;
     color: variables.$black;
     border-radius: utility.get-rem(10);
   }

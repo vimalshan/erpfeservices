@@ -40,11 +40,11 @@ Define global mixins to be reused across components.
 
 @mixin grid-parent {
   .page-title {
-    font-family: 'DNVDisplay';
+    font-family: 'SuaadhyaDisplay';
     font-weight: 400;
     font-size: utility.get-rem(36);
     text-transform: uppercase;
-    color: $primary-dnv-dark-blue;
+    color: $primary-suaadhya-dark-blue;
     padding: 0 utility.get-rem(40) utility.get-rem(41) utility.get-rem(38);
     background-color: $home-header-bg;
   }

@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import {
   convertToUtcDate,
   mapApiResponseToPageName,
-} from '@customer-portal/shared/helpers';
+} from '@erp-services/shared/helpers';
 
 import { iconMap } from '../../constants';
 import { ActionsDto, ActionsListDto } from '../../dtos';

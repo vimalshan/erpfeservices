@@ -19,7 +19,7 @@ export const SCHEDULE_LIST_QUERY = gql`
         auditID
         reportingCountry
         projectNumber
-        accountDNVId
+        accountSuaadhyaId
       }
       isSuccess
       message

@@ -4,19 +4,19 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, EMPTY, filter, switchMap, tap } from 'rxjs';
 
-import { RouteStoreService } from '@customer-portal/router';
+import { RouteStoreService } from '@erp-services/router';
 import {
   AppPagesEnum,
   DEFAULT_GRID_CONFIG,
   StatusStates,
-} from '@customer-portal/shared/constants';
-import { getContentType } from '@customer-portal/shared/helpers';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { downloadFromByteArray } from '@customer-portal/shared/helpers/download';
-import { getFilterOptionsForColumn } from '@customer-portal/shared/helpers/grid';
-import { ToastSeverity } from '@customer-portal/shared/models';
-import { FilterOptions, GridConfig } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/constants';
+import { getContentType } from '@erp-services/shared/helpers';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { downloadFromByteArray } from '@erp-services/shared/helpers/download';
+import { getFilterOptionsForColumn } from '@erp-services/shared/helpers/grid';
+import { ToastSeverity } from '@erp-services/shared/models';
+import { FilterOptions, GridConfig } from '@erp-services/shared/models/grid';
 
 import {
   CertificateDetailsModel,
@@ -78,7 +78,7 @@ const defaultState: CertificateDetailsStateModel = {
     certificateId: 0,
     certificateNumber: '',
     newCertificateId: null,
-    accountDNVId: 0,
+    accountSuaadhyaId: 0,
     header: {
       creationDate: '',
       documentMarks: [],

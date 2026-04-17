@@ -1,7 +1,9 @@
-import { BaseApolloResponse } from "@customer-portal/shared";
+import { BaseApolloResponse } from "@erp-services/shared";
 
 export interface SettingsCompanyDetailsDto extends BaseApolloResponse<SettingsCompanyDetailsDataDto> {
   data: SettingsCompanyDetailsDataDto;
+  isSuccess: boolean;
+  message?: string;
 }
 
 export interface SettingsCompanyDetailsDataDto {
@@ -22,7 +24,7 @@ export interface SettingsCompanyDetailsLegalEntityDto {
   poNumberRequired: boolean;
   vatNumber: string;
   zipCode: string;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
   countryCode: string;
 }
 

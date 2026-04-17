@@ -1,20 +1,20 @@
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
+} from '@erp-services/data-access/global';
 import {
   COLUMN_DELIMITER,
   CURRENT_DATE_FORMAT,
-} from '@customer-portal/shared/constants';
+} from '@erp-services/shared/constants';
 import {
   convertToUtcDate,
   utcDateToPayloadFormat,
-} from '@customer-portal/shared/helpers/date';
-import { mapFilterConfigToValues } from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/date';
+import { mapFilterConfigToValues } from '@erp-services/shared/helpers/grid';
 import {
   FilteringConfig,
   GridFileActionType,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import {
   AuditDetailsDto,
@@ -299,7 +299,7 @@ export class AuditDetailsMapperService {
   static mapToAuditDocumentItemModel(
     dto: AuditDocumentsListDto,
     hasAuditsEditPermission: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
   ): AuditDocumentListItemModel[] {
     if (!dto?.data) {
       return [];
@@ -317,7 +317,7 @@ export class AuditDetailsMapperService {
       ];
 
       const canBeDeleted =
-        !isDnvUser && auditDocument.canBeDeleted && hasAuditsEditPermission;
+        !isSuaadhyaUser && auditDocument.canBeDeleted && hasAuditsEditPermission;
 
       if (canBeDeleted) {
         actions.push({

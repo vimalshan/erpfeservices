@@ -1,7 +1,7 @@
 import { computed, signal } from '@angular/core';
 import { of } from 'rxjs';
 
-import { FilterOptions, LanguageOption } from '@customer-portal/shared';
+import { FilterOptions, LanguageOption } from '@erp-services/shared';
 
 import {
   FindingDetailsDescription,
@@ -26,7 +26,7 @@ const findingDetails: FindingDetailsModel = {
     closeDate: '18-05-2024',
     dueDate: '18-05-2024',
     openDate: '18-05-2024',
-    site: 'DNV GL GSS IT',
+    site: 'Suaadhya GL GSS IT',
     services: 'IFS Food version 8 April 2023 || FSC-STD-40-004 V3-1',
     status: 'Open',
   },
@@ -74,7 +74,7 @@ const responseHistory: FindingHistoryResponseModel[] = [
     correction: 'Correction',
   },
   {
-    userName: 'DNV | Arne Arnesson',
+    userName: 'Suaadhya | Arne Arnesson',
     isAuditor: true,
     responseDateTime: '01-05-2024 13:44',
     auditorComment: 'Please provide a better explanation of the root cause.',

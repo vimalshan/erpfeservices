@@ -8,9 +8,9 @@ shared-grid ::ng-deep {
   @include mixins.gutter-for(top, right, bottom, left);
 
   .p-datatable-wrapper {
-    box-shadow: 0px calc(5 / var(--dnv-font-base-unitless) * 1rem) 
-      calc(3 / var(--dnv-font-base-unitless) * 1rem) 
-      calc(-4 / var(--dnv-font-base-unitless) * 1rem) rgba(15, 32, 75, 0.25);
+    box-shadow: 0px calc(5 / var(--suaadhya-font-base-unitless) * 1rem) 
+      calc(3 / var(--suaadhya-font-base-unitless) * 1rem) 
+      calc(-4 / var(--suaadhya-font-base-unitless) * 1rem) rgba(15, 32, 75, 0.25);
 
     .p-datatable-thead {
       box-shadow:
@@ -29,7 +29,7 @@ shared-grid ::ng-deep {
         span {
           @extend %#{typography.$label-s-pattern};
           color: colors.get-color('Sandstone40');
-          font-size: var(--dnv-font-text-s);
+          font-size: var(--suaadhya-font-text-s);
           font-weight: 700;
         }
       }
@@ -83,7 +83,7 @@ shared-grid ::ng-deep {
       height: utility.get-rem(30);
 
       &:before {
-        font-size: var(--dnv-gutter-base-unitless);
+        font-size: var(--suaadhya-gutter-base-unitless);
         color: colors.get-color('LandGreen');
       }
     }

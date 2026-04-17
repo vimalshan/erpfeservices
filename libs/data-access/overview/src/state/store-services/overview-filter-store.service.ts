@@ -6,7 +6,7 @@ import { TreeNode } from 'primeng/api';
 import {
   SharedSelectMultipleDatum,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { OverviewFilterKey } from '../../models';
 import {

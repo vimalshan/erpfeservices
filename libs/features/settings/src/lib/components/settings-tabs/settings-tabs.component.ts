@@ -5,8 +5,8 @@ import { TranslocoDirective } from '@jsverse/transloco';
 import { TabViewChangeEvent, TabViewModule } from 'primeng/tabview';
 import { map, Observable } from 'rxjs';
 
-import { SettingsTab } from '@customer-portal/data-access/settings';
-import { RouteStoreService } from '@customer-portal/router';
+import { SettingsTab } from '@erp-services/data-access/settings';
+import { RouteStoreService } from '@erp-services/router';
 
 import { SettingsTabsCompanyDetailsComponent } from '../settings-tabs-company-details';
 import { SettingsTabsMembersComponent } from '../settings-tabs-members';

@@ -1,6 +1,7 @@
 export interface MemberPermissions {
   view?: AccessAreasPermission;
   edit?: AccessAreasPermission;
+  submit?: AccessAreasPermission;
 }
 
 export interface AccessAreasPermission {

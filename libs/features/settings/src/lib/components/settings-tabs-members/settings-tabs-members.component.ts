@@ -7,13 +7,13 @@ import { take } from 'rxjs';
 import {
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings/state/store-services';
+} from '@erp-services/data-access/settings';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings/state/store-services';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { modalBreakpoints } from '@customer-portal/shared/constants';
+} from '@erp-services/shared/components/button';
+import { modalBreakpoints } from '@erp-services/shared/constants';
 
 import { AdminGridComponent } from './admin-grid/admin-grid.component';
 import { MembersGridComponent } from './members-grid/members-grid.component';

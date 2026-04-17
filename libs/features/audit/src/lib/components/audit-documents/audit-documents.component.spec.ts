@@ -8,21 +8,21 @@ import { EMPTY, of } from 'rxjs';
 import {
   AuditDetailsStoreService,
   createAuditDetailsStoreServiceMock,
-} from '@customer-portal/data-access/audit';
+} from '@erp-services/data-access/audit';
 import {
   createDocumentStoreServiceMock,
   DocumentsStoreService,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   createProfileStoreServiceMock,
   createSettingsCoBrowsingStoreServiceMock,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   AddDocumentsComponent,
   AddDocumentsFooterComponent,
-} from '@customer-portal/features/upload';
+} from '@erp-services/features/upload';
 import {
   createActionsMock,
   createDestroyRefMock,
@@ -36,7 +36,7 @@ import {
   modalBreakpoints,
   SortingDirection,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AuditDocumentsComponent } from './audit-documents.component';
 

@@ -17,8 +17,8 @@
   padding-right: calc(100vw - 20px - 77px);
   padding-bottom: utility.get-rem(18);
   padding-left: utility.get-rem(20);
-  background-color: variables.$basic-tones-dnv-white;
-  border-bottom: 1px solid variables.$basic-tones-dnv-light;
+  background-color: variables.$basic-tones-suaadhya-white;
+  border-bottom: 1px solid variables.$basic-tones-suaadhya-light;
 }
 
 .content {
@@ -82,10 +82,10 @@
       }
 
       .card-title {
-        color: variables.$primary-dnv-dark-blue;
+        color: variables.$primary-suaadhya-dark-blue;
         text-align: center;
 
-        font-family: 'DNVDisplayRegular';
+        font-family: 'SuaadhyaDisplayRegular';
         font-size: utility.get-rem(36);
         font-style: normal;
         font-weight: 400;

@@ -4,7 +4,7 @@ import {
   FilterValue,
   IndividualFilter,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AuditChartFilterKey, AuditChartsTabs } from '../../constants';
 import { AuditListItemEnrichedDto } from '../../dtos';

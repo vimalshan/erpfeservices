@@ -1,7 +1,7 @@
 import {
   ActionFilterKey,
   ActionsListStoreService,
-} from '@customer-portal/data-access/actions';
+} from '@erp-services/data-access/actions';
 
 import { ActionsFilterComponent } from './actions-filter.component';
 

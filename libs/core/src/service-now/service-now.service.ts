@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { LoggingService } from '../app-insights/logging.service';
 import { ServiceNowClient, ServiceNowConfig } from './service-now.config';
@@ -54,7 +54,7 @@ export class ServiceNowService {
 
   openInvoiceSupport(params: InvoiceParams, openOnLoad = true): void {
     this.openServiceNowSupport(
-      ServiceNowFeature.DNV_INVOICE,
+      ServiceNowFeature.SUAADHYA_INVOICE,
       params,
       openOnLoad,
     );
@@ -62,7 +62,7 @@ export class ServiceNowService {
 
   openScheduleSupport(params: ScheduleParams, openOnLoad = true): void {
     this.openServiceNowSupport(
-      ServiceNowFeature.DNV_SCHEDULE,
+      ServiceNowFeature.SUAADHYA_SCHEDULE,
       params,
       openOnLoad,
     );
@@ -70,7 +70,7 @@ export class ServiceNowService {
 
   openCertificateSupport(params: CertificateParams, openOnLoad = true): void {
     this.openServiceNowSupport(
-      ServiceNowFeature.DNV_CERTIFICATE,
+      ServiceNowFeature.SUAADHYA_CERTIFICATE,
       params,
       openOnLoad,
     );
@@ -81,7 +81,7 @@ export class ServiceNowService {
     openOnLoad = true,
   ): void {
     this.openServiceNowSupport(
-      ServiceNowFeature.DNV_COMPANY,
+      ServiceNowFeature.SUAADHYA_COMPANY,
       params,
       openOnLoad,
     );

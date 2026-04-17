@@ -4,8 +4,8 @@ import {
   CertificateDetailsStoreService,
   CertificateDownloadDialogData,
   createCertificateDetailsStoreServiceMock,
-} from '@customer-portal/data-access/certificates';
-import { LanguageOption } from '@customer-portal/shared';
+} from '@erp-services/data-access/certificates';
+import { LanguageOption } from '@erp-services/shared';
 
 import { CertificateGuidelines } from '../../constants';
 import { CertificateDownloadDialogComponent } from './certificate-download-dialog.component';

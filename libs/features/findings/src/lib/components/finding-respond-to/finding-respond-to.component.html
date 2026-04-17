@@ -119,15 +119,15 @@
         </form>
         @if (!isRespondInProgress && !isClosedStatus) {
           <div class="respond-to-finding__buttons">
-            @if (!isDnvUser()) {
+            @if (!isSuaadhyaUser()) {
               @if (noPreviousResponses) {
                 <shared-button
                   [isDisabled]="
                     isAnyFormFieldEmpty || !hasSubmitFindingPermission()
                   "
-                  [label]="t('findings.findingDetails.sendToDNV')"
+                  [label]="t('findings.findingDetails.sendToSuaadhya')"
                   [type]="sharedButtonType.Primary"
-                  (clickEvent)="onSubmitToDnv()">
+                  (clickEvent)="onSubmitToSuaadhya()">
                 </shared-button>
 
                 <shared-button
@@ -157,9 +157,9 @@
                   [isDisabled]="
                     !areAllResponsesAvailable || !hasSubmitFindingPermission()
                   "
-                  [label]="t('findings.findingDetails.sendToDNV')"
+                  [label]="t('findings.findingDetails.sendToSuaadhya')"
                   [type]="sharedButtonType.Primary"
-                  (clickEvent)="onSubmitToDnv()">
+                  (clickEvent)="onSubmitToSuaadhya()">
                 </shared-button>
 
            

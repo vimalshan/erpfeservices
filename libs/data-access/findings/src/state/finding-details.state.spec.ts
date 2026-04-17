@@ -4,28 +4,28 @@ import { NgxsModule, Store } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { of, throwError } from 'rxjs';
 
-import { UnreadActionsStoreService } from '@customer-portal/data-access/actions';
+import { UnreadActionsStoreService } from '@erp-services/data-access/actions';
 import {
   createProfileStoreServiceMock,
   createSettingsCoBrowsingStoreServiceMock,
   createUnreadActionsStoreService,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   createRouteStoreServiceMock,
   RouteStoreService,
-} from '@customer-portal/router';
+} from '@erp-services/router';
 import {
   createMessageServiceMock,
   DEFAULT_GRID_CONFIG,
   GridFileActionType,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   FindingDetailsDto,
@@ -162,7 +162,7 @@ describe('FindingDetailsState', () => {
         services: ['IFS Food version 8 April 2023', 'FSC-STD-40-004 V3-1'],
         sites: [
           {
-            siteName: 'DNV GL GSS IT',
+            siteName: 'Suaadhya GL GSS IT',
             siteAddress: 'Arnhem',
           },
         ],
@@ -216,7 +216,7 @@ describe('FindingDetailsState', () => {
           closeDate: '18.07.2024',
           dueDate: '18.06.2024',
           openDate: '18.05.2024',
-          site: 'DNV GL GSS IT',
+          site: 'Suaadhya GL GSS IT',
           services: 'IFS Food version 8 April 2023, FSC-STD-40-004 V3-1',
           status: 'Open',
         },
@@ -302,7 +302,7 @@ describe('FindingDetailsState', () => {
       const expectedDto: FindingResponsesPayloadDto = {
         request: {
           findingNumber: 'MANMES-0031',
-          isSubmitToDnv: true,
+          isSubmitToSuaadhya: true,
           rootCause: '123',
           correctiveAction: '234',
           correction: '111',
@@ -381,7 +381,7 @@ describe('FindingDetailsState', () => {
         closeDate: '18-05-2024',
         dueDate: '18-05-2024',
         openDate: '18-05-2024',
-        site: 'DNV GL GSS IT',
+        site: 'Suaadhya GL GSS IT',
         services: 'IFS Food version 8 April 2023 || FSC-STD-40-004 V3-1',
         status: 'Open',
       },
@@ -419,7 +419,7 @@ describe('FindingDetailsState', () => {
           closeDate: '18-05-2024',
           dueDate: '18-05-2024',
           openDate: '18-05-2024',
-          site: 'DNV GL GSS IT',
+          site: 'Suaadhya GL GSS IT',
           services: 'IFS Food version 8 April 2023 || FSC-STD-40-004 V3-1',
           status: 'Open',
         },
@@ -534,7 +534,7 @@ describe('FindingDetailsState', () => {
         correction: 'Correction',
       },
       {
-        userName: 'DNV | Arne Arnesson',
+        userName: 'Suaadhya | Arne Arnesson',
         isAuditor: true,
         responseDateTime: '01.05.2024 23:44',
         auditorComment:
@@ -570,7 +570,7 @@ describe('FindingDetailsState', () => {
           fileName: 'ImageScan_Cannon3XDS_193740573023097.png',
           type: 'Evidence',
           dateAdded: '2024-06-12T00:00:00.000+00:00',
-          uploadedBy: 'DNV Arne Arnesson',
+          uploadedBy: 'Suaadhya Arne Arnesson',
           documentUrl:
             'https://file-examples.com/wp-content/storage/2017/10/file_example_JPG_100kB.jpg',
           canBeDeleted: true,
@@ -580,7 +580,7 @@ describe('FindingDetailsState', () => {
           fileName: 'Audit_plan_22042024.pdf',
           type: 'Evidence',
           dateAdded: '2024-06-12T00:00:00.000+00:00',
-          uploadedBy: 'DNV Arne Arnesson',
+          uploadedBy: 'Suaadhya Arne Arnesson',
           documentUrl:
             'https://file-examples.com/wp-content/storage/2017/10/file-sample_150kB.pdf',
           canBeDeleted: true,
@@ -606,7 +606,7 @@ describe('FindingDetailsState', () => {
         fileName: 'ImageScan_Cannon3XDS_193740573023097.png',
         fileType: 'Evidence',
         dateAdded: '12-06-2024',
-        uploadedBy: 'DNV Arne Arnesson',
+        uploadedBy: 'Suaadhya Arne Arnesson',
         actions: [
           {
             label: 'download',
@@ -627,7 +627,7 @@ describe('FindingDetailsState', () => {
         fileName: 'Audit_plan_22042024.pdf',
         fileType: 'Evidence',
         dateAdded: '12-06-2024',
-        uploadedBy: 'DNV Arne Arnesson',
+        uploadedBy: 'Suaadhya Arne Arnesson',
         actions: [
           {
             label: 'download',
@@ -699,7 +699,7 @@ describe('FindingDetailsState', () => {
           fileName: 'ImageScan_Cannon3XDS_193740573023097.png',
           type: 'Evidence',
           dateAdded: '2024-06-12T00:00:00.000+00:00',
-          uploadedBy: 'DNV Arne Arnesson',
+          uploadedBy: 'Suaadhya Arne Arnesson',
           documentUrl:
             'https://file-examples.com/wp-content/storage/2017/10/file_example_JPG_100kB.jpg',
           canBeDeleted: true,
@@ -709,7 +709,7 @@ describe('FindingDetailsState', () => {
           fileName: 'Audit_plan_22042024.pdf',
           type: 'Evidence',
           dateAdded: '2024-06-12T00:00:00.000+00:00',
-          uploadedBy: 'DNV Arne Arnesson',
+          uploadedBy: 'Suaadhya Arne Arnesson',
           documentUrl:
             'https://file-examples.com/wp-content/storage/2017/10/file-sample_150kB.pdf',
           canBeDeleted: true,
@@ -735,7 +735,7 @@ describe('FindingDetailsState', () => {
         fileName: 'ImageScan_Cannon3XDS_193740573023097.png',
         fileType: 'Evidence',
         dateAdded: '12-06-2024',
-        uploadedBy: 'DNV Arne Arnesson',
+        uploadedBy: 'Suaadhya Arne Arnesson',
         actions: [
           {
             label: 'download',
@@ -751,7 +751,7 @@ describe('FindingDetailsState', () => {
         fileName: 'Audit_plan_22042024.pdf',
         fileType: 'Evidence',
         dateAdded: '12-06-2024',
-        uploadedBy: 'DNV Arne Arnesson',
+        uploadedBy: 'Suaadhya Arne Arnesson',
         actions: [
           {
             label: 'download',
@@ -818,7 +818,7 @@ describe('FindingDetailsState', () => {
           closeDate: '18-05-2024',
           dueDate: '18-05-2024',
           openDate: '18-05-2024',
-          site: 'DNV GL GSS IT',
+          site: 'Suaadhya GL GSS IT',
           services: 'IFS Food version 8 April 2023 || FSC-STD-40-004 V3-1',
           status: 'Open',
         },
@@ -930,7 +930,7 @@ describe('FindingDetailsState', () => {
         correctiveAction: 'Corrective Action',
         correction: 'Correction',
         rootCause: 'Root Cause',
-        isSubmitToDnv: true,
+        isSubmitToSuaadhya: true,
         updatedOn: '2024-05-18T07:29:43.207+00:00',
         isDraft: false,
         respondId: 123,

@@ -5,11 +5,11 @@ import {
   applyGridConfigWithoutPagination,
   getNumberOfFilteredRecords,
   isAnyFilterActive,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   FilteringConfig,
   FilterOptions,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { ScheduleListItemModel } from '../../models';
 import {

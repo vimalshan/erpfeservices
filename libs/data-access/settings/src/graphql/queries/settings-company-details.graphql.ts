@@ -30,7 +30,7 @@ export const SETTINGS_COMPANY_DETAILS_QUERY = gql`
           poNumberRequired
           vatNumber
           zipCode
-          accountDNVId
+          accountSuaadhyaId
         }
       }
       isSuccess

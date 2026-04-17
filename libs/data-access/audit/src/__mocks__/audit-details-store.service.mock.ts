@@ -1,6 +1,6 @@
 import { signal } from '@angular/core';
 
-import { FilterOptions } from '@customer-portal/shared';
+import { FilterOptions } from '@erp-services/shared';
 
 import { AuditDetailsModel, AuditDocumentListItemModel } from '../models';
 

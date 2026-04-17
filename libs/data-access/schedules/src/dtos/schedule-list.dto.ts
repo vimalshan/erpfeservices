@@ -1,6 +1,6 @@
 import { BaseApolloResponse,
   ServiceDetailsMaster, SiteDetailsMaster
- } from '@customer-portal/shared';
+ } from '@erp-services/shared';
 
 export interface ScheduleListDto extends BaseApolloResponse<ScheduleListItemDto[]> {
   data: ScheduleListItemDto[];
@@ -21,7 +21,7 @@ export interface ScheduleListItemDto {
   auditID: number;  
   reportingCountry: string;
   projectNumber: string;
-  accountDNVId: number;  
+  accountSuaadhyaId: number;  
 }
 
 export interface ScheduleListItemEnrichedDto extends ScheduleListItemDto {

@@ -1,4 +1,4 @@
-import { GridConfig } from '@customer-portal/shared';
+import { GridConfig } from '@erp-services/shared';
 
 import {
   FindingDetailsModel,
@@ -33,7 +33,7 @@ export class SendFindingResponsesFormSuccess {
   static readonly type =
     '[Finding Details] Send Finding Responses Form Success';
 
-  constructor(public isSubmitToDnv: boolean) {}
+  constructor(public isSubmitToSuaadhya: boolean) {}
 }
 
 export class LoadLatestFindingResponses {

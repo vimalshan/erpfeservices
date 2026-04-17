@@ -8,7 +8,7 @@
 .trends-grid {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
   padding-top: utility.get-rem(36);
   padding-left: utility.get-rem(24);
 }

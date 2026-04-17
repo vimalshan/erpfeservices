@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { FindingDocumentsListDto } from '../../dtos/finding-documents-list.dto';
 

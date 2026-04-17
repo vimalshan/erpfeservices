@@ -5,7 +5,7 @@ import {
   GridFileActionType,
   mapFilterConfigToValues,
   utcDateToPayloadFormat,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { ContractsExcelPayloadDto, ContractsListDto } from '../../dtos';
 import { ContractsListItemModel } from '../../models';

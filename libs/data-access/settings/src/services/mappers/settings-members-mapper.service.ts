@@ -6,7 +6,7 @@ import {
   EventActionItem,
   GridEventActionType,
   SiteModel,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   City,
@@ -97,7 +97,7 @@ const mapCountriesToNodes = (countries: Country[]): TreeNode[] =>
 export class SettingsMembersMapper {
   static mapToMembersList(
     dto: SettingsMembersListDto,
-    accountDnvId: string | null,
+    accountSuaadhyaId: string | null,
   ): SettingsMembersItemModel[] {
     if (!dto?.data) {
       return [];
@@ -149,7 +149,7 @@ export class SettingsMembersMapper {
             ? {
                 id: email,
                 actions: SettingsMembersMapper.getActions(
-                  accountDnvId,
+                  accountSuaadhyaId,
                   canManagePermissions,
                   canDelete,
                 ),
@@ -161,7 +161,7 @@ export class SettingsMembersMapper {
 
   static mapToAdminList(
     dto: SettingsAdminListDto,
-    accountDnvId: string | null,
+    accountSuaadhyaId: string | null,
   ): SettingsMembersItemModel[] {
     if (!dto?.data) {
       return [];
@@ -205,7 +205,7 @@ export class SettingsMembersMapper {
                 id: email,
                 name,
                 actions: SettingsMembersMapper.getActions(
-                  accountDnvId,
+                  accountSuaadhyaId,
                   canManagePermissions,
                   canDelete,
                 ),
@@ -432,12 +432,12 @@ export class SettingsMembersMapper {
   };
 
   public static getActions(
-    accountDnvId: string | null,
+    accountSuaadhyaId: string | null,
     canManagePermissions: boolean,
     canDelete: boolean,
   ): EventActionItem[] {
     return [
-      ...(accountDnvId
+      ...(accountSuaadhyaId
         ? [
             {
               label: GridEventActionType.ViewPortalAs,

@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 
 @Component({
   selector: 'lib-profile-settings-footer',

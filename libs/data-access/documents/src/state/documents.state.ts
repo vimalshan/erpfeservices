@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 import { Action, State, StateContext } from '@ngxs/store';
-import { Message, MessageService } from 'primeng/api';
+import { ToastMessageOptions, MessageService } from 'primeng/api';
 import {
   catchError,
   combineLatest,
@@ -13,10 +13,10 @@ import {
   tap,
 } from 'rxjs';
 
-import { RouteStoreService } from '@customer-portal/router';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { downloadFromByteArray } from '@customer-portal/shared/helpers/download';
-import { FileUpload, ToastSeverity } from '@customer-portal/shared/models';
+import { RouteStoreService } from '@erp-services/router';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { downloadFromByteArray } from '@erp-services/shared/helpers/download';
+import { FileUpload, ToastSeverity } from '@erp-services/shared/models';
 
 import { BaseFileUploadErrors } from '../models/documents.model';
 import { DocumentsService } from '../services/documents.service';
@@ -206,7 +206,7 @@ export class DocumentsState {
       fileUploadSuccess,
     }: ShowNotificationAfterUploadDocumentSuccess,
   ) {
-    const message: Message = getToastContentBySeverity(
+    const message: ToastMessageOptions = getToastContentBySeverity(
       ToastSeverity.UploadSuccess,
     );
     message.summary = this.ts.translate(message.summary!);
@@ -222,7 +222,7 @@ export class DocumentsState {
     _: StateContext<DocumentsStateModel>,
     { uploadStatus, fileUploadErrors }: ShowNotificationAfterUploadDocumentFail,
   ) {
-    const message: Message = getToastContentBySeverity(
+    const message: ToastMessageOptions = getToastContentBySeverity(
       ToastSeverity.UploadError,
     );
     message.summary = this.ts.translate(message.summary!);

@@ -3,9 +3,9 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, of, tap } from 'rxjs';
 
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { ToastSeverity } from '@customer-portal/shared/models';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { ToastSeverity } from '@erp-services/shared/models';
 
 import {
   OverviewUpcomingAuditEvent,

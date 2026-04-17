@@ -10,26 +10,26 @@ import {
 import { TranslocoDirective } from '@jsverse/transloco';
 import { catchError, map, Observable } from 'rxjs';
 
-import { LoggingService } from '@customer-portal/core/app-insights';
-import { SpinnerService } from '@customer-portal/core/spinner';
-import { AuditDetailsStoreService } from '@customer-portal/data-access/audit';
+import { LoggingService } from '@erp-services/core/app-insights';
+import { SpinnerService } from '@erp-services/core/spinner';
+import { AuditDetailsStoreService } from '@erp-services/data-access/audit';
 import {
   DocType,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   DocumentQueueService,
   DocumentsService,
-} from '@customer-portal/data-access/documents/services';
+} from '@erp-services/data-access/documents/services';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { StatusComponent } from '@customer-portal/shared/components/grid';
-import { STATUS_STATES_MAP } from '@customer-portal/shared/constants';
-import { animateFlyToDownload } from '@customer-portal/shared/helpers/download';
-import { CustomDatePipe } from '@customer-portal/shared/pipes';
+} from '@erp-services/shared/components/button';
+import { StatusComponent } from '@erp-services/shared/components/grid';
+import { STATUS_STATES_MAP } from '@erp-services/shared/constants';
+import { animateFlyToDownload } from '@erp-services/shared/helpers/download';
+import { CustomDatePipe } from '@erp-services/shared/pipes';
 
 import { AuditTabViewComponent } from '../audit-tab-view/audit-tab-view.component';
 

@@ -10,8 +10,8 @@ import {
 import { Router } from '@angular/router';
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
 
-import { ErrorCardComponent } from '@customer-portal/shared/components';
-import { RouteConfig } from '@customer-portal/shared/constants';
+import { ErrorCardComponent } from '@erp-services/shared/components';
+import { RouteConfig } from '@erp-services/shared/constants';
 
 interface ErrorState {
   message: string;
@@ -19,7 +19,7 @@ interface ErrorState {
 }
 
 @Component({
-  selector: 'customer-portal-error',
+  selector: 'erp-services-error',
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss'],
   imports: [CommonModule, TranslocoDirective, ErrorCardComponent],

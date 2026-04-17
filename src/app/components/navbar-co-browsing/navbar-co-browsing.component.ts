@@ -4,20 +4,20 @@ import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
 import { ConfirmationService } from 'primeng/api';
 import { concatMap, take } from 'rxjs';
 
-import { AppInitializerService } from '@customer-portal/permissions';
+import { AppInitializerService } from '@erp-services/permissions';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { buttonStyleClass } from '@customer-portal/shared/components/custom-confirm-dialog';
-import { Language } from '@customer-portal/shared/models';
+} from '@erp-services/shared/components/button';
+import { buttonStyleClass } from '@erp-services/shared/components/custom-confirm-dialog';
+import { Language } from '@erp-services/shared/models';
 import {
   CoBrowsingCookieService,
   CoBrowsingSharedService,
-} from '@customer-portal/shared/services';
+} from '@erp-services/shared/services';
 
 @Component({
-  selector: 'customer-portal-navbar-co-browsing',
+  selector: 'erp-services-navbar-co-browsing',
   imports: [CommonModule, TranslocoDirective, SharedButtonComponent],
   templateUrl: './navbar-co-browsing.component.html',
   styleUrl: './navbar-co-browsing.component.scss',

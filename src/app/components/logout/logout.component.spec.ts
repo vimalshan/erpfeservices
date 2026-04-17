@@ -3,7 +3,7 @@ import {
   AuthService, 
   createAuthServiceMock, 
   getTranslocoModule 
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 import { LogoutComponent } from './logout.component';
 
 describe('LogoutComponent', () => {

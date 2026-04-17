@@ -1,6 +1,6 @@
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { createProfileStoreServiceMock } from '@customer-portal/data-access/settings';
+import { createProfileStoreServiceMock } from '@erp-services/data-access/settings';
 
 import { ProfileSettingsFooterComponent } from './profile-settings-footer.component';
 

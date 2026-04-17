@@ -3,7 +3,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
 }
 
 ::ng-deep {

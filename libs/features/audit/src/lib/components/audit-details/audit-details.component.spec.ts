@@ -1,15 +1,15 @@
 import { signal } from '@angular/core';
 
-import { SpinnerService } from '@customer-portal/core';
+import { SpinnerService } from '@erp-services/core';
 import {
   AuditDetailsStoreService,
   createAuditDetailsStoreServiceMock,
-} from '@customer-portal/data-access/audit';
+} from '@erp-services/data-access/audit';
 import {
   createDocumentStoreServiceMock,
   DocType,
   DocumentsStoreService,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 
 import { AuditDetailsComponent } from './audit-details.component';
 

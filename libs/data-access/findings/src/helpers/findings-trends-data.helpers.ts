@@ -1,6 +1,6 @@
 import { TreeNode } from 'primeng/api';
 
-import { TreeColumnDefinition } from '@customer-portal/shared';
+import { TreeColumnDefinition } from '@erp-services/shared';
 
 import { bidirectionalMapTrendsYears } from '../constants';
 

@@ -23,7 +23,7 @@
     "placeholder": "Inserisci la data in cui hai pianificato di effettuare il pagamento di questa fattura",
     "referenceNumber": "Numero di riferimento",
     "statusRestriction": "La data di pagamento pianificato dell'aggiornamento si applica solo agli stati \"Scaduto\", \"Parzialmente pagato\" e \"Non Pagato\".",
-    "tooltip": "Da compilare con una data futura in cui è previsto il pagamento a DNV per questa fattura",
+    "tooltip": "Da compilare con una data futura in cui è previsto il pagamento a Suaadhya per questa fattura",
     "warning": "Modificando questa data non viene modificata in automatico la data di scadenza.",
     "success": "Data di pagamento pianificata aggiornata con successo"
   }

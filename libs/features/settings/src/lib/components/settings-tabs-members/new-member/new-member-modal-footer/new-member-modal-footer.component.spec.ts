@@ -4,11 +4,11 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
   createSettingsMemberServiceMock,
   SettingsMembersStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createDynamicDialogRefServiceMock,
   createMessageServiceMock,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { NewMemberModalFooterComponent } from './new-member-modal-footer.component';
 

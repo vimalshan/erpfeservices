@@ -11,7 +11,7 @@
       0,
       utility.get-rem(630)
     );
-  gap: utility.get-rem(calc(4 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(4 * var(--suaadhya-gutter-base-unitless)));
   background-color: transparent;
 
   @include mixins.only-for(tablet) {

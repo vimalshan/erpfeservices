@@ -24,10 +24,10 @@ import { filter, tap } from 'rxjs';
 import {
   ConfirmScheduleDetailsStoreService,
   ScheduleCalendarActionStoreService,
-} from '@customer-portal/data-access/schedules';
-import { CURRENT_DATE_FORMAT } from '@customer-portal/shared/constants';
-import { calculateWeekRange } from '@customer-portal/shared/helpers/date';
-import { CustomDatePipe } from '@customer-portal/shared/pipes/custom-date.pipe';
+} from '@erp-services/data-access/schedules';
+import { CURRENT_DATE_FORMAT } from '@erp-services/shared/constants';
+import { calculateWeekRange } from '@erp-services/shared/helpers/date';
+import { CustomDatePipe } from '@erp-services/shared/pipes/custom-date.pipe';
 
 import { RescheduleAction } from '../../constants/schedule-list-reschedule.enum';
 

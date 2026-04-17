@@ -7,7 +7,7 @@ import { Observable, of, throwError, zip } from 'rxjs';
 import {
   createRouteStoreServiceMock,
   RouteStoreService,
-} from '@customer-portal/router';
+} from '@erp-services/router';
 import {
   createFileSaverMock,
   createMessageServiceMock,
@@ -18,7 +18,7 @@ import {
   FilterValue,
   GridConfig,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AuditExcelPayloadDto, AuditListDto } from '../dtos';
 import { AuditListService } from '../services';

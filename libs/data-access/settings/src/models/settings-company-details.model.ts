@@ -6,7 +6,7 @@ export interface SettingsCompanyDetailsModel {
 
 export interface SettingsCompanyDetailsData {
   accountId: number;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
   address: string;
   city: string;
   country: string;
@@ -20,7 +20,7 @@ export interface SettingsCompanyDetailsData {
 }
 
 export interface SettingsCompanyDetailsEditParams {
-  accountDNVId: number;
+  accountSuaadhyaId: number;
   address: string;
   city: string;
   countryId: number;

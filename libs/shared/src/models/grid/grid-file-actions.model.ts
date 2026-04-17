@@ -14,4 +14,5 @@ export enum GridFileActionType {
 export interface GridFileActionEvent {
   url?: string;
   actionType: GridFileActionType;
+  element?: HTMLElement;
 }

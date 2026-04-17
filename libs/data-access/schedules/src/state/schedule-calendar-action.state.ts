@@ -4,12 +4,12 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService } from 'primeng/api';
 import { catchError, filter, map, tap } from 'rxjs';
 
-import { LoggingService } from '@customer-portal/core/app-insights';
-import { UnreadActionsStoreService } from '@customer-portal/data-access/actions/state';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { downloadFileFromByteArray } from '@customer-portal/shared/helpers/download';
-import { ToastSeverity } from '@customer-portal/shared/models';
+import { LoggingService } from '@erp-services/core/app-insights';
+import { UnreadActionsStoreService } from '@erp-services/data-access/actions/state';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { downloadFileFromByteArray } from '@erp-services/shared/helpers/download';
+import { ToastSeverity } from '@erp-services/shared/models';
 
 import {
   ScheduleCalendarInviteCalendarAttributesDto,

@@ -1,14 +1,14 @@
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
-import { COLUMN_DELIMITER } from '@customer-portal/shared/constants';
+} from '@erp-services/data-access/global';
+import { COLUMN_DELIMITER } from '@erp-services/shared/constants';
 import {
   convertToUtcDate,
   utcDateToPayloadFormat,
-} from '@customer-portal/shared/helpers/date';
-import { mapFilterConfigToValues } from '@customer-portal/shared/helpers/grid';
-import { FilteringConfig } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/helpers/date';
+import { mapFilterConfigToValues } from '@erp-services/shared/helpers/grid';
+import { FilteringConfig } from '@erp-services/shared/models/grid';
 
 import {
   AuditExcelPayloadDto,

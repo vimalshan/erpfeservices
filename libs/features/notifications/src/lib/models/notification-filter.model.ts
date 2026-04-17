@@ -1,4 +1,4 @@
-import { SharedSelectMultipleDatum } from '@customer-portal/shared';
+import { SharedSelectMultipleDatum } from '@erp-services/shared';
 
 export interface NotificationFilter {
   id: string;

@@ -6,24 +6,24 @@ import { catchError, take, tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
+} from '@erp-services/data-access/global';
 import {
   ClearNavigationFilters,
   OverviewSharedStoreService,
-} from '@customer-portal/overview-shared';
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { downloadFileFromByteArray } from '@customer-portal/shared/helpers/download';
+} from '@erp-services/overview-shared';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { downloadFileFromByteArray } from '@erp-services/shared/helpers/download';
 import {
   getFilterOptions,
   updateGridConfigBasedOnFilters,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   FilterableColumnDefinition,
   ToastSeverity,
-} from '@customer-portal/shared/models';
-import { FilterOptions, GridConfig } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models';
+import { FilterOptions, GridConfig } from '@erp-services/shared/models/grid';
 
 import { CertificateListItemModel } from '../models';
 import {

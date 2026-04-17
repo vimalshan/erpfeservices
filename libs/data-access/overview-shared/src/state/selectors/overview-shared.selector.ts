@@ -1,6 +1,6 @@
 import { Selector } from '@ngxs/store';
 
-import { CalendarViewType, FilterValue } from '@customer-portal/shared/models';
+import { CalendarViewType, FilterValue } from '@erp-services/shared/models';
 
 import {
   OverviewSharedState,

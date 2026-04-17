@@ -22,7 +22,7 @@ p-button.p-element::ng-deep {
   .p-button {
     @extend %#{typography.$button-l-pattern};
     display: flex;
-    gap: calc(var(--dnv-gutter-base-unitless) * 0.0625rem);
+    gap: calc(var(--suaadhya-gutter-base-unitless) * 0.0625rem);
     padding: utility.get-rem(8) utility.get-rem(16);
     color: colors.get-color('UiWhite');
     background-color: colors.get-color('SeaBlue');

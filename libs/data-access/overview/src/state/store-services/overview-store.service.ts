@@ -2,7 +2,7 @@ import { Injectable, Signal } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 
-import { CardDataModel, CardNavigationPayload } from '@customer-portal/shared';
+import { CardDataModel, CardNavigationPayload } from '@erp-services/shared';
 
 import {
   LoadMoreOverviewCardData,

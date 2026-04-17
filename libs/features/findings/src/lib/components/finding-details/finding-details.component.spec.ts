@@ -1,10 +1,10 @@
 import { ConfirmationService } from 'primeng/api';
 
-import { SpinnerService } from '@customer-portal/core';
+import { SpinnerService } from '@erp-services/core';
 import {
   createFindingDetailsStoreServiceMock,
   FindingDetailsStoreService,
-} from '@customer-portal/data-access/findings';
+} from '@erp-services/data-access/findings';
 
 import { FindingDetailsComponent } from './finding-details.component';
 

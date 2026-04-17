@@ -5,7 +5,7 @@
         <h2 aria-label="personal-information" class="profile__title">
           {{ t('settings.form.profile.myInformation') }}
         </h2>
-        @if (!isDnvUser()) {
+        @if (!isSuaadhyaUser()) {
           <p-button
             class="profile__btn"
             icon="pi pi-external-link"
@@ -71,7 +71,7 @@
           {{ t('settings.form.profile.settings') }}
         </h2>
 
-        @if (!isDnvUser()) {
+        @if (!isSuaadhyaUser()) {
           <p-button
             class="profile__btn"
             icon="pi pi-pencil"
@@ -108,7 +108,7 @@
         <h2 aria-label="password" class="profile__title">
           {{ t('settings.form.profile.password') }}
         </h2>
-        @if (!isDnvUser()) {
+        @if (!isSuaadhyaUser()) {
           <p-button
             class="profile__btn"
             icon="pi pi-external-link"

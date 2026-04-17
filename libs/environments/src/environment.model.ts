@@ -8,7 +8,7 @@ export interface EnvironmentModel {
   baseUrl: string;
   certificateGraphqlHost: string;
   contactGraphqlHost: string;
-  dnvLink?: string;
+  suaadhyaLink?: string;
   documentsApi: string;
   federatedLogoutUrl: string;
   findingGraphqlHost: string;
@@ -35,10 +35,10 @@ export interface ServiceNowEnvironmentModel {
   scriptUrl: string;
   sysIds: {
     catalogItem: string;
-    dnvInvoice: string;
-    dnvSchedule: string;
-    dnvCertificate: string;
-    dnvCompanySettings: string;
-    dnvReschedule: string;
+    suaadhyaInvoice: string;
+    suaadhyaSchedule: string;
+    suaadhyaCertificate: string;
+    suaadhyaCompanySettings: string;
+    suaadhyaReschedule: string;
   };
 }

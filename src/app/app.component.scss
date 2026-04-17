@@ -24,26 +24,26 @@
     grid-template-rows: minmax(60px, auto) minmax(max-content, 1fr);
   }
 
-  customer-portal-navbar-co-browsing {
+  erp-services-navbar-co-browsing {
     grid-area: co-browsing;
   }
 
-  customer-portal-navbar {
+  erp-services-navbar {
     grid-area: navbar;
   }
 
-  customer-portal-sidebar {
+  erp-services-sidebar {
     grid-area: sidebar;
     @include mixins.respond-to(tablet) {
       display: none;
     }
   }
 
-  customer-portal-footer {
+  erp-services-footer {
     grid-area: footer;
   }
 
-  customer-portal-sidebar-mobile {
+  erp-services-sidebar-mobile {
     display: none;
     @include mixins.respond-to(tablet) {
       display: flex;
@@ -61,7 +61,7 @@ main {
     'main';
 
   .no-breadcrumb {
-    customer-portal-breadcrumb {
+    erp-services-breadcrumb {
       display: none;
     }
   }

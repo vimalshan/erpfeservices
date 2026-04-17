@@ -34,6 +34,6 @@ shared-grid {
   @include mixins.respond-to(phone) {
     flex-direction: column;
     align-items: flex-start;
-    bottom: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * -13));
+    bottom: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * -13));
   }
 }

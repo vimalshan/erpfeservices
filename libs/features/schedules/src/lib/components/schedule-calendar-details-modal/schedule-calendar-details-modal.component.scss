@@ -21,7 +21,7 @@
   grid-template-areas:
     'h4 h4 shared-status'
     'add-to-calendar share-invite .';
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
   background-color: colors.get-color('SkyBlue95');
   @include mixins.gutter-for(top, right, bottom, left);
   @include mixins.gutter-for(0.5, top, bottom);
@@ -33,7 +33,7 @@
       'shared-status'
       'add-to-calendar'
       'share-invite';
-    gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+    gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
   }
 }
 
@@ -41,12 +41,12 @@
   grid-area: body;
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
   @include mixins.gutter-for(top, right, bottom, left);
   @include mixins.gutter-for(0.5, top, bottom);
 
   @include mixins.respond-to(phone) {
-    gap: utility.get-rem(var(--dnv-gutter-base-unitless)); 
+    gap: utility.get-rem(var(--suaadhya-gutter-base-unitless)); 
   }
 }
 
@@ -95,6 +95,6 @@ shared-button {
 
   @include mixins.respond-to(phone) {
     grid-template-columns: 100%;
-    gap: utility.get-rem(calc(0.5 * var(--dnv-gutter-base-unitless)));
+    gap: utility.get-rem(calc(0.5 * var(--suaadhya-gutter-base-unitless)));
   }
 }

@@ -8,7 +8,7 @@ import {
   FilteringConfig,
   FilterOptions,
   GridConfig,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   MemberAreasPermissions,

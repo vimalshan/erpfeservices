@@ -8,14 +8,14 @@ import {
   ScheduleCalendarActionLocationTypes,
   ScheduleCalendarActionTypes,
   ScheduleStatus,
-} from '@customer-portal/data-access/schedules';
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/schedules';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
-import { modalBreakpoints } from '@customer-portal/shared/constants';
-import { formatUtcToLocal } from '@customer-portal/shared/helpers';
+} from '@erp-services/permissions';
+import { modalBreakpoints } from '@erp-services/shared/constants';
+import { formatUtcToLocal } from '@erp-services/shared/helpers';
 
 import {
   ScheduleCalendarConfirmModalComponent,

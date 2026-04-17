@@ -12,20 +12,20 @@ export const EXTERNAL_APPS = [
     title: 'apps.boostAuditTitle',
     subTitle: 'apps.boostAuditDescription',
     imageUrl: 'assets/external-apps/boostAudit-external.jpg',
-    link: 'https://boostmyaudit.dnv.com/',
+    link: 'https://boostmyaudit.suaadhya.com/',
   },
   {
     id: 1,
     title: 'apps.luminaTitle',
     subTitle: 'apps.luminaDescription',
     imageUrl: './assets/external-apps/lumina-external.jpg',
-    link: 'https://lumina.dnv.com/home',
+    link: 'https://lumina.suaadhya.com/home',
   },
   {
     id: 2,
     title: 'apps.selfAssessmentToolTitle',
     subTitle: 'apps.selfAssessmentToolDescription',
     imageUrl: './assets/external-apps/selfAssessmentTool.png',
-    link: 'https://www.dnv.com/assurance/general/online-self-assessment-suite',
+    link: 'https://www.suaadhya.com/assurance/general/online-self-assessment-suite',
   },
 ];

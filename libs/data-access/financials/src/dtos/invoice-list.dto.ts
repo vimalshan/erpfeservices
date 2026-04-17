@@ -20,5 +20,5 @@ export interface InvoiceListItemDto {
   status: string;
   reportingCountry: string;
   projectNumber: string;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
 }

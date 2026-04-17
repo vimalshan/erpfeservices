@@ -5,13 +5,13 @@ import { catchError, tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 import {
   CustomTreeNode,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { ScheduleCalendarFilterTypes, ScheduleStatusTypes } from '../constants';
 import { ScheduleListItemEnrichedDto } from '../dtos';
@@ -665,13 +665,13 @@ export class ScheduleListCalendarState {
 
     const updatedAllSchedules = state.allSchedules.map((item) =>
       item.siteAuditId === siteAuditId
-        ? { ...item, status: ScheduleStatusTypes.ToBeConfirmedByDNV }
+        ? { ...item, status: ScheduleStatusTypes.ToBeConfirmedBySuaadhya }
         : item,
     );
 
     const updatedCalendarSchedule = state.calendarSchedule.map((item) =>
       item.siteAuditId === siteAuditId
-        ? { ...item, status: ScheduleStatusTypes.ToBeConfirmedByDNV }
+        ? { ...item, status: ScheduleStatusTypes.ToBeConfirmedBySuaadhya }
         : item,
     );
 

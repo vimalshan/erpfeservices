@@ -4,7 +4,7 @@ import {
   GridConfig,
   SharedSelectMultipleDatum,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { NotificationFilterKey } from '../../constants';
 import { NotificationModel } from '../../models';

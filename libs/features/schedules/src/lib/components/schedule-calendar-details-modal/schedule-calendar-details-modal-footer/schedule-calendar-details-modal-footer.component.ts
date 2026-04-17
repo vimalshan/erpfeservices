@@ -7,12 +7,12 @@ import {
   ConfirmScheduleDetailsStoreService,
   ScheduleCalendarActionTypes,
   ScheduleStatus,
-} from '@customer-portal/data-access/schedules';
-import { SettingsCoBrowsingStoreService } from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/schedules';
+import { SettingsCoBrowsingStoreService } from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 
 import { RequestChangesModel } from '../../../models';
 
@@ -37,8 +37,8 @@ export class ScheduleCalendarDetailsModalFooterComponent {
   );
   public sharedButtonType = SharedButtonType;
 
-  public isDnvUser = computed(() =>
-    this.settingsCoBrowsingStoreService.isDnvUser(),
+  public isSuaadhyaUser = computed(() =>
+    this.settingsCoBrowsingStoreService.isSuaadhyaUser(),
   );
 
   constructor(

@@ -52,7 +52,7 @@ export class SettingsCompanyDetailsMapperService {
   ): SettingsCompanyDetailsData {
     return {
       accountId: datum.accountId,
-      accountDNVId: datum.accountDNVId,
+      accountSuaadhyaId: datum.accountSuaadhyaId,
       address: datum.address,
       city: datum.city,
       country: datum.country,

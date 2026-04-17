@@ -6,7 +6,7 @@
       (clickEvent)="onReschedule()">
     </shared-button>
   }
-    @if (!isDnvUser()) {
+    @if (!isSuaadhyaUser()) {
       <shared-button 
         class="request-changes-button"
         [label]="t('serviceNow.requestChanges')" 

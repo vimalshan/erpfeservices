@@ -3,7 +3,7 @@ import {
   GridTextWithIconModel,
   MemberPermissions,
   SiteModel,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 export interface SettingsMembersItemModel {
   name: string;

@@ -1,8 +1,8 @@
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 import {
   CustomTreeNode,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { ScheduleListItemEnrichedDto } from '../../dtos';
 import {

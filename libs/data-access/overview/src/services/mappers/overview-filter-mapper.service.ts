@@ -1,6 +1,6 @@
 import { TreeNode } from 'primeng/api';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 
 import { OverviewFilterDataDto } from '../../dtos';
 

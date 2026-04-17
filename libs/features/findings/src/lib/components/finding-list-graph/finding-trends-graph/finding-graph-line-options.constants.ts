@@ -1,6 +1,6 @@
 import { ChartOptions } from 'chart.js';
 
-import { ChartTypeEnum } from '@customer-portal/shared';
+import { ChartTypeEnum } from '@erp-services/shared';
 
 export const FINDINGS_GRAPH_LINE_OPTIONS: ChartOptions<ChartTypeEnum.Line> = {
   responsive: true,

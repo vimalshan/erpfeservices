@@ -45,7 +45,7 @@ $page-base-body-section-filters-pattern: string.unique-id();
 
 %#{$page-base-body-subhead-pattern} {
   display: grid;
-  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
   background-color: colors.get-color('SkyBlue95');
   @include mixins.gutter-for(right, left);
   @include mixins.gutter-for(0.625, top, bottom);
@@ -62,7 +62,7 @@ $page-base-body-section-filters-pattern: string.unique-id();
 
 %#{$page-base-body-section-filters-pattern} {
   display: grid;
-  gap: utility.get-rem(calc(1.5 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(1.5 * var(--suaadhya-gutter-base-unitless)));
   background-color: colors.get-color('SkyBlue95');
   @include mixins.gutter-for(right, left);
   @include mixins.gutter-for(0.5, top, bottom);

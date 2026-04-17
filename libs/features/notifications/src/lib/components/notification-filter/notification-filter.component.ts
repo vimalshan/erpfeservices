@@ -7,12 +7,12 @@ import {
 } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { NotificationFilterKey } from '@customer-portal/data-access/notifications';
-import { NotificationListStoreService } from '@customer-portal/data-access/notifications/state/store-services';
+import { NotificationFilterKey } from '@erp-services/data-access/notifications';
+import { NotificationListStoreService } from '@erp-services/data-access/notifications/state/store-services';
 import {
   SharedSelectMultipleComponent,
   SharedSelectTreeComponent,
-} from '@customer-portal/shared/components/select';
+} from '@erp-services/shared/components/select';
 
 @Component({
   selector: 'lib-notification-filter',

@@ -5,7 +5,7 @@
     (clickEvent)="onCancel()">
   </shared-button>
   <ng-container *sharedHasAdminPermission="roles.Admin">
-    @if(!isDnvUser()){
+    @if(!isSuaadhyaUser()){
       <shared-button class="request-changes-button" 
         [label]="t('serviceNow.requestChanges')"
         [type]="sharedButtonType.Outline" 

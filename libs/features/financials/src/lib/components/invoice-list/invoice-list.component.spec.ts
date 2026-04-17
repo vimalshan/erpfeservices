@@ -7,18 +7,18 @@ import {
 import { TranslocoService } from '@jsverse/transloco';
 import { MessageService } from 'primeng/api';
 
-import { LoggingService, ServiceNowService } from '@customer-portal/core';
+import { LoggingService, ServiceNowService } from '@erp-services/core';
 import {
   InvoiceListItemModel,
   InvoiceListStoreService,
-} from '@customer-portal/data-access/financials';
+} from '@erp-services/data-access/financials';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 import {
   createTranslationServiceMock,
   EventAction,
@@ -29,7 +29,7 @@ import {
   ObjectType,
   PageName,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { InvoiceEventService } from '../../services';
 import { InvoiceListComponent } from './invoice-list.component';
@@ -283,7 +283,7 @@ describe('InvoiceListComponent', () => {
       expect((component as any).selectedOverdueOrUnpaidIds).toEqual([]);
     });
 
-    test('should set displayUpdatePlannedPaymentDateButton to true when selectedInvoices is not empty and user is not dnvUser', () => {
+    test('should set displayUpdatePlannedPaymentDateButton to true when selectedInvoices is not empty and user is not suaadhyaUser', () => {
       // Arrange
       const selectedInvoices: InvoiceListItemModel[] = testInvoices;
 
@@ -294,7 +294,7 @@ describe('InvoiceListComponent', () => {
       expect(component.displayUpdatePlannedPaymentDateButton).toBe(true);
     });
 
-    test('should set displayUpdatePlannedPaymentDateButton to false when selectedInvoices is empty and user is not dnvUser', () => {
+    test('should set displayUpdatePlannedPaymentDateButton to false when selectedInvoices is empty and user is not suaadhyaUser', () => {
       // Arrange
       const selectedInvoices: InvoiceListItemModel[] = testInvoices;
 

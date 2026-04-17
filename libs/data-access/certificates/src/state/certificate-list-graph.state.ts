@@ -7,13 +7,13 @@ import { tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared/constants';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared/constants';
 import {
   extractAppliedFilters,
   formatFilter,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   BarChartModel,
   CustomTreeNode,
@@ -21,7 +21,7 @@ import {
   DrillDownFilterColumnMapping,
   SharedSelectTreeChangeEventOutput,
   TreeColumnDefinition,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { CertificateChartFilterKey } from '../constants';
 import { CertificateListItemEnrichedDto } from '../dtos';

@@ -8,7 +8,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
   @include mixins.gutter-for(top, right, bottom, left);
 }
 
@@ -31,13 +31,13 @@ h2 {
 
 .profile {
   display: grid;
-  gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 6));
+  gap: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 6));
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    padding-bottom: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 2));
     border-bottom: 1px solid variables.$sky-blue;
   }
 
@@ -55,19 +55,19 @@ h2 {
       }
       .p-button-icon {
         color: colors.get-color('SeaBlue');
-        margin-left: utility.get-rem(calc(var(--dnv-gutter-base-unitless)));
+        margin-left: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless)));
       }
     }
   }
 
   &__section-details {
-    padding-top: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    padding-top: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 2));
     display: grid;
-    gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+    gap: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 3));
   }
 
   &__section-text {
-    padding-top: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    padding-top: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 2));
     display: grid;
   }
 
@@ -75,7 +75,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 7));
+    gap: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 7));
   }
 
   &__section-label {
@@ -86,7 +86,7 @@ h2 {
   }
 
   &__section-value {
-    font-size: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    font-size: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 2));
   }
 }
 
@@ -111,11 +111,11 @@ h2 {
 
 @media screen and (max-width: variables.$breakpoint-xl) {
   .profile {
-    padding: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 5))
-      utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+    padding: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 5))
+      utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 3));
 
     &__title {
-      font-size: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+      font-size: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 3));
     }
   }
 }
@@ -124,7 +124,7 @@ h2 {
   .profile {
     padding: 0;
     &__title {
-      font-size: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+      font-size: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 2));
     }
 
     &__section-label {
@@ -134,7 +134,7 @@ h2 {
     &__section-info {
       display: grid;
       grid-template-columns: utility.get-rem(140) 1fr;
-      gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+      gap: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 3));
     }
 
     &__section-value {

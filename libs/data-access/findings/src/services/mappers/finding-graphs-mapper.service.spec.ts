@@ -3,7 +3,7 @@ import {
   DoughnutChartModel,
   EMPTY_GRAPH_DATA,
   SharedSelectMultipleDatum,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   FindingGraphsFilterCompaniesDataDto,

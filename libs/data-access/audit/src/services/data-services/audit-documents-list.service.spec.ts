@@ -6,7 +6,7 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { AuditDocumentsListDto } from '../../dtos';
 import { AuditDocumentsListService } from './audit-documents-list.service';

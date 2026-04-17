@@ -5,14 +5,14 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { TreeNode } from 'primeng/api';
 import { tap } from 'rxjs';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { DEFAULT_GRID_CONFIG, Routes } from '@customer-portal/shared/constants';
-import { constructNavigation } from '@customer-portal/shared/helpers/navigation';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { DEFAULT_GRID_CONFIG, Routes } from '@erp-services/shared/constants';
+import { constructNavigation } from '@erp-services/shared/helpers/navigation';
 import {
   FilterValue,
   GridConfig,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { ActionFilterKey } from '../constants';
 import {

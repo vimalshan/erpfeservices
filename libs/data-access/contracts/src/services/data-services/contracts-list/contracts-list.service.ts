@@ -9,7 +9,7 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { map, Observable, of } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { ContractsExcelPayloadDto, ContractsListDto } from '../../../dtos';
 

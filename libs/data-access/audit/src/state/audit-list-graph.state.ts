@@ -6,16 +6,16 @@ import { tap } from 'rxjs';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared/constants';
-import { shouldApplyFilter } from '@customer-portal/shared/helpers/chart';
+} from '@erp-services/data-access/global';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared/constants';
+import { shouldApplyFilter } from '@erp-services/shared/helpers/chart';
 import {
   extractAppliedFilters,
   formatFilter,
   formatFilterOnlyDate,
-} from '@customer-portal/shared/helpers/grid';
-import { getCurrentYearRange } from '@customer-portal/shared/helpers/time';
+} from '@erp-services/shared/helpers/grid';
+import { getCurrentYearRange } from '@erp-services/shared/helpers/time';
 import {
   BarChartModel,
   CustomTreeNode,
@@ -23,7 +23,7 @@ import {
   DrillDownFilterColumnMapping,
   FilterValue,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { AuditChartFilterKey, AuditChartsTabs } from '../constants';
 import { AuditListItemEnrichedDto } from '../dtos';

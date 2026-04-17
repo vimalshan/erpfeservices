@@ -3,7 +3,7 @@ import { Store } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 import { Observable } from 'rxjs';
 
-import { Language } from '@customer-portal/shared';
+import { Language } from '@erp-services/shared';
 
 import {
   LoadProfileLanguage,

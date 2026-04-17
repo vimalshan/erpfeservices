@@ -24,7 +24,7 @@
 
 p-tabview.p-element::ng-deep {
     .p-tabview-nav {
-        gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+        gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
         @include mixins.gutter-for(left);
     }
 

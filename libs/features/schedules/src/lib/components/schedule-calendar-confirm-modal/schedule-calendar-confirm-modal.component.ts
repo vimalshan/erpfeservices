@@ -13,7 +13,7 @@ import { filter } from 'rxjs/operators';
 import {
   ConfirmScheduleDetailsStoreService,
   ScheduleCalendarActionStoreService,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 
 @Component({
   selector: 'lib-schedule-calendar-confirm-modal',

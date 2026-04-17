@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
-import { Message, MessageService } from 'primeng/api';
+import { ToastMessageOptions, MessageService } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
@@ -12,17 +12,17 @@ import {
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
 
-import { DocumentsStoreService } from '@customer-portal/data-access/documents/state';
-import { ToastSeverity } from '@customer-portal/shared';
+import { DocumentsStoreService } from '@erp-services/data-access/documents/state';
+import { ToastSeverity } from '@erp-services/shared';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
+} from '@erp-services/shared/components/button';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
 import {
   ErrorMessages,
   validateFileHelper,
-} from '@customer-portal/shared/helpers/upload';
+} from '@erp-services/shared/helpers/upload';
 
 @Component({
   selector: 'lib-add-documents',
@@ -62,7 +62,7 @@ export class AddDocumentsComponent {
       if (data && this.errorMapper.size === 0) {
         this.documentsStoreService.uploadDocuments(this.files);
 
-        const message: Message = getToastContentBySeverity(ToastSeverity.Info);
+        const message: ToastMessageOptions = getToastContentBySeverity(ToastSeverity.Info);
         message.detail = this.ts.translate('fileUploadStarted');
         this.messageService.add(message);
       }

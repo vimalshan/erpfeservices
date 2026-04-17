@@ -10,13 +10,13 @@ export class SettingsAdminListService {
 
   constructor(private readonly apollo: Apollo) {}
 
-  getSettingsAdminList(accountDnvId: string | null): Observable<any> {
+  getSettingsAdminList(accountSuaadhyaId: string | null): Observable<any> {
     return this.apollo
       .use(this.clientName)
       .query({
         query: SETTINGS_ADMIN_LIST_QUERY,
         variables: {
-          accountDNVId: accountDnvId,
+          accountSuaadhyaId: accountSuaadhyaId,
         },
         fetchPolicy: 'no-cache',
       })

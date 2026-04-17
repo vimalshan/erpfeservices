@@ -7,4 +7,5 @@ export enum TimeRange {
   YearCurrent = 'yearCurrent',
   YearNext = 'yearNext',
   YearCustom = 'yearCustom',
+  YearCustom5Years = 'yearCustom5Years',
 }

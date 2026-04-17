@@ -3,11 +3,11 @@ import { ChangeDetectionStrategy, Component, Signal } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { SettingsCompanyDetailsStoreService } from '@customer-portal/data-access/settings';
+import { SettingsCompanyDetailsStoreService } from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 @Component({
   selector: 'lib-settings-tab-company-details-modal-footer',

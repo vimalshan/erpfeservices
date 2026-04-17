@@ -17,7 +17,7 @@ export class SettingsMembersPermissionsService {
 
   getSettingsMembersPermissions(
     memberEmail: string,
-    accountDnvId: string | null,
+    accountSuaadhyaId: string | null,
   ): Observable<any> {
     return this.apollo
       .use(this.clientName)
@@ -25,7 +25,7 @@ export class SettingsMembersPermissionsService {
         query: SETTINGS_MEMBERS_PERMISSIONS_QUERY,
         variables: {
           memberEmail,
-          accountDNVId: accountDnvId,
+          accountSuaadhyaId: accountSuaadhyaId,
         },
         fetchPolicy: 'no-cache',
       })

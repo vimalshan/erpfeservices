@@ -1,4 +1,4 @@
-import { ServiceDetailsMaster, SiteDetailsMaster } from "@customer-portal/shared";
+import { ServiceDetailsMaster, SiteDetailsMaster } from "@erp-services/shared";
 
 export interface CertificateListItemDto {
   certificateId: number;

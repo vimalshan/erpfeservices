@@ -10,13 +10,13 @@ import {
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
   
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   AppPagesEnum,
   modalBreakpoints,
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   AdminGridComponent,
@@ -27,7 +27,7 @@ import {
 } from '../settings-tabs-members';
 import { NewMemberModalFooterComponent } from '../settings-tabs-members/new-member';
 import { NewMemberModalComponent } from '../settings-tabs-members/new-member/new-member.component';
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings/state/store-services';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings/state/store-services';
 
 @Component({
   selector: 'lib-co-browsing-members-select',
@@ -58,7 +58,7 @@ export class CoBrowsingMembersSelectComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.settingsCoBrowsingStoreService.isDnvUser()) {
+    if (this.settingsCoBrowsingStoreService.isSuaadhyaUser()) {
       this.settingsCompanyDetailsStoreService.loadSettingsCompanyDetails();
       this.settingsMembersStoreService.loadMemberRoles();
     }

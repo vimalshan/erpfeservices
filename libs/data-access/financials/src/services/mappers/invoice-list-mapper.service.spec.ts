@@ -2,7 +2,7 @@ import {
   FilteringConfig,
   FilterMode,
   FilterOperator,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { InvoiceListMapperService } from './invoice-list-mapper.service';
 

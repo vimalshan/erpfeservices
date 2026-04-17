@@ -1,6 +1,6 @@
 import { Selector } from '@ngxs/store';
 
-import { DoughnutChartModel } from '@customer-portal/shared';
+import { DoughnutChartModel } from '@erp-services/shared';
 
 import {
   OverviewFinancialStatusState,

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { modalBreakpoints } from '@customer-portal/shared';
+import { modalBreakpoints } from '@erp-services/shared';
 
 import { UpdatePlannedPaymentDateComponent } from '../components/update-planned-payment-date';
 import { UpdatePlannedPaymentDateFooterComponent } from '../components/update-planned-payment-date-footer';

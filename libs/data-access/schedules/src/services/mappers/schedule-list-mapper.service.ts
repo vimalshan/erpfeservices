@@ -1,21 +1,21 @@
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
-import { COLUMN_DELIMITER } from '@customer-portal/shared/constants';
+} from '@erp-services/data-access/global';
+import { COLUMN_DELIMITER } from '@erp-services/shared/constants';
 import {
   formatUtcToLocal,
   isDateInPast,
   utcDateInFuture,
   utcDateInPast,
   utcDateToPayloadFormat,
-} from '@customer-portal/shared/helpers/date';
-import { mapFilterConfigToValues } from '@customer-portal/shared/helpers/grid';
-import { EventAction, EventActionItem } from '@customer-portal/shared/models';
+} from '@erp-services/shared/helpers/date';
+import { mapFilterConfigToValues } from '@erp-services/shared/helpers/grid';
+import { EventAction, EventActionItem } from '@erp-services/shared/models';
 import {
   FilteringConfig,
   GridEventActionType,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { ScheduleStatus } from '../../constants';
 import {
@@ -29,7 +29,7 @@ export class ScheduleListMapperService {
   static mapToScheduleListItemModel(
     dto: ScheduleListDto,
     hasScheduleEditPermission: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
     isAdminUser: boolean,
     siteMasterList: SiteMasterListItemModel[],
     serviceMasterList: ServiceMasterListItemModel[],
@@ -44,7 +44,7 @@ export class ScheduleListMapperService {
       this.mapSingleItem(
         scheduleItem,
         hasScheduleEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
         isAdminUser,
         siteMasterList,
         serviceMasterList,
@@ -88,7 +88,7 @@ export class ScheduleListMapperService {
   private static mapSingleItem(
     item: ScheduleListItemDto,
     hasScheduleEditPermission: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
     isAdminUser: boolean,
     siteMasterList: SiteMasterListItemModel[],
     serviceMasterList: ServiceMasterListItemModel[],
@@ -128,7 +128,7 @@ export class ScheduleListMapperService {
       siteAuditId: item.siteAuditId,
       siteAddress: site?.formattedAddress ?? '',
       auditID: item.auditID,
-      accountDNVId: item.accountDNVId,
+      accountSuaadhyaId: item.accountSuaadhyaId,
       siteZip: site?.siteZip ?? '',
       siteCountry: site?.countryName ?? '',
       siteState: site?.siteState ?? '',
@@ -137,7 +137,7 @@ export class ScheduleListMapperService {
       eventActions: this.buildEventActions(
         item,
         hasScheduleEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
         isAdminUser,
       ),
     };
@@ -157,7 +157,7 @@ export class ScheduleListMapperService {
   private static buildEventActions(
     item: ScheduleListItemDto,
     hasScheduleEditPermission: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
     isAdminUser: boolean,
   ): EventAction {
     const isStartDatePast = isDateInPast(item.startDate);
@@ -173,7 +173,7 @@ export class ScheduleListMapperService {
     return {
       id: item.siteAuditId,
       displayConfirmButton:
-        !isDnvUser &&
+        !isSuaadhyaUser &&
         isToBeConfirmed &&
         !isStartDatePast &&
         hasScheduleEditPermission,
@@ -181,7 +181,7 @@ export class ScheduleListMapperService {
       actions: this.buildEventActionItems(
         item,
         hasScheduleEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
         isAdminUser,
       ),
     };
@@ -190,10 +190,10 @@ export class ScheduleListMapperService {
   private static buildEventActionItems(
     item: ScheduleListItemDto,
     hasScheduleEditPermission: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
     isAdminUser: boolean,
   ): EventActionItem[] {
-    if (this.areEqualStatuses(item.status, ScheduleStatus.ToBeConfirmedByDnv)) {
+    if (this.areEqualStatuses(item.status, ScheduleStatus.ToBeConfirmedBySuaadhya)) {
       return [];
     }
 
@@ -210,9 +210,9 @@ export class ScheduleListMapperService {
       item.status,
       ScheduleStatus.ToBeConfirmed,
     );
-    const isToBeConfirmedByDnv = this.areEqualStatuses(
+    const isToBeConfirmedBySuaadhya = this.areEqualStatuses(
       item.status,
-      ScheduleStatus.ToBeConfirmedByDnv,
+      ScheduleStatus.ToBeConfirmedBySuaadhya,
     );
 
     const allActions: EventActionItem[] = [
@@ -238,7 +238,7 @@ export class ScheduleListMapperService {
         label: GridEventActionType.RequestChanges,
         i18nKey: 'gridEvent.requestChanges',
         icon: 'pi pi-pencil',
-        disabled: isDnvUser,
+        disabled: isSuaadhyaUser,
       },
     ];
 
@@ -247,19 +247,19 @@ export class ScheduleListMapperService {
         case GridEventActionType.Reschedule:
           if (
             isScheduleInPast &&
-            (isToBeConfirmed || isToBeConfirmedByDnv || isConfirmed)
+            (isToBeConfirmed || isToBeConfirmedBySuaadhya || isConfirmed)
           ) {
             return false;
           }
 
-          return isScheduleInFuture && !isDnvUser && hasScheduleEditPermission;
+          return isScheduleInFuture && !isSuaadhyaUser && hasScheduleEditPermission;
         case GridEventActionType.ShareInvite:
         case GridEventActionType.AddToCalendar:
           if (isConfirmed && isScheduleInPast) {
             return false;
           }
 
-          if (isScheduleInPast && (isToBeConfirmed || isToBeConfirmedByDnv)) {
+          if (isScheduleInPast && (isToBeConfirmed || isToBeConfirmedBySuaadhya)) {
             return false;
           }
 

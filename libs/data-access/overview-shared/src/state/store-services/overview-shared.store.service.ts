@@ -3,8 +3,8 @@ import { Store } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 import { Observable } from 'rxjs';
 
-import { CalendarViewType } from '@customer-portal/shared/models';
-import { FilterValue } from '@customer-portal/shared/models/grid';
+import { CalendarViewType } from '@erp-services/shared/models';
+import { FilterValue } from '@erp-services/shared/models/grid';
 
 import {
   OverviewFinancialNavigateToListView,

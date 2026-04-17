@@ -49,14 +49,14 @@
 
   @each $direction in $directions {
     padding-#{$direction}: utility.get-rem(
-      calc(var(--dnv-gutter-base-unitless) * $scale * $factor-desktop)
+      calc(var(--suaadhya-gutter-base-unitless) * $scale * $factor-desktop)
     );
   }
 
   @include respond-to(tablet) {
     @each $direction in $directions {
       padding-#{$direction}: utility.get-rem(
-        calc(var(--dnv-gutter-base-unitless) * $scale * $factor-tablet)
+        calc(var(--suaadhya-gutter-base-unitless) * $scale * $factor-tablet)
       );
     }
   }
@@ -64,7 +64,7 @@
   @include respond-to(phone) {
     @each $direction in $directions {
       padding-#{$direction}: utility.get-rem(
-        calc(var(--dnv-gutter-base-unitless) * $scale * $factor-phone)
+        calc(var(--suaadhya-gutter-base-unitless) * $scale * $factor-phone)
       );
     }
   }

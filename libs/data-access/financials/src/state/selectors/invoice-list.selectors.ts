@@ -1,16 +1,16 @@
 import { createSelector, Selector } from '@ngxs/store';
 
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
 import {
   applyGridConfig,
   getNumberOfFilteredRecords,
   isAnyFilterActive,
-} from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/grid';
 import {
   FilteringConfig,
   FilterOptions,
   GridConfig,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { InvoiceListItemModel } from '../../models';
 import { InvoiceListState, InvoiceListStateModel } from '../invoice-list.state';

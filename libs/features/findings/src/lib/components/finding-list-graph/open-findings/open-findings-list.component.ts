@@ -13,15 +13,15 @@ import {
   FindingListGraphStoreService,
   getOpenFindingsDateRange,
   OpenFindingsMonthsPeriod,
-} from '@customer-portal/data-access/findings';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
-import { createOrUpdateLegendForCharts } from '@customer-portal/shared/helpers/chart';
-import { formatFilter } from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/data-access/findings';
+import { ChartComponent } from '@erp-services/shared/components/chart';
+import { createOrUpdateLegendForCharts } from '@erp-services/shared/helpers/chart';
+import { formatFilter } from '@erp-services/shared/helpers/grid';
 import {
   ChartFilter,
   ChartTypeEnum,
-} from '@customer-portal/shared/models/chart';
-import { FilterValue } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/chart';
+import { FilterValue } from '@erp-services/shared/models/grid';
 
 import { OPEN_FINDINGS_LIST_GRAPH_OPTIONS } from './open-findings-list-graphs-options.constants';
 

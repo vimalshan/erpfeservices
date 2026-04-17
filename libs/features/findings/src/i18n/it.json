@@ -11,9 +11,9 @@
   "confirmationPopup": {
     "cancel": "Annulla",
     "delete": "Annulla",
-    "sendToDnv": "Invia a DNV",
+    "sendToSuaadhya": "Invia a Suaadhya",
     "submit": "Invia",
-    "youAreAboutToSubmitResponseToDNV": "Stai per inviare le tue risposte alla non-conformità a DNV"
+    "youAreAboutToSubmitResponseToSuaadhya": "Stai per inviare le tue risposte alla non-conformità a Suaadhya"
   },
   "deleteDocument": {
     "header": "Cancellare il documento?",
@@ -64,9 +64,9 @@
     "respondToFindingQ3Placeholder": "Cosa hai fatto per risolvere il problema?",
     "saveAsDraft": "Salva come bozza",
     "scope": "Ambito",
-    "sendToDNV": "Invia a DNV",
+    "sendToSuaadhya": "Invia a Suaadhya",
     "responsesSaveAsDraftSuccess":"Risposta salvata nella bozza",
-    "responsesSendToDNVSuccess":"Risposta inviata a DNV"
+    "responsesSendToSuaadhyaSuccess":"Risposta inviata a Suaadhya"
   },
   "findingGraphsTabs": {
     "findingStatus": "Findings per stato",

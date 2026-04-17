@@ -6,7 +6,7 @@ import {
   ConfirmScheduleDetailsStoreService,
   ScheduleCalendarActionTypes,
   ScheduleStatus,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 
 import { ScheduleCalendarDetailsModalFooterComponent } from './schedule-calendar-details-modal-footer.component';
 

@@ -3,12 +3,12 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { CardModule } from 'primeng/card';
 
-import { TrainingStatusStoreService } from '@customer-portal/data-access/overview';
-import { environment } from '@customer-portal/environments';
+import { TrainingStatusStoreService } from '@erp-services/data-access/overview';
+import { environment } from '@erp-services/environments';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 
 @Component({
   selector: 'lib-overview-training-status',

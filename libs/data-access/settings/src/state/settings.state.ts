@@ -4,17 +4,17 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { MessageService, TreeNode } from 'primeng/api';
 import { EMPTY, filter, map, Observable, tap } from 'rxjs';
 
-import { DEFAULT_GRID_CONFIG } from '@customer-portal/shared/constants';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { getFilterOptions } from '@customer-portal/shared/helpers/grid';
+import { DEFAULT_GRID_CONFIG } from '@erp-services/shared/constants';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { getFilterOptions } from '@erp-services/shared/helpers/grid';
 import {
   FilterableColumnDefinition,
   Language,
   ToastSeverity,
-} from '@customer-portal/shared/models';
-import { FilterOptions, GridConfig } from '@customer-portal/shared/models/grid';
-import { CoBrowsingCookieService } from '@customer-portal/shared/services/co-browsing';
-import { LocaleService } from '@customer-portal/shared/services/locale';
+} from '@erp-services/shared/models';
+import { FilterOptions, GridConfig } from '@erp-services/shared/models/grid';
+import { CoBrowsingCookieService } from '@erp-services/shared/services/co-browsing';
+import { LocaleService } from '@erp-services/shared/services/locale';
 
 import {
   CoBrowsingCompanyListDto,
@@ -119,7 +119,7 @@ import {
   UpdateAdminGridConfig,
   UpdateEditCompanyDetailsFormValidity,
   UpdateImpersonatedUser,
-  UpdateIsDnvUser,
+  UpdateIsSuaadhyaUser,
   UpdateMemberAreasPermissions,
   UpdateMembersFilterOptions,
   UpdateMembersGridConfig,
@@ -180,7 +180,7 @@ export interface SettingsStateModel {
   userDetailsToManagePermission: UserDetailsToManagePermission | null;
   selectedUserDetails: SelectedUserDetailsModel | null;
   isEditManagePermissionsFormPristine: boolean;
-  isDnvUser: boolean;
+  isSuaadhyaUser: boolean;
   adminViewCompanyList: CoBrowsingCompany[];
   selectedCoBrowsingCompany: CoBrowsingCompany | null;
   selectedCoBrowsingCompanyId: string | null;
@@ -243,7 +243,7 @@ const defaultState: SettingsStateModel = {
   userDetailsToManagePermission: null,
   selectedUserDetails: null,
   isEditManagePermissionsFormPristine: true,
-  isDnvUser: false,
+  isSuaadhyaUser: false,
   adminViewCompanyList: [],
   selectedCoBrowsingCompany: null,
   selectedCoBrowsingCompanyId: null,
@@ -311,16 +311,16 @@ export class SettingsState {
 
   @Action(LoadSettingsAdminList)
   loadSettingsAdminList(ctx: StateContext<SettingsStateModel>) {
-    const accountDnvId = ctx.getState().selectedCoBrowsingCompanyId;
+    const accountSuaadhyaId = ctx.getState().selectedCoBrowsingCompanyId;
 
     return this.settingsAdminListService
-      .getSettingsAdminList(accountDnvId)
+      .getSettingsAdminList(accountSuaadhyaId)
       .pipe(
         tap((data: SettingsAdminListDto) => {
           if (data.isSuccess) {
             const adminList = SettingsMembersMapper.mapToAdminList(
               data,
-              accountDnvId,
+              accountSuaadhyaId,
             );
             ctx.dispatch(new LoadSettingsAdminListSuccess(adminList));
             ctx.dispatch(new UpdateAdminFilterOptions());
@@ -341,16 +341,16 @@ export class SettingsState {
 
   @Action(LoadSettingsMembersList)
   loadSettingsMembersList(ctx: StateContext<SettingsStateModel>) {
-    const accountDnvId = ctx.getState().selectedCoBrowsingCompanyId;
+    const accountSuaadhyaId = ctx.getState().selectedCoBrowsingCompanyId;
 
     return this.settingsMembersListService
-      .getSettingsMembersList(accountDnvId)
+      .getSettingsMembersList(accountSuaadhyaId)
       .pipe(
         tap((data: SettingsMembersListDto) => {
           if (data.isSuccess) {
             const membersList = SettingsMembersMapper.mapToMembersList(
               data,
-              accountDnvId,
+              accountSuaadhyaId,
             );
             ctx.dispatch(new LoadSettingsMembersListSuccess(membersList));
             ctx.dispatch(new UpdateMembersFilterOptions());
@@ -509,10 +509,10 @@ export class SettingsState {
   @Action(LoadMembersPermissions)
   loadMembersPermissions(ctx: StateContext<SettingsStateModel>) {
     const memberEmail = ctx.getState().newMemberForm!.email;
-    const accountDnvId = ctx.getState().selectedCoBrowsingCompanyId;
+    const accountSuaadhyaId = ctx.getState().selectedCoBrowsingCompanyId;
 
     return this.settingsMembersPermissionsService
-      .getSettingsMembersPermissions(memberEmail, accountDnvId)
+      .getSettingsMembersPermissions(memberEmail, accountSuaadhyaId)
       .pipe(
         tap((data: SettingsMembersPermissionsDto) => {
           if (data.isSuccess) {
@@ -1302,13 +1302,13 @@ export class SettingsState {
 
   // #region AdminCoBrowsing
 
-  @Action(UpdateIsDnvUser)
-  switchIsDnvUser(
+  @Action(UpdateIsSuaadhyaUser)
+  switchIsSuaadhyaUser(
     ctx: StateContext<SettingsStateModel>,
-    { isDnvUser }: UpdateIsDnvUser,
+    { isSuaadhyaUser }: UpdateIsSuaadhyaUser,
   ) {
     ctx.patchState({
-      isDnvUser,
+      isSuaadhyaUser,
     });
   }
 

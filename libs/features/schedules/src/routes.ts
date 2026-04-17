@@ -2,8 +2,8 @@ import { importProvidersFrom } from '@angular/core';
 import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 import { NgxsModule } from '@ngxs/store';
 
-import { UnreadActionsStoreService } from '@customer-portal/data-access/actions/state';
-import { DocumentsState } from '@customer-portal/data-access/documents/state/documents.state';
+import { UnreadActionsStoreService } from '@erp-services/data-access/actions/state';
+import { DocumentsState } from '@erp-services/data-access/documents/state/documents.state';
 import {
   ConfirmScheduleDetailsState,
   ConfirmScheduleDetailsStoreService,
@@ -13,9 +13,9 @@ import {
   ScheduleListCalendarStoreService,
   ScheduleListState,
   ScheduleListStoreService,
-} from '@customer-portal/data-access/schedules';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
-import { Language } from '@customer-portal/shared';
+} from '@erp-services/data-access/schedules';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

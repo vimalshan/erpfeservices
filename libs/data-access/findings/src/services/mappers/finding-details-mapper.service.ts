@@ -1,5 +1,5 @@
-import { CURRENT_DATE_FORMAT } from '@customer-portal/shared/constants';
-import { convertToUtcDate } from '@customer-portal/shared/helpers/date';
+import { CURRENT_DATE_FORMAT } from '@erp-services/shared/constants';
+import { convertToUtcDate } from '@erp-services/shared/helpers/date';
 
 import {
   FindingDetailsDto,
@@ -108,7 +108,7 @@ export class FindingDetailsMapperService {
       request: {
         findingNumber,
         responseId: submitModel.isSubmit ? responseId : null,
-        isSubmitToDnv: submitModel.isSubmit,
+        isSubmitToSuaadhya: submitModel.isSubmit,
         rootCause: submitModel.formValue.rootCause,
         correctiveAction: submitModel.formValue.correctionAction,
         correction: submitModel.formValue.nonConformity,
@@ -131,7 +131,7 @@ export class FindingDetailsMapperService {
         nonConformity: data.correction,
         rootCause: data.rootCause,
       },
-      isSubmit: data.isSubmitToDnv,
+      isSubmit: data.isSubmitToSuaadhya,
       createdOn: convertToUtcDate(data.updatedOn, CURRENT_DATE_FORMAT),
       isDraft: data.isDraft,
       respondId: data.respondId ? String(data.respondId) : '',

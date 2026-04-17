@@ -1,7 +1,7 @@
 import {
   CardNavigationPayload,
   SharedSelectTreeChangeEventOutput,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { OverviewFilterTypes } from '../../constants';
 

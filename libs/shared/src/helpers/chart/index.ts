@@ -4,3 +4,4 @@ export * from './chart-external-tooltip-plugin.helper';
 export * from './chart-filter.helper';
 export * from './chart-legend-plugin.helper';
 export * from './chart-total-plugin.helper';
+export * from './chart-tooltip-on-hover-plugin.helper';

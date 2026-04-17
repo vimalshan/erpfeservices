@@ -9,7 +9,7 @@ import {
   createMessageServiceMock,
   Language,
   LocaleService,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { SettingsMembersPermissionsDto } from '../dtos';
 import {

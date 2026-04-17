@@ -6,5 +6,5 @@ export interface OverviewUpcomingAuditDto {
 export interface OverviewUpcomingAuditDataDto {
   confirmed: string[];
   toBeConfirmed: string[];
-  toBeConfirmedByDNV: string[];
+  toBeConfirmedBySuaadhya: string[];
 }

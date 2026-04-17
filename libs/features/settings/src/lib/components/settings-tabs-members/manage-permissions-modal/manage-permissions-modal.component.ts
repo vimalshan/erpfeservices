@@ -5,9 +5,9 @@ import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import { InputTextModule } from 'primeng/inputtext';
 
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings/state/store-services';
-import { SharedSelectTreeComponent } from '@customer-portal/shared/components/select';
-import { SharedSelectTreeChangeEventOutput } from '@customer-portal/shared/models';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings/state/store-services';
+import { SharedSelectTreeComponent } from '@erp-services/shared/components/select';
+import { SharedSelectTreeChangeEventOutput } from '@erp-services/shared/models';
 
 import { AccessAreas } from '../../../models';
 import { AccessAreasComponent } from '../access-areas/access-areas.component';

@@ -2,7 +2,7 @@ import {
   FilteringConfig,
   FilterMode,
   FilterOperator,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { ScheduleStatus } from '../../constants';
 import { ScheduleExcelPayloadDto, ScheduleListDto } from '../../dtos';
@@ -96,21 +96,21 @@ describe('ScheduleListMapperService', () => {
         isSuccess: true,
       };
       const hasScheduleEditPermission = true;
-      const isDnvUser = false;
+      const isSuaadhyaUser = false;
 
       // Act
       const resultWithDataNull =
         ScheduleListMapperService.mapToScheduleListItemModel(
           dtoWithDataNull,
           hasScheduleEditPermission,
-          isDnvUser,
+          isSuaadhyaUser,
           false,
         );
       const resultWithDataUndefined =
         ScheduleListMapperService.mapToScheduleListItemModel(
           dtoWithDataUndefined,
           hasScheduleEditPermission,
-          isDnvUser,
+          isSuaadhyaUser,
           false,
         );
 
@@ -186,7 +186,7 @@ describe('ScheduleListMapperService', () => {
       expect(result).toEqual(expected);
     });
 
-    test('should map correctly actions based on isDnvUser flag', () => {
+    test('should map correctly actions based on isSuaadhyaUser flag', () => {
       // Arrange
       const dto: ScheduleListDto = {
         isSuccess: true,
@@ -240,13 +240,13 @@ describe('ScheduleListMapperService', () => {
       // Arrange
       const dto: ScheduleListDto = { data: [], isSuccess: true };
       const hasScheduleEditPermission = true;
-      const isDnvUser = false;
+      const isSuaadhyaUser = false;
 
       // Act
       const result = ScheduleListMapperService.mapToScheduleListItemModel(
         dto,
         hasScheduleEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
         false,
       );
 
@@ -375,10 +375,10 @@ describe('ScheduleListMapperService', () => {
     });
   });
 
-  test('should map dto correctly when user is a DNV user with edit permission', () => {
+  test('should map dto correctly when user is a Suaadhya user with edit permission', () => {
     // Arrange
     const hasScheduleEditPermission = true;
-    const isDnvUser = true;
+    const isSuaadhyaUser = true;
 
     const dto: ScheduleListDto = {
       data: [
@@ -388,12 +388,12 @@ describe('ScheduleListMapperService', () => {
           endDate: '2024-09-01T17:00:00Z',
           status: ScheduleStatus.ToBeConfirmed,
           services: ['Service X'],
-          site: 'DNV Site',
+          site: 'Suaadhya Site',
           city: 'Oslo',
           auditType: 'ISO',
-          leadAuditor: 'DNV Auditor',
-          siteRepresentatives: ['DNV Rep'],
-          company: 'DNV Company',
+          leadAuditor: 'Suaadhya Auditor',
+          siteRepresentatives: ['Suaadhya Rep'],
+          company: 'Suaadhya Company',
           siteAddress: 'Peliyagoda Warehouse Complex',
           auditID: 2420775,
           siteZip: 140456,
@@ -414,12 +414,12 @@ describe('ScheduleListMapperService', () => {
         endDate: '01-09-2024',
         status: 'To Be Confirmed',
         service: 'Service X',
-        site: 'DNV Site',
+        site: 'Suaadhya Site',
         city: 'Oslo',
         auditType: 'ISO',
-        leadAuditor: 'DNV Auditor',
-        siteRepresentative: 'DNV Rep',
-        company: 'DNV Company',
+        leadAuditor: 'Suaadhya Auditor',
+        siteRepresentative: 'Suaadhya Rep',
+        company: 'Suaadhya Company',
         siteAddress: 'Peliyagoda Warehouse Complex',
         auditID: 2420775,
         siteZip: 140456,
@@ -459,7 +459,7 @@ describe('ScheduleListMapperService', () => {
     const result = ScheduleListMapperService.mapToScheduleListItemModel(
       dto,
       hasScheduleEditPermission,
-      isDnvUser,
+      isSuaadhyaUser,
       false,
     );
 

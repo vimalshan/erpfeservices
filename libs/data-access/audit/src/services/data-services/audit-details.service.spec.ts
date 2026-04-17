@@ -31,7 +31,7 @@ describe('AuditDetailsService', () => {
     post: jest.fn(),
   };
 
-  jest.mock('@customer-portal/environments', () => ({
+  jest.mock('@erp-services/environments', () => ({
     environment: {
       documentsApi: 'http://fakeapi.com',
     },

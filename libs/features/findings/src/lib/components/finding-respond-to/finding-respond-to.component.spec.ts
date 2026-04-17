@@ -5,19 +5,19 @@ import { ConfirmationService } from 'primeng/api';
 import {
   FindingResponsesFormModel,
   FindingResponsesModel,
-} from '@customer-portal/data-access/findings';
+} from '@erp-services/data-access/findings';
 import {
   createProfileStoreServiceMock,
   createSettingsCoBrowsingStoreServiceMock,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createDestroyRefMock,
   createTranslationServiceMock,
   FindingsStatusStates,
   FindingsTagStates,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { FindingRespondToComponent } from './finding-respond-to.component';
 
@@ -169,7 +169,7 @@ describe('FindingRespondToComponent', () => {
     expect(sendFormEmitSpy).toHaveBeenCalledWith(expectedParams);
   });
 
-  test('should submit reponses to dnv', () => {
+  test('should submit reponses to suaadhya', () => {
     // Arrange
     const confirmationService = new ConfirmationService();
     component['confirmationService'] = confirmationService;
@@ -202,7 +202,7 @@ describe('FindingRespondToComponent', () => {
     };
 
     // Act
-    component.onSubmitToDnv();
+    component.onSubmitToSuaadhya();
 
     // Assert
     expect(sendFormEmitSpy).toHaveBeenCalledWith(expectedParams);

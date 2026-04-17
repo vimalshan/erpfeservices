@@ -23,7 +23,7 @@ import { tap } from 'rxjs';
 import {
   ProfileSettingsLanguagesModel,
   ProfileStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 
 @Component({
   selector: 'lib-profile-settings-modal',

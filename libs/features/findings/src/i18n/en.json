@@ -11,9 +11,9 @@
   "confirmationPopup": {
     "cancel": "Cancel",
     "delete": "Delete",
-    "sendToDnv": "Send to DNV",
+    "sendToSuaadhya": "Send to Suaadhya",
     "submit": "Submit",
-    "youAreAboutToSubmitResponseToDNV": "You are about to submit your response for the non-conformity to DNV"
+    "youAreAboutToSubmitResponseToSuaadhya": "You are about to submit your response for the non-conformity to Suaadhya"
   },
   "deleteDocument": {
     "header": "Delete document?",
@@ -64,9 +64,9 @@
     "respondToFindingQ3Placeholder": "What did you do to resolve the issue?",
     "saveAsDraft": "Save as draft",
     "scope": "Scope",
-    "sendToDNV": "Send to DNV",
+    "sendToSuaadhya": "Send to Suaadhya",
     "responsesSaveAsDraftSuccess":"Response saved to draft",
-    "responsesSendToDNVSuccess":"Response send to DNV"
+    "responsesSendToSuaadhyaSuccess":"Response send to Suaadhya"
   },
   "findingGraphsTabs": {
     "findingStatus": "Finding status",

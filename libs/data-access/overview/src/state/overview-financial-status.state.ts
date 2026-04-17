@@ -3,7 +3,7 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { DoughnutChartModel, EMPTY_GRAPH_DATA } from '@customer-portal/shared';
+import { DoughnutChartModel, EMPTY_GRAPH_DATA } from '@erp-services/shared';
 
 import {
   OverviewFinancialStatusMapperService,

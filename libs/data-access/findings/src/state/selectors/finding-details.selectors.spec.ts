@@ -5,7 +5,7 @@ import {
   isAnyFilterActive,
   SortingDirection,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { FindingDetailsStateModel } from '../finding-details.state';
 import { FindingDetailsSelectors } from './finding-details.selectors';

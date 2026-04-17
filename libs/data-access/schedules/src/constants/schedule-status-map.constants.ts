@@ -1,13 +1,13 @@
-import { StatesClasses } from '@customer-portal/shared';
+import { StatesClasses } from '@erp-services/shared';
 
 export enum ScheduleStatus {
   Confirmed = 'Confirmed',
   ToBeConfirmed = 'To Be Confirmed',
-  ToBeConfirmedByDnv = 'To Be Confirmed by DNV',
+  ToBeConfirmedBySuaadhya = 'To Be Confirmed by Suaadhya',
 }
 
 export const SCHEDULE_STATUS_MAP: Record<string, string> = {
   [ScheduleStatus.Confirmed.toLowerCase()]: StatesClasses.ForestGreen,
   [ScheduleStatus.ToBeConfirmed.toLowerCase()]: StatesClasses.SunflowerYellow,
-  [ScheduleStatus.ToBeConfirmedByDnv.toLowerCase()]: StatesClasses.SummerSky,
+  [ScheduleStatus.ToBeConfirmedBySuaadhya.toLowerCase()]: StatesClasses.SummerSky,
 };

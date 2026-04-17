@@ -58,7 +58,7 @@ export interface UserValidation {
   userIsActive: boolean;
   termsAcceptanceRedirectUrl: string;
   policySubCode: null | number;
-  isDnvUser: boolean;
+  isSuaadhyaUser: boolean;
   userEmail: string;
   veracityId: string;
   portalLanguage: string;

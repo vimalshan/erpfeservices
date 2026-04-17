@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { getTranslocoModule } from '@customer-portal/shared';
+import { getTranslocoModule } from '@erp-services/shared';
 
 import { ActionsComponent } from './actions.component';
 

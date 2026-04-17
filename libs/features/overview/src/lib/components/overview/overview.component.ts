@@ -9,20 +9,20 @@ import {
 import { FormsModule } from '@angular/forms';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { OverviewStoreService } from '@customer-portal/data-access/overview';
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
+import { OverviewStoreService } from '@erp-services/data-access/overview';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 import {
   PagePermissionsService,
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   BreadcrumbService,
   CardNavigationPayload,
   SharedButtonComponent,
   SharedButtonType,
   SharedCustomDynamicCardComponent,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { OverviewFiltersComponent } from '../overview-filters';
 import { OverviewFinancialStatusComponent } from '../overview-financial-status/overview-financial-status.component';

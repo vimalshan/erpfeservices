@@ -11,26 +11,26 @@
   border: 0;
 }
 
-.tippy-box[data-theme~='dnv-dark'] {
-  color: variables.$basic-tones-dnv-white;
+.tippy-box[data-theme~='suaadhya-dark'] {
+  color: variables.$basic-tones-suaadhya-white;
   border-radius: 10px;
   padding: 4px 12px;
-  background: variables.$basic-tones-dnv-medium-dark;
+  background: variables.$basic-tones-suaadhya-medium-dark;
 }
 
-.tippy-box[data-theme~='dnv-light-sm'],
-.tippy-box[data-theme~='dnv-light-md'] {
-  color: variables.$basic-tones-dnv-dark;
+.tippy-box[data-theme~='suaadhya-light-sm'],
+.tippy-box[data-theme~='suaadhya-light-md'] {
+  color: variables.$basic-tones-suaadhya-dark;
   border-radius: 10px;
   padding: 4px 12px;
   background: variables.$active-filter-tag-bg;
 }
 
-.tippy-box[data-theme~='dnv-light-sm'] {
+.tippy-box[data-theme~='suaadhya-light-sm'] {
   font-size: 12px;
 }
 
-.tippy-box[data-theme~='dnv-light-md'] {
+.tippy-box[data-theme~='suaadhya-light-md'] {
   font-size: 14px;
 }
 

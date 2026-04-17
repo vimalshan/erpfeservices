@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import { catchError, map, Observable, of } from 'rxjs';
 
-import { BaseApolloService } from '@customer-portal/core';
-import { environment } from '@customer-portal/environments';
+import { BaseApolloService } from '@erp-services/core';
+import { environment } from '@erp-services/environments';
 
 import { AuditExcelPayloadDto, AuditListDto } from '../../dtos';
 import { AUDIT_LIST_QUERY } from '../../graphql';

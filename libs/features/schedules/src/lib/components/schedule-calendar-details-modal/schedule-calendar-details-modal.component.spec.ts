@@ -7,7 +7,7 @@ import {
   ScheduleCalendarActionLocationTypes,
   ScheduleCalendarActionStoreService,
   ScheduleStatus,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 
 import { ScheduleCalendarDetailsModalComponent } from './schedule-calendar-details-modal.component';
 
@@ -60,18 +60,18 @@ describe('ScheduleCalendarDetailsModalComponent', () => {
         mockConfirmScheduleDetailsStoreService.calendarDetails! as WritableSignal<CalendarDetailsModel>;
     });
 
-    test('should return true when status is "ToBeConfirmedByDnv"', () => {
+    test('should return true when status is "ToBeConfirmedBySuaadhya"', () => {
       // Act
       calendarDetails!.set({
         ...calendarDetails(),
-        status: ScheduleStatus.ToBeConfirmedByDnv,
+        status: ScheduleStatus.ToBeConfirmedBySuaadhya,
       });
 
       // Assert
       expect(component.isToBeConfirmedStatus()).toBe(true);
     });
 
-    test('should return false when status is not "ToBeConfirmedByDnv"', () => {
+    test('should return false when status is not "ToBeConfirmedBySuaadhya"', () => {
       // Act
       calendarDetails.set({
         ...calendarDetails(),
@@ -86,7 +86,7 @@ describe('ScheduleCalendarDetailsModalComponent', () => {
       // Act
       calendarDetails.set({
         ...calendarDetails(),
-        status: ScheduleStatus.ToBeConfirmedByDnv.toUpperCase(),
+        status: ScheduleStatus.ToBeConfirmedBySuaadhya.toUpperCase(),
       });
 
       // Assert

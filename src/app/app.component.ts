@@ -4,10 +4,10 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   imports: [RouterModule, CommonModule],
-  selector: 'customer-portal-root',
+  selector: 'erp-services-root',
   template: ` <router-outlet></router-outlet> `,
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'customer-portal';
+  title = 'erp-services';
 }

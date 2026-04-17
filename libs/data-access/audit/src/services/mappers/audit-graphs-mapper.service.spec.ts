@@ -1,4 +1,4 @@
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared';
 
 import { AuditGraphsFilterSitesDataDto } from '../../dtos';
 import { AuditGraphsMapperService } from './audit-graphs-mapper.service';

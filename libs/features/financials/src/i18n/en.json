@@ -24,7 +24,7 @@
     "placeholder": "Enter the date you plan to pay this invoice",
     "referenceNumber": "Reference number",
     "statusRestriction": "The Update Planned Payment date only applies to \"Overdue\", \"Not Paid\" and \"Partially Paid\" status.",
-    "tooltip": "To be populated with a future date on when payment is expected to be made to DNV for this invoice",
+    "tooltip": "To be populated with a future date on when payment is expected to be made to Suaadhya for this invoice",
     "warning": "Changing this date does not automatically change the payment due date.",
     "success": "Planned payment date successfully updated"
   }

@@ -4,14 +4,14 @@ import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 import { TreeNode } from 'primeng/api';
 import { Observable } from 'rxjs';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
 import {
   BarChartModel,
   CustomTreeNode,
   DoughnutChartModel,
   FilterValue,
   IndividualFilter,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { AuditChartFilterKey, AuditChartsTabs } from '../../constants';
 import {

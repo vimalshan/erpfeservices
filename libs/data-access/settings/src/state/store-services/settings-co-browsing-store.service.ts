@@ -7,7 +7,7 @@ import {
   GetCompanyList,
   ResetSelectedCobrowsingCompany,
   UpdateImpersonatedUser,
-  UpdateIsDnvUser,
+  UpdateIsSuaadhyaUser,
   UpdateSelectedCobrowsingCompany,
 } from '../actions';
 import { CoBrowsingSelectors } from '../selectors';
@@ -24,14 +24,14 @@ export class SettingsCoBrowsingStoreService {
     );
   }
 
-  get isDnvUser(): Signal<boolean> {
-    return this.store.selectSignal(CoBrowsingSelectors.isDnvUser);
+  get isSuaadhyaUser(): Signal<boolean> {
+    return this.store.selectSignal(CoBrowsingSelectors.isSuaadhyaUser);
   }
 
   constructor(private store: Store) {}
 
   @Dispatch()
-  updateIsDnvUser = (isDnvUser: boolean) => new UpdateIsDnvUser(isDnvUser);
+  updateIsSuaadhyaUser = (isSuaadhyaUser: boolean) => new UpdateIsSuaadhyaUser(isSuaadhyaUser);
 
   @Dispatch()
   getCompanyList = () => new GetCompanyList();

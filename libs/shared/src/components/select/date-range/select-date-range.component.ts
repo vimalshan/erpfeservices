@@ -34,7 +34,7 @@ export interface SharedSelectDateRangeDatum {
 }
 
 @Component({
-  selector: 'shared-select-date-range',
+  selector: 'shared-select-date-range, shared-select-date-range-mod',
   imports: [
     CommonModule,
     FormsModule,
@@ -52,11 +52,12 @@ export class SharedSelectDateRangeComponent {
   @ViewChild('dropdown') dropdown!: Select;
 
   public ariaLabel = input<string>();
+  public customRange = input<Date[] | null>();
   public data = input<TimeRange[]>(SHARED_SELECT_DATE_RANGE_DEFAULT_DATA);
   public isDisabled = input<boolean>(false);
-  public prefill = input<TimeRange>();
+  public prefill = input<string | TimeRange>();
 
-  public changeEvent = output<Date[]>();
+  public changeEvent = output<Date[] | { range: Date[]; type: TimeRange }>();
 
   public isRangeCustomLabelVisible = signal(false);
   public options = computed<SharedSelectDateRangeDatum[]>(() =>

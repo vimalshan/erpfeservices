@@ -1,6 +1,6 @@
 import { signal, WritableSignal } from '@angular/core';
 
-import { UserPermissions } from '@customer-portal/data-access/settings';
+import { UserPermissions } from '@erp-services/data-access/settings';
 
 const mappedUserPermissionsData = {
   certificates: {

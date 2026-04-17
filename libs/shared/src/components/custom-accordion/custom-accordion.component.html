@@ -1,5 +1,5 @@
 <p-accordion
-  [value]="value()"
+  [value]="$any(value() ?? '')"
   [multiple]="multiple()"
   [styleClass]="styleClass() ?? ''"
 >

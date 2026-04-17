@@ -2,7 +2,7 @@ import {
   FilteringConfig,
   FilterMode,
   FilterOperator,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   AuditDetailsDescriptionDto,
@@ -513,13 +513,13 @@ describe('AuditDetailsMapperService', () => {
         message: '',
       };
       const hasAuditsEditPermission = true;
-      const isDnvUser = false;
+      const isSuaadhyaUser = false;
 
       // Act
       const result = AuditDetailsMapperService.mapToAuditDocumentItemModel(
         dto,
         hasAuditsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
       // Assert
@@ -535,7 +535,7 @@ describe('AuditDetailsMapperService', () => {
             fileName: 'File 0',
             type: 'docx',
             dateAdded: '2024-01-01',
-            uploadedBy: 'DNV someusername 1',
+            uploadedBy: 'Suaadhya someusername 1',
             canBeDeleted: true,
             currentSecurity: '10',
           },
@@ -544,7 +544,7 @@ describe('AuditDetailsMapperService', () => {
             fileName: 'File 1',
             type: 'xlsx',
             dateAdded: '2024-01-01',
-            uploadedBy: 'DNV someusername 2',
+            uploadedBy: 'Suaadhya someusername 2',
             canBeDeleted: true,
             currentSecurity: '10',
           },
@@ -553,13 +553,13 @@ describe('AuditDetailsMapperService', () => {
         message: 'message',
       };
       const hasAuditsEditPermission = true;
-      const isDnvUser = false;
+      const isSuaadhyaUser = false;
 
       // Act
       const result = AuditDetailsMapperService.mapToAuditDocumentItemModel(
         dto,
         hasAuditsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
       // Assert
@@ -569,7 +569,7 @@ describe('AuditDetailsMapperService', () => {
           fileName: 'File 0',
           fileType: 'docx',
           dateAdded: '01.01.2024',
-          uploadedBy: 'DNV someusername 1',
+          uploadedBy: 'Suaadhya someusername 1',
           canBeDeleted: true,
           actions: [
             {
@@ -589,7 +589,7 @@ describe('AuditDetailsMapperService', () => {
           fileName: 'File 1',
           fileType: 'xlsx',
           dateAdded: '01.01.2024',
-          uploadedBy: 'DNV someusername 2',
+          uploadedBy: 'Suaadhya someusername 2',
           canBeDeleted: true,
           actions: [
             {
@@ -616,7 +616,7 @@ describe('AuditDetailsMapperService', () => {
             fileName: 'File 0',
             type: 'docx',
             dateAdded: '2024-01-01',
-            uploadedBy: 'DNV someusername 1',
+            uploadedBy: 'Suaadhya someusername 1',
             canBeDeleted: true,
             currentSecurity: '10',
           },
@@ -625,7 +625,7 @@ describe('AuditDetailsMapperService', () => {
             fileName: 'File 1',
             type: 'xlsx',
             dateAdded: '2024-01-01',
-            uploadedBy: 'DNV someusername 2',
+            uploadedBy: 'Suaadhya someusername 2',
             canBeDeleted: true,
             currentSecurity: '10',
           },
@@ -634,13 +634,13 @@ describe('AuditDetailsMapperService', () => {
         message: 'message',
       };
       const hasAuditsEditPermission = false;
-      const isDnvUser = false;
+      const isSuaadhyaUser = false;
 
       // Act
       const result = AuditDetailsMapperService.mapToAuditDocumentItemModel(
         dto,
         hasAuditsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
       // Assert
@@ -650,7 +650,7 @@ describe('AuditDetailsMapperService', () => {
           fileName: 'File 0',
           fileType: 'docx',
           dateAdded: '01.01.2024',
-          uploadedBy: 'DNV someusername 1',
+          uploadedBy: 'Suaadhya someusername 1',
           canBeDeleted: true,
           actions: [
             {
@@ -665,7 +665,7 @@ describe('AuditDetailsMapperService', () => {
           fileName: 'File 1',
           fileType: 'xlsx',
           dateAdded: '01.01.2024',
-          uploadedBy: 'DNV someusername 2',
+          uploadedBy: 'Suaadhya someusername 2',
           canBeDeleted: true,
           actions: [
             {
@@ -678,7 +678,7 @@ describe('AuditDetailsMapperService', () => {
       ]);
     });
 
-    test('should NOT allow delete for DNV user even with edit permissions', () => {
+    test('should NOT allow delete for Suaadhya user even with edit permissions', () => {
       // Arrange
       const dto: AuditDocumentsListDto = {
         data: [
@@ -687,7 +687,7 @@ describe('AuditDetailsMapperService', () => {
             fileName: 'File 2',
             type: 'pdf',
             dateAdded: '2024-01-01',
-            uploadedBy: 'DNV user',
+            uploadedBy: 'Suaadhya user',
             canBeDeleted: true,
             currentSecurity: '10',
           },
@@ -696,13 +696,13 @@ describe('AuditDetailsMapperService', () => {
         message: 'message',
       };
       const hasAuditsEditPermission = true;
-      const isDnvUser = true;
+      const isSuaadhyaUser = true;
 
       // Act
       const result = AuditDetailsMapperService.mapToAuditDocumentItemModel(
         dto,
         hasAuditsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
       // Assert
@@ -712,7 +712,7 @@ describe('AuditDetailsMapperService', () => {
           fileName: 'File 2',
           fileType: 'pdf',
           dateAdded: '01.01.2024',
-          uploadedBy: 'DNV user',
+          uploadedBy: 'Suaadhya user',
           canBeDeleted: true,
           actions: [
             {

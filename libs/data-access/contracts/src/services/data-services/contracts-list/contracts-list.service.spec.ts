@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { ContractsListDto } from '../../../dtos';
 import { ContractsListService } from './contracts-list.service';

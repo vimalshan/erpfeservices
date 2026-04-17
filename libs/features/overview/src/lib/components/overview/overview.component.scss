@@ -44,7 +44,7 @@
   grid-area: left;
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+  gap: utility.get-rem(calc(var(--suaadhya-gutter-base-unitless) * 2));
   background-color: colors.get-color('UiWhite');
   @include mixins.gutter-for(top, right, bottom, left);
 }
@@ -104,6 +104,6 @@ p {
   }
 
   span.no-services-text {
-    font-size: var(--dnv-font-text-m);
+    font-size: var(--suaadhya-font-text-m);
   }
 }

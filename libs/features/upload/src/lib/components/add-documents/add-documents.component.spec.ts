@@ -6,11 +6,11 @@ import { of } from 'rxjs';
 import {
   createDocumentStoreServiceMock,
   DocumentsStoreService,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   createMessageServiceMock,
   createTranslationServiceMock,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AddDocumentsComponent } from './add-documents.component';
 

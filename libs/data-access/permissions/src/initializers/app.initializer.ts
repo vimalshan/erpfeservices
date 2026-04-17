@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 
-import { LoggingService } from '@customer-portal/core/app-insights';
+import { LoggingService } from '@erp-services/core/app-insights';
 
 import { AppInitializerService } from '../services';
 

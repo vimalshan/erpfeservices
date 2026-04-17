@@ -1,4 +1,4 @@
-import { BaseApolloResponse } from "@customer-portal/shared";
+import { BaseApolloResponse } from "@erp-services/shared";
 
 export interface FindingGraphsFilterSitesDto{
   data: FindingGraphsFilterSitesDataDto[];
@@ -14,6 +14,7 @@ export interface FindingGraphsFilterSitesDataDto {
 export interface FindingStatusByCategoryGraphDto 
 extends BaseApolloResponse<FindingStatusByCategoryGraphData> {
   data: FindingStatusByCategoryGraphData;
+  isSuccess?: boolean;
 }
 
 

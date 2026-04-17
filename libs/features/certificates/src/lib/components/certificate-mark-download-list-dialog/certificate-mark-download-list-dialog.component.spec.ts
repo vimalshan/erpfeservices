@@ -4,17 +4,17 @@ import { DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
   CertificateDetailsStoreService,
   createCertificateDetailsStoreServiceMock,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createMessageServiceMock,
   getToastContentBySeverity,
   GridFileActionType,
   ToastSeverity,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { CertificateMarkDownloadListDialogComponent } from './certificate-mark-download-list-dialog.component';
 

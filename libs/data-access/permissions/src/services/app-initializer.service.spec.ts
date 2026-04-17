@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { of, throwError } from 'rxjs';
 
-import { UserTelemetryService } from '@customer-portal/core';
+import { UserTelemetryService } from '@erp-services/core';
 import {
   createProfileLanguageStoreServiceMock,
   createProfileStoreServiceMock,
@@ -12,14 +12,14 @@ import {
   SettingsCompanyDetailsStoreService,
   SettingsUserValidationService,
   UserValidation,
-} from '@customer-portal/data-access/settings';
-import { environment } from '@customer-portal/environments';
+} from '@erp-services/data-access/settings';
+import { environment } from '@erp-services/environments';
 import {
   AppPagesEnum,
   AuthService,
   AuthServiceResponse,
   createAuthServiceMock,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { UserValidationSubcodes } from '../constants';
 import { AppInitializerService } from './app-initializer.service';
@@ -96,7 +96,7 @@ describe('AppInitializerService', () => {
         },
         {
           provide: SettingsCoBrowsingStoreService,
-          useValue: { updateIsDnvUser: jest.fn() },
+          useValue: { updateIsSuaadhyaUser: jest.fn() },
         },
 
         {

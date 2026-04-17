@@ -11,30 +11,30 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { catchError, map, Observable } from 'rxjs';
 
-import { LoggingService } from '@customer-portal/core';
+import { LoggingService } from '@erp-services/core';
 import {
   DownloadFileNames,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
-import { DocumentQueueService } from '@customer-portal/data-access/documents/services';
+} from '@erp-services/data-access/documents';
+import { DocumentQueueService } from '@erp-services/data-access/documents/services';
 import {
   FindingsListMapperService,
   FindingsListService,
   FindingsListStoreService,
-} from '@customer-portal/data-access/findings';
-import { SettingsCoBrowsingStoreService } from '@customer-portal/data-access/settings';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/data-access/findings';
+import { SettingsCoBrowsingStoreService } from '@erp-services/data-access/settings';
+import { BasePreferencesComponent } from '@erp-services/preferences';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   FINDINGS_STATUS_STATES_MAP,
   FINDINGS_TAG_STATES_MAP,
   ObjectName,
   ObjectType,
   PageName,
-} from '@customer-portal/shared/constants';
-import { animateFlyToDownload } from '@customer-portal/shared/helpers/download';
-import { ColumnDefinition, GridConfig } from '@customer-portal/shared/models';
+} from '@erp-services/shared/constants';
+import { animateFlyToDownload } from '@erp-services/shared/helpers/download';
+import { ColumnDefinition, GridConfig } from '@erp-services/shared/models';
 
 import { FINDINGS_LIST_COLUMNS } from '../../constants';
 

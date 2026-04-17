@@ -7,13 +7,13 @@ import {
   CertificateChartFilterKey,
   CertificateListGraphStoreService,
   CertificatesTabs,
-} from '@customer-portal/data-access/certificates';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
-import { chartTotalPlugin } from '@customer-portal/shared/helpers/chart';
+} from '@erp-services/data-access/certificates';
+import { ChartComponent } from '@erp-services/shared/components/chart';
+import { chartTotalPlugin } from '@erp-services/shared/helpers/chart';
 import {
   ChartFilter,
   ChartTypeEnum,
-} from '@customer-portal/shared/models/chart';
+} from '@erp-services/shared/models/chart';
 
 import {
   CERTIFICATES_BY_STATUS_GRAPH_OPTIONS,

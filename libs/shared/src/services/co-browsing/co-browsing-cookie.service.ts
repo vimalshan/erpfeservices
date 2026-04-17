@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { environment } from '@auth-portal/environments';
+import { environment } from '@erp-services/environments';
 
 @Injectable({
   providedIn: 'root',

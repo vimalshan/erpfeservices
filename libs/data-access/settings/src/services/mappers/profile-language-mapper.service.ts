@@ -1,4 +1,4 @@
-import { Language } from '@customer-portal/shared';
+import { Language } from '@erp-services/shared';
 
 import { ProfileLanguageDto } from '../../dtos';
 

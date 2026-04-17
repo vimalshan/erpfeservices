@@ -1,4 +1,4 @@
-import { convertToUtcDate, GridFileActionType } from '@customer-portal/shared';
+import { convertToUtcDate, GridFileActionType } from '@erp-services/shared';
 
 import { FindingDocumentsListDto } from '../../dtos';
 import { FindingDocumentListItemModel } from '../../models';
@@ -9,14 +9,14 @@ describe('FindingDocumentsListMapperService', () => {
     // Arrange
     const dto: any = null;
     const findingsEditPermission = true;
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -27,14 +27,14 @@ describe('FindingDocumentsListMapperService', () => {
     // Arrange
     const dto: any = undefined;
     const findingsEditPermission = true;
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -49,14 +49,14 @@ describe('FindingDocumentsListMapperService', () => {
       message: '',
     };
     const findingsEditPermission = true;
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -74,7 +74,7 @@ describe('FindingDocumentsListMapperService', () => {
           fileName: 'document1.pdf',
           type: 'PDF',
           dateAdded: mockDate,
-          uploadedBy: 'DNV auditor1',
+          uploadedBy: 'Suaadhya auditor1',
           documentUrl: 'http://example.com/download1',
           canBeDeleted: true,
         },
@@ -98,7 +98,7 @@ describe('FindingDocumentsListMapperService', () => {
         fileName: 'document1.pdf',
         fileType: 'PDF',
         dateAdded: convertToUtcDate(mockDate),
-        uploadedBy: `DNV auditor1`,
+        uploadedBy: `Suaadhya auditor1`,
         actions: [
           {
             label: 'download',
@@ -136,14 +136,14 @@ describe('FindingDocumentsListMapperService', () => {
         canBeDeleted: true,
       },
     ];
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -161,7 +161,7 @@ describe('FindingDocumentsListMapperService', () => {
           fileName: 'document1.pdf',
           type: 'PDF',
           dateAdded: mockDate,
-          uploadedBy: 'DNV auditor1',
+          uploadedBy: 'Suaadhya auditor1',
           documentUrl: 'http://example.com/download1',
           canBeDeleted: true,
         },
@@ -185,7 +185,7 @@ describe('FindingDocumentsListMapperService', () => {
         fileName: 'document1.pdf',
         fileType: 'PDF',
         dateAdded: convertToUtcDate(mockDate),
-        uploadedBy: `DNV auditor1`,
+        uploadedBy: `Suaadhya auditor1`,
         actions: [
           {
             label: 'download',
@@ -213,14 +213,14 @@ describe('FindingDocumentsListMapperService', () => {
         canBeDeleted: true,
       },
     ];
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -238,7 +238,7 @@ describe('FindingDocumentsListMapperService', () => {
           fileName: 'document1.pdf',
           type: 'PDF',
           dateAdded: mockDate,
-          uploadedBy: 'DNV auditor1',
+          uploadedBy: 'Suaadhya auditor1',
           documentUrl: 'http://example.com/download1',
           canBeDeleted: true,
         },
@@ -253,7 +253,7 @@ describe('FindingDocumentsListMapperService', () => {
         fileName: 'document1.pdf',
         fileType: 'PDF',
         dateAdded: convertToUtcDate(mockDate),
-        uploadedBy: `DNV auditor1`,
+        uploadedBy: `Suaadhya auditor1`,
         actions: [
           {
             label: 'download',
@@ -270,14 +270,14 @@ describe('FindingDocumentsListMapperService', () => {
         canBeDeleted: true,
       },
     ];
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -352,14 +352,14 @@ describe('FindingDocumentsListMapperService', () => {
         canBeDeleted: false,
       },
     ];
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
@@ -409,21 +409,21 @@ describe('FindingDocumentsListMapperService', () => {
         canBeDeleted: true,
       },
     ];
-    const isDnvUser = false;
+    const isSuaadhyaUser = false;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert
     expect(result).toEqual(expected);
   });
 
-  test('should NOT allow delete for DNV user even with edit permissions', () => {
+  test('should NOT allow delete for Suaadhya user even with edit permissions', () => {
     // Arrange
     const mockDate = new Date().toISOString();
     const findingsEditPermission = true;
@@ -434,7 +434,7 @@ describe('FindingDocumentsListMapperService', () => {
           fileName: 'document1.pdf',
           type: 'PDF',
           dateAdded: mockDate,
-          uploadedBy: 'DNV auditor1',
+          uploadedBy: 'Suaadhya auditor1',
           documentUrl: 'http://example.com/download1',
           canBeDeleted: true,
         },
@@ -458,7 +458,7 @@ describe('FindingDocumentsListMapperService', () => {
         fileName: 'document1.pdf',
         fileType: 'PDF',
         dateAdded: convertToUtcDate(mockDate),
-        uploadedBy: `DNV auditor1`,
+        uploadedBy: `Suaadhya auditor1`,
         actions: [
           {
             label: 'download',
@@ -486,14 +486,14 @@ describe('FindingDocumentsListMapperService', () => {
         canBeDeleted: true,
       },
     ];
-    const isDnvUser = true;
+    const isSuaadhyaUser = true;
 
     // Act
     const result =
       FindingDocumentsListMapperService.mapToFindingDocumentItemModel(
         dto,
         findingsEditPermission,
-        isDnvUser,
+        isSuaadhyaUser,
       );
 
     // Assert

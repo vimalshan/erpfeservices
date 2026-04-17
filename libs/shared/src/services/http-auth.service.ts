@@ -14,6 +14,7 @@ import {
   API_BASE_URL,
   API_ENDPOINTS
 } from '../models/api-models';
+import { LoginRequest, LoginResponse } from '../models/auth-login.model';
 
 export interface User {
   id: string;
@@ -86,7 +87,13 @@ export class AuthService {
   /**
    * Authenticate user and generate access token
    */
-  login(credentials: LoginViewModel): Observable<User> {
+  login(credentials?: LoginViewModel): Observable<User> {
+    if (!credentials) {
+      // No-arg login: redirect to auth URL
+      window.location.href = `${API_BASE_URL}/login`;
+      return new Observable<User>();
+    }
+
     const url = `${API_BASE_URL}${API_ENDPOINTS.TOKEN}`;
     
     return this.http.post<TokenModelApiResponse>(url, credentials).pipe(
@@ -317,5 +324,30 @@ export class AuthService {
     if (!user?.roles) return false;
     
     return roles.every(role => user.roles.includes(role));
+  }
+
+  loginWithCredentials(request: LoginRequest): Observable<LoginResponse> {
+    const url = `${API_BASE_URL}${API_ENDPOINTS.TOKEN}`;
+    return this.http.post<LoginResponse>(url, request, { headers: this.getHeaders() });
+  }
+
+  storeLoginResponse(response: LoginResponse): void {
+    if (response.access_token) {
+      localStorage.setItem(this.STORAGE_KEYS.TOKEN, response.access_token);
+      this.tokenSubject.next(response.access_token);
+    }
+    if (response.refreshToken) {
+      localStorage.setItem(this.STORAGE_KEYS.REFRESH_TOKEN, response.refreshToken);
+    }
+  }
+
+  storeLoginCredentials(request: LoginRequest): void {
+    localStorage.setItem('login_user', request.userName);
+  }
+
+  resetLogoutState(): void {
+    this.clearStoredData();
+    this.tokenSubject.next(null);
+    this.currentUserSubject.next(null);
   }
 }

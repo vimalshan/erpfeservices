@@ -5,6 +5,6 @@ export interface FindingResponsesPayloadDto {
     rootCause: string;
     correctiveAction: string;
     correction: string;
-    isSubmitToDnv: boolean;
+    isSubmitToSuaadhya: boolean;
   };
 }

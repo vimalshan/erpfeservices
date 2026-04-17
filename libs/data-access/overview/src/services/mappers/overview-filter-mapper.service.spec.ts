@@ -1,4 +1,4 @@
-import { SharedSelectMultipleDatum } from '@customer-portal/shared';
+import { SharedSelectMultipleDatum } from '@erp-services/shared';
 
 import { OverviewFilterDataDto } from '../../dtos';
 import { OverviewFilterMapperService } from './overview-filter-mapper.service';

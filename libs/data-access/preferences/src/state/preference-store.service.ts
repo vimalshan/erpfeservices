@@ -1,7 +1,7 @@
 import { Injectable, Signal } from '@angular/core';
 import { Store } from '@ngxs/store';
 
-import { ObjectName, ObjectType, PageName } from '@customer-portal/shared';
+import { ObjectName, ObjectType, PageName } from '@erp-services/shared';
 
 import { PreferenceModel } from '../models';
 import { LoadPreference, SavePreference } from './preference.actions';

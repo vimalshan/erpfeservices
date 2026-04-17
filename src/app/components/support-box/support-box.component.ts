@@ -4,10 +4,10 @@ import { TranslocoDirective } from '@jsverse/transloco';
 import { 
   SharedButtonComponent, 
   SharedButtonType 
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 @Component({
-  selector: 'customer-portal-support-box',
+  selector: 'erp-services-support-box',
   standalone: true,
   imports: [CommonModule, TranslocoDirective, SharedButtonComponent],
   templateUrl: './support-box.component.html',

@@ -17,17 +17,17 @@
   grid-area: head;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(3, calc((100% - (2px * var(--dnv-gutter-base-unitless))) / 3));
+  grid-template-columns: repeat(3, calc((100% - (2px * var(--suaadhya-gutter-base-unitless))) / 3));
   grid-template-areas:
     'h4 h4 h4'
     'service audit-type auditor'
     'site . .';
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
   background-color: colors.get-color('SkyBlue95');
   @include mixins.gutter-for(top, right, bottom, left);
 
   @include mixins.respond-to(phone) {
-    grid-template-columns: repeat(2, calc(50% - (0.5px * var(--dnv-gutter-base-unitless))));
+    grid-template-columns: repeat(2, calc(50% - (0.5px * var(--suaadhya-gutter-base-unitless))));
     grid-template-areas:
       'h4 h4'
       'service audit-type'
@@ -40,7 +40,7 @@
   grid-area: body;
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
   @include mixins.gutter-for(top, right, bottom, left);
 
   .disclaimer-container {
@@ -49,13 +49,13 @@
   }
 
   .scheduleInfo {
-    font-size: var(--dnv-font-text-l);
+    font-size: var(--suaadhya-font-text-l);
     margin-bottom: utility.get-rem(5);
     font-weight: 700;
   }
 
   .disclaimer {
-    font-size: var(--dnv-font-text-l);
+    font-size: var(--suaadhya-font-text-l);
     margin-bottom: utility.get-rem(5);
   }
 }
@@ -63,10 +63,10 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
 
   @include mixins.respond-to(phone) {
-    gap: utility.get-rem(var(--dnv-gutter-base-unitless)); 
+    gap: utility.get-rem(var(--suaadhya-gutter-base-unitless)); 
   }
 }
 
@@ -100,13 +100,13 @@ p {
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
 }
 
 .grouping {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
 }
 
 .service {
@@ -131,7 +131,7 @@ p {
 .site {
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(0.5 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(0.5 * var(--suaadhya-gutter-base-unitless)));
 }
 
 .p-inputtext::ng-deep {

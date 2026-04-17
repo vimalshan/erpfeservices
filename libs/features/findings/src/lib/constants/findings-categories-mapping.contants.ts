@@ -1,4 +1,4 @@
-import { FindingsTagStates } from '@customer-portal/shared';
+import { FindingsTagStates } from '@erp-services/shared';
 
 export const FINDINGS_CATEGORIES: Record<string, string> = {
   majorCount: FindingsTagStates.Cat1Major,

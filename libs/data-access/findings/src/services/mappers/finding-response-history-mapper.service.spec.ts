@@ -72,7 +72,7 @@ describe('FindingResponseHistoryMapperService', () => {
         correction: 'Correction',
       },
       {
-        userName: 'DNV | Arne Arnesson',
+        userName: 'Suaadhya | Arne Arnesson',
         isAuditor: true,
         responseDateTime: '01.05.2024 23:44',
         auditorComment:

@@ -3,14 +3,14 @@ import { Routes } from '@angular/router';
 import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 import { NgxsModule } from '@ngxs/store';
 
-import { UnreadActionsStoreService } from '@customer-portal/data-access/actions/state';
-import { DocumentsState } from '@customer-portal/data-access/documents/state/documents.state';
+import { UnreadActionsStoreService } from '@erp-services/data-access/actions/state';
+import { DocumentsState } from '@erp-services/data-access/documents/state/documents.state';
 import {
   FindingDetailsState,
   FindingListGraphState,
   FindingsListState,
-} from '@customer-portal/data-access/findings';
-import { Language } from '@customer-portal/shared';
+} from '@erp-services/data-access/findings';
+import { Language } from '@erp-services/shared';
 
 import { findingDetailsDeactivationGuard } from './lib/guards';
 

@@ -18,7 +18,7 @@ export const INVOICE_LIST_QUERY = gql`
           status
           reportingCountry
           projectNumber
-          accountDNVId
+          accountSuaadhyaId
         }
       }
       isSuccess

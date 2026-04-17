@@ -14,13 +14,13 @@ import {
   ScheduleCalendarActionLocationTypes,
   ScheduleCalendarActionStoreService,
   ScheduleStatus,
-} from '@customer-portal/data-access/schedules';
+} from '@erp-services/data-access/schedules';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { StatusComponent } from '@customer-portal/shared/components/grid';
-import { CustomDatePipe } from '@customer-portal/shared/pipes/custom-date.pipe';
+} from '@erp-services/shared/components/button';
+import { StatusComponent } from '@erp-services/shared/components/grid';
+import { CustomDatePipe } from '@erp-services/shared/pipes/custom-date.pipe';
 
 @Component({
   selector: 'lib-schedule-calendar-details-modal',
@@ -47,7 +47,7 @@ export class ScheduleCalendarDetailsModalComponent implements OnInit {
       this.confirmScheduleDetailsStoreService.calendarDetails();
 
     return (
-      status.toLowerCase() === ScheduleStatus.ToBeConfirmedByDnv.toLowerCase()
+      status.toLowerCase() === ScheduleStatus.ToBeConfirmedBySuaadhya.toLowerCase()
     );
   });
 

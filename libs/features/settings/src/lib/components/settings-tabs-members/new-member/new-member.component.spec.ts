@@ -5,8 +5,8 @@ import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 import {
   createSettingsMemberServiceMock,
   SettingsMembersStoreService,
-} from '@customer-portal/data-access/settings';
-import { createDestroyRefMock } from '@customer-portal/shared';
+} from '@erp-services/data-access/settings';
+import { createDestroyRefMock } from '@erp-services/shared';
 
 import { NewMemberModalComponent } from './new-member.component';
 

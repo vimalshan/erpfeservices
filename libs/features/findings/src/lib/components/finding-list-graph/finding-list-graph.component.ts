@@ -24,23 +24,23 @@ import {
   FindingChartFilterKey,
   FindingListGraphStoreService,
   FindingTabs,
-} from '@customer-portal/data-access/findings';
+} from '@erp-services/data-access/findings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { NoDataComponent } from '@customer-portal/shared/components/no-data';
+} from '@erp-services/shared/components/button';
+import { NoDataComponent } from '@erp-services/shared/components/no-data';
 import {
   SharedSelectDateRangeModComponent,
   SharedSelectMultipleModComponent,
   TreeDropdownComponent,
-} from '@customer-portal/shared/components/select';
+} from '@erp-services/shared/components/select';
 import {
   getTimeModRange,
   toUtcRange,
-} from '@customer-portal/shared/helpers/time';
-import { CustomTreeNode, TimeRange } from '@customer-portal/shared/models';
-import { CategoryStylesService } from '@customer-portal/shared/services';
+} from '@erp-services/shared/helpers/time';
+import { CustomTreeNode, TimeRange } from '@erp-services/shared/models';
+import { CategoryStylesService } from '@erp-services/shared/services';
 
 @Component({
   selector: 'lib-finding-list-graph',
@@ -289,7 +289,7 @@ export class FindingListGraphComponent implements OnInit, OnDestroy {
 
     if (node.children && node.children.length > 0) {
       ids = ids.concat(
-        node.children.flatMap((child) => this.getAllDescendantNodeIds(child)),
+        node.children.flatMap((child: CustomTreeNode) => this.getAllDescendantNodeIds(child)),
       );
     }
 
@@ -301,7 +301,7 @@ export class FindingListGraphComponent implements OnInit, OnDestroy {
       return [node.data];
     }
 
-    return node.children.flatMap((child) =>
+    return node.children.flatMap((child: CustomTreeNode) =>
       this.getAllDescendantLeafIds(child),
     );
   }

@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 import {
   getToastContentBySeverity,
   ToastSeverity,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { TrainingStatusGraphResponseDto } from '../dtos';
 import { TrainingStatusModel } from '../models';

@@ -1,4 +1,4 @@
-import { GridFileAction } from '@customer-portal/shared';
+import { GridFileAction } from '@erp-services/shared';
 
 export interface CertificationMarksListItemModel {
   fileName: string;

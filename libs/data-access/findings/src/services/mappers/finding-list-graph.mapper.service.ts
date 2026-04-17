@@ -3,12 +3,12 @@ import { TreeNode } from 'primeng/api';
 import {
   ServiceMasterListItemModel,
   SiteMasterListItemModel,
-} from '@customer-portal/data-access/global';
+} from '@erp-services/data-access/global';
 import {
   CustomTreeNode,
   ServiceDetailsMaster,
   SiteDetailsMaster,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   FindingGraphsFilterSitesDataDto,

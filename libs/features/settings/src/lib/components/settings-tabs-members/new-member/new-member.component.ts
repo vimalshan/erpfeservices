@@ -14,7 +14,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
 import { debounceTime, EMPTY, tap } from 'rxjs';
 
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings/state/store-services';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings/state/store-services';
 
 import { enhancedEmailValidator } from '../../../helpers';
 

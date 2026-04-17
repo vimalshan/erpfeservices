@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { CertificateDetailsStoreService } from '@customer-portal/data-access/certificates';
-import { GridComponent } from '@customer-portal/shared/components/grid';
-import { ColumnDefinition, GridConfig } from '@customer-portal/shared/models';
+import { CertificateDetailsStoreService } from '@erp-services/data-access/certificates';
+import { GridComponent } from '@erp-services/shared/components/grid';
+import { ColumnDefinition, GridConfig } from '@erp-services/shared/models';
 
 import { CERTIFICATES_SITES_LIST_COLUMNS } from '../../constants';
 

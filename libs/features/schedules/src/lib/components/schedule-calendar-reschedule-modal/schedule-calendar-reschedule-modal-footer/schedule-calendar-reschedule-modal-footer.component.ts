@@ -7,16 +7,16 @@ import { Observable } from 'rxjs';
 import {
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { Roles } from '@customer-portal/shared/constants';
+} from '@erp-services/shared/components/button';
+import { Roles } from '@erp-services/shared/constants';
 import {
   ADMIN_PERMISSION_CHECKER,
   HasAdminPermissionDirective,
-} from '@customer-portal/shared/directives/permissions';
+} from '@erp-services/shared/directives/permissions';
 
 import { SCHEDULE_LIST_SUPPORT } from '../../../constants';
 import { RequestChangesModel } from '../../../models';
@@ -44,8 +44,8 @@ export class ScheduleCalendarRescheduleModalFooterComponent {
   sharedButtonType = SharedButtonType;
   public roles = Roles;
 
-  public isDnvUser = computed(() =>
-    this.settingsCoBrowsingStoreService.isDnvUser(),
+  public isSuaadhyaUser = computed(() =>
+    this.settingsCoBrowsingStoreService.isSuaadhyaUser(),
   );
 
   constructor(

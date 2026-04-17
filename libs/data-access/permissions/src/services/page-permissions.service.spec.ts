@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import {
   createProfileStoreServiceMock,
   ProfileStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 
 import { PagePermissionsService } from './page-permissions.service';
 

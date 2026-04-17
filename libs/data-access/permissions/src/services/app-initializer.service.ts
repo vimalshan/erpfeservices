@@ -15,11 +15,11 @@ import {
   tap,
 } from 'rxjs';
 
-import { UserTelemetryService } from '@customer-portal/core';
+import { UserTelemetryService } from '@erp-services/core';
 import {
   GlobalServiceMasterStoreService,
   GlobalSiteMasterStoreService,
-} from '@customer-portal/data-access/global';
+} from '@erp-services/data-access/global';
 import {
   ProfileLanguageStoreService,
   ProfileStoreService,
@@ -27,17 +27,17 @@ import {
   SettingsCompanyDetailsStoreService,
   SettingsUserValidationService,
   UserValidation,
-} from '@customer-portal/data-access/settings';
-import { environment } from '@customer-portal/environments';
+} from '@erp-services/data-access/settings';
+import { environment } from '@erp-services/environments';
 import {
   AppPagesEnum,
   AuthTokenConstants,
   RouteConfig,
-} from '@customer-portal/shared/constants';
+} from '@erp-services/shared/constants';
 import {
   AuthService,
   CoBrowsingSharedService,
-} from '@customer-portal/shared/services';
+} from '@erp-services/shared/services';
 
 import { UserValidationSubcodes } from '../constants';
 
@@ -102,14 +102,14 @@ export class AppInitializerService {
               return EMPTY;
             }
 
-            if (result.isDnvUser) {
-              this.settingsCoBrowsingStoreService.updateIsDnvUser(true);
+            if (result.isSuaadhyaUser) {
+              this.settingsCoBrowsingStoreService.updateIsSuaadhyaUser(true);
 
               return from(
                 this.router.navigateByUrl(
                   AppPagesEnum.CoBrowsingCompanySelect,
                   {
-                    state: { isUserValidated: true, isDnvUser: true },
+                    state: { isUserValidated: true, isSuaadhyaUser: true },
                   },
                 ),
               );

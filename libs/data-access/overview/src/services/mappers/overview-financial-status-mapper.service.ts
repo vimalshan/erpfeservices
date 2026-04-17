@@ -1,6 +1,6 @@
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared/constants';
-import { buildStatusColorPalette } from '@customer-portal/shared/helpers/chart';
-import { DoughnutChartModel } from '@customer-portal/shared/models/chart';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared/constants';
+import { buildStatusColorPalette } from '@erp-services/shared/helpers/chart';
+import { DoughnutChartModel } from '@erp-services/shared/models/chart';
 
 import { OverviewFinancialStatusGraphWrapperDto } from '../../dtos';
 import { DoughnutChartWithStatus } from '../../models';

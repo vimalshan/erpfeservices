@@ -1,13 +1,13 @@
 import {
   convertToUtcDate,
   utcDateToPayloadFormat,
-} from '@customer-portal/shared/helpers/date';
-import { mapFilterConfigToValues } from '@customer-portal/shared/helpers/grid';
+} from '@erp-services/shared/helpers/date';
+import { mapFilterConfigToValues } from '@erp-services/shared/helpers/grid';
 import {
   FilteringConfig,
   GridEventActionType,
   GridFileActionType,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { InvoiceExcelPayloadDto, InvoiceListItemDto } from '../../dtos';
 import { isInvoiceOverdueOrUnpaid } from '../../helpers';
@@ -17,7 +17,7 @@ export class InvoiceListMapperService {
   static mapToInvoiceItemModel(
     items: InvoiceListItemDto[],
     isAdminUser: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
   ): InvoiceListItemModel[] {
     return items.map((item: InvoiceListItemDto) => ({
       amount: item.amount,
@@ -34,7 +34,7 @@ export class InvoiceListMapperService {
       referenceNumber: item.referenceNumber,
       reportingCountry: item.reportingCountry,
       projectNumber: item.projectNumber,
-      accountDNVId: item.accountDNVId,
+      accountSuaadhyaId: item.accountSuaadhyaId,
       status: item.status,
       actions: [
         {
@@ -50,13 +50,13 @@ export class InvoiceListMapperService {
             label: GridEventActionType.RequestChanges,
             i18nKey: 'gridEvent.requestChanges',
             icon: 'pi pi-pencil',
-            disabled: !isAdminUser || isDnvUser,
+            disabled: !isAdminUser || isSuaadhyaUser,
           },
           {
             label: GridEventActionType.UpdatePlannedPaymentDate,
             i18nKey: `gridEvent.${GridEventActionType.UpdatePlannedPaymentDate}`,
             icon: 'pi pi-calendar',
-            disabled: isDnvUser || !isInvoiceOverdueOrUnpaid(item),
+            disabled: isSuaadhyaUser || !isInvoiceOverdueOrUnpaid(item),
           },
         ],
       },

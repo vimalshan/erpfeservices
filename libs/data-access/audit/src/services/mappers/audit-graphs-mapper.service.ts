@@ -1,14 +1,14 @@
 import { TreeNode } from 'primeng/api';
 
-import { EMPTY_GRAPH_DATA } from '@customer-portal/shared/constants';
+import { EMPTY_GRAPH_DATA } from '@erp-services/shared/constants';
 import {
   buildStatusColorPalette,
   getPaletteColorOrFallback,
-} from '@customer-portal/shared/helpers/chart';
+} from '@erp-services/shared/helpers/chart';
 import {
   BarChartModel,
   DoughnutChartModel,
-} from '@customer-portal/shared/models/chart';
+} from '@erp-services/shared/models/chart';
 
 import {
   AuditGraphsFilterSitesDataDto,

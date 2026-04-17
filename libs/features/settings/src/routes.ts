@@ -2,9 +2,9 @@ import { importProvidersFrom } from '@angular/core';
 import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 import { NgxsModule } from '@ngxs/store';
 
-import { allowDnvUserGuard } from '@customer-portal/data-access/settings/guards';
-import { SettingsState } from '@customer-portal/data-access/settings/state/settings.state';
-import { Language } from '@customer-portal/shared';
+import { allowSuaadhyaUserGuard } from '@erp-services/data-access/settings/guards';
+import { SettingsState } from '@erp-services/data-access/settings/state/settings.state';
+import { Language } from '@erp-services/shared';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {
@@ -43,7 +43,7 @@ export const SETTINGS_ROUTES = [
     data: {
       breadcrumb: null,
     },
-    canActivate: [allowDnvUserGuard],
+    canActivate: [allowSuaadhyaUserGuard],
     title: 'Admin Co-browsing Members',
     providers: [
       provideTranslocoScope({
@@ -62,7 +62,7 @@ export const SETTINGS_ROUTES = [
     data: {
       breadcrumb: null,
     },
-    canActivate: [allowDnvUserGuard],
+    canActivate: [allowSuaadhyaUserGuard],
     title: 'Admin Co-browsing View',
     providers: [
       provideTranslocoScope({

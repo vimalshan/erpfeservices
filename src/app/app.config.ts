@@ -23,30 +23,32 @@ import { NgxsDispatchPluginModule } from '@ngxs-labs/dispatch-decorator';
 import { Apollo, APOLLO_NAMED_OPTIONS, NamedOptions } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { MessageService } from 'primeng/api';
+import { providePrimeNG } from 'primeng/config';
 import { DialogService } from 'primeng/dynamicdialog';
+import Aura from '@primeng/themes/aura';
 
 // import {
 //   LoggingService,
 //   spinnerInterceptor,
 //   SpinnerService,
-// } from '@customer-portal/core';
-// import { UnreadActionsState } from '@customer-portal/data-access/actions/state/unread-actions.state';
-// import { GlobalState } from '@customer-portal/data-access/global/state/global.state';
-// import { UnreadNotificationsState } from '@customer-portal/data-access/notifications/state/unread-notifications.state';
-// import { SettingsState } from '@customer-portal/data-access/settings/state/settings.state';
-// import { environment } from '@customer-portal/environments';
-// import { OverviewSharedState } from '@customer-portal/overview-shared';
+// } from '@erp-services/core';
+// import { UnreadActionsState } from '@erp-services/data-access/actions/state/unread-actions.state';
+// import { GlobalState } from '@erp-services/data-access/global/state/global.state';
+// import { UnreadNotificationsState } from '@erp-services/data-access/notifications/state/unread-notifications.state';
+// import { SettingsState } from '@erp-services/data-access/settings/state/settings.state';
+// import { environment } from '@erp-services/environments';
+// import { OverviewSharedState } from '@erp-services/overview-shared';
 // import {
 //   appInitializer,
 //   loggingInitializer,
-// } from '@customer-portal/permissions';
-// import { PreferenceState } from '@customer-portal/preferences/state/preference.state';
-// import { CustomRouterStateSerializer } from '@customer-portal/router';
-// import { Language } from '@customer-portal/shared/models';
+// } from '@erp-services/permissions';
+// import { PreferenceState } from '@erp-services/preferences/state/preference.state';
+// import { CustomRouterStateSerializer } from '@erp-services/router';
+// import { Language } from '@erp-services/shared/models';
 // import {
 //   LocaleService,
 //   registerLocales,
-// } from '@customer-portal/shared/services/locale';
+// } from '@erp-services/shared/services/locale';
 
 import { appRoutes } from './app.routes';
 import {
@@ -72,7 +74,7 @@ import { LoggingService, SpinnerService } from '../../libs/core/src';
 
 declare global {
   /* eslint-disable no-var, vars-on-top */
-  var dnvRandomNonce: string;
+  var suaadhyaRandomNonce: string;
 }
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
@@ -109,6 +111,11 @@ export const appConfig: ApplicationConfig = {
     { provide: ErrorHandler, useClass: GlobalErrorHandler },
     { provide: DialogService },
     provideAnimations(),
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+      },
+    }),
     provideHttpClient(),
     importProvidersFrom(
       NgxsModule.forRoot(
@@ -133,7 +140,7 @@ export const appConfig: ApplicationConfig = {
     ),
     {
       provide: CSP_NONCE,
-      useValue: globalThis.dnvRandomNonce,
+      useValue: globalThis.suaadhyaRandomNonce,
     },
     { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer },
     provideHttpClient(),

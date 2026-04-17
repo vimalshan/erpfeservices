@@ -14,31 +14,31 @@ import {
   ServiceNowCaseDetailsId,
   ServiceNowService,
   ServiceNowTable,
-} from '@customer-portal/core';
-import { NotificationModel } from '@customer-portal/data-access/notifications';
-import { NotificationListStoreService } from '@customer-portal/data-access/notifications/state/store-services';
+} from '@erp-services/core';
+import { NotificationModel } from '@erp-services/data-access/notifications';
+import { NotificationListStoreService } from '@erp-services/data-access/notifications/state/store-services';
 import {
   ProfileLanguageStoreService,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
-import { GridComponent } from '@customer-portal/shared/components/grid';
-import { HtmlDetailsFooterModalComponent } from '@customer-portal/shared/components/html-details-footer-modal';
-import { HtmlDetailsModalComponent } from '@customer-portal/shared/components/html-details-modal';
+} from '@erp-services/data-access/settings';
+import { BasePreferencesComponent } from '@erp-services/preferences';
+import { GridComponent } from '@erp-services/shared/components/grid';
+import { HtmlDetailsFooterModalComponent } from '@erp-services/shared/components/html-details-footer-modal';
+import { HtmlDetailsModalComponent } from '@erp-services/shared/components/html-details-modal';
 import {
   FINDINGS_STATUS_STATES_MAP,
   modalBreakpoints,
   NOTIFICATION_HELP_SUPPORT,
-} from '@customer-portal/shared/constants';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
+} from '@erp-services/shared/constants';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
 import {
   ColumnDefinition,
   GridConfig,
   GridRowAction,
   HelpClickedModal,
   ToastSeverity,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { notificationsList } from '../../__mocks__';
 import { NOTIFICATION_LIST_COLUMNS } from '../../constants';
@@ -89,7 +89,7 @@ export class NotificationListComponent
   }
 
   onNotificationRowClick(inputData: { rowData: GridRowAction }): void {
-    if (this.settingsCoBrowsingStoreService.isDnvUser()) {
+    if (this.settingsCoBrowsingStoreService.isSuaadhyaUser()) {
       return;
     }
     const { id, entityId, entityType, snowLink } =

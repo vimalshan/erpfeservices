@@ -2,22 +2,22 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { environment } from '@customer-portal/environments';
+import { environment } from '@erp-services/environments';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { AuthService } from '@customer-portal/shared/services';
+} from '@erp-services/shared/components/button';
+import { AuthService } from '@erp-services/shared/services';
 
 @Component({
-  selector: 'customer-portal-logout',
+  selector: 'erp-services-logout',
   imports: [CommonModule, SharedButtonComponent, TranslocoDirective],
   templateUrl: './logout.component.html',
   styleUrl: './logout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LogoutComponent implements OnInit {
-  dnvLink = environment.dnvLink;
+  suaadhyaLink = environment.suaadhyaLink;
   sharedButtonType = SharedButtonType;
 
   constructor(private readonly authService: AuthService) {}
@@ -30,7 +30,7 @@ export class LogoutComponent implements OnInit {
     this.authService.login();
   }
 
-  onGoToDnvClick(): void {
-    window.open(this.dnvLink, '_self');
+  onGoToSuaadhyaClick(): void {
+    window.open(this.suaadhyaLink, '_self');
   }
 }

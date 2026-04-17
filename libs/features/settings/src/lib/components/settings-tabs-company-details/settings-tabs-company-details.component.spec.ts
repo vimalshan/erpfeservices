@@ -8,11 +8,11 @@ import { MessageService } from 'primeng/api';
 import {
   SettingsCompanyDetailsStoreService,
   SettingsState,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   createMessageServiceMock,
   createTranslationServiceMock,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { SettingsTabsCompanyDetailsComponent } from './settings-tabs-company-details.component';
 

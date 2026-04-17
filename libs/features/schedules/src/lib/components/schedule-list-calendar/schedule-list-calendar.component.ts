@@ -20,16 +20,16 @@ import {
   LoggingService,
   ScheduleParams,
   ServiceNowService,
-} from '@customer-portal/core';
+} from '@erp-services/core';
 import {
   SCHEDULE_STATUS_MAP,
   ScheduleCalendarFilterKey,
   ScheduleCalendarFilterTypes,
   ScheduleListCalendarStoreService,
-} from '@customer-portal/data-access/schedules';
-import { ProfileLanguageStoreService } from '@customer-portal/data-access/settings';
-import { environment } from '@customer-portal/environments';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
+} from '@erp-services/data-access/schedules';
+import { ProfileLanguageStoreService } from '@erp-services/data-access/settings';
+import { environment } from '@erp-services/environments';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
 import {
   CustomFullCalendarComponent,
   NoDataComponent,
@@ -37,14 +37,14 @@ import {
   SharedButtonType,
   SharedSelectMultipleModComponent,
   TreeDropdownComponent,
-} from '@customer-portal/shared/components';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { formatUtcToLocal } from '@customer-portal/shared/helpers/date';
+} from '@erp-services/shared/components';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { formatUtcToLocal } from '@erp-services/shared/helpers/date';
 import {
   CalendarViewType,
   CustomTreeNode,
   ToastSeverity,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { RescheduleAction } from '../../constants/schedule-list-reschedule.enum';
 import { ScheduleCalendarEventService } from '../../services/schedule-calendar-event.service';
@@ -244,7 +244,7 @@ export class ScheduleListCalendarComponent implements OnInit, OnDestroy {
       return [node.data];
     }
 
-    return node.children.flatMap((child) =>
+    return node.children.flatMap((child: CustomTreeNode) =>
       this.getAllDescendantLeafIds(child),
     );
   }
@@ -286,8 +286,8 @@ export class ScheduleListCalendarComponent implements OnInit, OnDestroy {
 
       const dynamicSysId =
         rescheduleState === RescheduleAction.SupportRequest
-          ? environment.serviceNow.sysIds.dnvReschedule
-          : environment.serviceNow.sysIds.dnvSchedule;
+          ? environment.serviceNow.sysIds.suaadhyaReschedule
+          : environment.serviceNow.sysIds.suaadhyaSchedule;
       const scheduleServiceNowParams: ScheduleParams = {
         startDate: schedule.startDate,
         endDate: schedule.endDate,
@@ -305,7 +305,7 @@ export class ScheduleListCalendarComponent implements OnInit, OnDestroy {
         projectNumber: schedule.projectNumber,
         language: this.profileLanguageStoreService.languageLabel(),
         sys_id: dynamicSysId,
-        accountDNVId: schedule.accountDNVId,
+        accountSuaadhyaId: schedule.accountSuaadhyaId,
       };
 
       this.serviceNowService.openScheduleSupport(scheduleServiceNowParams);

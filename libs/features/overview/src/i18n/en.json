@@ -1,7 +1,7 @@
 {
   "heading": "My services",
   "title": "Welcome{{user}}",
-  "userCompany": "DNV Customer Portal",
+  "userCompany": "Suaadhya Customer Portal",
   "financialStatus": "Financial status",
   "financialStatusViewAll": "Financial status view all",
   "trainingStatus": "Training status",
@@ -13,7 +13,7 @@
   "welcomeDescription": "Track the progress of your ongoing services",
   "confirmed": "Confirmed",
   "toBeConfirmed": "To be confirmed",
-  "dnvToConfirm": "DNV to confirm",
+  "suaadhyaToConfirm": "Suaadhya to confirm",
   "totalInvoices": "Total invoices",
   "status": "Status",
   "hasAllServicesDisplayed": "All services are displayed.",

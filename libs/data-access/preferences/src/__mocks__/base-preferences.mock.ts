@@ -4,7 +4,7 @@ import { Actions } from '@ngxs/store';
 import {
   createActionsMock,
   createDestroyRefMock,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { PreferenceStoreService } from '../state';
 

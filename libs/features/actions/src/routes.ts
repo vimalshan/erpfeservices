@@ -3,8 +3,8 @@ import { InlineLoader, provideTranslocoScope } from '@jsverse/transloco';
 import { NgxsModule } from '@ngxs/store';
 
 
-import { Language } from '@customer-portal/shared';
-import { ActionsListState } from '@customer-portal/data-access/actions/state';
+import { Language } from '@erp-services/shared';
+import { ActionsListState } from '@erp-services/data-access/actions/state';
 
 export const loader = [Language.English, Language.Italian].reduce(
   (acc: InlineLoader, lang: string) => {

@@ -1,4 +1,4 @@
-import { Language } from '@customer-portal/shared';
+import { Language } from '@erp-services/shared';
 
 import { SIDEBAR_MENU_GROUP_LIST, UserRoles } from '../../constants';
 import { ProfileDto } from '../../dtos';

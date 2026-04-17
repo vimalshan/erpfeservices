@@ -1,4 +1,4 @@
-import { CompanyModel, ServiceModel, SiteModel } from '@customer-portal/shared';
+import { CompanyModel, ServiceModel, SiteModel } from '@erp-services/shared';
 
 export interface SettingsMembersListDto {
   data: SettingsMembersListItemDto[];

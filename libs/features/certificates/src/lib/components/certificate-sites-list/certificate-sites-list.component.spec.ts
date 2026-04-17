@@ -1,8 +1,8 @@
 import {
   CertificateDetailsStoreService,
   createCertificateDetailsStoreServiceMock,
-} from '@customer-portal/data-access/certificates';
-import { GridConfig, SortingMode } from '@customer-portal/shared';
+} from '@erp-services/data-access/certificates';
+import { GridConfig, SortingMode } from '@erp-services/shared';
 
 import { CertificateSitesListComponent } from './certificate-sites-list.component';
 

@@ -5,12 +5,12 @@ import { TranslocoService } from '@jsverse/transloco';
 import { ConfirmationService } from 'primeng/api';
 import { Observable, of } from 'rxjs';
 
-import { SpinnerService } from '@customer-portal/core';
+import { SpinnerService } from '@erp-services/core';
 import {
   createFindingDetailsStoreServiceMock,
   FindingDetailsStoreService,
-} from '@customer-portal/data-access/findings';
-import { createTranslationServiceMock } from '@customer-portal/shared';
+} from '@erp-services/data-access/findings';
+import { createTranslationServiceMock } from '@erp-services/shared';
 
 import { FindingDetailsComponent } from '../components';
 import { findingDetailsDeactivationGuard } from './finding-details-deactivation.guard';

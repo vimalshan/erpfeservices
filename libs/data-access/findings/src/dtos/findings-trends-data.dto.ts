@@ -1,5 +1,5 @@
 import { TreeNode } from 'primeng/api';
-import { BaseApolloResponse } from '@customer-portal/shared';
+import { BaseApolloResponse } from '@erp-services/shared';
 
 export interface FindingsTrendsDataDto extends BaseApolloResponse<TreeNode[]> {
   data: TreeNode[];

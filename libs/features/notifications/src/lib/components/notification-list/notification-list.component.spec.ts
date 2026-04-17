@@ -4,15 +4,15 @@ import { MessageService } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { of } from 'rxjs';
 
-import { LoggingService, ServiceNowService } from '@customer-portal/core';
-import { NotificationListStoreService } from '@customer-portal/data-access/notifications';
+import { LoggingService, ServiceNowService } from '@erp-services/core';
+import { NotificationListStoreService } from '@erp-services/data-access/notifications';
 import {
   createSettingsCoBrowsingStoreServiceMock,
-  isDnvUserMock,
+  isSuaadhyaUserMock,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
-import { GridRowAction } from '@customer-portal/shared';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
+import { GridRowAction } from '@erp-services/shared';
 
 import { NotificationListComponent } from './notification-list.component';
 
@@ -150,9 +150,9 @@ describe('NotificationListComponent', () => {
     expect(onNotificationRowClickSpy).toHaveBeenCalled();
   });
 
-  test('should prevent navigation for DNV users on notification row click', () => {
+  test('should prevent navigation for Suaadhya users on notification row click', () => {
     // Arrange
-    isDnvUserMock.set(true);
+    isSuaadhyaUserMock.set(true);
 
     const rowDataInfo: GridRowAction = {
       id: 1,

@@ -39,7 +39,7 @@
       "phone": "Phone number",
       "settings": "Settings",
       "settingsModal": {
-        "additionalInformation": "After you submit your edited personal information, it will be reviewed by a DNV employee.  You will receive a notification once the information has been updated.",
+        "additionalInformation": "After you submit your edited personal information, it will be reviewed by a Suaadhya employee.  You will receive a notification once the information has been updated.",
         "header": "Edit portal settings"
       },
       "submit": "Submit",
@@ -107,7 +107,7 @@
         "cancel": "Cancel",
         "submit": "Submit"
       },
-      "information": "Once you submit your updated company details, they will be reviewed by a DNV representative. If contract or certificate details are affected, it may be necessary to carry out additional audit activities before reissuing the updated certificates. You will be notified once your information has been updated.",
+      "information": "Once you submit your updated company details, they will be reviewed by a Suaadhya representative. If contract or certificate details are affected, it may be necessary to carry out additional audit activities before reissuing the updated certificates. You will be notified once your information has been updated.",
       "title": "Edit company details"
     }
   },

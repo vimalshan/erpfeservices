@@ -7,8 +7,8 @@ import {
   NavigateFromOverviewCardToAuditListView,
   NavigateFromOverviewCardToFindingsListView,
   NavigateFromOverviewCardToScheduleListView,
-} from '@customer-portal/overview-shared';
-import { CardDataModel, CardNavigationPayload } from '@customer-portal/shared';
+} from '@erp-services/overview-shared';
+import { CardDataModel, CardNavigationPayload } from '@erp-services/shared';
 
 import { OverviewCardsDto } from '../dtos';
 import {

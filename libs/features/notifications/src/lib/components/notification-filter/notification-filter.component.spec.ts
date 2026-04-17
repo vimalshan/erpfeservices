@@ -1,7 +1,7 @@
 import {
   NotificationFilterKey,
   NotificationListStoreService,
-} from '@customer-portal/data-access/notifications';
+} from '@erp-services/data-access/notifications';
 
 import { NotificationFilterComponent } from './notification-filter.component';
 

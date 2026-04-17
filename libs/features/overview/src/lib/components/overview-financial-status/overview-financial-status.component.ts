@@ -2,18 +2,18 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { OverviewFinancialStatusStoreService } from '@customer-portal/data-access/overview';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
+import { OverviewFinancialStatusStoreService } from '@erp-services/data-access/overview';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
+} from '@erp-services/shared/components/button';
+import { ChartComponent } from '@erp-services/shared/components/chart';
 import {
   ChartFilter,
   ChartTypeEnum,
-} from '@customer-portal/shared/models/chart';
-import { FilterValue } from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/chart';
+import { FilterValue } from '@erp-services/shared/models/grid';
 
 import { OVERVIEW_FINANCIALS_STATUS_OPTIONS } from '../../constants';
 

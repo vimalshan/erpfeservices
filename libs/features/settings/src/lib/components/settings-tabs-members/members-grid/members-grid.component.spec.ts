@@ -8,8 +8,8 @@ import {
   createSettingsMemberServiceMock,
   SettingsCoBrowsingStoreService,
   SettingsMembersStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 import {
   createConfirmationServiceMock,
   createDialogServiceMock,
@@ -18,7 +18,7 @@ import {
   GridEventActionType,
   SortingConfig,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { MembersGridComponent } from './members-grid.component';
 

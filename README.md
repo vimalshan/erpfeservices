@@ -1,4 +1,4 @@
-# CustomerPortal
+# erpServices
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -6,9 +6,9 @@
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
-npx create-nx-workspace@latest customer-portal --preset=angular
-cd customer-portal
-https://github.com/iyyanar2405/customer-portal
+npx create-nx-workspace@latest erp-services --preset=angular
+cd erp-services
+https://github.com/iyyanar2405/erp-services
 
 ## Finish your CI setup
 
@@ -20,19 +20,19 @@ https://github.com/iyyanar2405/customer-portal
 To run the dev server for your app, use:
 
 ```sh
-npx nx serve customer-portal
+npx nx serve erp-services
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build customer-portal
+npx nx build erp-services
 ```
 
 To see all available targets to run for a project, run:
 
 ```sh
-npx nx show project customer-portal
+npx nx show project erp-services
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.

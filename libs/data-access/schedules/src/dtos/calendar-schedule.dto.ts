@@ -18,5 +18,5 @@ export interface CalendarScheduleDataDto {
   auditID:number 
   reportingCountry: string;
   projectNumber: string;
-  accountDNVId: string; 
+  accountSuaadhyaId: string; 
 }

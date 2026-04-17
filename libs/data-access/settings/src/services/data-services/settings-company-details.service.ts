@@ -56,7 +56,7 @@ export class SettingsCompanyDetailsService {
       mutation: SETTINGS_COMPANY_DETAILS_MUTATION,
       variables: {
         updateCompanyRequest: {
-          email: 'archana.shantageri@dnv.com', // TODO placeholder until API makes changes
+          email: 'archana.shantageri@suaadhya.com', // TODO placeholder until API makes changes
           ...params,
         },
       },

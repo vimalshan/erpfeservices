@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 
 @Component({
   selector: 'lib-certificate-suspension-message-modal',

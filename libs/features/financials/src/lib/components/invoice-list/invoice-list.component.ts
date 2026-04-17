@@ -16,54 +16,54 @@ import {
   InvoiceParams,
   LoggingService,
   ServiceNowService,
-} from '@customer-portal/core';
+} from '@erp-services/core';
 import {
   DownloadFileNames,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
-import { DocumentQueueService } from '@customer-portal/data-access/documents/services';
+} from '@erp-services/data-access/documents';
+import { DocumentQueueService } from '@erp-services/data-access/documents/services';
 import {
   InvoiceListItemModel,
   InvoiceListMapperService,
   InvoiceListService,
   InvoiceListStoreService,
   isInvoiceOverdueOrUnpaid,
-} from '@customer-portal/data-access/financials';
+} from '@erp-services/data-access/financials';
 import {
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings/state/store-services';
-import { OverviewSharedStoreService } from '@customer-portal/overview-shared';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings/state/store-services';
+import { OverviewSharedStoreService } from '@erp-services/overview-shared';
+import { BasePreferencesComponent } from '@erp-services/preferences';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/shared/components/button';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   INVOICES_STATUS_MAP,
   ObjectName,
   ObjectType,
   PageName,
-} from '@customer-portal/shared/constants';
-import { DebounceClickDirective } from '@customer-portal/shared/directives/debounce-click';
+} from '@erp-services/shared/constants';
+import { DebounceClickDirective } from '@erp-services/shared/directives/debounce-click';
 import {
   animateFlyToDownload,
   getContentType,
   getToastContentBySeverity,
-} from '@customer-portal/shared/helpers';
+} from '@erp-services/shared/helpers';
 import {
   ColumnDefinition,
   ToastSeverity,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 import {
   GridConfig,
   GridEventAction,
   GridEventActionType,
   GridFileActionEvent,
   GridFileActionType,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { INVOICE_LIST_COLUMNS } from '../../constants';
 import { InvoiceEventService } from '../../services';
@@ -191,7 +191,7 @@ export class InvoiceListComponent
     );
 
     this.displayUpdatePlannedPaymentDateButton =
-      !this.settingsCoBrowsingStoreService.isDnvUser() &&
+      !this.settingsCoBrowsingStoreService.isSuaadhyaUser() &&
       overdueOrUnpaidInvoices.length > 0;
 
     this.selectedOverdueOrUnpaidIds = overdueOrUnpaidInvoices.map(
@@ -343,7 +343,7 @@ export class InvoiceListComponent
         reportingCountry: invoice.reportingCountry,
         projectNumber: invoice.projectNumber,
         language: this.profileLanguageStoreService.languageLabel(),
-        accountDNVId: invoice.accountDNVId,
+        accountSuaadhyaId: invoice.accountSuaadhyaId,
       };
       this.serviceNowService.openInvoiceSupport(invoiceServiceNowParams);
     } catch (error) {

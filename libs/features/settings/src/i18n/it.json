@@ -39,7 +39,7 @@
       "phone": "Numero di telefono",
       "settings": "Impostazioni",
       "settingsModal": {
-        "additionalInformation": "Dopo aver inviato le tue informazioni personali modificate, saranno esaminate da DNV. Riceverai una notifica una volta che le informazioni saranno state aggiornate.",
+        "additionalInformation": "Dopo aver inviato le tue informazioni personali modificate, saranno esaminate da Suaadhya. Riceverai una notifica una volta che le informazioni saranno state aggiornate.",
         "header": "Modifica le impostazioni del Portale"
       },
       "submit": "Invia",
@@ -107,7 +107,7 @@
         "cancel": "Cancellare",
         "submit": "Invia"
       },
-      "information": "Una volta inviati i dettagli aziendali aggiornati, questi verranno esaminati da un rappresentante DNV. Se i dettagli del contratto o del certificato vengono interessati, potrebbe essere necessario svolgere ulteriori attività di audit prima di riemettere i certificati aggiornati. Riceverai una notifica una volta che le tue informazioni saranno state aggiornate.",
+      "information": "Una volta inviati i dettagli aziendali aggiornati, questi verranno esaminati da un rappresentante Suaadhya. Se i dettagli del contratto o del certificato vengono interessati, potrebbe essere necessario svolgere ulteriori attività di audit prima di riemettere i certificati aggiornati. Riceverai una notifica una volta che le tue informazioni saranno state aggiornate.",
       "title": "Modifica i dettagli dell'azienda"
     }
   },

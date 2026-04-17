@@ -60,7 +60,7 @@ describe('OverviewUpcomingAuditService', () => {
         color: '#FFE900',
       },
       {
-        title: 'To Be Confirmed by DNV',
+        title: 'To Be Confirmed by Suaadhya',
         start: '2025-01-25',
         end: '2025-01-25',
         color: '#009FDA',

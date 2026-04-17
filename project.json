@@ -1,8 +1,8 @@
 {
-  "name": "customer-portal",
+  "name": "erp-services",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "customer-portal",
+  "prefix": "erp-services",
   "sourceRoot": "./src",
   "tags": ["type:app"],
   "targets": {
@@ -10,7 +10,7 @@
       "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/customer-portal",
+        "outputPath": "dist/erp-services",
         "index": "./src/index.html",
         "main": "./src/main.ts",
         "polyfills": ["zone.js"],
@@ -28,7 +28,6 @@
         "styles": [
           "./node_modules/@angular/cdk/overlay-prebuilt.css",
           "./node_modules/primeicons/primeicons.css",
-          "./node_modules/primeng/resources/primeng.css",
           "./src/styles/styles.scss"
         ],
         "stylePreprocessorOptions": {
@@ -143,16 +142,16 @@
       },
       "configurations": {
         "local": {
-          "buildTarget": "customer-portal:build:local"
+          "buildTarget": "erp-services:build:local"
         },
         "production": {
-          "buildTarget": "customer-portal:build:production"
+          "buildTarget": "erp-services:build:production"
         },
         "development": {
-          "buildTarget": "customer-portal:build:development"
+          "buildTarget": "erp-services:build:development"
         },
         "qa": {
-          "buildTarget": "customer-portal:build:qa"
+          "buildTarget": "erp-services:build:qa"
         }
       },
       "defaultConfiguration": "local"
@@ -160,7 +159,7 @@
     "extract-i18n": {
       "executor": "@nx/angular:extract-i18n",
       "options": {
-        "buildTarget": "customer-portal:build"
+        "buildTarget": "erp-services:build"
       }
     }
   }

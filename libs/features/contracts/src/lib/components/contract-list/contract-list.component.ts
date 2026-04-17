@@ -15,36 +15,36 @@ import {
   ContractsListMapperService,
   ContractsListService,
   ContractsListStoreService,
-} from '@customer-portal/data-access/contracts';
+} from '@erp-services/data-access/contracts';
 import {
   DocType,
   DownloadFileNames,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   DocumentQueueService,
   DocumentsService,
-} from '@customer-portal/data-access/documents/services';
-import { SettingsCoBrowsingStoreService } from '@customer-portal/data-access/settings';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
+} from '@erp-services/data-access/documents/services';
+import { SettingsCoBrowsingStoreService } from '@erp-services/data-access/settings';
+import { BasePreferencesComponent } from '@erp-services/preferences';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/shared/components/button';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   ObjectName,
   ObjectType,
   PageName,
-} from '@customer-portal/shared/constants';
-import { animateFlyToDownload } from '@customer-portal/shared/helpers/download';
+} from '@erp-services/shared/constants';
+import { animateFlyToDownload } from '@erp-services/shared/helpers/download';
 import {
   ColumnDefinition,
   GridConfig,
   GridFileActionEvent,
   GridFileActionType,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { CONTRACTS_LIST_COLUMNS } from '../../constants';
 

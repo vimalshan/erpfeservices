@@ -17,7 +17,7 @@ export const overviewUpcomingAuditsMock = {
             '2025-03-20',
           ],
           toBeConfirmed: ['2025-03-12'],
-          toBeConfirmedByDNV: ['2025-03-13'],
+          toBeConfirmedBySuaadhya: ['2025-03-13'],
         },
       ],
     },

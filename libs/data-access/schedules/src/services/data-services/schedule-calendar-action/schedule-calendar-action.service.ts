@@ -92,7 +92,7 @@ export class ScheduleCalendarActionService {
             const updatedData = existing.viewAuditSchedules.data.map(
               (s: any) =>
                 s.siteAuditId === siteAuditId
-                  ? { ...s, status: ScheduleStatusTypes.ToBeConfirmedByDNV }
+                  ? { ...s, status: ScheduleStatusTypes.ToBeConfirmedBySuaadhya }
                   : s,
             );
 

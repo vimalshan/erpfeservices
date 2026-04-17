@@ -2,10 +2,10 @@ import { gql } from 'apollo-angular';
 
 export const SETTINGS_MEMBERS_PERMISSIONS_QUERY = gql`
   query GetSettingsMembersPermissions(
-    $accountDNVId: String
+    $accountSuaadhyaId: String
     $memberEmail: String
   ) {
-    getUserPermissions(accountDNVId: $accountDNVId, memberEmail: $memberEmail) {
+    getUserPermissions(accountSuaadhyaId: $accountSuaadhyaId, memberEmail: $memberEmail) {
       data {
         companies {
           companyId

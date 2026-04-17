@@ -58,6 +58,7 @@ export class ChartComponent implements OnDestroy, AfterViewInit {
   @Input() hasBorderIfNoData = false;
   @Input() tooltipTitle!: string;
   @Input() chartFilters!: ChartFilter;
+  @Input() isLoading = false;
   @Output() chartClick = new EventEmitter<any>();
   @Output() tooltipButtonClick = new EventEmitter<any>();
 

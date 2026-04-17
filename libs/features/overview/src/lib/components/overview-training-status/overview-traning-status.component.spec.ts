@@ -1,7 +1,7 @@
 import { runInInjectionContext } from '@angular/core';
 
-import { TrainingStatusStoreService } from '@customer-portal/data-access/overview';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+import { TrainingStatusStoreService } from '@erp-services/data-access/overview';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 
 import { OverviewTrainingStatusComponent } from './overview-training-status.component';
 

@@ -2,7 +2,7 @@ import {
   CellType,
   ColumnDefinition,
   ColumnType,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 export const INVOICE_LIST_COLUMNS: ColumnDefinition[] = [
   {

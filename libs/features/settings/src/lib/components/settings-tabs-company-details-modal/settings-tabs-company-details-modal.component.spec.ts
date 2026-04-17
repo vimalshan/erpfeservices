@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslocoService } from '@jsverse/transloco';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { SettingsCompanyDetailsStoreService } from '@customer-portal/data-access/settings';
-import { createTranslationServiceMock } from '@customer-portal/shared';
+import { SettingsCompanyDetailsStoreService } from '@erp-services/data-access/settings';
+import { createTranslationServiceMock } from '@erp-services/shared';
 
 import { SettingsTabsCompanyDetailsModalComponent } from './settings-tabs-company-details-modal.component';
 

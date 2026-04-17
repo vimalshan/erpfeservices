@@ -4,7 +4,7 @@ import {
   BarChartModel,
   DoughnutChartModel,
   EMPTY_GRAPH_DATA,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 const auditStatusDoughnutGraphData: WritableSignal<DoughnutChartModel> =
   signal(EMPTY_GRAPH_DATA);

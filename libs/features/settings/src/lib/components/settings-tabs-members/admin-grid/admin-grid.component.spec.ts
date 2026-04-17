@@ -8,9 +8,9 @@ import {
   createSettingsCoBrowsingStoreServiceMock,
   SettingsCoBrowsingStoreService,
   SettingsMembersStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
-import { createTranslationServiceMock } from '@customer-portal/shared';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
+import { createTranslationServiceMock } from '@erp-services/shared';
 
 import { AdminGridComponent } from './admin-grid.component';
 

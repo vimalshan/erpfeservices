@@ -5,7 +5,7 @@
       [customRange]="customDateRange()"
       [isDisabled]="dateRangeIsDisabled"
       [prefill]="selectedTimeRange()"
-      (changeEvent)="onDateRangeChange($event)">
+      (changeEvent)="onDateRangeChange($any($event))">
     </shared-select-date-range-mod>
 
     <shared-select-multiple-mod

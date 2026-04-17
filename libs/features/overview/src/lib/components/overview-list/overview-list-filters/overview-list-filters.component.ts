@@ -14,19 +14,19 @@ import { combineLatest } from 'rxjs';
 import {
   OverviewFilterTypes,
   OverviewListStoreService,
-} from '@customer-portal/data-access/overview';
-import { ProfileStoreService } from '@customer-portal/data-access/settings';
-import { PagePermissionsService } from '@customer-portal/permissions';
+} from '@erp-services/data-access/overview';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
+import { PagePermissionsService } from '@erp-services/permissions';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 import {
   SharedSelectMultipleModComponent,
   TreeDropdownComponent,
-} from '@customer-portal/shared/components/select';
-import { CustomTreeNode } from '@customer-portal/shared/models';
-import { BreadcrumbService } from '@customer-portal/shared/services/breadcrumb';
+} from '@erp-services/shared/components/select';
+import { CustomTreeNode } from '@erp-services/shared/models';
+import { BreadcrumbService } from '@erp-services/shared/services/breadcrumb';
 
 @Component({
   selector: 'lib-overview-list-filters',
@@ -142,7 +142,7 @@ export class OverviewListFiltersComponent implements OnInit {
       return [node.data];
     }
 
-    return node.children.flatMap((child) =>
+    return node.children.flatMap((child: CustomTreeNode) =>
       this.getAllDescendantLeafIds(child),
     );
   }

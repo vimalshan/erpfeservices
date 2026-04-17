@@ -1,10 +1,10 @@
-import { LanguageOption } from '@customer-portal/shared';
+import { LanguageOption } from '@erp-services/shared';
 
 export interface CertificateDetailsModel {
   certificateId: number;
   certificateNumber: string;
   newCertificateId: number | null;
-  accountDNVId: number;
+  accountSuaadhyaId: number;
   header: CertificateDetailsHeader;
 }
 

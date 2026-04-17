@@ -3,32 +3,32 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { catchError, map, Observable } from 'rxjs';
 
-import { LoggingService } from '@customer-portal/core/app-insights';
+import { LoggingService } from '@erp-services/core/app-insights';
 import {
   CertificateDetailsStoreService,
   CertificateDocumentsListItemModel,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   DocType,
   DownloadType,
   DownloadTypeName,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   DocumentQueueService,
   DocumentsService,
-} from '@customer-portal/data-access/documents/services';
+} from '@erp-services/data-access/documents/services';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { GridComponent } from '@customer-portal/shared/components/grid';
-import { animateFlyToDownload } from '@customer-portal/shared/helpers/download';
+} from '@erp-services/shared/components/button';
+import { GridComponent } from '@erp-services/shared/components/grid';
+import { animateFlyToDownload } from '@erp-services/shared/helpers/download';
 import {
   ColumnDefinition,
   GridConfig,
   GridFileActionEvent,
   GridFileActionType,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { CERTIFICATE_DOCUMENTS_COLUMNS } from '../../constants';
 

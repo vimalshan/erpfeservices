@@ -9,7 +9,7 @@ import {
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
 import { AccordionModule } from 'primeng/accordion';
 
-import { FindingDetailsStoreService } from '@customer-portal/data-access/findings';
+import { FindingDetailsStoreService } from '@erp-services/data-access/findings';
 
 @Component({
   selector: 'lib-finding-responses-accordion',

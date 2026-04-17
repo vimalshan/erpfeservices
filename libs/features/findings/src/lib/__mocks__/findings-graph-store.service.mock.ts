@@ -4,7 +4,7 @@ import {
   BarChartModel,
   EMPTY_GRAPH_DATA,
   SharedSelectMultipleDatum,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 const dataCompanies: WritableSignal<SharedSelectMultipleDatum<number>[]> =
   signal([

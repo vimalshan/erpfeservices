@@ -33,7 +33,7 @@ p-multiselect.p-element::ng-deep,
   }
 
   .p-multiselect-items {
-    padding: calc(var(--dnv-gutter-base-unitless) * 0.0625rem);
+    padding: calc(var(--suaadhya-gutter-base-unitless) * 0.0625rem);
   }
 
   .p-multiselect-label {
@@ -53,7 +53,7 @@ p-multiselect.p-element::ng-deep,
   }
 
   .p-multiselect-empty-message {
-    padding: calc(var(--dnv-gutter-base-unitless) * 0.0625rem);
+    padding: calc(var(--suaadhya-gutter-base-unitless) * 0.0625rem);
   }
 
   .p-multiselect-close {

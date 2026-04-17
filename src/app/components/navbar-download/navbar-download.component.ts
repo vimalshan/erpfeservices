@@ -14,12 +14,12 @@ import { OverlayPanel, OverlayPanelModule } from 'primeng/overlaypanel';
 import {
   DocumentDownloadTask,
   DocumentQueueService,
-} from '@customer-portal/data-access/documents/services';
+} from '@erp-services/data-access/documents/services';
 
 import { NavbarButtonComponent } from '../navbar-button';
 
 @Component({
-  selector: 'customer-portal-navbar-download',
+  selector: 'erp-services-navbar-download',
   imports: [
     CommonModule,
     TranslocoDirective,

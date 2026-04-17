@@ -8,14 +8,14 @@ import { DropdownModule } from 'primeng/dropdown';
 import {
   CoBrowsingCompany,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { environment } from '@customer-portal/environments';
+} from '@erp-services/data-access/settings';
+import { environment } from '@erp-services/environments';
 import {
   AppPagesEnum,
   AuthService,
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 @Component({
   selector: 'lib-co-browsing-company-select',
@@ -38,7 +38,7 @@ export class CoBrowsingCompanySelectComponent implements OnInit {
     private readonly authService: AuthService,
     private readonly router: Router,
   ) {
-    if (this.settingsCoBrowsingStoreService.isDnvUser()) {
+    if (this.settingsCoBrowsingStoreService.isSuaadhyaUser()) {
       this.settingsCoBrowsingStoreService.getCompanyList();
     }
   }

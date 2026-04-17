@@ -9,7 +9,7 @@
 
 .p-listbox {
   background: form.$inputListBg;
-  color: variables.$basic-tones-dnv-medium-dark;
+  color: variables.$basic-tones-suaadhya-medium-dark;
   border: form.$inputListBorder;
   border-radius: utility.get-rem(10);
   transition: general.$formElementTransition;
@@ -18,7 +18,7 @@
     padding: utility.get-rem(14) utility.get-rem(17.5) utility.get-rem(10.5)
       utility.get-rem(14);
     color: form.$inputListHeaderTextColor;
-    background: variables.$basic-tones-dnv-ultra-light;
+    background: variables.$basic-tones-suaadhya-ultra-light;
     margin: form.$inputListHeaderMargin;
     border-top-right-radius: general.$borderRadius;
     border-top-left-radius: general.$borderRadius;
@@ -26,7 +26,7 @@
     align-items: start;
     gap: utility.get-rem(9);
     position: relative;
-    border-bottom: 1px solid variables.$basic-tones-dnv-medium-light;
+    border-bottom: 1px solid variables.$basic-tones-suaadhya-medium-light;
 
     .p-listbox-filter {
       padding-right: list.nth(form.$inputPadding, 2) +
@@ -74,7 +74,7 @@
         color: unset;
         background: unset;
         &:hover {
-          background: variables.$primary-dnv-sky-light-blue;
+          background: variables.$primary-suaadhya-sky-light-blue;
         }
       }
 
@@ -117,8 +117,8 @@
         }
 
         &:hover {
-          color: variables.$basic-tones-dnv-medium-dark;
-          background: variables.$basic-tones-dnv-light;
+          color: variables.$basic-tones-suaadhya-medium-dark;
+          background: variables.$basic-tones-suaadhya-light;
         }
       }
     }
@@ -130,7 +130,7 @@
 
   .p-checkbox-box {
     &.p-highlight {
-      background-color: variables.$primary-dnv-medium-blue;
+      background-color: variables.$primary-suaadhya-medium-blue;
     }
   }
 }

@@ -2,14 +2,14 @@ import { DestroyRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
-import { SessionTimeoutService } from '@customer-portal/core';
+import { SessionTimeoutService } from '@erp-services/core';
 import {
   AuthService,
   AuthTokenConstants,
   BreadcrumbService,
   CoBrowsingSharedService,
   ScriptLoaderService,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { AppComponent } from './app.component';
 
@@ -64,8 +64,8 @@ describe('AppComponent', () => {
     expect(component.breadcrumbVisibility).toBe(true);
   });
 
-  test('should initialize title as "customer-portal"', () => {
-    expect(component.title).toBe('customer-portal');
+  test('should initialize title as "erp-services"', () => {
+    expect(component.title).toBe('erp-services');
   });
 
   test('should initialize script loader and session timeout service when token is valid', () => {

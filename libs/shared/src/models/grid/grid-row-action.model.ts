@@ -18,4 +18,5 @@ export interface GridRowAction {
     label: string;
     url: string;
   }[];
+  language?: string;
 }

@@ -9,16 +9,16 @@ import {
 } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 
-import { FindingListGraphStoreService } from '@customer-portal/data-access/findings';
-import { ChartComponent } from '@customer-portal/shared/components/chart';
+import { FindingListGraphStoreService } from '@erp-services/data-access/findings';
+import { ChartComponent } from '@erp-services/shared/components/chart';
 import {
   chartTotalPlugin,
   showTooltipOnHoverPlugin,
-} from '@customer-portal/shared/helpers/chart';
+} from '@erp-services/shared/helpers/chart';
 import {
   ChartFilter,
   ChartTypeEnum,
-} from '@customer-portal/shared/models/chart';
+} from '@erp-services/shared/models/chart';
 
 import { FINDING_LIST_BY_CATEGORY_GRAPH_OPTIONS } from './finding-list-category-graph-options.constants';
 import { FINDING_LIST_BY_STATUS_GRAPH_OPTIONS } from './finding-list-status-options.constants';

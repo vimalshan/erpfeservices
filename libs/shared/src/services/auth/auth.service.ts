@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { environment } from '@auth-portal/environments';
+import { environment } from '@erp-services/environments';
 
 import { AuthTokenConstants } from '../../constants/auth-constants';
-import { AuthServiceResponse } from '../../models';
+import { AuthServiceResponse, LoginRequest, LoginResponse } from '../../models';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +18,29 @@ export class AuthService {
   login(): void {
     this.clearTokenData();
     window.location.href = `${this.authApiUrl}/login?returnUrl=${encodeURIComponent(environment.baseUrl)}`;
+  }
+
+  loginWithCredentials(request: LoginRequest): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.authApiUrl}/token`, request, {
+      withCredentials: true,
+    });
+  }
+
+  storeLoginResponse(response: LoginResponse): void {
+    if (response.access_token) {
+      localStorage.setItem('access_token', response.access_token);
+    }
+    if (response.expires) {
+      this.storeTokenData(response.expires);
+    }
+  }
+
+  storeLoginCredentials(request: LoginRequest): void {
+    localStorage.setItem('login_user', request.userName);
+  }
+
+  resetLogoutState(): void {
+    this.clearTokenData();
   }
 
   logout(): Observable<string> {
@@ -69,5 +92,9 @@ export class AuthService {
     localStorage.removeItem(AuthTokenConstants.TOKEN_EXPIRY_KEY);
     localStorage.removeItem(AuthTokenConstants.LAST_ACTIVITY_KEY);
     localStorage.removeItem(AuthTokenConstants.TOKEN_DURATION_KEY);
+  }
+
+  isLogOutInProgress(): boolean {
+    return !localStorage.getItem(AuthTokenConstants.TOKEN_EXPIRY_KEY);
   }
 }

@@ -10,15 +10,15 @@ import { filter, tap } from 'rxjs';
 import {
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/data-access/settings';
+import { BasePreferencesComponent } from '@erp-services/preferences';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   ObjectName,
   ObjectType,
   PageName,
-} from '@customer-portal/shared/constants';
-import { ColumnDefinition, GridConfig } from '@customer-portal/shared/models';
+} from '@erp-services/shared/constants';
+import { ColumnDefinition, GridConfig } from '@erp-services/shared/models';
 
 import { SETTINGS_TABS_COMPANY_DETAILS_GRID_COLUMNS } from '../../constants';
 import { SettingsTabsCompanyDetailsInfoComponent } from '../settings-tabs-company-details-info';

@@ -8,7 +8,7 @@
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
   grid-template-areas:
     'form'
     'p';
@@ -18,10 +18,10 @@ form {
   grid-area: form;
   display: flex;
   flex-direction: column;
-  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(3 * var(--suaadhya-gutter-base-unitless)));
 
   @include mixins.respond-to(phone) {
-    gap: utility.get-rem(var(--dnv-gutter-base-unitless)); 
+    gap: utility.get-rem(var(--suaadhya-gutter-base-unitless)); 
   }
 }
 
@@ -29,12 +29,12 @@ label {
   @extend %#{typography.$label-l-pattern};
   display: flex;
   align-items: center;
-  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  gap: utility.get-rem(var(--suaadhya-gutter-base-unitless));
   color: colors.get-color('DarkBlue');
 }
 
 i {
-  font-size: var(--dnv-font-text-l);
+  font-size: var(--suaadhya-font-text-l);
 }
 
 p {
@@ -48,13 +48,13 @@ p {
 
   @include mixins.respond-to(phone) {
     grid-template-columns: 100%;
-    gap: utility.get-rem(calc(0.5 * var(--dnv-gutter-base-unitless)));
+    gap: utility.get-rem(calc(0.5 * var(--suaadhya-gutter-base-unitless)));
   }
 }
 
 .wrapper {
   display: flex;
-  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  gap: utility.get-rem(calc(2 * var(--suaadhya-gutter-base-unitless)));
 }
 
 .p-inputtext::ng-deep {
@@ -98,7 +98,7 @@ p-dropdown.p-element::ng-deep {
   .p-dropdown-filter-container {
     display: flex;
     align-items: center;
-    margin: utility.get-rem(var(--dnv-gutter-base-unitless));
+    margin: utility.get-rem(var(--suaadhya-gutter-base-unitless));
   }
 
   .p-overlay {

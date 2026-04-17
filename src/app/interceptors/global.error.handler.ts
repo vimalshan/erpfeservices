@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { ApolloError } from '@apollo/client/errors';
 
-import { LoggingService } from '@customer-portal/core';
+import { LoggingService } from '@erp-services/core';
 
 @Injectable()
 export class GlobalErrorHandler extends ErrorHandler {

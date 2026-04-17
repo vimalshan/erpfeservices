@@ -11,11 +11,11 @@ import {
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   createMessageServiceMock,
   FilteringConfig,
@@ -23,7 +23,7 @@ import {
   FilterOperator,
   GridConfig,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { ScheduleExcelPayloadDto, ScheduleListDto } from '../dtos';
 import { ScheduleListItemModel } from '../models';
@@ -39,8 +39,8 @@ import {
   ScheduleListStateModel,
 } from './schedules-list.state';
 
-jest.mock('@customer-portal/shared', () => {
-  const actualModule = jest.requireActual('@customer-portal/shared');
+jest.mock('@erp-services/shared', () => {
+  const actualModule = jest.requireActual('@erp-services/shared');
 
   return {
     ...actualModule,
@@ -270,9 +270,9 @@ describe('ScheduleListState', () => {
         .spyOn(profileStoreServiceMock, 'hasPermission')
         .mockReturnValue(() => true);
 
-      // Mock isDnvUser to return false (needed for ScheduleListMapperService)
+      // Mock isSuaadhyaUser to return false (needed for ScheduleListMapperService)
       jest
-        .spyOn(settingsCoBrowsingStoreServiceMock, 'isDnvUser')
+        .spyOn(settingsCoBrowsingStoreServiceMock, 'isSuaadhyaUser')
         .mockReturnValue(false);
 
       jest
@@ -294,7 +294,7 @@ describe('ScheduleListState', () => {
         PermissionCategories.Schedule,
         PermissionsList.Edit,
       );
-      expect(settingsCoBrowsingStoreServiceMock.isDnvUser).toHaveBeenCalled();
+      expect(settingsCoBrowsingStoreServiceMock.isSuaadhyaUser).toHaveBeenCalled();
       expect(
         settingsCompanyDetailsStoreServiceMock.isUserAdmin,
       ).toHaveBeenCalled();

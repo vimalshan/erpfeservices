@@ -32,7 +32,7 @@ p-progressSpinner::ng-deep {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color.scale(variables.$primary-dnv-dark-blue, $alpha: -60%);
+  background-color: color.scale(variables.$primary-suaadhya-dark-blue, $alpha: -60%);
   z-index: 9999;
 }
 .spinner-text {
@@ -40,7 +40,7 @@ p-progressSpinner::ng-deep {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: var(--dnv-font-text-s);
+  font-size: var(--suaadhya-font-text-s);
   color: colors.get-color('UiBlack');
 }
 

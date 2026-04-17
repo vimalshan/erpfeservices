@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslocoModule } from '@jsverse/transloco';
 
-import { CustomCardComponent } from '@customer-portal/shared/components/custom-card';
+import { CustomCardComponent } from '@erp-services/shared/components/custom-card';
 
 import { EXTERNAL_APPS, ExternalAppModel } from '../../constants';
 

@@ -2,7 +2,7 @@
   "name": "environments",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/environments/src",
-  "prefix": "customer-portal",
+  "prefix": "erp-services",
   "projectType": "library",
   "tags": ["type:environments", "domain:environments"],
   "targets": {

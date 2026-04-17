@@ -3,23 +3,23 @@ import { runInInjectionContext, signal, WritableSignal } from '@angular/core';
 import {
   ContractsListItemModel,
   ContractsListStoreService,
-} from '@customer-portal/data-access/contracts';
+} from '@erp-services/data-access/contracts';
 import {
   createDocumentStoreServiceMock,
   DocumentsStoreService,
-} from '@customer-portal/data-access/documents';
+} from '@erp-services/data-access/documents';
 import {
   createSettingsCoBrowsingStoreServiceMock,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 import {
   GridConfig,
   ObjectName,
   ObjectType,
   PageName,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { ContractListComponent } from './contract-list.component';
 

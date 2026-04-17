@@ -3,12 +3,12 @@ import { Store } from '@ngxs/store';
 import { Dispatch } from '@ngxs-labs/dispatch-decorator';
 import { Observable } from 'rxjs';
 
-import { AdminPermissionChecker } from '@customer-portal/shared/directives/permissions';
+import { AdminPermissionChecker } from '@erp-services/shared/directives/permissions';
 import {
   FilteringConfig,
   FilterOptions,
   GridConfig,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import {
   SettingsCompanyDetailsCountryListData,

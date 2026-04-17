@@ -14,7 +14,7 @@ import {
 import {
   decodeDownloadFileName,
   downloadFromByteArray,
-} from '@customer-portal/shared/helpers/download';
+} from '@erp-services/shared/helpers/download';
 
 export interface DocumentDownloadTask {
   id: string;

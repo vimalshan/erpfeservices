@@ -109,3 +109,43 @@ export const downloadFromByteArray = (inputArray: any, fileName: string) => {
 
   saveAs(file, fileName);
 };
+
+export const decodeDownloadFileName = (rawName: string): string => {
+  if (!rawName) {
+    return rawName;
+  }
+
+  try {
+    return decodeURIComponent(rawName);
+  } catch {
+    return rawName;
+  }
+};
+
+export const animateFlyToDownload = (element: HTMLElement): void => {
+  if (!element) {
+    return;
+  }
+
+  const clone = element.cloneNode(true) as HTMLElement;
+  const rect = element.getBoundingClientRect();
+
+  clone.style.position = 'fixed';
+  clone.style.left = `${rect.left}px`;
+  clone.style.top = `${rect.top}px`;
+  clone.style.zIndex = '9999';
+  clone.style.transition = 'all 0.5s ease-in-out';
+  clone.style.opacity = '1';
+  clone.style.pointerEvents = 'none';
+
+  document.body.appendChild(clone);
+
+  requestAnimationFrame(() => {
+    clone.style.transform = 'translateY(20px) scale(0.5)';
+    clone.style.opacity = '0';
+  });
+
+  setTimeout(() => {
+    clone.remove();
+  }, 600);
+};

@@ -2,11 +2,11 @@ import { HashMap, TranslateParams, TranslocoService } from '@jsverse/transloco';
 import { ConfirmationService } from 'primeng/api';
 import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
-import { SettingsMembersStoreService } from '@customer-portal/data-access/settings';
+import { SettingsMembersStoreService } from '@erp-services/data-access/settings';
 
 import { ManagePermissionsModalHeaderComponent } from './manage-permissions-modal-header.component';
 
-jest.mock('@customer-portal/data-access/settings');
+jest.mock('@erp-services/data-access/settings');
 jest.mock('primeng/dynamicdialog');
 jest.mock('primeng/api');
 jest.mock('@jsverse/transloco');

@@ -17,143 +17,143 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@customer-portal/core": ["libs/core/src/index.ts"],
-      "@customer-portal/core/*": ["libs/core/src/*"],
-      "@customer-portal/data-access/actions": [
+      "@erp-services/core": ["libs/core/src/index.ts"],
+      "@erp-services/core/*": ["libs/core/src/*"],
+      "@erp-services/data-access/actions": [
         "libs/data-access/actions/src/index.ts"
       ],
-      "@customer-portal/data-access/actions/*": [
+      "@erp-services/data-access/actions/*": [
         "libs/data-access/actions/src/*"
       ],
-      "@customer-portal/data-access/audit": [
+      "@erp-services/data-access/audit": [
         "libs/data-access/audit/src/index.ts"
       ],
-      "@customer-portal/data-access/audit/*": ["libs/data-access/audit/src/*"],
-      "@customer-portal/data-access/certificates": [
+      "@erp-services/data-access/audit/*": ["libs/data-access/audit/src/*"],
+      "@erp-services/data-access/certificates": [
         "libs/data-access/certificates/src/index.ts"
       ],
-      "@customer-portal/data-access/certificates/*": [
+      "@erp-services/data-access/certificates/*": [
         "libs/data-access/certificates/src/*"
       ],
-      "@customer-portal/data-access/contracts": [
+      "@erp-services/data-access/contracts": [
         "libs/data-access/contracts/src/index.ts"
       ],
-      "@customer-portal/data-access/contracts/*": [
+      "@erp-services/data-access/contracts/*": [
         "libs/data-access/contracts/src/*"
       ],
-      "@customer-portal/data-access/documents": [
+      "@erp-services/data-access/documents": [
         "libs/data-access/documents/src/index.ts"
       ],
-      "@customer-portal/data-access/documents/*": [
+      "@erp-services/data-access/documents/*": [
         "libs/data-access/documents/src/*"
       ],
-      "@customer-portal/data-access/financials": [
+      "@erp-services/data-access/financials": [
         "libs/data-access/financials/src/index.ts"
       ],
-      "@customer-portal/data-access/financials/*": [
+      "@erp-services/data-access/financials/*": [
         "libs/data-access/financials/src/*"
       ],
-      "@customer-portal/data-access/findings": [
+      "@erp-services/data-access/findings": [
         "libs/data-access/findings/src/index.ts"
       ],
-      "@customer-portal/data-access/findings/*": [
+      "@erp-services/data-access/findings/*": [
         "libs/data-access/findings/src/*"
       ],
-      "@customer-portal/data-access/notifications": [
+      "@erp-services/data-access/notifications": [
         "libs/data-access/notifications/src/index.ts"
       ],
-      "@customer-portal/data-access/notifications/*": [
+      "@erp-services/data-access/notifications/*": [
         "libs/data-access/notifications/src/*"
       ],
-      "@customer-portal/data-access/overview": [
+      "@erp-services/data-access/overview": [
         "libs/data-access/overview/src/index.ts"
       ],
-      "@customer-portal/data-access/overview-shared": [
+      "@erp-services/data-access/overview-shared": [
         "libs/data-access/overview-shared/src/index.ts"
       ],
-      "@customer-portal/data-access/overview-shared/*": [
+      "@erp-services/data-access/overview-shared/*": [
         "libs/data-access/overview-shared/src/*"
       ],
-      "@customer-portal/data-access/overview/*": [
+      "@erp-services/data-access/overview/*": [
         "libs/data-access/overview/src/*"
       ],
-      "@customer-portal/data-access/schedules": [
+      "@erp-services/data-access/schedules": [
         "libs/data-access/schedules/src/index.ts"
       ],
-      "@customer-portal/data-access/schedules/*": [
+      "@erp-services/data-access/schedules/*": [
         "libs/data-access/schedules/src/*"
       ],
-      "@customer-portal/data-access/settings": [
+      "@erp-services/data-access/settings": [
         "libs/data-access/settings/src/index.ts"
       ],
-      "@customer-portal/data-access/settings/*": [
+      "@erp-services/data-access/settings/*": [
         "libs/data-access/settings/src/*"
       ],
-      "@customer-portal/environments": ["libs/environments/src/index.ts"],
-      "@customer-portal/environments/*": ["libs/environments/src/*"],
-      "@customer-portal/features/actions": [
+      "@erp-services/environments": ["libs/environments/src/index.ts"],
+      "@erp-services/environments/*": ["libs/environments/src/*"],
+      "@erp-services/features/actions": [
         "libs/features/actions/src/index.ts"
       ],
-      "@customer-portal/features/audit": ["libs/features/audit/src/index.ts"],
-      "@customer-portal/features/certificates": [
+      "@erp-services/features/audit": ["libs/features/audit/src/index.ts"],
+      "@erp-services/features/certificates": [
         "libs/features/certificates/src/index.ts"
       ],
-      "@customer-portal/features/contracts": [
+      "@erp-services/features/contracts": [
         "libs/features/contracts/src/index.ts"
       ],
-      "@customer-portal/features/external-apps": [
+      "@erp-services/features/external-apps": [
         "libs/features/external-apps/src/index.ts"
       ],
-      "@customer-portal/features/financials": [
+      "@erp-services/features/financials": [
         "libs/features/financials/src/index.ts"
       ],
-      "@customer-portal/features/findings": [
+      "@erp-services/features/findings": [
         "libs/features/findings/src/index.ts"
       ],
-      "@customer-portal/features/logout": ["libs/features/logout/src/index.ts"],
-      "@customer-portal/features/notifications": [
+      "@erp-services/features/logout": ["libs/features/logout/src/index.ts"],
+      "@erp-services/features/notifications": [
         "libs/features/notifications/src/index.ts"
       ],
-      "@customer-portal/features/overview": [
+      "@erp-services/features/overview": [
         "libs/features/overview/src/index.ts"
       ],
-      "@customer-portal/features/profile": [
+      "@erp-services/features/profile": [
         "libs/features/profile/src/index.ts"
       ],
-      "@customer-portal/features/schedules": [
+      "@erp-services/features/schedules": [
         "libs/features/schedules/src/index.ts"
       ],
-      "@customer-portal/features/settings": [
+      "@erp-services/features/settings": [
         "libs/features/settings/src/index.ts"
       ],
-      "@customer-portal/features/upload": ["libs/features/upload/src/index.ts"],
-      "@customer-portal/features/welcome": [
+      "@erp-services/features/upload": ["libs/features/upload/src/index.ts"],
+      "@erp-services/features/welcome": [
         "libs/features/welcome/src/index.ts"
       ],
-      "@customer-portal/data-access/global": ["libs/data-access/global/src/index.ts"],
-      "@customer-portal/data-access/global/*": ["libs/data-access/global/src/*"],
-      "@customer-portal/overview-shared": [
+      "@erp-services/data-access/global": ["libs/data-access/global/src/index.ts"],
+      "@erp-services/data-access/global/*": ["libs/data-access/global/src/*"],
+      "@erp-services/overview-shared": [
         "libs/data-access/overview-shared/src/index.ts"
       ],
-      "@customer-portal/overview-shared/*": [
+      "@erp-services/overview-shared/*": [
         "libs/data-access/overview-shared/src/*"
       ],
-      "@customer-portal/permissions": [
+      "@erp-services/permissions": [
         "libs/data-access/permissions/src/index.ts"
       ],
-      "@customer-portal/permissions/*": [
+      "@erp-services/permissions/*": [
         "libs/data-access/permissions/src/*"
       ],
-      "@customer-portal/preferences": [
+      "@erp-services/preferences": [
         "libs/data-access/preferences/src/index.ts"
       ],
-      "@customer-portal/preferences/*": [
+      "@erp-services/preferences/*": [
         "libs/data-access/preferences/src/*"
       ],
-      "@customer-portal/router": ["libs/data-access/router/src/index.ts"],
-      "@customer-portal/router/*": ["libs/data-access/router/src/*"],
-      "@customer-portal/shared": ["libs/shared/src/index.ts"],
-      "@customer-portal/shared/*": ["libs/shared/src/*"]
+      "@erp-services/router": ["libs/data-access/router/src/index.ts"],
+      "@erp-services/router/*": ["libs/data-access/router/src/*"],
+      "@erp-services/shared": ["libs/shared/src/index.ts"],
+      "@erp-services/shared/*": ["libs/shared/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"],

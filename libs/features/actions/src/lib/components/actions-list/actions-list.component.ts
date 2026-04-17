@@ -6,24 +6,24 @@ import { CheckboxChangeEvent, CheckboxModule } from 'primeng/checkbox';
 import { DialogService } from 'primeng/dynamicdialog';
 import { filter, take, tap } from 'rxjs';
 
-import { ActionsListStoreService } from '@customer-portal/data-access/actions/state';
-import { NotificationModel as ActionModel } from '@customer-portal/data-access/notifications';
-import { SettingsCoBrowsingStoreService } from '@customer-portal/data-access/settings';
-import { BasePreferencesComponent } from '@customer-portal/preferences';
+import { ActionsListStoreService } from '@erp-services/data-access/actions/state';
+import { NotificationModel as ActionModel } from '@erp-services/data-access/notifications';
+import { SettingsCoBrowsingStoreService } from '@erp-services/data-access/settings';
+import { BasePreferencesComponent } from '@erp-services/preferences';
 import {
   HtmlDetailsFooterModalComponent,
   HtmlDetailsModalComponent,
-} from '@customer-portal/shared/components';
-import { GridComponent } from '@customer-portal/shared/components/grid';
+} from '@erp-services/shared/components';
+import { GridComponent } from '@erp-services/shared/components/grid';
 import {
   FINDINGS_STATUS_STATES_MAP,
   modalBreakpoints,
-} from '@customer-portal/shared/constants';
+} from '@erp-services/shared/constants';
 import {
   ColumnDefinition,
   GridConfig,
   GridRowAction,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 import { ACTIONS_LIST_COLUMNS } from '../../constants/actions-list-column-constant';
 
@@ -68,7 +68,7 @@ export class ActionsListComponent
   }
 
   onActionRowClick(inputData: { rowData: GridRowAction }): void {
-    if (this.settingsCoBrowsingStoreService.isDnvUser()) {
+    if (this.settingsCoBrowsingStoreService.isSuaadhyaUser()) {
       return;
     }
 

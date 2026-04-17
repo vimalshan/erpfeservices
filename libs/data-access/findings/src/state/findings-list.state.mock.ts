@@ -5,7 +5,7 @@ import {
   FilterValue,
   GridConfig,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { FindingExcelPayloadDto, FindingListDto } from '../dtos';
 
@@ -18,7 +18,7 @@ export const mockedFindingsListResponse: FindingListDto = {
       title: 'The organization shall have documented processes',
       category: 'CAT1 (major)',
       services: ['IFS Food version 8 April 2023', 'FSC-STD-40-004 V3-1'],
-      sites: ['DNV GL GSS IT'],
+      sites: ['Suaadhya GL GSS IT'],
       findingNumber: 'MANMES-0031',
       countries: ['France'],
       cities: ['Arnhem'],
@@ -37,7 +37,7 @@ export const mockedFindingsListResponse: FindingListDto = {
         'ISO 45001:2018 || ISO 9001:2015',
         'FSC-STD-40-004 V3-1',
       ],
-      sites: ['DNV GL GSS IT (Arnhem)'],
+      sites: ['Suaadhya GL GSS IT (Arnhem)'],
       countries: ['France'],
       cities: ['Arnhem'],
       findingNumber: 'MANMES-0032',
@@ -56,7 +56,7 @@ export const expectedFindingsInState = [
     title: 'The organization shall have documented processes',
     category: 'CAT1 (major)',
     services: 'IFS Food version 8 April 2023 || FSC-STD-40-004 V3-1',
-    site: 'DNV GL GSS IT',
+    site: 'Suaadhya GL GSS IT',
     country: 'France',
     city: 'Arnhem',
     openDate: '18-05-2024',
@@ -72,7 +72,7 @@ export const expectedFindingsInState = [
     category: 'CAT2 (Minor)',
     services:
       'ISO 45001:2018 || ISO 45001:2018 || ISO 9001:2015 || FSC-STD-40-004 V3-1',
-    site: 'DNV GL GSS IT (Arnhem)',
+    site: 'Suaadhya GL GSS IT (Arnhem)',
     country: 'France',
     city: 'Arnhem',
     openDate: '15-05-2024',
@@ -149,12 +149,12 @@ export const expectedFilterOptions = {
   ],
   site: [
     {
-      label: 'DNV GL GSS IT',
-      value: 'DNV GL GSS IT',
+      label: 'Suaadhya GL GSS IT',
+      value: 'Suaadhya GL GSS IT',
     },
     {
-      label: 'DNV GL GSS IT (Arnhem)',
-      value: 'DNV GL GSS IT (Arnhem)',
+      label: 'Suaadhya GL GSS IT (Arnhem)',
+      value: 'Suaadhya GL GSS IT (Arnhem)',
     },
   ],
   country: [
@@ -284,8 +284,8 @@ export const userFilters: FilteringConfig = {
     operator: FilterOperator.And,
     value: [
       {
-        label: 'DNV GL GSS IT',
-        value: 'DNV GL GSS IT',
+        label: 'Suaadhya GL GSS IT',
+        value: 'Suaadhya GL GSS IT',
       },
       {
         label: 'calenberger Strasse 36',
@@ -385,7 +385,7 @@ export const expectedRequestDownloadFindingsPayload: FindingExcelPayloadDto = {
     title: ['The organization shall have documented processes'],
     category: ['CAT1 - Major', 'CAT2 - Minor'],
     service: ['ISO 45001:2018'],
-    site: ['DNV GL GSS IT', 'calenberger Strasse 36'],
+    site: ['Suaadhya GL GSS IT', 'calenberger Strasse 36'],
     country: ['France'],
     city: ['Arnhem', 'Nordstemmen'],
     auditId: ['3067121', '3067486'],
@@ -404,7 +404,7 @@ export const defaultFindingListState = {
         title: 'The organization shall have documented processes',
         category: 'CAT1 (major)',
         services: 'IFS Food version 8 April 2023 || FSC-STD-40-004 V3-1',
-        site: 'DNV GL GSS IT',
+        site: 'Suaadhya GL GSS IT',
         country: 'France',
         city: 'Arnhem',
         auditNumber: '3067486',
@@ -419,7 +419,7 @@ export const defaultFindingListState = {
         category: 'CAT2 (Minor)',
         services:
           'ISO 45001:2018 || ISO 45001:2018 || ISO 9001:2015 || FSC-STD-40-004 V3-1',
-        site: 'DNV GL GSS IT (Arnhem)',
+        site: 'Suaadhya GL GSS IT (Arnhem)',
         country: 'France',
         city: 'Arnhem',
         auditNumber: '3067486',
@@ -495,12 +495,12 @@ export const defaultFindingListState = {
       ],
       site: [
         {
-          label: 'DNV GL GSS IT',
-          value: 'DNV GL GSS IT',
+          label: 'Suaadhya GL GSS IT',
+          value: 'Suaadhya GL GSS IT',
         },
         {
-          label: 'DNV GL GSS IT (Arnhem)',
-          value: 'DNV GL GSS IT (Arnhem)',
+          label: 'Suaadhya GL GSS IT (Arnhem)',
+          value: 'Suaadhya GL GSS IT (Arnhem)',
         },
       ],
       country: [

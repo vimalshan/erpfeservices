@@ -2,13 +2,13 @@ import { runInInjectionContext } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
 import { of } from 'rxjs';
 
-import { ActionsListStoreService } from '@customer-portal/data-access/actions';
+import { ActionsListStoreService } from '@erp-services/data-access/actions';
 import {
   createSettingsCoBrowsingStoreServiceMock,
-  isDnvUserMock,
+  isSuaadhyaUserMock,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
-import { createPreferenceMockInjector } from '@customer-portal/preferences';
+} from '@erp-services/data-access/settings';
+import { createPreferenceMockInjector } from '@erp-services/preferences';
 
 import { ActionsListComponent } from './actions-list.component';
 
@@ -88,10 +88,10 @@ describe('ActionsListComponent', () => {
     );
   });
 
-  test('should prevent navigation for DNV users on action row click', () => {
+  test('should prevent navigation for Suaadhya users on action row click', () => {
     // Arrange
-    isDnvUserMock.set(true);
-    // isDnvUserSignal.set(true);
+    isSuaadhyaUserMock.set(true);
+    // isSuaadhyaUserSignal.set(true);
 
     const rowData = {
       rowData: {

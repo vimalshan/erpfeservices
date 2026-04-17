@@ -9,7 +9,7 @@ export const OVERVIEW_UPCOMING_AUDITS_QUERY = gql`
       data {
         confirmed
         toBeConfirmed
-        toBeConfirmedByDNV
+        toBeConfirmedBySuaadhya
       }
     }
   }

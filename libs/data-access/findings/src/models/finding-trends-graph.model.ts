@@ -1,6 +1,6 @@
 import { ChartData } from 'chart.js';
 
-import { ChartTypeEnum } from '@customer-portal/shared';
+import { ChartTypeEnum } from '@erp-services/shared';
 
 export interface FindingTrendsGraphModel {
   data: ChartData<ChartTypeEnum.Line>;

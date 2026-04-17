@@ -1,5 +1,5 @@
-import { convertToUtcDate } from '@customer-portal/shared/helpers/date';
-import { GridFileActionType } from '@customer-portal/shared/models/grid';
+import { convertToUtcDate } from '@erp-services/shared/helpers/date';
+import { GridFileActionType } from '@erp-services/shared/models/grid';
 
 import {
   FindingDocumentListItemDto,
@@ -11,7 +11,7 @@ export class FindingDocumentsListMapperService {
   static mapToFindingDocumentItemModel(
     dto: FindingDocumentsListDto,
     hasFindingsEditPermission: boolean,
-    isDnvUser: boolean,
+    isSuaadhyaUser: boolean,
   ): FindingDocumentListItemModel[] {
     if (!dto?.data) {
       return [];
@@ -38,7 +38,7 @@ export class FindingDocumentsListMapperService {
       };
 
       const canBeDeleted =
-        !isDnvUser && item.canBeDeleted && hasFindingsEditPermission;
+        !isSuaadhyaUser && item.canBeDeleted && hasFindingsEditPermission;
 
       if (canBeDeleted) {
         item.actions.push({

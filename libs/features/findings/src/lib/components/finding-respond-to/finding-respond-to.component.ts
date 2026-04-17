@@ -14,7 +14,7 @@ import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
 import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { Textarea } from 'primeng/inputtextarea';
 import { TooltipModule } from 'primeng/tooltip';
 import { distinctUntilChanged, map, tap } from 'rxjs';
 
@@ -22,24 +22,24 @@ import {
   FindingDetailsModel,
   FindingResponsesFormModel,
   FindingResponsesModel,
-} from '@customer-portal/data-access/findings';
+} from '@erp-services/data-access/findings';
 import {
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
-import { buttonStyleClass } from '@customer-portal/shared/components/custom-confirm-dialog';
+} from '@erp-services/shared/components/button';
+import { buttonStyleClass } from '@erp-services/shared/components/custom-confirm-dialog';
 import {
   FindingsStatusStates,
   FindingsTagStates,
-} from '@customer-portal/shared/constants';
+} from '@erp-services/shared/constants';
 
 @Component({
   selector: 'lib-finding-respond-to',
@@ -49,7 +49,7 @@ import {
     InputTextModule,
     ReactiveFormsModule,
     TranslocoDirective,
-    InputTextareaModule,
+    Textarea,
     TooltipModule,
     ConfirmDialogModule,
   ],
@@ -72,7 +72,7 @@ export class FindingRespondToComponent implements OnInit {
     PermissionsList.Submit,
   );
 
-  isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+  isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
 
   @Input()
   isRespondInProgress!: boolean;
@@ -162,11 +162,11 @@ export class FindingRespondToComponent implements OnInit {
     });
   }
 
-  onSubmitToDnv(): void {
+  onSubmitToSuaadhya(): void {
     this.confirmationService.confirm({
-      header: this.ts.translate('findings.confirmationPopup.sendToDnv'),
+      header: this.ts.translate('findings.confirmationPopup.sendToSuaadhya'),
       message: this.ts.translate(
-        'findings.confirmationPopup.youAreAboutToSubmitResponseToDNV',
+        'findings.confirmationPopup.youAreAboutToSubmitResponseToSuaadhya',
       ),
       acceptLabel: this.ts.translate('findings.confirmationPopup.submit'),
       rejectLabel: this.ts.translate('findings.confirmationPopup.cancel'),

@@ -44,7 +44,7 @@ describe('FindingDetailsService', () => {
             services: ['IFS Food version 8 April 2023', 'FSC-STD-40-004 V3-1'],
             sites: [
               {
-                siteName: 'DNV GL GSS IT',
+                siteName: 'Suaadhya GL GSS IT',
                 siteAddress: 'Arnhem',
               },
             ],
@@ -138,7 +138,7 @@ describe('FindingDetailsService', () => {
             correction: 'test correction',
             correctiveAction: 'test correctiveAction',
             rootCause: 'test rootCause',
-            isSubmitToDnv: true,
+            isSubmitToSuaadhya: true,
           },
         };
         const { request } = payload;
@@ -170,7 +170,7 @@ describe('FindingDetailsService', () => {
             correctiveAction: 'test correctiveAction',
             updatedOn: '06-04-2024',
             rootCause: 'test rootCause',
-            isSubmitToDnv: true,
+            isSubmitToSuaadhya: true,
             isDraft: false,
             respondId: 1,
           },

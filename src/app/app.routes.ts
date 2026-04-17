@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 
-import { allowNonDnvUserGuard } from '@customer-portal/data-access/settings/guards';
+import { allowNonSuaadhyaUserGuard } from '@erp-services/data-access/settings/guards';
 import { authGuard, RouteConfig } from '../../libs/shared/src';
 
 
@@ -28,7 +28,7 @@ export const appRoutes: Route[] = [
         (m) => m.LogoutComponent,
       ),
     title: RouteConfig.Logout.title,
-    canActivate: [allowNonDnvUserGuard],
+    canActivate: [allowNonSuaadhyaUserGuard],
   },
   {
     path: RouteConfig.Error.path,

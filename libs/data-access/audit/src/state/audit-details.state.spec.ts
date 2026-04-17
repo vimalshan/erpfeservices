@@ -8,15 +8,15 @@ import {
   createSettingsCoBrowsingStoreServiceMock,
   ProfileStoreService,
   SettingsCoBrowsingStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   PermissionCategories,
   PermissionsList,
-} from '@customer-portal/permissions';
+} from '@erp-services/permissions';
 import {
   createRouteStoreServiceMock,
   RouteStoreService,
-} from '@customer-portal/router';
+} from '@erp-services/router';
 import {
   DEFAULT_GRID_CONFIG,
   FilteringConfig,
@@ -25,7 +25,7 @@ import {
   GridConfig,
   GridFileActionType,
   SortingMode,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import {
   AuditDetailsDto,

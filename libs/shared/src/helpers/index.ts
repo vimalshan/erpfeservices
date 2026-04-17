@@ -1,5 +1,6 @@
 export * from './bidirectional-map';
 export * from './chart';
+export * from './custom-operators';
 export * from './custom-toast';
 export * from './date';
 export * from './download';

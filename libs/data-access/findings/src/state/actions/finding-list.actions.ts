@@ -1,4 +1,4 @@
-import { FilterValue, GridConfig } from '@customer-portal/shared';
+import { FilterValue, GridConfig } from '@erp-services/shared';
 
 import { FindingListItemModel } from '../../models';
 

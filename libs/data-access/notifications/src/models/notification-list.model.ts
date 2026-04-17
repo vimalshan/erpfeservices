@@ -1,4 +1,4 @@
-import { GridRowAction } from '@customer-portal/shared';
+import { GridRowAction } from '@erp-services/shared';
 
 export interface NotificationListModel {
   notifications: NotificationModel[];

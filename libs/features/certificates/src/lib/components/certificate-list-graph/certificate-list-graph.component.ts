@@ -24,21 +24,21 @@ import {
   CertificateChartFilterKey,
   CertificateListGraphStoreService,
   CertificatesTabs,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 import {
   SharedSelectDateRangeModComponent,
   SharedSelectMultipleModComponent,
   TreeDropdownComponent,
-} from '@customer-portal/shared/components/select';
+} from '@erp-services/shared/components/select';
 import {
   ChartTypeEnum,
   CustomTreeNode,
   TimeRange,
-} from '@customer-portal/shared/models';
+} from '@erp-services/shared/models';
 
 @Component({
   selector: 'lib-certificate-list-graph',

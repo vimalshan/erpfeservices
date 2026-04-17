@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 
-import { ActionFilterKey } from '@customer-portal/data-access/actions';
-import { ActionsListStoreService } from '@customer-portal/data-access/actions/state';
+import { ActionFilterKey } from '@erp-services/data-access/actions';
+import { ActionsListStoreService } from '@erp-services/data-access/actions/state';
 import {
   SharedSelectMultipleComponent,
   SharedSelectTreeComponent,
-} from '@customer-portal/shared/components/select';
+} from '@erp-services/shared/components/select';
 
 @Component({
   selector: 'lib-actions-filter',

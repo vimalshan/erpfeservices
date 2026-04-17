@@ -19,19 +19,19 @@ import {
   LoggingService,
   ServiceNowService,
   SpinnerService,
-} from '@customer-portal/core';
+} from '@erp-services/core';
 import {
   CERTIFICATE_STATUS_MAP,
   CertificateDetailsStoreService,
   CertificateDownloadDialogSubmitData,
   CertificateStatus,
   DocumentMark,
-} from '@customer-portal/data-access/certificates';
+} from '@erp-services/data-access/certificates';
 import {
   ProfileLanguageStoreService,
   SettingsCoBrowsingStoreService,
   SettingsCompanyDetailsStoreService,
-} from '@customer-portal/data-access/settings';
+} from '@erp-services/data-access/settings';
 import {
   LanguageSwitcherComponent,
   MessageComponent,
@@ -40,15 +40,15 @@ import {
   SharedButtonComponent,
   SharedButtonType,
   StatusComponent,
-} from '@customer-portal/shared/components';
-import { modalBreakpoints } from '@customer-portal/shared/constants';
+} from '@erp-services/shared/components';
+import { modalBreakpoints } from '@erp-services/shared/constants';
 import {
   ADMIN_PERMISSION_CHECKER,
   HasAdminPermissionDirective,
-} from '@customer-portal/shared/directives/permissions';
-import { getToastContentBySeverity } from '@customer-portal/shared/helpers/custom-toast';
-import { LanguageOption, ToastSeverity } from '@customer-portal/shared/models';
-import { CustomDatePipe } from '@customer-portal/shared/pipes/custom-date.pipe';
+} from '@erp-services/shared/directives/permissions';
+import { getToastContentBySeverity } from '@erp-services/shared/helpers/custom-toast';
+import { LanguageOption, ToastSeverity } from '@erp-services/shared/models';
+import { CustomDatePipe } from '@erp-services/shared/pipes/custom-date.pipe';
 
 import { CertificateMarkLanguageList } from '../../constants';
 import { CertificateDownloadDialogComponent } from '../certificate-download-dialog';
@@ -95,7 +95,7 @@ export class CertificateDetailsComponent
   newCertificateInProgressMessages: MessageModel[] = [];
   isLoading = this.spinnerService.isLoading$;
   sharedButtonType = SharedButtonType;
-  isDnvUser = this.settingsCoBrowsingStoreService.isDnvUser;
+  isSuaadhyaUser = this.settingsCoBrowsingStoreService.isSuaadhyaUser;
   isOutstandingStatus = false;
 
   constructor(
@@ -283,7 +283,7 @@ export class CertificateDetailsComponent
         certificateNumber: this.certificateDetails().certificateNumber,
         revisionNumber: this.certificateDetails().header.revisionNumber,
         certificateID: this.certificateDetails().certificateId,
-        accountDNVId: this.certificateDetails().accountDNVId,
+        accountSuaadhyaId: this.certificateDetails().accountSuaadhyaId,
         certificateStatus: this.certificateDetails().header.status,
         language: this.profileLanguageStoreService.languageLabel(),
         service: this.certificateDetails().header.services,

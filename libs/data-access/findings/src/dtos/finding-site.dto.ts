@@ -1,4 +1,4 @@
-import { BaseApolloResponse } from "@customer-portal/shared";
+import { BaseApolloResponse } from "@erp-services/shared";
 
 export interface FindingSiteDto {
   id: number;
@@ -53,4 +53,5 @@ interface GetFindingSiteResponse {
 export interface FindingsSiteResponse 
 extends BaseApolloResponse<GetFindingSiteResponse[]> {
   data: GetFindingSiteResponse[];
+  isSuccess?: boolean;
 }

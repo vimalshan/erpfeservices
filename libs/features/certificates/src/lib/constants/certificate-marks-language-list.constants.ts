@@ -1,4 +1,4 @@
-import { LanguageOption } from '@customer-portal/shared';
+import { LanguageOption } from '@erp-services/shared';
 
 export const CertificateMarkLanguageList: LanguageOption[] = [
   {

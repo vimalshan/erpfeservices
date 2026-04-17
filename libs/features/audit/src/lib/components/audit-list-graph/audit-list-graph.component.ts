@@ -24,21 +24,21 @@ import {
   AuditChartFilterKey,
   AuditChartsTabs,
   AuditListGraphStoreService,
-} from '@customer-portal/data-access/audit';
+} from '@erp-services/data-access/audit';
 import {
   SharedButtonComponent,
   SharedButtonType,
-} from '@customer-portal/shared/components/button';
+} from '@erp-services/shared/components/button';
 import {
   SharedSelectDateRangeModComponent,
   SharedSelectMultipleModComponent,
   TreeDropdownComponent,
-} from '@customer-portal/shared/components/select';
+} from '@erp-services/shared/components/select';
 import {
   getTimeModRange,
   toUtcRange,
-} from '@customer-portal/shared/helpers/time';
-import { CustomTreeNode, TimeRange } from '@customer-portal/shared/models';
+} from '@erp-services/shared/helpers/time';
+import { CustomTreeNode, TimeRange } from '@erp-services/shared/models';
 
 @Component({
   selector: 'lib-audit-list-graph',

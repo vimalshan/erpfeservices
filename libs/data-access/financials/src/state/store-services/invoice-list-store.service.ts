@@ -8,7 +8,7 @@ import {
   FilterOptions,
   FilterValue,
   GridConfig,
-} from '@customer-portal/shared';
+} from '@erp-services/shared';
 
 import { InvoiceListItemModel } from '../../models';
 import {

@@ -7,15 +7,15 @@ import {
   signal,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { MenuItem } from 'primeng/api';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { filter, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'customer-portal-breadcrumb',
-  imports: [CommonModule, TranslocoDirective, BreadcrumbModule],
+  selector: 'erp-services-breadcrumb',
+  imports: [CommonModule, TranslocoDirective, BreadcrumbModule, RouterLink],
   templateUrl: './breadcrumb.component.html',
   styleUrl: './breadcrumb.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

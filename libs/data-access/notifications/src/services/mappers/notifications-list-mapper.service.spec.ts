@@ -1,4 +1,4 @@
-import { ApiResponseToPageNameMapping } from '@customer-portal/shared';
+import { ApiResponseToPageNameMapping } from '@erp-services/shared';
 
 import { NotificationListDto } from '../../dtos';
 import { NotificationsListMapperService } from './notifications-list-mapper.service';

@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { TabViewModule } from 'primeng/tabview';
 
-import { CertificateListGraphStoreService } from '@customer-portal/data-access/certificates';
-import { TreeTableComponent } from '@customer-portal/shared/components/tree-table';
+import { CertificateListGraphStoreService } from '@erp-services/data-access/certificates';
+import { TreeTableComponent } from '@erp-services/shared/components/tree-table';
 
 @Component({
   selector: 'lib-certificate-list-site-graph',

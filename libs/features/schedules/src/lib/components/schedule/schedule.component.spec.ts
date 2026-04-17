@@ -1,4 +1,4 @@
-import { SharedButtonToggleDatum } from '@customer-portal/shared';
+import { SharedButtonToggleDatum } from '@erp-services/shared';
 
 import { ScheduleComponent } from './schedule.component';
 

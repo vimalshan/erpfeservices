@@ -5,18 +5,18 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { TreeNode } from 'primeng/api';
 import { catchError, EMPTY, of, tap } from 'rxjs';
 
-import { SharedSelectMultipleDatum } from '@customer-portal/shared/components/select/multiple';
-import { DEFAULT_GRID_CONFIG, Routes } from '@customer-portal/shared/constants';
+import { SharedSelectMultipleDatum } from '@erp-services/shared/components/select/multiple';
+import { DEFAULT_GRID_CONFIG, Routes } from '@erp-services/shared/constants';
 import {
   constructNavigation,
-} from '@customer-portal/shared/helpers';
-import { SharedSelectTreeChangeEventOutput } from '@customer-portal/shared/models';
-import { throwIfNotSuccess } from '@customer-portal/shared/helpers/custom-operators';
+} from '@erp-services/shared/helpers';
+import { SharedSelectTreeChangeEventOutput } from '@erp-services/shared/models';
+import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 import {
   FilterOptions,
   FilterValue,
   GridConfig,
-} from '@customer-portal/shared/models/grid';
+} from '@erp-services/shared/models/grid';
 
 import { NotificationFilterKey } from '../constants';
 import {

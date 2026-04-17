@@ -16,8 +16,8 @@ import { TooltipModule } from 'primeng/tooltip';
 import {
   InvoiceListItemModel,
   InvoiceListStoreService,
-} from '@customer-portal/data-access/financials';
-import { getDateWithoutTimezone } from '@customer-portal/shared/helpers/date';
+} from '@erp-services/data-access/financials';
+import { getDateWithoutTimezone } from '@erp-services/shared/helpers/date';
 
 @Component({
   selector: 'lib-update-planned-payment-date',
