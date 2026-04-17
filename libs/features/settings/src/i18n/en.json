@@ -1,0 +1,126 @@
+{
+  "button": {
+    "collapseSection": "Collapse section",
+    "expandSection": "Expand section",
+    "updateInProgress": "Request update in progress",
+    "requestChanges": "Request Changes"
+  },
+  "form": {
+    "companyDetails": {
+      "address": "Address",
+      "city": "City",
+      "country": "Country",
+      "organizationName": "Organization Name",
+      "poNumberRequired": "Po Number Required",
+      "poNumberRequiredTooltip": "Do you require a PO number",
+      "poNumberRequiredValue": {
+        "false": "No",
+        "true": "Yes"
+      },
+      "vatNumber": "Vat Number",
+      "vatNumberTooltip": "Enter your legal entity's VAT number, if applicable.",
+      "zipcode": "Zipcode"
+    },
+    "profile": {
+      "cancel": "Cancel",
+      "changePassword": "You can change your password in Veracity.",
+      "changesPortal": "The changes will be automatically applied to the Portal.",
+      "communicationLanguage": "Communication Language",
+      "countryRegion": "Country / Region",
+      "displayName": "Display name",
+      "editInVeracity": "Edit in Veracity",
+      "editInVeracityToolTip": "Changes made in Veracity will be updated in the Customer Portal shortly. Refresh or relog to see them.",
+      "editSettings": "Edit Settings",
+      "email": "e-mail address",
+      "jobTitle": "Job Title",
+      "myInformation": "Personal information",
+      "name": "Name",
+      "password": "Password",
+      "phone": "Phone number",
+      "settings": "Settings",
+      "settingsModal": {
+        "additionalInformation": "After you submit your edited personal information, it will be reviewed by a DNV employee.  You will receive a notification once the information has been updated.",
+        "header": "Edit portal settings"
+      },
+      "submit": "Submit",
+      "title": "My Profile"
+    },
+    "members": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "role": "Role",
+      "jobTitle": "Job Title",
+      "rolePlaceholder": "Select functional role",
+      "roleInfo": "Functional Role of the User in the company",
+      "company": "Company",
+      "services": "Services",
+      "sites": "Sites",
+      "adminRights": "Admin rights",
+      "manageMembersPermissions": "Manage members and permissions",
+      "accessAreas": "Access areas",
+      "view": "View",
+      "edit": "Edit",
+      "contracts": "Contracts",
+      "scheduleAuditsFindings": "Schedule, Audits, Findings",
+      "certificates": "Certificates",
+      "financials": "Financials"
+    }
+  },
+  "grid": {
+    "header": {
+      "organizationName": "Company"
+    }
+  },
+  "heading": {
+    "companyDetails": "Company details",
+    "legalEntities": "Legal entities",
+    "parentCompany": "Parent company"
+  },
+  "membersTab": {
+    "access": "Access",
+    "addNewMember": "Add new member",
+    "admins": "Admins ({{ total }})",
+    "company": "Company",
+    "email": "Email",
+    "members": "Members ({{ total }})",
+    "name": "Name",
+    "pendingVerification": "Veracity registration is pending. User to complete the process by checking email.",
+    "service": "Service",
+    "site": "Site",
+    "addMember": "Add member",
+    "cancel": "Cancel",
+    "continueToPermissions": "Continue to permissions",
+    "managePermissions": "Manage permissions",
+    "memberDetails": "Member details",
+    "submit": "Submit",
+    "removeUser": {
+      "header": "Remove user",
+      "message": "Are you sure, you want to remove the user?",
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  "modal": {
+    "companyDetails": {
+      "button": {
+        "cancel": "Cancel",
+        "submit": "Submit"
+      },
+      "information": "Once you submit your updated company details, they will be reviewed by a DNV representative. If contract or certificate details are affected, it may be necessary to carry out additional audit activities before reissuing the updated certificates. You will be notified once your information has been updated.",
+      "title": "Edit company details"
+    }
+  },
+  "tabs": {
+    "companyDetails": "Company details",
+    "members": "Members",
+    "personalInformation": "Personal information"
+  },
+  "title": "Settings",
+  "discardDraftPopup": {
+    "header": "Discard draft?",
+    "message": "Are you sure you want to discard your draft? \nYou will not be able to recover the changes.",
+    "continueEditing": "Continue editing",
+    "discard": "Discard"
+  }
+}

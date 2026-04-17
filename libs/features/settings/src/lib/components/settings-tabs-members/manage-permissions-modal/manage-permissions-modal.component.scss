@@ -1,0 +1,77 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+@use 'pattern/variables' as variables;
+
+.manage-permissions {
+  &__info,
+  &__form {
+    padding: utility.get-rem(24) utility.get-rem(32);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: utility.get-rem(16);
+    background-color: colors.get-color('AliceBlue');
+
+    &__details {
+      display: flex;
+      column-gap: utility.get-rem(24);
+    }
+  }
+
+  &__form {
+    padding: utility.get-rem(24) utility.get-rem(32);
+
+    & > div {
+      margin-bottom: utility.get-rem(20);
+
+      & > h5 {
+        margin-bottom: utility.get-rem(4);
+      }
+    }
+  }
+}
+
+h4 {
+  @extend %#{typography.$heading-s-pattern};
+  color: colors.get-color('SeaBlue');
+}
+
+h5 {
+  @extend %#{typography.$label-m-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+p {
+  @extend %#{typography.$text-m-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+:host p-treeselect.p-element::ng-deep,
+::ng-deep .p-treeselect-panel {
+  .p-treenode-label {
+    max-width: utility.get-rem(430);
+  }
+
+  @media screen and (max-width: variables.$breakpoint-xl) {
+    .p-treenode-label {
+      max-width: utility.get-rem(400);
+    }
+  }
+
+  @media screen and (max-width: variables.$breakpoint-md) {
+    .p-treenode-label {
+      max-width: utility.get-rem(320);
+    }
+  }
+
+  @media screen and (max-width: variables.$breakpoint-sm) {
+    .p-treenode-label {
+      max-width: utility.get-rem(150);
+    }
+  }
+}

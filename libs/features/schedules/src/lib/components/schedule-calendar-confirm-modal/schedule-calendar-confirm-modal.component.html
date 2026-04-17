@@ -1,0 +1,45 @@
+<ng-container *transloco="let t">
+  <div class="head">
+    <h4>
+      {{
+        t('schedules.confirm.heading', {
+          startDate:
+            confirmScheduleDetailsStoreService.calendarDetails().startDate,
+          endDate: confirmScheduleDetailsStoreService.calendarDetails().endDate,
+        })
+      }}
+    </h4>
+
+    <div class="service">
+      <h6>{{ t('schedules.service') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().service
+      }}</span>
+    </div>
+
+    <div class="audit-type">
+      <h6>{{ t('schedules.auditType') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().auditType
+      }}</span>
+    </div>
+
+    <div class="auditor">
+      <h6>{{ t('schedules.auditor') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().auditor
+      }}</span>
+    </div>
+
+    <div class="site">
+      <h6>{{ t('schedules.site') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().site
+      }}</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <p>{{ t('schedules.confirm.disclaimer') }}</p>
+  </div>
+</ng-container>

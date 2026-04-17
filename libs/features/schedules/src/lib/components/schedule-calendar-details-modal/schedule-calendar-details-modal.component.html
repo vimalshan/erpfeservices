@@ -1,0 +1,72 @@
+<ng-container *transloco="let t">
+  <div class="head">
+    <h2>
+      {{
+        t('schedules.details.heading', {
+          startDate: confirmScheduleDetailsStoreService.calendarDetails().startDate | customDate,
+          endDate: confirmScheduleDetailsStoreService.calendarDetails().endDate | customDate,
+        })
+      }}
+    </h2>
+
+    <shared-status
+      [statusClassMap]="statusStatesMap"
+      [value]="confirmScheduleDetailsStoreService.calendarDetails().status">
+    </shared-status>
+
+    @if (!isToBeConfirmedStatus()) {
+      <shared-button
+        class="add-to-calendar"
+        [icon]="'calendar-plus'"
+        [label]="t('schedules.details.addToCalendar')"
+        [type]="sharedButtonType.TextLink"
+        (clickEvent)="onAddToCalendar()">
+      </shared-button>
+
+      <shared-button
+        class="share-invite"
+        [icon]="'share-alt'"
+        [label]="t('schedules.details.shareInvite')"
+        [type]="sharedButtonType.TextLink"
+        (clickEvent)="onShareInvite()">
+      </shared-button>
+    }
+  </div>
+
+  <div class="body">
+    <div class="grouping">
+      <h3>{{ t('schedules.service') }}</h3>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().service
+      }}</span>
+    </div>
+
+    <div class="grouping">
+      <h3>{{ t('schedules.auditType') }}</h3>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().auditType
+      }}</span>
+    </div>
+
+    <div class="grouping">
+      <h3>{{ t('schedules.auditor') }}</h3>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().auditor
+      }}</span>
+    </div>
+
+    <div class="grouping">
+      <h3>{{ t('schedules.site') }}</h3>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().site
+      }}</span>
+    </div>
+
+    <div class="grouping">
+      <h3>{{ t('schedules.siteRepresentative') }}</h3>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().siteRepresentative
+      }}</span>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,82 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="overview-title" class="head">
+    <h1 id="overview-title">
+      {{
+        t('overview.title', {
+          user: userFirstName(),
+        })
+      }}
+    </h1>
+    <p class="welcome-description">{{ t('overview.welcomeDescription') }}</p>
+  </section>
+
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    <div class="left">
+      <h3>{{ t('overview.heading') }}</h3>
+      @if (overviewStoreService.overviewCardData().length) {
+        <lib-overview-filters></lib-overview-filters>
+        <div #myElem class="overview-scroll-wrapper">
+          <div class="overview-scroll-card">
+            @if (
+              overviewStoreService.overviewCardData() &&
+              overviewStoreService.overviewCardData().length > 0
+            ) {
+              @for (
+                card of overviewStoreService.overviewCardData();
+                track card
+              ) {
+                <shared-custom-dynamic-card
+                  [card]="card"
+                  (cardClicked)="
+                    onCardClicked($event)
+                  "></shared-custom-dynamic-card>
+              }
+            }
+          </div>
+        </div>
+        <div class="load-more-wrapper">
+          @if (overviewStoreService.hasMorePages()) {
+            <shared-button
+              [label]="t('overview.loadMore')"
+              [type]="sharedButtonType.Outline"
+              (clickEvent)="onRequestMoreServiceCards()">
+            </shared-button>
+          } @else {
+            <span class="load-more-text">{{
+              t('overview.hasAllServicesDisplayed')
+            }}</span>
+          }
+        </div>
+      } @else {
+        <div class="overview-no-services">
+          <img
+            src="./assets/images/no-data.png"
+            alt="{{ t('overview.noServices') }}" />
+          <span class="no-services-info">{{ t('overview.noServices') }} </span>
+          <span class="no-services-text"
+            >{{ t('overview.noServicesDescription') }}
+          </span>
+        </div>
+      }
+    </div>
+    <div class="right">
+      @if (
+        !profileStoreService.hasPermission(
+          permissionCategories.Audits,
+          permissionsList.NoAccess
+        )()
+      ) {
+        <lib-overview-upcoming-audits></lib-overview-upcoming-audits>
+      }
+      @if (
+        !profileStoreService.hasPermission(
+          permissionCategories.Financials,
+          permissionsList.NoAccess
+        )()
+      ) {
+        <lib-overview-financial-status></lib-overview-financial-status>
+      }
+      <lib-overview-training-status></lib-overview-training-status>
+    </div>
+  </section>
+</ng-container>

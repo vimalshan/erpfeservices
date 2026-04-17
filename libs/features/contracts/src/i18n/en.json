@@ -1,0 +1,12 @@
+{
+  "contractsList": {
+    "company": "Company",
+    "contractName": "Contract Name",
+    "contractType": "Contract Type",
+    "dateAdded": "Date Added",
+    "download": "Download",
+    "services": "Service",
+    "site": "Site Name"
+  },
+  "title": "Contracts"
+}

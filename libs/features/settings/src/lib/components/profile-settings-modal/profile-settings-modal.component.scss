@@ -1,0 +1,44 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/utility' as utility;
+
+.profile-settings {
+  padding: utility.get-rem(32) utility.get-rem(24);
+
+  .form {
+    display: grid;
+    gap: utility.get-rem(24);
+
+    &__label {
+      font-weight: 700;
+      font-size: utility.get-rem(14);
+      text-transform: uppercase;
+    }
+
+    &__item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: utility.get-rem(180) auto;
+      grid-column-gap: utility.get-rem(24);
+    }
+
+    &__dropdown {
+      ::ng-deep {
+        .p-dropdown {
+          width: 100%;
+          font-size: utility.get-rem(16);
+        }
+
+        .p-dropdown-label {
+          padding: utility.get-rem(12);
+        }
+      }
+    }
+
+    ::ng-deep {
+      .p-inputtext {
+        padding: utility.get-rem(12);
+        font-size: utility.get-rem(16);
+      }
+    }
+  }
+}

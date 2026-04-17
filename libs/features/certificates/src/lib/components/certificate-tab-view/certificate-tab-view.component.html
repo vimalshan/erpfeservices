@@ -1,0 +1,26 @@
+<ng-container *transloco="let t">
+  <p-tabView role="tablist" [scrollable]="true">
+    <p-tabPanel
+      id="certificate-sites-tab"
+      role="tab"
+      [attr.aria-label]="t('certificate.certificateDetailsDescription.sites')"
+      [header]="t('certificate.certificateDetailsDescription.sites')">
+      <ng-template pTemplate="content">
+        <lib-certificate-sites-list></lib-certificate-sites-list>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="certificate-documents-tab"
+      role="tab"
+      [attr.aria-label]="
+        t('certificate.certificateDetailsDescription.documents')
+      "
+      [disabled]="isOutstandingStatus"
+      [header]="t('certificate.certificateDetailsDescription.documents')">
+      <ng-template pTemplate="content">
+        <lib-certificate-documents></lib-certificate-documents>
+      </ng-template>
+    </p-tabPanel>
+  </p-tabView>
+</ng-container>

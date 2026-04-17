@@ -1,0 +1,14 @@
+<ng-container *transloco="let t">
+  <shared-button
+    [label]="t('cancel')"
+    [type]="sharedButtonType.Outline"
+    (clickEvent)="closeDialog(false)">
+  </shared-button>
+
+  <shared-button
+    [isDisabled]="!canUploadData()"
+    [label]="t('update')"
+    [type]="sharedButtonType.Secondary"
+    (clickEvent)="onClickUpdatePlannedPaymentDate()">
+  </shared-button>
+</ng-container>

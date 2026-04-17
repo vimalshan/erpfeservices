@@ -1,0 +1,28 @@
+@if (isPreferenceInitialized | async) {
+  <shared-grid
+    class="table-list"
+    [columns]="cols"
+    [data]="settingsMembersStoreService.settingsMembersList()"
+    [displayClearButton]="settingsMembersStoreService.hasMembersActiveFilters()"
+    [displayColsReorderButton]="false"
+    [displayExportButton]="false"
+    [filterDelay]="0"
+    [filterOptions]="settingsMembersStoreService.membersFilterOptions()"
+    [filteringConfig$]="settingsMembersStoreService.membersFilteringConfig"
+    [hasActiveFilters]="settingsMembersStoreService.hasMembersActiveFilters()"
+    [paginator]="true"
+    [preferenceData]="preferenceData()"
+    [rowHover]="true"
+    [scrollable]="true"
+    [selectable]="false"
+    [selectableSticky]="false"
+    [shouldPersist]="shouldPersist()"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [totalRecords]="settingsMembersStoreService.membersTotalFilteredRecords()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (savePreference)="onSavePreference($event)"
+    (triggerEventAction)="onEventActionTrigger($event)">
+  </shared-grid>
+}

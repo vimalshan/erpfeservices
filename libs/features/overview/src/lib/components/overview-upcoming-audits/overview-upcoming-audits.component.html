@@ -1,0 +1,28 @@
+<ng-container *transloco="let t">
+  <div class="card calendar-container">
+    <div class="upcoming-audits-heading">
+      <h4>{{ t('overview.upcomingAudits') }}</h4>
+      <shared-button
+        [attr.aria-label]="t('overview.upcomingAuditsViewAll')"
+        [label]="t('overview.viewAll')"
+        [type]="sharedButtonType.TextLink"
+        (clickEvent)="onButtonClick()">
+      </shared-button>
+    </div>
+    <full-calendar #fullcalendar [options]="calendarOptions()"> </full-calendar>
+    <div class="calendar-legend">
+      <div class="legend-item">
+        <span class="legend-color confirmed"></span>
+        <span class="legend-text">{{ t('overview.confirmed') }}</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color to-be-confirmed"></span>
+        <span class="legend-text">{{ t('overview.toBeConfirmed') }}</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-color dnv-confirmed"></span>
+        <span class="legend-text">{{ t('overview.dnvToConfirm') }}</span>
+      </div>
+    </div>
+  </div>
+</ng-container>

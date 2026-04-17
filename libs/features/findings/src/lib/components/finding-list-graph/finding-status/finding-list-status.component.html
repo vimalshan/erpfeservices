@@ -1,0 +1,54 @@
+<ng-container *transloco="let t">
+  <section
+    aria-labelledby="finding-status-graphs-charts"
+    class="charts"
+    role="region">
+    <h2 id="finding-status-graphs-charts">
+      {{ t('findings.findingStatusGraph.title') }}
+    </h2>
+    <div class="chart-doughnut" role="region">
+      <h3 id="findings-status-graphs-charts-doughnut">
+        {{ t('findings.findingStatusGraph.findingsByStatusTitle') }}
+      </h3>
+      <shared-chart
+        class="chart-doughnut-graph"
+        [chartFilters]="findingsByStatusChartFilters"
+        [data]="findingListGraphStoreService.findingsByStatusGraphData().data"
+        [options]="findingsByStatusGraphOptions"
+        [plugins]="doughnutTotalPlugin"
+        [tooltipTitle]="t('findings.findingStatusGraph.totalFindings')"
+        [type]="doughnutType"
+        (tooltipButtonClick)="
+          findingListGraphStoreService.navigateFromFindingListChartToListView(
+            $event
+          )
+        ">
+      </shared-chart>
+    </div>
+
+    <div
+      aria-labelledby="finding-status-charts-bar"
+      class="chart-bar"
+      role="region">
+      <h3 id="finding-status-charts-bar">
+        {{ t('findings.findingStatusGraph.findingByCategory') }}
+      </h3>
+
+      <shared-chart
+        [chartFilters]="findingsByCategoryChartFilters"
+        [data]="
+          findingListGraphStoreService.findingStatusByCategoryGraphData().data
+        "
+        [hasBorderIfNoData]="true"
+        [options]="findingsByCategoryGraphOptions"
+        [type]="barType"
+        [useCustomLegend]="true"
+        (tooltipButtonClick)="
+          findingListGraphStoreService.navigateFromFindingListChartToListView(
+            $event
+          )
+        ">
+      </shared-chart>
+    </div>
+  </section>
+</ng-container>

@@ -1,0 +1,144 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/colors' as colors;
+@use 'pattern/mixins' as mixins;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  height: utility.get-rem(69);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: colors.get-color('UiWhite');
+  border-bottom: 1px solid colors.get-color('UiWhite');
+  @include mixins.gutter-for(right, left);
+  @include mixins.gutter-for(0.5, top, bottom);
+}
+
+.content {
+  background-image: url('/assets/images/welcome.svg');
+  top: utility.get-rem(69);
+  width: 100vw;
+  height: calc(100vh - utility.get-rem(245));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: colors.get-color('DarkBlue');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: utility.get-rem(10);
+  color: colors.get-color('UiWhite');
+  max-width: utility.get-rem(800);
+
+  .text-container-title {
+    font-size: utility.get-rem(20);
+    text-transform: uppercase;
+    color: #99d9f0;
+    letter-spacing: 8px;
+  }
+
+  .text-container-description {
+    font-size: utility.get-rem(64);
+    text-align: center;
+  }
+}
+
+.card {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  gap: utility.get-rem(12);
+  padding: utility.get-rem(36) utility.get-rem(32);
+  border-radius: utility.get-rem(10);
+  background: colors.get-color('UiWhite');
+  position: absolute;
+  bottom: utility.get-rem(-80);
+  box-shadow: 0px 3px 6px 0px colors.get-color('Sandstone60');
+  width: 65vw;
+  min-width: utility.get-rem(400);
+
+  .card-text-container {
+    font-family: 'Nunito Sans';
+    display: flex;
+    flex-direction: column;
+    gap: utility.get-rem(16);
+
+    .card-label {
+      font-size: utility.get-rem(14);
+      line-height: utility.get-rem(21);
+      font-weight: 600;
+    }
+  }
+
+  .card-actions {
+    gap: utility.get-rem(12);
+    display: flex;
+
+    p-dropdown {
+      width: 100%;
+    }
+
+    p-dropdown.p-element::ng-deep {
+      @extend %#{mixture.$dropdown-element-pattern};
+      height: utility.get-rem(42);
+
+      .p-inputwrapper {
+        @extend %#{mixture.$dropdown-input-wrapper-pattern};
+      }
+
+      .p-inputtext {
+        @extend %#{typography.$text-l-pattern};
+      }
+
+      li.p-element {
+        @extend %#{mixture.$dropdown-option-pattern};
+      }
+
+      .p-dropdown-label {
+        padding: 0;
+      }
+
+      .p-overlay {
+        @extend %#{mixture.$shadow-modal-pattern};
+      }
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-md) {
+  .content {
+    padding: 0 utility.get-rem(24);
+  }
+
+  .card {
+    align-items: center;
+
+    .card-actions {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-sm) {
+  .content {
+    padding: 0 utility.get-rem(16);
+  }
+}

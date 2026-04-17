@@ -1,0 +1,67 @@
+<ng-container *transloco="let t">
+  <p-fileUpload
+    #fileUpload
+    accept=""
+    name="myfile[]"
+    [customUpload]="true"
+    [maxFileSize]="MAX_FILE_SIZE"
+    [multiple]="true"
+    [showCancelButton]="false"
+    [showUploadButton]="false"
+    (onSelect)="onSelectedFiles($event, fileUpload)">
+    <ng-template let-files pTemplate="content">
+      <div class="upload-info">
+        <div class="upload-info-wrapper">
+          <i class="pi pi-cloud-upload" style="font-size: 3rem"></i>
+          <div class="upload-info-wrapper__text">
+            <p>{{ t('selectFileDragDrop') }}</p>
+            <p>{{ t('uploadHint') }}</p>
+          </div>
+        </div>
+        <p class="upload-info-divider">
+          {{ t('or') }}
+        </p>
+        <shared-button
+          [label]="t('selectFile')"
+          [type]="sharedButtonType.Outline"
+          (clickEvent)="choose(fileUpload)">
+        </shared-button>
+      </div>
+      @if (files.length > 0) {
+        <div class="files-list">
+          <div class="files-list__header">{{ t('fileName') }}</div>
+          @for (file of files; track file; let i = $index; let odd = $odd) {
+            <div
+              class="files-list__item"
+              [ngClass]="{ 'files-list__odd': odd }">
+              <div class="files-list__info">
+                <span class="files-list__info-name">
+                  {{ file.name }}
+                </span>
+                @if (errorMapper.has(file.name)) {
+                  @for (error of errorMapper.get(file.name); track error) {
+                    <span class="files-list__info-error">
+                      {{ t(error, { filename: file.name }) }}
+                    </span>
+                  }
+                }
+              </div>
+              <span class="files-list__item-remove">
+                <i
+                  class="pi pi-trash"
+                  role="button"
+                  style="font-size: 1.5rem"
+                  tabindex="0"
+                  [ariaLabel]="t('delete') + file.name"
+                  (click)="removeFile($event, fileUpload, i)"
+                  (keydown.enter)="removeFile($event, fileUpload, i)"
+                  (keydown.space)="removeFile($event, fileUpload, i)">
+                </i>
+              </span>
+            </div>
+          }
+        </div>
+      }
+    </ng-template>
+  </p-fileUpload>
+</ng-container>

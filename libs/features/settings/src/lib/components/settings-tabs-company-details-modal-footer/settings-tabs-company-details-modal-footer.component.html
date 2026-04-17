@@ -1,0 +1,14 @@
+<ng-container *transloco="let t">
+  <shared-button
+    [label]="t('settings.modal.companyDetails.button.cancel')"
+    [type]="sharedButtonType.Outline"
+    (clickEvent)="onCloseEditSettings()">
+  </shared-button>
+
+  <shared-button
+    [isDisabled]="!isFormValid()"
+    [label]="t('settings.modal.companyDetails.button.submit')"
+    [type]="sharedButtonType.Secondary"
+    (clickEvent)="onSubmit()">
+  </shared-button>
+</ng-container>

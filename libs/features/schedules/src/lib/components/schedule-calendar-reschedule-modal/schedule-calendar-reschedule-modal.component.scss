@@ -1,0 +1,172 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'head'
+    'body';
+}
+
+.head {
+  grid-area: head;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, calc((100% - (2px * var(--dnv-gutter-base-unitless))) / 3));
+  grid-template-areas:
+    'h4 h4 h4'
+    'service audit-type auditor'
+    'site . .';
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  background-color: colors.get-color('SkyBlue95');
+  @include mixins.gutter-for(top, right, bottom, left);
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: repeat(2, calc(50% - (0.5px * var(--dnv-gutter-base-unitless))));
+    grid-template-areas:
+      'h4 h4'
+      'service audit-type'
+      'auditor .'
+      'site .';
+  }
+}
+
+.body {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  @include mixins.gutter-for(top, right, bottom, left);
+
+  .disclaimer-container {
+    margin-top: utility.get-rem(-10);
+    margin-bottom: utility.get-rem(-20);
+  }
+
+  .scheduleInfo {
+    font-size: var(--dnv-font-text-l);
+    margin-bottom: utility.get-rem(5);
+    font-weight: 700;
+  }
+
+  .disclaimer {
+    font-size: var(--dnv-font-text-l);
+    margin-bottom: utility.get-rem(5);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+
+  @include mixins.respond-to(phone) {
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless)); 
+  }
+}
+
+h4 {
+  @extend %#{typography.$heading-s-pattern};
+  grid-area: h4;
+  color: colors.get-color('SeaBlue');
+}
+
+h6 {
+  @extend %#{typography.$label-m-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+label {
+  @extend %#{typography.$label-l-pattern};
+  color: colors.get-color('DarkBlue');
+}
+
+span {
+  @extend %#{typography.$text-l-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+p {
+  @extend %#{typography.$text-l-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+}
+
+.grouping {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+}
+
+.service {
+  grid-area: service;
+}
+
+.audit-type {
+  grid-area: audit-type;
+}
+
+.auditor {
+  grid-area: auditor;
+}
+
+.site {
+  grid-area: site;
+}
+
+.service,
+.audit-type,
+.auditor,
+.site {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(0.5 * var(--dnv-gutter-base-unitless)));
+}
+
+.p-inputtext::ng-deep {
+  @extend %#{mixture.$input-text-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+p-dropdown.p-element::ng-deep {
+  @extend %#{mixture.$dropdown-element-pattern};
+  height: utility.get-rem(45);
+
+  .p-inputwrapper {
+    @extend %#{mixture.$dropdown-input-wrapper-pattern};
+  }
+
+  .p-inputtext {
+    @extend %#{typography.$text-l-pattern};
+  }
+
+  li.p-element {
+    @extend %#{mixture.$dropdown-option-pattern};
+  }
+
+  .p-dropdown-label {
+    padding: 0;
+  }
+
+  .p-overlay {
+    @extend %#{mixture.$shadow-modal-pattern};
+  }
+}
+
+p-calendar.p-element::ng-deep {
+  .p-inputtext {
+    @extend %#{typography.$text-l-pattern};
+    height: utility.get-rem(45);
+  }
+}

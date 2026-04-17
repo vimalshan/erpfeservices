@@ -1,0 +1,99 @@
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/utility';
+@use 'pattern/typography';
+@use 'pattern/colors';
+@use 'pattern/mixture';
+
+.trends-grid {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  padding-top: utility.get-rem(36);
+  padding-left: utility.get-rem(24);
+}
+
+.certificate-site-table-wrapper {
+  padding-bottom: utility.get-rem(50);
+
+  &::ng-deep {
+    .p-treetable-scrollable-header {
+      overflow: hidden;
+    }
+
+    .p-treetable table {
+      table-layout: inherit;
+    }
+
+    .p-treetable-scrollable-body {
+      overflow: auto;
+    }
+
+    .p-treetable-scrollable-header-box {
+      padding-right: 0;
+    }
+
+    .tree-table-container .p-treetable-scrollable-header th {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      height: utility.get-rem(48);
+      overflow: hidden;
+      line-height: utility.get-rem(25);
+
+      &:first-child {
+        flex-grow: 2;
+      }
+    }
+
+    .p-treetable table thead tr,
+    .p-treetable table tbody tr {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+    }
+
+    .tree-table-container .p-treetable-scrollable-body td:first-child {
+      flex-grow: 2;
+      
+      span {
+        display: inline-block;
+      }
+    }
+
+    .pi-check-circle {
+      color: colors.get-color('SeaBlue');
+      font-size: utility.get-rem(15);
+    }
+  }
+}
+
+.certificate-site-table-wrapper {
+  padding-bottom: utility.get-rem(50);
+}
+
+h2 {
+  @extend %#{typography.$heading-m-pattern};
+  color: colors.get-color('SeaBlue');
+}
+
+:host ::ng-deep {
+  .tree-table-container .p-treetable-unfrozen-view .p-treetable-scrollable-body td:first-child {
+    p-treetabletoggler {
+      pointer-events: none;
+ 
+      button {
+        .p-icon-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .tree-table-container .p-treetable-frozen-view .p-treetable-scrollable-body td:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    span{
+      display: inline;
+    }
+  }
+}

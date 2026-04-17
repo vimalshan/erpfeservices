@@ -1,0 +1,29 @@
+{
+  "heading": "My services",
+  "title": "Welcome{{user}}",
+  "userCompany": "DNV Customer Portal",
+  "financialStatus": "Financial status",
+  "financialStatusViewAll": "Financial status view all",
+  "trainingStatus": "Training status",
+  "trainingStatusViewAll": "Training status view all",
+  "noCourses": "No courses are available",
+  "upcomingAudits": "Upcoming audits",
+  "upcomingAuditsViewAll": "Upcoming audits view all",
+  "viewAll": "View all",
+  "welcomeDescription": "Track the progress of your ongoing services",
+  "confirmed": "Confirmed",
+  "toBeConfirmed": "To be confirmed",
+  "dnvToConfirm": "DNV to confirm",
+  "totalInvoices": "Total invoices",
+  "status": "Status",
+  "hasAllServicesDisplayed": "All services are displayed.",
+  "loadMore": "Load more",
+  "noServices": "No services available to track",
+  "noServicesDescription": "Currently there are no services available to follow. Once they'll become available you'll be able to track them here.",
+  "cardTexts": {
+    "schedule": "Confirmed",
+    "audits": "Completed",
+    "findings": "Closed",
+    "noValue": "No data available"
+  }
+}

@@ -1,0 +1,17 @@
+<ng-container *transloco="let t">
+  <section class="trends-grid">
+    <h2>
+      {{ t('certificate.certificatesGraphsTabs.certificatesBySite') }}
+    </h2>
+    <div class="certificate-site-table-wrapper" tabindex="0">
+      <shared-tree-table
+        [cols]="scrollableColumns()"
+        [data]="certificateListGraphStoreService.certificatesBySiteData()"
+        [frozenCols]="frozenColumns()"
+        [isLoading]="
+          certificateListGraphStoreService.isLoadingCertificateBySite()
+        ">
+      </shared-tree-table>
+    </div>
+  </section>
+</ng-container>

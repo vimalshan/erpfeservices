@@ -1,0 +1,25 @@
+<ng-container *transloco="let t">
+  @if (isRescheduleVisible()) {
+    <shared-button
+      [label]="t('schedules.details.reschedule')"
+      [type]="sharedButtonType.Outline"
+      (clickEvent)="onReschedule()">
+    </shared-button>
+  }
+    @if (!isDnvUser()) {
+      <shared-button 
+        class="request-changes-button"
+        [label]="t('serviceNow.requestChanges')" 
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onRequestChanges()">
+      </shared-button>
+    }
+
+  @if (isConfirmVisible()) {
+    <shared-button
+      [label]="t('schedules.details.confirm')"
+      [type]="sharedButtonType.Secondary"
+      (clickEvent)="onConfirm()">
+    </shared-button>
+  }
+</ng-container>

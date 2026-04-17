@@ -1,0 +1,132 @@
+{
+  "attachedDocuments": {
+    "addDocument": "Aggiungi documento",
+    "addDocuments": "Aggiungi documenti",
+    "dateAdded": "Data di caricamento",
+    "fileName": "Nome del file",
+    "type": "Tipo",
+    "uploadedBy": "Caricato da",
+    "downloadButton": "Scaricamento"
+  },
+  "confirmationPopup": {
+    "cancel": "Annulla",
+    "delete": "Annulla",
+    "sendToDnv": "Invia a DNV",
+    "submit": "Invia",
+    "youAreAboutToSubmitResponseToDNV": "Stai per inviare le tue risposte alla non-conformità a DNV"
+  },
+  "deleteDocument": {
+    "header": "Cancellare il documento?",
+    "message": "Sei sicuro di voler cancellare il documento? Non potrai recuperarlo una volta eliminato."
+  },
+  "discardDraftPopup": {
+    "continueEditing": "Continua le modifiche",
+    "discard": "Abbandona",
+    "discardDraftHeader": "Cancellare la bozza?",
+    "discardDraftMessage": "Sei sicuro di voler cancellare la bozza?"
+  },
+  "fileUpload": {
+    "fileUploadFailed": "Il download {{filename}} non è andato a buon fine.",
+    "fileUploadGenericError": "{{filename}} non è andato a buon fine. Qualcosa non ha funzionato, per favore riprova.",
+    "fileUploadSuccess": "Caricamento di {{filename}} riuscito",
+    "fileUploadWrongName": "Il caricamento {{filename}} non è andato a buon fine. Esiste già un file con lo stesso nome.",
+    "fileUploadWrongNameLength": "Il caricamento {{filename}} non è andato a buon fine. Il nome del file supera il limite di 254 caratteri.",
+    "fileUploadWrongSize": "Il caricamento {{filename}} non è andato a buon fine. Il file supera il limite massimo di 4GB.",
+    "fileUploadWrongType": "Il caricamento {{filename}} non è andato a buon fine.Il tipo di file non è consentito."
+  },
+  "findingDetails": {
+    "accepted": "Accettato {{date}}",
+    "auditNumber": "Audit #",
+    "auditor": "auditor",
+    "auditType": "tipo di audit",
+    "clause": "Punto della norma",
+    "closed": "Chiuso {{date}}",
+    "continueWithDraft": "Continua con la bozza",
+    "description": "Descrizione",
+    "documents": "Documenti",
+    "draftCreated": "Bozza salvata",
+    "due": "Dovuto {{date}}",
+    "editSubmittedResponse": "Modifica la risposta inviata",
+    "focusArea": "Area di interesse",
+    "manageFinding": "Gestione del finding",
+    "open": "Aperto {{date}}",
+    "previousResponses": "Commenti precedenti",
+    "respondToFinding": "Rispondi ad un Finding",
+    "respondToFindingDetails": "Quando le azioni correttive sono state eseguite, verifica l’efficacia delle azioni e indica la correzione, la causa principale e l’azione correttiva. Il tuo lead auditor  seguirà la non conformità quando riceverà il commento.",
+    "respondToFindingHint1": "Descrivi l’azione immediata intrapresa per risolvere la non conformità, assicurando che il problema venga risolto tempestivamente.",
+    "respondToFindingHint2": "Identifica la ragione o il fattore sottostante che ha portato alla non conformità, con l’obiettivo di affrontare la fonte del problema.",
+    "respondToFindingHint3": "Descrivi i passaggi sistematici adottati per prevenire il ripetersi della causa principale, concentrandoti sulla risoluzione a lungo termine e sulla prevenzione.",
+    "respondToFindingQ1": "Quale correzione è stata apportata per eliminare la non conformità?",
+    "respondToFindingQ1Placeholder": "Esempio: ho risolto il seguente problema facendo...",
+    "respondToFindingQ2": "Qual è la causa principale?",
+    "respondToFindingQ2Placeholder": "Cosa ha causato il problema?",
+    "respondToFindingQ3": "Quale azione correttiva è stata intrapresa per eliminare la causa principale della non conformità?",
+    "respondToFindingQ3Placeholder": "Cosa hai fatto per risolvere il problema?",
+    "saveAsDraft": "Salva come bozza",
+    "scope": "Ambito",
+    "sendToDNV": "Invia a DNV",
+    "responsesSaveAsDraftSuccess":"Risposta salvata nella bozza",
+    "responsesSendToDNVSuccess":"Risposta inviata a DNV"
+  },
+  "findingGraphsTabs": {
+    "findingStatus": "Findings per stato",
+    "openFindings": "Findings aperti",
+    "trends": "Tendenze",
+    "findingsByClause": "Findings per punto della norma",
+    "findingsBySite": "Findings per sito"
+  },
+  "findingsList": {
+    "acceptedDate": "Data di accettazione",
+    "auditNumber": "Audit #",
+    "company": "Azienda",
+    "category": "Categoria",
+    "city": "Città",
+    "closeDate": "Data di chiusura",
+    "dueDate": "Scadenza",
+    "findingsNumber": "Findings #",
+    "listTitle": "Findings",
+    "openDate": "Data di apertura",
+    "service": "Servizio",
+    "site": "Luogo",
+    "status": "Stato",
+    "title": "Titolo",
+    "country": "Paese",
+    "id": "ID"
+  },
+  "findingStatusGraph": {
+    "findingByCategory": "Ricerca per categoria",
+    "findingsByStatusTitle": "Risultati totali",
+    "title": "Findings per stato",
+    "totalFindings": "Risultati totali"
+  },
+  "openFindings": {
+    "becomingOverdueTitle": "In scadenza | Aperti da 2-3 mesi",
+    "earlyStageTitle": "Aperti da meno di un mese",
+    "inProgressTitle": "Aperti da 1-2 mesi",
+    "overdueTitle": "In ritardo | Aperti da più di 3 mesi",
+    "sharedChartLegend": "Legenda del grafico condiviso",
+    "title": "Findings aperti"
+  },
+  "responseHistory": {
+    "hideResponse": "Nascondi le risposte",
+    "previousResponses": "Commenti precedenti",
+    "previousResponsesDescription": "Una panoramica di tutti i cambiamenti di stato, le risposte inviate e le repliche dei tuoi auditor.",
+    "replied": "risposto",
+    "responseDate": "Data della risposta",
+    "responseHour": "Ora di risposta",
+    "submittedResponse": "risposta inviata",
+    "userName": "Nome utente",
+    "viewResponse": "Visualizza le risposte"
+  },
+  "title": "Findings",
+  "trendsGraph": {
+    "title": "Tendenze",
+    "titleLine": "Findings per categoria"
+  },
+  "findingsByClause": {
+    "title": "Findings per punto della norma"
+  },
+  "findingsBySite": {
+    "title": "Findings per sito"
+  }
+}

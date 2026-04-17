@@ -1,0 +1,85 @@
+<ng-container *transloco="let t">
+  @if (
+    findingListGraphStoreService.loaded() &&
+    findingListGraphStoreService.allFindingItems().length === 0
+  ) {
+    <shared-no-data
+      [altText]="t('findings.findingsList.noData')"
+      [descriptionText]="t('findings.findingsList.noDataDescription')"
+      [error]="!!findingListGraphStoreService.error()"
+      [infoText]="t('findings.findingsList.noData')">
+    </shared-no-data>
+  } @else {
+    <section class="filters" role="region" [attr.aria-label]="t('filters')">
+      <shared-select-date-range-mod
+        [ariaLabel]="t('select.dateRange.custom')"
+        [customRange]="customDateRange()"
+        [isDisabled]="dateRangeIsDisabled"
+        [prefill]="selectedTimeRange()"
+        (changeEvent)="onDateRangeChange($event)">
+      </shared-select-date-range-mod>
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.companies')"
+        [options]="findingListGraphStoreService.dataCompanies()"
+        [placeholder]="t('select.multiSelect.companies')"
+        [prefill]="findingListGraphStoreService.filterCompanies()"
+        (changeEvent)="onFilterChange($event, chartFilterKey.Companies)">
+      </shared-select-multiple-mod>
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.services')"
+        [options]="findingListGraphStoreService.dataServices()"
+        [placeholder]="t('select.multiSelect.services')"
+        [prefill]="findingListGraphStoreService.filterServices()"
+        (changeEvent)="onFilterChange($event, chartFilterKey.Services)">
+      </shared-select-multiple-mod>
+
+      <shared-tree-dropdown
+        [expandedState]="latestExpandedState"
+        [nodes]="siteData"
+        [selectedIds]="filterSites"
+        (expandedStateChange)="onExpandedStateChange($event)"
+        (selectionChange)="onSelectionChange($event)">
+      </shared-tree-dropdown>
+
+      <shared-button
+        class="reset-btn"
+        [label]="t('reset')"
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onReset()">
+      </shared-button>
+    </section>
+
+    <section class="tabs" role="region" [attr.aria-label]="t('tabs')">
+      <p-tabView
+        [activeIndex]="activeTabIndex"
+        (onChange)="onTabChange($event)">
+        <p-tabPanel
+          id="finding-status-tab"
+          role="tabpanel"
+          [attr.aria-label]="t('findings.findingGraphsTabs.findingStatus')"
+          header="{{
+            t('findings.findingGraphsTabs.findingStatus')
+          }}"></p-tabPanel>
+        <p-tabPanel
+          header="{{
+            t('findings.findingGraphsTabs.openFindings')
+          }}"></p-tabPanel>
+        <p-tabPanel
+          header="{{
+            t('findings.findingGraphsTabs.findingsByClause')
+          }}"></p-tabPanel>
+        <p-tabPanel
+          header="{{
+            t('findings.findingGraphsTabs.findingsBySite')
+          }}"></p-tabPanel>
+        <p-tabPanel
+          header="{{ t('findings.findingGraphsTabs.trends') }}"></p-tabPanel>
+      </p-tabView>
+      <router-outlet></router-outlet>
+    </section>
+  }
+</ng-container>

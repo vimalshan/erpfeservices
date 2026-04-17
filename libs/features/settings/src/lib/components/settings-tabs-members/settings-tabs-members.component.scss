@@ -1,0 +1,27 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-members {
+  &__actions {
+    @include mixins.gutter-for(top, right, left);
+  }
+
+  &__admins,
+  &__members {
+    > p {
+      color: colors.get-color('SeaBlue');
+      @include mixins.gutter-for(top, right, left);
+      @extend %#{typography.$heading-m-pattern};
+    }
+  }
+
+  &__members {
+    background-color: colors.get-color('Sandstone95');
+  }
+}

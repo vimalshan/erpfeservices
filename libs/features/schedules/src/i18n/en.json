@@ -1,0 +1,59 @@
+{
+  "auditor": "Auditor",
+  "auditType": "Audit Type",
+  "calendarFilter": {
+    "companiesPlaceholder": "All companies",
+    "servicesPlaceholder": "All standards",
+    "sitesPlaceholder": "All sites",
+    "statusesPlaceholder": "All statuses"
+  },
+  "confirm": {
+    "cancel": "Cancel",
+    "disclaimer": "Prior to the audit, the team leader will contact you to define the audit plan and request any documentation necessary for its preparation. Members of the audit team will also be confirmed at that time.",
+    "error": "Audit schedule not confirmed. Please try again",
+    "heading": "{{startDate}} - {{endDate}}",
+    "submit": "Confirm audit",
+    "success": "Audit schedule confirmed",
+    "title": "Confirm audit"
+  },
+  "details": {
+    "addToCalendar": "Add to calendar",
+    "confirm": "Confirm",
+    "heading": "{{startDate}} - {{endDate}}",
+    "reschedule": "Reschedule",
+    "shareInvite": "Share invite",
+    "title": "Audit details"
+  },
+  "reschedule": {
+    "cancel": "Cancel",
+    "commentsLabel": "Additional comments (optional)",
+    "commentsPlaceholder": "Optional",
+    "dateLabel": "Indicate the week to which you want to move the audit",
+    "datePlaceholder": "- Select a week -",
+    "disclaimer": "We will try our best to honor your date change request but are unable to guarantee this.",
+    "error": "Audit reschedule not confirmed. Please try again",
+    "heading": "Rescheduling {{date}}",
+    "reasonLabel": "Indicate the reason for the request",
+    "reasonPlaceholder": "- Select a reason -",
+    "submit": "Send request",
+    "success": "Audit reschedule confirmed",
+    "title": "Request reschedule"
+  },
+  "scheduleList": {
+    "auditType": "Audit Type",
+    "city": "City",
+    "company": "Company",
+    "endDate": "End Date",
+    "leadAuditor": "Lead Auditor",
+    "service": "Service",
+    "site": "Site",
+    "siteRepresentative": "Site Representative",
+    "startDate": "Start Date",
+    "status": "Status",
+    "siteAuditId": "Site Id"
+  },
+  "service": "Service",
+  "site": "Site",
+  "siteRepresentative": "Site Representative",
+  "title": "Schedule"
+}

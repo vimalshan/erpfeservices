@@ -1,0 +1,18 @@
+<p-inputNumber
+  [inputId]="inputId()"
+  [placeholder]="placeholder()"
+  [min]="min()"
+  [max]="max()"
+  [step]="step()"
+  [showButtons]="showButtons()"
+  [mode]="mode()"
+  [currency]="currency()"
+  [locale]="locale()"
+  [minFractionDigits]="minFractionDigits()"
+  [maxFractionDigits]="maxFractionDigits()"
+  [disabled]="isDisabled || disabled()"
+  [readonly]="readonly()"
+  [inputStyleClass]="inputClass()"
+  [(ngModel)]="value"
+  (ngModelChange)="onValueChange($event)"
+></p-inputNumber>

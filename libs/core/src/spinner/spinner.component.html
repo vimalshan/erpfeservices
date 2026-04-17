@@ -1,0 +1,8 @@
+@if (isLoadingForCurrentRoute) {
+  <ng-container *transloco="let t">
+    <div aria-live="polite" class="container">
+      <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+      <div class="spinner-text">{{ t('loading') }}</div>
+    </div>
+  </ng-container>
+}

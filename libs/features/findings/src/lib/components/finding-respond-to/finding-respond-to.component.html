@@ -1,0 +1,181 @@
+@if (!shouldHideRespond) {
+  <ng-container *transloco="let t">
+    <div class="respond-to-finding">
+      <div class="wrapper">
+        <div class="respond-to-finding__title-container">
+          <h2 class="respond-to-finding__title" id="respond-to-finding-title">
+            {{ t('findings.findingDetails.respondToFinding') }}
+          </h2>
+          @if (isDraft) {
+            <div aria-live="polite" class="respond-to-finding__draft-created">
+              <span class="respond-to-finding__label">
+                {{ t('findings.findingDetails.draftCreated') | uppercase }}
+              </span>
+              {{ latestFindingResponses?.createdOn }}
+            </div>
+          }
+        </div>
+        <p class="respond-to-finding__details" id="respond-to-finding-details">
+          {{ t('findings.findingDetails.respondToFindingDetails') }}
+        </p>
+
+        <form
+          aria-labelledby="respond-to-finding-title respond-to-finding-details"
+          class="respond-to-finding__form"
+          [formGroup]="form">
+          <div class="respond-to-finding__form__input">
+            <label for="non-conformity">
+              {{ t('findings.findingDetails.respondToFindingQ1') }}
+              <i
+                class="pi pi-info-circle"
+                role="img"
+                tooltipPosition="top"
+                [attr.aria-label]="
+                  t('findings.findingDetails.respondToFindingHint1')
+                "
+                [pTooltip]="
+                  t('findings.findingDetails.respondToFindingHint1')
+                "></i>
+            </label>
+            @if (isFormReadonly) {
+              <p class="respond-to-finding__text" id="non-conformity-value">
+                {{ latestFindingResponses?.formValue?.nonConformity }}
+              </p>
+            } @else {
+              <textarea
+                aria-labelledby="non-conformity"
+                formControlName="nonConformity"
+                id="non-conformity"
+                pInputTextarea
+                rows="1"
+                [autoResize]="true"
+                [placeholder]="
+                  t('findings.findingDetails.respondToFindingQ1Placeholder')
+                "></textarea>
+            }
+          </div>
+          <div class="respond-to-finding__form__input">
+            <label for="root-cause">
+              {{ t('findings.findingDetails.respondToFindingQ2') }}
+              <i
+                class="pi pi-info-circle"
+                role="img"
+                tooltipPosition="top"
+                [attr.aria-label]="
+                  t('findings.findingDetails.respondToFindingHint2')
+                "
+                [pTooltip]="
+                  t('findings.findingDetails.respondToFindingHint2')
+                "></i>
+            </label>
+            @if (isFormReadonly) {
+              <p class="respond-to-finding__text" id="root-cause-value">
+                {{ latestFindingResponses?.formValue?.rootCause }}
+              </p>
+            } @else {
+              <textarea
+                aria-labelledby="root-cause"
+                formControlName="rootCause"
+                id="root-cause"
+                pInputTextarea
+                rows="1"
+                [autoResize]="true"
+                [placeholder]="
+                  t('findings.findingDetails.respondToFindingQ2Placeholder')
+                "></textarea>
+            }
+          </div>
+          <div class="respond-to-finding__form__input">
+            <label for="correction-action">
+              {{ t('findings.findingDetails.respondToFindingQ3') }}
+              <i
+                class="pi pi-info-circle"
+                role="img"
+                tooltipPosition="top"
+                [attr.aria-label]="
+                  t('findings.findingDetails.respondToFindingHint3')
+                "
+                [pTooltip]="
+                  t('findings.findingDetails.respondToFindingHint3')
+                "></i>
+            </label>
+            @if (isFormReadonly) {
+              <p class="respond-to-finding__text" id="correction-action-value">
+                {{ latestFindingResponses?.formValue?.correctionAction }}
+              </p>
+            } @else {
+              <textarea
+                aria-labelledby="correction-action"
+                formControlName="correctionAction"
+                id="correction-action"
+                pInputTextarea
+                rows="1"
+                [autoResize]="true"
+                [placeholder]="
+                  t('findings.findingDetails.respondToFindingQ3Placeholder')
+                "></textarea>
+            }
+          </div>
+        </form>
+        @if (!isRespondInProgress && !isClosedStatus) {
+          <div class="respond-to-finding__buttons">
+            @if (!isDnvUser()) {
+              @if (noPreviousResponses) {
+                <shared-button
+                  [isDisabled]="
+                    isAnyFormFieldEmpty || !hasSubmitFindingPermission()
+                  "
+                  [label]="t('findings.findingDetails.sendToDNV')"
+                  [type]="sharedButtonType.Primary"
+                  (clickEvent)="onSubmitToDnv()">
+                </shared-button>
+
+                <shared-button
+                  [isDisabled]="
+                    areAllFormFieldsEmpty ||
+                    (!hasEditFindingPermission() &&
+                      !hasSubmitFindingPermission())
+                  "
+                  [label]="t('findings.findingDetails.saveAsDraft')"
+                  [type]="sharedButtonType.Outline"
+                  (clickEvent)="onSaveDraft()">
+                </shared-button>
+              }
+              @if (isSubmitted) {
+                <shared-button
+                  [isDisabled]="
+                    (!hasEditFindingPermission() &&
+                      !hasSubmitFindingPermission())
+                  "
+                  [label]="t('findings.findingDetails.editSubmittedResponse')"
+                  [type]="sharedButtonType.Outline"
+                  (clickEvent)="onEditSubmittedResponse()">
+                </shared-button>
+              }
+              @if (isDraft) {
+                <shared-button
+                  [isDisabled]="
+                    !areAllResponsesAvailable || !hasSubmitFindingPermission()
+                  "
+                  [label]="t('findings.findingDetails.sendToDNV')"
+                  [type]="sharedButtonType.Primary"
+                  (clickEvent)="onSubmitToDnv()">
+                </shared-button>
+
+           
+                  <shared-button
+                    [isDisabled]="(!hasEditFindingPermission() &&
+                      !hasSubmitFindingPermission())"
+                    [label]="t('findings.findingDetails.continueWithDraft')"
+                    [type]="sharedButtonType.Outline"
+                    (clickEvent)="onContinueWithDraft()">
+                  </shared-button>
+            
+              }
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </ng-container>
+}

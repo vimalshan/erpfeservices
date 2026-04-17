@@ -1,0 +1,85 @@
+<ng-container *transloco="let t">
+  <div class="manage-permissions">
+    <div class="manage-permissions__info">
+      <h4>{{ displayName() }}</h4>
+      <div class="manage-permissions__info__details">
+        <div>
+          <h5>{{ t('settings.form.members.email') }}</h5>
+          <p>{{ displayEmail() }}</p>
+        </div>
+        @if (settingsMembersStoreService.newMemberForm()?.role) {
+          <div>
+            <h5>{{ t('settings.form.members.role') }}</h5>
+            <p>{{ settingsMembersStoreService.newMemberForm()?.role }}</p>
+          </div>
+        }
+        @if (settingsMembersStoreService.selectedUserDetails()?.jobTitle) {
+          <div>
+            <h5>{{ t('settings.form.members.jobTitle') }}</h5>
+            <p>
+              {{ settingsMembersStoreService.selectedUserDetails()?.jobTitle }}
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="manage-permissions__form">
+      <div>
+        <lib-admin-rights
+          [isChecked]="
+            settingsMembersStoreService.hasReceivedAdminPermissions()
+          "
+          (adminRightsChange)="onChangeAdminRights($event)"></lib-admin-rights>
+      </div>
+
+      <div>
+        <h5>{{ t('settings.form.members.company') }}</h5>
+        <shared-select-tree
+          [appendTo]="'body'"
+          [options]="settingsMembersStoreService.companies()"
+          [placeholder]="t('select.treeSelect.companies')"
+          [prefill]="
+            isInEditMode ? settingsMembersStoreService.companies() : []
+          "
+          (changeEvent)="onComapaniesChange($event)">
+        </shared-select-tree>
+      </div>
+
+      <div>
+        <h5>{{ t('settings.form.members.services') }}</h5>
+        <shared-select-tree
+          [appendTo]="'body'"
+          [isDisabled]="
+            settingsMembersStoreService.isServicesDropdownDisabled()
+          "
+          [options]="settingsMembersStoreService.services()"
+          [placeholder]="t('select.treeSelect.services')"
+          [prefill]="isInEditMode ? settingsMembersStoreService.services() : []"
+          (changeEvent)="onServicesChange($event)">
+        </shared-select-tree>
+      </div>
+
+      <div>
+        <h5>{{ t('settings.form.members.sites') }}</h5>
+        <shared-select-tree
+          [appendTo]="'body'"
+          [isDisabled]="settingsMembersStoreService.isSitesDropdownDisabled()"
+          [options]="settingsMembersStoreService.sites()"
+          [placeholder]="t('select.treeSelect.sites')"
+          [prefill]="isInEditMode ? settingsMembersStoreService.sites() : []"
+          (changeEvent)="onSitesChange($event)">
+        </shared-select-tree>
+      </div>
+
+      <div>
+        <lib-access-areas
+          [areas]="permissionsAreas"
+          [isAdminRightsChecked]="
+            settingsMembersStoreService.hasReceivedAdminPermissions()
+          "
+          (changeAccessAreas)="onChangeAccessAreas($event)"></lib-access-areas>
+      </div>
+    </div>
+  </div>
+</ng-container>

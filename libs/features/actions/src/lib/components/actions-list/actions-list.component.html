@@ -1,0 +1,36 @@
+<ng-container *transloco="let t">
+  <shared-grid
+    class="table-list"
+    dataKey="actions"
+    [columns]="cols"
+    [data]="actionsListStoreService.actionsDetails()"
+    [displayExportButton]="false"
+    [filterDelay]="0"
+    [hasActiveFilters]="false"
+    [paginator]="true"
+    [preferenceData]="preferenceData()"
+    [rowHover]="true"
+    [rowsPerPageOptions]="[10, 20, 30]"
+    [scrollable]="true"
+    [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [statusStatesMap]="statusStatesMap"
+    [totalRecords]="actionsListStoreService.totalRecords()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (triggerRedirectAction)="onActionRowClick($event)">
+    <ng-template #buttonsCustomTemplate>
+      <div class="checkbox-text">
+        <p-checkbox
+          inputId="check-high-priority"
+          name="HighPriority"
+          [ariaLabel]="t('actions.highPriority')"
+          [binary]="true"
+          [ngModel]="isChecked"
+          (onChange)="onChangeHighPriority($event)" />
+        <label for="check-high-priority">{{ t('actions.highPriority') }}</label>
+      </div>
+    </ng-template>
+  </shared-grid>
+</ng-container>

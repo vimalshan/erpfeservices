@@ -1,0 +1,38 @@
+<ng-container *transloco="let t">
+  <div class="profile-settings">
+    <form class="profile-settings__form form" [formGroup]="form">
+      <div class="form__item">
+        <label
+          aria-label="communication-language"
+          class="form__label"
+          for="communication-language">
+          {{ t('settings.form.profile.communicationLanguage') }}
+        </label>
+        <p-dropdown
+          appendTo="body"
+          class="form__dropdown"
+          formControlName="communicationLanguage"
+          inputId="communication-language"
+          optionLabel="languageName"
+          [options]="languages()" />
+      </div>
+
+      <div class="form__item">
+        <label aria-label="job-title" class="form__label" for="job-title">
+          {{ t('settings.form.members.role') }}
+        </label>
+        <p-dropdown
+          appendTo="body"
+          class="form__dropdown"
+          formControlName="jobTitle"
+          inputId="job-title"
+          [options]="roles" />
+      </div>
+      <div>
+        <span>{{
+          t('settings.form.profile.settingsModal.additionalInformation')
+        }}</span>
+      </div>
+    </form>
+  </div>
+</ng-container>

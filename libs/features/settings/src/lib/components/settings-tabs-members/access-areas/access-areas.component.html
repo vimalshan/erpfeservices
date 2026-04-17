@@ -1,0 +1,78 @@
+<ng-container *transloco="let t">
+  <div class="form-labels">
+    <h5 class="form-labels__title">
+      {{ t('settings.form.members.accessAreas') }}
+    </h5>
+    <div class="form-labels__checkboxes-row">
+      <div class="form-labels__checkbox-label">
+        {{ t('settings.form.members.view') }}
+      </div>
+      <div class="form-labels__checkbox-label">
+        {{ t('settings.form.members.edit') }}
+      </div>
+      <div class="form-labels__checkbox-label">
+        {{ t('settings.form.members.submit') }}
+      </div>
+    </div>
+  </div>
+  <div class="access-areas">
+    @for (area of areas(); track area.name; let index = $index) {
+      <div class="access-areas__item">
+        <p class="access-areas__name">{{ t(area.name) }}</p>
+        <div class="access-areas__checkboxes-row">
+          @if (area.permission.view) {
+            <div class="access-areas__checkbox-cell">
+              <p-checkbox
+                type="checkbox"
+                [binary]="true"
+                [disabled]="
+                  isAdminRightsChecked() ||
+                  (area.permission.edit?.isChecked ||
+                  area.permission.submit?.isChecked
+                    ? true
+                    : false)
+                "
+                [ngModel]="area.permission.view.isChecked"
+                (onChange)="
+                  onChangeAccessAreas(index, permissionAreas.View)
+                "></p-checkbox>
+            </div>
+          } @else {
+            <div
+              class="access-areas__checkbox-cell access-areas__placeholder"></div>
+          }
+          @if (area.permission.edit) {
+            <div class="access-areas__checkbox-cell">
+              <p-checkbox
+                type="checkbox"
+                [binary]="true"
+                [disabled]="isAdminRightsChecked() || area.permission.submit?.isChecked ? true : false"
+                [ngModel]="area.permission.edit.isChecked"
+                (onChange)="
+                  onChangeAccessAreas(index, permissionAreas.Edit)
+                "></p-checkbox>
+            </div>
+          } @else {
+            <div
+              class="access-areas__checkbox-cell access-areas__placeholder"></div>
+          }
+          @if (area.permission.submit) {
+            <div class="access-areas__checkbox-cell">
+              <p-checkbox
+                type="checkbox"
+                [binary]="true"
+                [disabled]="isAdminRightsChecked()"
+                [ngModel]="area.permission.submit.isChecked"
+                (onChange)="
+                  onChangeAccessAreas(index, permissionAreas.Submit)
+                "></p-checkbox>
+            </div>
+          } @else {
+            <div
+              class="access-areas__checkbox-cell access-areas__placeholder"></div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</ng-container>

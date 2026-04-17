@@ -1,0 +1,47 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/layout' as layout;
+@use 'pattern/mixins' as mixins;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+:host {
+  @extend %#{layout.$page-base-pattern};
+}
+
+.head {
+  @extend %#{layout.$page-base-head-pattern};
+  position: relative;
+}
+
+.body {
+  @extend %#{layout.$page-base-body-pattern};
+}
+
+h1 {
+  @extend %#{typography.$heading-xl-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+.container {
+  display: flex;
+  gap: utility.get-rem(16);
+  @include mixins.gutter-for(top, right, bottom, left);
+
+  @include mixins.respond-to(phone) {
+    flex-direction: column;
+  }
+}
+
+shared-custom-card {
+  width: 25%;
+
+  @include mixins.respond-to(tablet) {
+    width: 33%;
+  }
+
+  @include mixins.respond-to(phone) {
+    width: 100%;
+  }
+}

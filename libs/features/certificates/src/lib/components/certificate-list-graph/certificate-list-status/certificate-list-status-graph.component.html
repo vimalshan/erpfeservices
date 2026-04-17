@@ -1,0 +1,61 @@
+<ng-container *transloco="let t">
+  <section
+    aria-labelledby="certificate-graphs-charts"
+    class="charts"
+    role="region">
+    <h2 id="certificate-graphs-charts">
+      {{ t('certificate.certificateGraphs.title') }}
+    </h2>
+
+    <div
+      aria-labelledby="certificate-graphs-charts-doughnut"
+      class="chart-doughnut"
+      role="region">
+      <h3 id="certificate-graphs-charts-doughnut">
+        {{ t('certificate.certificateGraphs.certificateByStatusTitle') }}
+      </h3>
+
+      <shared-chart
+        class="chart-doughnut-graph"
+        [chartFilters]="certificatesByStatusChartFilters"
+        [data]="
+          certificateListGraphStoreService.certificatesByStatusGraphData().data
+        "
+        [options]="certificatesByStatusChartOptions"
+        [plugins]="doughnutTotalPlugin"
+        [tooltipTitle]="t('certificate.certificateGraphs.totalCertificates')"
+        [type]="doughnutType"
+        (tooltipButtonClick)="
+          certificateListGraphStoreService.navigateFromListChartToListView(
+            $event
+          )
+        ">
+      </shared-chart>
+    </div>
+
+    <div
+      aria-labelledby="certificate-graphs-charts-bar"
+      class="chart-bar"
+      role="region">
+      <h3 id="certificate-graphs-charts-bar">
+        {{ t('certificate.certificateGraphs.certificateByTypeTitle') }}
+      </h3>
+
+      <shared-chart
+        [chartFilters]="certificatesByTypeChartFilters"
+        [data]="
+          certificateListGraphStoreService.certificatesByTypeGraphData().data
+        "
+        [hasBorderIfNoData]="true"
+        [options]="certificatesByTypeChartOptions"
+        [type]="barType"
+        [useCustomLegend]="true"
+        (tooltipButtonClick)="
+          certificateListGraphStoreService.navigateFromListChartToListView(
+            $event
+          )
+        ">
+      </shared-chart>
+    </div>
+  </section>
+</ng-container>

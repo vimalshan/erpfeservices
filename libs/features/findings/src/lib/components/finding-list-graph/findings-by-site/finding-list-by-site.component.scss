@@ -1,0 +1,38 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host::ng-deep {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  @include mixins.gutter-for(top, right, bottom, left);
+  .p-treetable-frozen-view {     
+      & + .p-treetable-unfrozen-view {
+         position: unset !important;         
+      }
+  }
+}
+
+h2 {
+  @extend %#{typography.$heading-m-pattern};
+  color: colors.get-color('SeaBlue');
+}
+:host ::ng-deep {
+.tree-table-container .p-treetable-scrollable-body td:first-child {
+    white-space: normal !important;
+    .icon-with-alignment{
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+  shared-tree-table {
+      .p-treetable-frozen-view {
+          display: none;
+      }
+      .p-treetable-unfrozen-view {
+          width: 100% !important;
+      }
+    }
+}

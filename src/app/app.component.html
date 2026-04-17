@@ -1,0 +1,29 @@
+@if (isDnvUser && coBrowsingSharedService.getCoBrowsingUserEmail()) {
+  <router-outlet></router-outlet>
+  <lib-spinner></lib-spinner>
+} @else {
+  @if (coBrowsingSharedService.getCoBrowsingUserEmail()) {
+    <customer-portal-navbar-co-browsing></customer-portal-navbar-co-browsing>
+  }
+  <div class="app-container">
+    @if (isLoggedIn) {
+      <customer-portal-navbar (toggleSidebarEvent)="sidebarMobile.onToggle($event)"></customer-portal-navbar>
+      <customer-portal-sidebar></customer-portal-sidebar>
+      <customer-portal-footer></customer-portal-footer>
+    }
+
+    <main [ngClass]="{ 'no-breadcrumb': !breadcrumbVisibility }">
+      @if (isLoggedIn) {
+        <customer-portal-breadcrumb></customer-portal-breadcrumb>
+      }
+      <div class="content">
+        <lib-spinner></lib-spinner>
+        <router-outlet></router-outlet>
+      </div>
+      <customer-portal-sidebar-mobile #sidebarMobile></customer-portal-sidebar-mobile>
+    </main>
+  </div>
+}
+
+<shared-custom-confirm-dialog></shared-custom-confirm-dialog>
+<shared-custom-toast></shared-custom-toast>

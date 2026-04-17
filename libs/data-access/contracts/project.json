@@ -1,0 +1,10 @@
+{
+  "name": "contracts-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-access/contracts/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:data-access", "domain:contracts"],
+  "targets": {
+  }
+}

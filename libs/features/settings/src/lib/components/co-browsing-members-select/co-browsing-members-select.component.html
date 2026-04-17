@@ -1,0 +1,58 @@
+<ng-container *transloco="let t">
+  <div class="container" role="main">
+    <div class="header">
+      <img
+        alt="DNV logo"
+        class="logo--lg"
+        src="../../../assets/logos/dnv-logo-color.svg" />
+
+      <shared-button
+        icon="sign-out"
+        [label]="t('navbar.logOut')"
+        [type]="sharedButtonType.TextLink"
+        (clickEvent)="onLogout()">
+      </shared-button>
+    </div>
+    <div class="content">
+      <div class="text-container">
+        <h1 class="text-container-title">
+          {{ t('cobrowsing.administrationPortal') }}
+        </h1>
+        <p class="text-container-description">
+          {{ t('cobrowsing.administrationPortalDescription') }}
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-text-container">
+          <p class="card-label">
+            {{ t('cobrowsing.selectCompany') }}
+          </p>
+        </div>
+        <div class="card-actions">
+          <p-dropdown
+            filterBy="label"
+            id="cobrowsingCompany"
+            optionLabel="label"
+            [ariaLabel]="t('cobrowsing.selectCompany')"
+            [filter]="true"
+            [ngModel]="
+              settingsCoBrowsingStoreService.selectedCoBrowsingCompany()
+            "
+            [options]="settingsCoBrowsingStoreService.adminViewCompanyList()"
+            [placeholder]="t('cobrowsing.selectCompany')"
+            [showClear]="false"
+            (ngModelChange)="onCompanyChange($event)">
+          </p-dropdown>
+
+          <shared-button
+            iconPos="right"
+            [icon]="'arrow-right'"
+            [label]="t('cobrowsing.continue')"
+            [type]="sharedButtonType.Primary"
+            (clickEvent)="onContinueClick()">
+          </shared-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

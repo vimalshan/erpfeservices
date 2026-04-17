@@ -1,0 +1,10 @@
+{
+  "name": "documents-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-access/documents/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:data-access", "domain:documents"],
+  "targets": {
+  }
+}

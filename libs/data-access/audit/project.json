@@ -1,0 +1,9 @@
+{
+  "name": "audit-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-access/audit/src",
+  "prefix": "lib",
+  "projectType": "library",
+   "tags": ["type:data-access", "domain:audit"],
+  "targets": {}
+}

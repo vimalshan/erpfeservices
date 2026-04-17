@@ -1,0 +1,89 @@
+<ng-container *transloco="let t">
+  <div class="header" role="region">
+    <h2 class="open-findings-title">
+      {{ t('findings.openFindings.title') }}
+    </h2>
+  </div>
+
+  <div
+    class="chart-legend"
+    role="region"
+    tabindex="0"
+    [attr.aria-label]="t('findings.openFindings.sharedChartLegend')"
+    [id]="sharedLegendId"
+    (click)="onLegendClick($event)"
+    (keydown.enter)="onLegendClick($event)"
+    (keydown.space)="onLegendClick($event)"></div>
+
+  <section class="charts" role="region">
+    <div class="chart chart-overdue" role="region">
+      <shared-chart
+        class="chart-stacked-bar-graph"
+        [chartFilters]="openFindingsChartFilters"
+        [data]="openFindingsData().overdueGraphData"
+        [options]="openFindingsGraphOptions"
+        [type]="barType"
+        (chartClick)="onChartClick($event)"
+        (tooltipButtonClick)="
+          onTooltipClick($event, openFindingsMonthsPeriod.Overdue)
+        ">
+        <div class="chart-header chart-header--overdue" header>
+          <i aria-hidden="true" class="pi pi-exclamation-circle"></i>
+          <span>{{ t('findings.openFindings.overdueTitle') }}</span>
+        </div>
+      </shared-chart>
+    </div>
+
+    <div class="chart chart-becoming-overdue" role="region">
+      <shared-chart
+        class="chart-stacked-bar-graph"
+        [chartFilters]="openFindingsChartFilters"
+        [data]="openFindingsData().becomingOverdueGraphData"
+        [options]="openFindingsGraphOptions"
+        [type]="barType"
+        (chartClick)="onChartClick($event)"
+        (tooltipButtonClick)="
+          onTooltipClick($event, openFindingsMonthsPeriod.BecomingOverdue)
+        ">
+        <div class="chart-header chart-header--becoming-overdue" header>
+          <i aria-hidden="true" class="pi pi-exclamation-circle"></i>
+          <span>{{ t('findings.openFindings.becomingOverdueTitle') }}</span>
+        </div>
+      </shared-chart>
+    </div>
+
+    <div class="chart chart-in-progress" role="region">
+      <shared-chart
+        class="chart-stacked-bar-graph"
+        [chartFilters]="openFindingsChartFilters"
+        [data]="openFindingsData().inProgressGraphData"
+        [options]="openFindingsGraphOptions"
+        [type]="barType"
+        (chartClick)="onChartClick($event)"
+        (tooltipButtonClick)="
+          onTooltipClick($event, openFindingsMonthsPeriod.InProgress)
+        ">
+        <div class="chart-header" header>
+          <span>{{ t('findings.openFindings.inProgressTitle') }}</span>
+        </div>
+      </shared-chart>
+    </div>
+
+    <div class="chart chart-early-stage" role="region">
+      <shared-chart
+        class="chart-stacked-bar-graph"
+        [chartFilters]="openFindingsChartFilters"
+        [data]="openFindingsData().earlyStageGraphData"
+        [options]="openFindingsGraphOptions"
+        [type]="barType"
+        (chartClick)="onChartClick($event)"
+        (tooltipButtonClick)="
+          onTooltipClick($event, openFindingsMonthsPeriod.EarlyStage)
+        ">
+        <div class="chart-header" header>
+          <span>{{ t('findings.openFindings.earlyStageTitle') }}</span>
+        </div>
+      </shared-chart>
+    </div>
+  </section>
+</ng-container>

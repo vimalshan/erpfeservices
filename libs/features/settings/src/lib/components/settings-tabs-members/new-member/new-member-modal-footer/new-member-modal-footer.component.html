@@ -1,0 +1,15 @@
+<ng-container *transloco="let t">
+  <shared-button
+    [label]="t('settings.membersTab.cancel')"
+    [type]="sharedButtonType.Outline"
+    (clickEvent)="closeDialog(false)">
+  </shared-button>
+
+  <shared-button
+    [icon]="'angle-right'"
+    [iconPos]="'right'"
+    [label]="t('settings.membersTab.continueToPermissions')"
+    [type]="sharedButtonType.Secondary"
+    (clickEvent)="onSubmit()">
+  </shared-button>
+</ng-container>

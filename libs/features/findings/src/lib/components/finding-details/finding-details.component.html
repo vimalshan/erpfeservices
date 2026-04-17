@@ -1,0 +1,107 @@
+@defer (when (isLoading | async) === false) {
+  <ng-container *transloco="let t">
+    <section aria-labelledby="finding-details-head" class="head" role="region">
+      <h1 id="finding-details-head">{{ findingId }}</h1>
+
+      <shared-status
+        [statusClassMap]="statusStatesMap"
+        [value]="findingDetails().header.status">
+      </shared-status>
+    </section>
+
+    <section aria-labelledby="finding-details-body" class="body" role="region">
+      <div class="details">
+        <h2 id="finding-details-body">
+          {{ findingDetails().header.services }}
+        </h2>
+
+        <div class="summary-left">
+          @if (findingDetails().header.site) {
+            <div class="summary-left-grouping">
+              <i aria-hidden="true" class="pi pi-building"></i>
+              <span>{{ findingDetails().header.site }}</span>
+            </div>
+          }
+
+          @if (findingDetails().header.city) {
+            <div class="summary-left-grouping">
+              <i aria-hidden="true" class="pi pi-globe"></i>
+              <span>{{ findingDetails().header.city }}</span>
+            </div>
+          }
+          <div class="summary-left-grouping">
+            @if (findingDetails().header.openDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('findings.findingDetails.open', {
+                  date: findingDetails().header.openDate | customDate,
+                })
+              }}</span>
+            }
+
+            @if (findingDetails().header.dueDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('findings.findingDetails.due', {
+                  date: findingDetails().header.dueDate | customDate,
+                })
+              }}</span>
+            }
+
+            @if (findingDetails().header.acceptedDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('findings.findingDetails.accepted', {
+                  date: findingDetails().header.acceptedDate | customDate,
+                })
+              }}</span>
+            }
+
+            @if (findingDetails().header.closeDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('findings.findingDetails.closed', {
+                  date: findingDetails().header.closeDate | customDate,
+                })
+              }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="summary-right">
+          <div class="summary-right-grouping">
+            <h3>{{ t('findings.findingDetails.auditor') }}</h3>
+            <span>{{ findingDetails().header.auditor }}</span>
+          </div>
+          <div class="summary-right-grouping">
+            <h3>{{ t('findings.findingDetails.auditType') }}</h3>
+            <span>{{ findingDetails().header.auditType }}</span>
+          </div>
+          <div class="summary-right-grouping">
+            <h3>
+              {{ t('findings.findingDetails.auditNumber') }}
+            </h3>
+
+            <span class="visually-hidden" id="auditNumberDescription">
+              {{ t('findings.findingDetails.auditNumber') }}
+              {{ findingDetails().header.auditNumber }}
+            </span>
+
+            <a
+              aria-labelledby="auditNumberDescription"
+              [routerLink]="['/audits/', findingDetails().header.auditNumber]"
+              >{{ findingDetails().header.auditNumber }}</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <lib-finding-tab-view
+        [isResponseHistoryAvailable]="
+          findingDetailsStoreService.isResponseHistoryAvailable()!
+        "></lib-finding-tab-view>
+    </section>
+  </ng-container>
+} @placeholder {
+  <div></div>
+}

@@ -1,0 +1,58 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host::ng-deep {
+  display: grid;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  grid-template-rows: auto auto minmax(max-content, 1fr);
+  grid-template-areas:
+    'h2'
+    'trends-chart'
+    'trends-grid';
+  @include mixins.gutter-for(top, right, bottom, left);  
+  shared-chart {
+      .chart-legend ul {
+        padding: 0 !important;
+      }
+    }
+      .p-treetable-frozen-view {     
+      & + .p-treetable-unfrozen-view {
+         position: unset !important;         
+      }
+    }
+    shared-tree-table {
+      .p-treetable-frozen-view {
+          display: none;
+      }
+      .p-treetable-unfrozen-view {
+          width: 100% !important;
+      }
+    }
+}
+
+.trends-chart {
+  grid-area: trends-chart;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  min-height: utility.get-rem(625);
+}
+
+h2 {
+  @extend %#{typography.$heading-m-pattern};
+  grid-area: h2;
+  color: colors.get-color('SeaBlue');
+}
+
+h3 {
+  @extend %#{typography.$label-l-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('SeaBlue');
+}
+
+.trends-grid {
+  margin: utility.get-rem(40) 0;
+}

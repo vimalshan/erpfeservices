@@ -1,0 +1,52 @@
+<ng-container *transloco="let t">
+  <div role="main">
+    <div class="co-browsing-header">
+      <p-button
+        icon="pi pi-arrow-left"
+        [ariaLabel]="t('cobrowsing.selectAnotherCompany') + ' ' + t('back')"
+        [iconPos]="'left'"
+        [label]="t('cobrowsing.selectAnotherCompany')"
+        [link]="true"
+        (onClick)="onGoBackClick()">
+      </p-button>
+      <h1>
+        {{ settingsCoBrowsingStoreService.selectedCoBrowsingCompany()?.label }}
+      </h1>
+    </div>
+    <div class="settings-members">
+      <div class="settings-members__actions">
+        <h2>{{ t('cobrowsing.manageMembers') }}</h2>
+        <shared-button
+          [icon]="'plus'"
+          [label]="t('cobrowsing.addNewMember')"
+          [type]="sharedButtonType.Outline"
+          (clickEvent)="onAddMemberClick()">
+        </shared-button>
+      </div>
+
+      <div class="settings-members__admins">
+        <p>
+          {{
+            t('cobrowsing.admins', {
+              total: settingsMembersStoreService.adminTotalFilteredRecords(),
+            })
+          }}
+        </p>
+        <lib-admin-grid
+          [shouldPersist]="
+            settingsCoBrowsingStoreService.isDnvUser()
+          "></lib-admin-grid>
+      </div>
+      <div class="settings-members__members">
+        <p>
+          {{
+            t('cobrowsing.members', {
+              total: settingsMembersStoreService.membersTotalFilteredRecords(),
+            })
+          }}
+        </p>
+        <lib-members-grid></lib-members-grid>
+      </div>
+    </div>
+  </div>
+</ng-container>

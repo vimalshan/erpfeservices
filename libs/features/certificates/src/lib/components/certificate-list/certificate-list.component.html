@@ -1,0 +1,30 @@
+@if (isPreferenceInitialized | async) {
+  <shared-grid
+   #grid
+   class="table-list"
+    dataKey="certificateId"
+    [columns]="cols"
+    [data]="certificateListStoreService.certificates()"
+    [displayClearButton]="certificateListStoreService.hasActiveFilters()"
+    [displayColsReorderButton]="true"
+    [filterDelay]="0"
+    [filterOptions]="certificateListStoreService.filterOptions()"
+    [filteringConfig$]="certificateListStoreService.filteringConfig"
+    [hasActiveFilters]="certificateListStoreService.hasActiveFilters()"
+    [isLoading]="certificateListStoreService.isLoading()"
+    [paginator]="true"
+    [preferenceData]="preferenceData()"
+    [route]="'/certificates/'"
+    [rowHover]="true"
+    [scrollable]="true"
+    [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [statusStatesMap]="statusMap"
+    [totalRecords]="certificateListStoreService.totalRecords()"
+    (exportExcel)="onExportExcelClick()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (savePreference)="onSavePreference($event)">
+  </shared-grid>
+}

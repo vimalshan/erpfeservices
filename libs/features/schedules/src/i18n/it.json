@@ -1,0 +1,59 @@
+{
+  "auditor": "Revisore",
+  "auditType": "Tipo di Audit",
+  "calendarFilter": {
+    "companiesPlaceholder": "Tutte le aziende",
+    "servicesPlaceholder": "Tutti gli schemi",
+    "sitesPlaceholder": "Tutti i siti",
+    "statusesPlaceholder": "Tutti gli stati"
+  },
+  "confirm": {
+    "cancel": "Cancellare",
+    "disclaimer": "Prima dell'audit, il responsabile del team ti contatterà per definire il piano dell'audit e richiedere eventuali documenti necessari per la sua preparazione. Anche i membri del team di audit saranno confermati in quel momento.",
+    "error": "Il programma di controllo non è confermato. Riprova.",
+    "heading": "{{startDate}} - {{endDate}}",
+    "submit": "Conferma audit",
+    "success": "Confermato il programma di audit",
+    "title": "Conferma audit"
+  },
+  "details": {
+    "addToCalendar": "Aggiungi al calendario",
+    "confirm": "Conferma",
+    "heading": "{{startDate}} - {{endDate}}",
+    "reschedule": "Ripianifica",
+    "shareInvite": "Condidi l'invito",
+    "title": "Dettagli dell'audit"
+  },
+  "reschedule": {
+    "cancel": "Cancellare",
+    "commentsLabel": "Commenti aggiuntivi (opzionale)",
+    "commentsPlaceholder": "Opzionale",
+    "dateLabel": "Indica la settimana in cui vorresti effettuare l'audit",
+    "datePlaceholder": "- Seleziona la settimana -",
+    "disclaimer": "Faremo del nostro meglio per soddisfare la vostra richiesta di modifica dei dati, ma non possiamo garantirlo.",
+    "error": "Riprogrammazione dell'audit non confermata. Riprova.",
+    "heading": "Ripianificazione {{date}}",
+    "reasonLabel": "Indica il motivo della richiesta",
+    "reasonPlaceholder": "- Seleziona il motivo -",
+    "submit": "Invia richiesta",
+    "success": "Confermata la riprogrammazione dell'audit",
+    "title": "Richiedi una ripianificazione"
+  },
+  "scheduleList": {
+    "auditType": "Tipo di audit",
+    "city": "Città",
+    "company": "Azienda",
+    "endDate": "Data di fine",
+    "leadAuditor": "Lead auditor",
+    "service": "Servizio",
+    "site": "Sito",
+    "siteRepresentative": "Rappresentante del sito",
+    "startDate": "Data di inizio",
+    "status": "Stato",
+    "siteAuditId": "ID sito"
+  },
+  "service": "Servizio",
+  "site": "Sito",
+  "siteRepresentative": "Rappresentante del sito",
+  "title": "Pianificazione"
+}

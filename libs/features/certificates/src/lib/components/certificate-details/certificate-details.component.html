@@ -1,0 +1,152 @@
+@defer (when (isLoading | async) === false) {
+  <ng-container *transloco="let t">
+    <section
+      aria-labelledby="certificate-details-head"
+      class="head"
+      role="region">
+      <h1 id="certificate-details-head">
+        {{ certificateDetails().certificateNumber }}
+      </h1>
+
+      <shared-status
+        [statusClassMap]="statusStatesMap"
+        [value]="certificateDetails().header.status">
+      </shared-status>
+
+      @if (!isDnvUser()) {
+        <ng-container *sharedHasAdminPermission="'admin'">
+          <shared-button
+            class="request-changes-button"
+            icon="pencil"
+            [label]="t('serviceNow.requestChanges')"
+            [type]="sharedButtonType.Outline"
+            (clickEvent)="openserviceNowCertificateSupport()">
+          </shared-button>
+        </ng-container>
+      }
+    </section>
+
+    <section aria-labelledby="certificate-details-body" class="body">
+      <div class="details">
+        @if (hasNewRevisionNumber()) {
+          <shared-message
+            [hasProjectedButton]="true"
+            [messages]="newCertificateInProgressMessages">
+            <shared-button
+              [label]="t('certificate.certificateDetails.viewNewCertificate')"
+              [type]="sharedButtonType.Secondary"
+              (clickEvent)="navigateToNewCertificate()">
+            </shared-button>
+          </shared-message>
+        }
+
+        <h2
+          id="certificate-details-body"
+          tabindex="0"
+          [attr.aria-label]="certificateDetails().header.services">
+          {{ certificateDetails().header.services }}
+        </h2>
+
+        <div class="summary-left">
+          @if (certificateDetails().header.siteName) {
+            <div class="summary-left-grouping">
+              <i aria-hidden="true" class="pi pi-building"></i>
+              <span>{{ certificateDetails().header.siteName }}</span>
+            </div>
+          }
+          @if (certificateDetails().header.siteAddress) {
+            <div class="summary-left-grouping">
+              <i aria-hidden="true" class="pi pi-globe"></i>
+              <span>{{ certificateDetails().header.siteAddress }}</span>
+            </div>
+          }
+          <div class="summary-left-grouping">
+            @if (certificateDetails().header.issuedDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('certificate.certificateDetails.date.start', {
+                  date: certificateDetails().header.issuedDate | customDate,
+                })
+              }}</span>
+            }
+
+            @if (certificateDetails().header.validUntilDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('certificate.certificateDetails.date.end', {
+                  date: certificateDetails().header.validUntilDate | customDate,
+                })
+              }}</span>
+            }
+
+            @if (certificateDetails().header.withdrawnDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('certificate.certificateDetails.date.withdrawn', {
+                  date: certificateDetails().header.withdrawnDate | customDate,
+                })
+              }}</span>
+            }
+
+            @if (certificateDetails().header.suspendedDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('certificate.certificateDetails.date.suspended', {
+                  date: certificateDetails().header.suspendedDate | customDate,
+                })
+              }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="summary-right">
+          <div class="summary-right-grouping">
+            <h3>{{ t('certificate.certificateDetails.languagesLabel') }}</h3>
+            @for (
+              language of certificateDetails().header.languages;
+              track language.code
+            ) {
+              <span>{{ language.name }}</span>
+            }
+          </div>
+        </div>
+
+        <div aria-labelledby="certificate-details-scope" class="scope">
+          <div class="grouping">
+            <h4 id="certificate-details-scope">
+              {{ t('certificate.certificateDetails.scope') }}
+            </h4>
+            <shared-language-switcher
+              [languages]="languages"
+              (selectedLanguageChanged)="onSelectedLanguageChanged($event)">
+            </shared-language-switcher>
+          </div>
+          <p class="description">{{ siteScope() }}</p>
+        </div>
+
+        <div class="buttons">
+          <shared-button
+            [icon]="'link'"
+            [isDisabled]="!isIssued && !certificateDetails().header.qRCodeLink"
+            [label]="t('certificate.certificateDetails.certificate')"
+            [type]="sharedButtonType.Secondary"
+            (clickEvent)="openCertificate()">
+          </shared-button>
+
+          <shared-button
+            [icon]="'download'"
+            [isDisabled]="!isIssued"
+            [label]="t('certificate.certificateDetails.certificationMark')"
+            [type]="sharedButtonType.Secondary"
+            (clickEvent)="confirmDownload(true)">
+          </shared-button>
+        </div>
+      </div>
+
+      <lib-certificate-tab-view
+        [isOutstandingStatus]="isOutstandingStatus"></lib-certificate-tab-view>
+    </section>
+  </ng-container>
+} @placeholder {
+  <div></div>
+}

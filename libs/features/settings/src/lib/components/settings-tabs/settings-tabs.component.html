@@ -1,0 +1,34 @@
+<ng-container *transloco="let t">
+  <p-tabView
+    role="tablist"
+    [activeIndex]="(tabIndex$ | async) ?? 0"
+    [scrollable]="true"
+    (onChange)="onTabChange($event)">
+    <p-tabPanel
+      id="settings-tabs-personal-information"
+      [attr.aria-label]="t('settings.tabs.personalInformation')"
+      [header]="t('settings.tabs.personalInformation')">
+      <ng-template pTemplate="content">
+        <lib-settings-tab-personal-information></lib-settings-tab-personal-information>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="settings-tabs-company-details"
+      [attr.aria-label]="t('settings.tabs.companyDetails')"
+      [header]="t('settings.tabs.companyDetails')">
+      <ng-template pTemplate="content">
+        <lib-settings-tab-company-details></lib-settings-tab-company-details>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="settings-tabs-members"
+      [attr.aria-label]="t('settings.tabs.members')"
+      [header]="t('settings.tabs.members')">
+      <ng-template pTemplate="content">
+        <lib-settings-tab-members></lib-settings-tab-members>
+      </ng-template>
+    </p-tabPanel>
+  </p-tabView>
+</ng-container>

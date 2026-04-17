@@ -1,0 +1,57 @@
+<ng-container *transloco="let t">
+  <div class="manage-findings">
+    <div class="wrapper">
+      <div class="manage-findings__header">
+        <h2 class="manage-findings__title">
+          {{ details()?.title }}
+        </h2>
+        <shared-tag
+          class="manage-findings__tag"
+          [tagClassesMap]="tagStatesMap"
+          [tagValue]="details()?.category"></shared-tag>
+
+        <shared-language-switcher
+          class="manage-findings__language-switcher"
+          [languages]="languages"
+          (selectedLanguageChanged)="onSelectedLanguageChanged($event)">
+        </shared-language-switcher>
+      </div>
+      <div class="manage-findings__details">
+        <div class="manage-findings__details-container clause">
+          <h3 class="manage-findings__details-title">
+            {{ t('findings.findingDetails.clause') | uppercase }}
+          </h3>
+          <div class="manage-findings__details-text">
+            {{ details()?.clause }}
+          </div>
+        </div>
+
+        <div class="manage-findings__details-container focus-area">
+          <h3 class="manage-findings__details-title">
+            {{ t('findings.findingDetails.focusArea') | uppercase }}
+          </h3>
+          <div class="manage-findings__details-text">
+            {{ details()?.focusArea }}
+          </div>
+        </div>
+
+        <div class="manage-findings__details-container description">
+          <h3 class="manage-findings__details-title">
+            {{ t('findings.findingDetails.description') | uppercase }}
+          </h3>
+          <div class="manage-findings__details-text">
+            {{ details()?.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <lib-finding-respond-to
+    [findingDetails]="findingDetailsStoreService.findingDetails()!"
+    [isRespondInProgress]="findingDetailsStoreService.isRespondInProgress()!"
+    [latestFindingResponses]="
+      findingDetailsStoreService.latestFindingResponses()!
+    "
+    (formDirtyStateChanged)="onFormDirtyStateChanged($event)"
+    (sendForm)="onSendForm($event)"></lib-finding-respond-to>
+</ng-container>

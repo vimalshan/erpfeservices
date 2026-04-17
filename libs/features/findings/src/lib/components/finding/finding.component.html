@@ -1,0 +1,10 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="finding-title" class="head" tabindex="0">
+    <h1 id="finding-title">{{ t('findings.title') }}</h1>
+    <shared-page-toggle [data]="pageToggleOptions"> </shared-page-toggle>
+  </section>
+
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    <router-outlet></router-outlet>
+  </section>
+</ng-container>

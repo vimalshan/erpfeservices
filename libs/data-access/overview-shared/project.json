@@ -1,0 +1,10 @@
+{
+  "name": "overview-shared-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-access/overview-shared/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:data-access", "domain:overview-shared"],
+  "targets": {
+  }
+}

@@ -1,0 +1,18 @@
+<p-dialog
+  [header]="header()"
+  [(visible)]="visible"
+  [modal]="modal()"
+  [closable]="closable()"
+  [draggable]="draggable()"
+  [resizable]="resizable()"
+  [styleClass]="styleClass() ?? ''"
+  [style]="width() ? { width: width() } : {}"
+  [maximizable]="maximizable()"
+  (onHide)="onHide()"
+>
+  <ng-content></ng-content>
+
+  <ng-template pTemplate="footer">
+    <ng-content select="[footer]"></ng-content>
+  </ng-template>
+</p-dialog>

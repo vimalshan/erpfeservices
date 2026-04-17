@@ -1,0 +1,10 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="actions" class="head" role="region">
+    <h1 id="actions">{{ t('actions.title') }}</h1>
+  </section>
+
+  <section class="body">
+    <lib-actions-filter></lib-actions-filter>
+    <router-outlet></router-outlet>
+  </section>
+</ng-container>

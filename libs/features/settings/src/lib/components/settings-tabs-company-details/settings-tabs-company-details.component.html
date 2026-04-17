@@ -1,0 +1,46 @@
+<ng-container *transloco="let t">
+  <!--Here to add check for updatePendingParentCompany and in settings*grid for LegalEntities-->
+  @if (settingsStoreService.parentCompany()) {
+    @if (settingsStoreService.legalEntityListCounter()) {
+      <lib-settings-tab-company-details-info
+        [data]="settingsStoreService.parentCompany()!"
+        [isOrganizationNameVisible]="true"
+        [isUserAdmin]="settingsStoreService.isUserAdmin()"
+        [title]="t('settings.heading.parentCompany')">
+      </lib-settings-tab-company-details-info>
+      <div class="container">
+        <h3>{{ t('settings.heading.legalEntities') }}</h3>
+        <lib-settings-tab-company-details-grid
+          [isLegalEntity]="true"
+          [isUserAdmin]="settingsStoreService.isUserAdmin()">
+        </lib-settings-tab-company-details-grid>
+      </div>
+    } @else {
+      <lib-settings-tab-company-details-info
+        [data]="settingsStoreService.parentCompany()!"
+        [isOrganizationNameVisible]="true"
+        [isUserAdmin]="settingsStoreService.isUserAdmin()"
+        [title]="t('settings.heading.companyDetails')">
+      </lib-settings-tab-company-details-info>
+    }
+  } @else {
+    @if (settingsStoreService.legalEntityListCounter() === 1) {
+      <lib-settings-tab-company-details-info
+        [data]="settingsStoreService.legalEntityList()[0]"
+        [isLegalEntity]="true"
+        [isOrganizationNameVisible]="true"
+        [isUserAdmin]="settingsStoreService.isUserAdmin()"
+        [title]="t('settings.heading.companyDetails')">
+      </lib-settings-tab-company-details-info>
+    }
+    @if (settingsStoreService.legalEntityListCounter() > 1) {
+      <div class="container">
+        <h3>{{ t('settings.heading.companyDetails') }}</h3>
+        <lib-settings-tab-company-details-grid
+          [isLegalEntity]="true"
+          [isUserAdmin]="settingsStoreService.isUserAdmin()">
+        </lib-settings-tab-company-details-grid>
+      </div>
+    }
+  }
+</ng-container>

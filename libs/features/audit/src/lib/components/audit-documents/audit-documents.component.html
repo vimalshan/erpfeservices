@@ -1,0 +1,57 @@
+<ng-container *transloco="let t">
+  <h3>{{ t('audit.auditDetailsDescription.documents') }}</h3>
+
+  <shared-grid
+    dataKey="documentId"
+    [columns]="cols"
+    [data]="auditDocumentsList()"
+    [displayClearButton]="
+      auditDetailsStoreService.auditDocumentsHasActiveFilters()
+    "
+    [displayColsReorderButton]="false"
+    [displayExportButton]="false"
+    [displayFilterSummary]="true"
+    [filterDelay]="0"
+    [filterOptions]="auditDetailsStoreService.auditDocumentsFilterOptions()"
+    [filteringConfig$]="auditDetailsStoreService.auditDocumentsFilteringConfig"
+    [hasActiveFilters]="
+      auditDetailsStoreService.auditDocumentsHasActiveFilters()
+    "
+    [isDocumentsGrid]="true"
+    [isLoading]="auditDetailsStoreService.isLoadingDocuments()"
+    [isShowAddDocument]="canAddDocuments()"
+    [paginator]="false"
+    [rowHover]="true"
+    [scrollable]="true"
+    [selectable]="true"
+    [selectableSticky]="false"
+    [shouldPersist]="false"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [totalRecords]="auditDetailsStoreService.auditDocumentsTotalRecords()"
+    (addDocuments)="openAddDocumentsDialog()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (selectionChangeData)="onSelectionChangeData($event)"
+    (triggerFileAction)="triggerFileAction($event)">
+    <ng-template #buttonsCustomTemplate>
+      @if (canAddDocuments()) {
+        <shared-button
+          [icon]="'paperclip'"
+          [label]="t('audit.attachedDocuments.addDocuments')"
+          [type]="sharedButtonType.Outline"
+          (clickEvent)="openAddDocumentsDialog()">
+        </shared-button>
+      }
+      @if (displayDownloadButton) {
+        <shared-button
+          #bulkDownloadBtn
+          [icon]="'download'"
+          [label]="t('audit.attachedDocuments.downloadButton')"
+          [type]="sharedButtonType.Outline"
+          (clickEvent)="downloadSelectedDocuments()">
+        </shared-button>
+      }
+    </ng-template>
+  </shared-grid>
+</ng-container>

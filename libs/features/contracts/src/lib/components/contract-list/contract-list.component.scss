@@ -1,0 +1,27 @@
+@use 'pattern/colors';
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+
+:host {
+  @extend %#{layout.$page-base-pattern};
+}
+
+.head {
+  @extend %#{layout.$page-base-head-pattern};
+  position: relative;
+}
+
+.body {
+  @extend %#{layout.$page-base-body-pattern};
+}
+
+h1 {
+  @extend %#{typography.$heading-xl-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+shared-grid {
+  @include mixins.gutter-for(top, right, bottom, left);
+}

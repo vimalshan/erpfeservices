@@ -1,0 +1,42 @@
+<ng-container *transloco="let t">
+  <div class="card">
+    <div class="financial-status-heading">
+      <h4>{{ t('overview.financialStatus') }}</h4>
+      <shared-button
+        [attr.aria-label]="t('overview.financialStatusViewAll')"
+        [label]="t('overview.viewAll')"
+        [type]="sharedButtonType.TextLink"
+        (clickEvent)="viewAllInvoices()">
+      </shared-button>
+    </div>
+
+    <div>
+      @if (
+        !overviewFinancialStatusStoreService.overviewFinancialStatusError()
+      ) {
+        <shared-chart
+          [chartFilters]="financialsStatusChartFilters"
+          [data]="
+            overviewFinancialStatusStoreService.overviewFinancialStatusGraphData()
+              .data
+          "
+          [isLoading]="overviewFinancialStatusStoreService.isLoading()"
+          [options]="overviewFinancialsStatusOptions"
+          [plugins]="doughnutPlugins"
+          [tooltipTitle]="t('overview.totalInvoices')"
+          [type]="doughnutType"
+          (tooltipButtonClick)="onTooltipButtonClick($event)">
+        </shared-chart>
+      } @else {
+        @if(!overviewFinancialStatusStoreService.isLoading()){
+          <div class="no-data-image">
+          <img
+            alt="No Data Display"
+            src="./assets/images/no-data-display.png" />
+          </div>
+        }
+       
+      }
+    </div>
+  </div>
+</ng-container>

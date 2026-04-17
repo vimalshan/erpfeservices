@@ -1,0 +1,125 @@
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/utility';
+
+@use 'variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-findings {
+  text-align: justify;
+  @extend %#{layout.$page-base-body-section-grey-pattern};
+
+  .wrapper {
+    @include mixins.gutter-for(left, right);
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: utility.get-rem(8) utility.get-rem(17);
+    margin-bottom: utility.get-rem(20);
+  }
+
+  &__title {
+    font-size: utility.get-rem(24);
+    font-weight: 700;
+    color: variables.$primary-dnv-medium-blue;
+  }
+
+  &__language-switcher {
+    margin-left: auto;
+  }
+
+  &__details {
+    display: block;
+    grid-template-columns: repeat(2, minmax(0, utility.get-rem(328)));
+    grid-gap: utility.get-rem(32);
+  }
+
+  &__details-title {
+    margin-bottom: 2px;
+    font-size: utility.get-rem(12);
+    font-weight: 700;
+    color: variables.$midnight-navy;
+    letter-spacing: 0.5px;
+  }
+
+  &__details-text {
+    font-size: utility.get-rem(16);
+  }
+
+  .clause {
+    grid-column: 1/2;
+    margin-bottom: utility.get-rem(16);
+  }
+
+  .focus-area {
+    grid-column: 2/2;
+    margin-bottom: utility.get-rem(16);
+  }
+
+  .description {
+    grid-column: 1/-1;
+    margin-bottom: utility.get-rem(16);
+  }
+}
+
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  .manage-findings {
+    padding: utility.get-rem(32);
+
+    &__header {
+      margin-bottom: utility.get-rem(16);
+    }
+
+    &__title {
+      font-size: utility.get-rem(22);
+    }
+
+    &__details {
+      grid-gap: utility.get-rem(24) utility.get-rem(32);
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-md) {
+  .manage-findings {
+    padding: utility.get-rem(28) utility.get-rem(20);
+    gap: utility.get-rem(8);
+
+    &__header {
+      margin-bottom: utility.get-rem(24);
+    }
+
+    &__title {
+      font-size: utility.get-rem(20);
+    }
+
+    &__language-switcher {
+      margin: 0 0 0 0;
+    }
+
+    &__details {
+      grid-template-columns: 1fr;
+      grid-gap: utility.get-rem(20);
+    }
+
+    .clause {
+      grid-column: 1/-1;
+    }
+
+    .focus-area {
+      grid-column: 1/-1;
+    }
+
+    .description {
+      grid-column: 1/-1;
+    }
+  }
+}

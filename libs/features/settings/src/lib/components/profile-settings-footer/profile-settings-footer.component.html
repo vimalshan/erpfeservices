@@ -1,0 +1,14 @@
+<ng-container *transloco="let t">
+  <shared-button
+    [label]="t('settings.form.profile.cancel')"
+    [type]="sharedButtonType.Outline"
+    (clickEvent)="closeDialog(false)">
+  </shared-button>
+
+  <shared-button
+    [isDisabled]="!isSubmitSettingsStatusValid()"
+    [label]="t('settings.form.profile.submit')"
+    [type]="sharedButtonType.Secondary"
+    (clickEvent)="onSubmit()">
+  </shared-button>
+</ng-container>

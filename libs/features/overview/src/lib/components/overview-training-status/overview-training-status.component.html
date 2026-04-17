@@ -1,0 +1,75 @@
+<ng-container *transloco="let t">
+  <div class="card">
+    <div class="training-status-heading">
+      <h4>{{ t('overview.trainingStatus') }}</h4>
+      <shared-button
+        [attr.aria-label]="t('overview.trainingStatusViewAll')"
+        [label]="t('overview.viewAll')"
+        [type]="sharedButtonType.TextLink"
+        (clickEvent)="onButtonClick()">
+      </shared-button>
+    </div>
+
+    @if (!trainingStatusStoreService.trainingStatusError()) {
+      <div class="training-status-content">
+        @if (!!trainingStatusStoreService.trainingStatusDetails().length) {
+          @for (
+            trainingStatus of trainingStatusStoreService.trainingStatusDetails();
+            track trainingStatus;
+            let index = $index
+          ) {
+            @if (index < trainingStatusCount) {
+              <p-card>
+                <div class="flex-parent">
+                  <div class="child flex-child left">
+                    <img alt="" [src]="trainingStatus.imageUrl" />
+                  </div>
+                  <div class="child flex-child">
+                    <span class="heading">{{
+                      trainingStatus.trainingName
+                    }}</span>
+
+                    <div class="sub-title secondary">
+                      {{ t('overview.status') }} : {{ trainingStatus.status }}
+                    </div>
+
+                    <div class="training-sub-content">
+                      <div class="child flex-child left">
+                        <span class="pi pi-clock icon"></span>
+                        <span class="sub-title primary">{{
+                          trainingStatus.dueDate
+                        }}</span>
+                      </div>
+
+                      <div class="child flex-child">
+                        <span class="pi pi-map-marker icon"></span>
+                        <span class="sub-title primary">{{
+                          trainingStatus.location
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </p-card>
+            }
+          }
+        } @else {
+          @if(!trainingStatusStoreService.isLoading()){
+            <div class="overview-no-courses">
+              <span class="no-courses-info"
+                >{{ t('overview.cardTexts.noValue') }}
+              </span>
+            </div>
+          }
+         
+        }
+      </div>
+    } @else {
+      @if(!trainingStatusStoreService.isLoading()){
+        <div class="no-data-image">
+          <img alt="No Data Display" src="./assets/images/no-data-display.png" />
+        </div>
+      }
+    }
+  </div>
+</ng-container>

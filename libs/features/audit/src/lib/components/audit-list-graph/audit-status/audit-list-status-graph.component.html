@@ -1,0 +1,48 @@
+<ng-container *transloco="let t">
+<section aria-labelledby="audit-graphs-charts" class="charts" role="region">
+  <h2 id="audit-graphs-charts">
+    {{ t('audit.auditGraphs.auditStatus.title') }}
+  </h2>
+
+  <div
+    aria-labelledby="audit-graphs-charts-doughnut"
+    class="chart-doughnut"
+    role="region">
+    <h3 id="audit-graphs-charts-doughnut">
+      {{ t('audit.auditGraphs.auditStatus.totalAudits') }}
+    </h3>
+
+    <shared-chart
+      class="chart-doughnut-graph"
+      [chartFilters]="auditStatusDoughnutChartFilters"
+      [data]="auditListGraphStoreService.auditStatusDoughnutGraphData().data"
+      [options]="auditStatusDoughnutGraphOptions"
+      [plugins]="doughnutTotalPlugin"
+      [tooltipTitle]="t('audit.auditGraphs.auditStatus.totalAudits')"
+      [type]="doughnutType"
+      (chartClick)="onChartClick($event)"
+      (tooltipButtonClick)="onTooltipButtonClick($event)">
+    </shared-chart>
+  </div>
+
+  <div
+    aria-labelledby="audit-graphs-charts-bar"
+    class="chart-bar"
+    role="region">
+    <h3 id="audit-graphs-charts-bar">
+      {{ t('audit.auditGraphs.auditStatus.titleBar') }}
+    </h3>
+
+    <shared-chart
+      [chartFilters]="auditStatusBarChartFilters"
+      [data]="auditListGraphStoreService.auditStatusBarGraphData().data"
+      [hasBorderIfNoData]="true"
+      [options]="auditStatusBarGraphOptions"
+      [type]="barType"
+      [useCustomLegend]="true"
+      (chartClick)="onChartClick($event)"
+      (tooltipButtonClick)="onTooltipButtonClick($event)">
+    </shared-chart>
+  </div>
+</section>
+</ng-container>

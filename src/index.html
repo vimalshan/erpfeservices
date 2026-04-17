@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>customer-portal</title>
+    <base href="/" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+</head>
+
+<body>
+    <div id="initial-loader">
+        <div class="spinner-box">
+            <i id="spinner"></i>
+            <div class="spinner-text">Loading...</div>
+        </div>
+    </div>
+    <customer-portal-root></customer-portal-root>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const spinner = document.getElementById('spinner');
+            const colors = ['#a8d7ee', '#5c9a40', '#13348d'];
+            let currentColorIndex = 0;
+
+            setInterval(() => {
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+                spinner.style.borderColor = colors[currentColorIndex];
+                spinner.style.borderTop = '4px solid transparent';
+            }, 500);
+        });
+    </script>
+</body>
+</html>

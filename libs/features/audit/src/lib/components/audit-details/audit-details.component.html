@@ -1,0 +1,92 @@
+@if (auditDetails().header) {
+  <ng-container *transloco="let t">
+    <section aria-labelledby="audit-details-head" class="head" role="region">
+      <h1 id="audit-details-head">
+        {{ t('audit.auditDetailsDescription.auditTitle', { id: auditId }) }}
+      </h1>
+
+      <shared-status
+        [statusClassMap]="statusStatesMap"
+        [value]="auditDetails().header.status">
+      </shared-status>
+    </section>
+
+    <section aria-labelledby="audit-details-body" class="body" role="region">
+      <div class="details">
+        <h2 id="audit-details-body">{{ auditDetails().header.services }}</h2>
+
+        <div class="summary-left">
+          @if (auditDetails().header.siteName) {
+            <div class="summary-left-grouping">
+              <i aria-hidden="true" class="pi pi-building"></i>
+              <span>{{ auditDetails().header.siteName }}</span>
+            </div>
+          }
+          @if (auditDetails().header.siteAddress) {
+            <div class="summary-left-grouping">
+              <i aria-hidden="true" class="pi pi-globe"></i>
+              <span>{{ auditDetails().header.siteAddress }}</span>
+            </div>
+          }
+          <div class="summary-left-grouping">
+            @if (auditDetails().header.startDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('audit.auditDetailsDescription.startLabel', {
+                  date: auditDetails().header.startDate | customDate,
+                })
+              }}</span>
+            }
+            @if (auditDetails().header.endDate) {
+              <i aria-hidden="true" class="pi pi-calendar"></i>
+              <span>{{
+                t('audit.auditDetailsDescription.endLabel', {
+                  date: auditDetails().header.endDate | customDate,
+                })
+              }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="summary-right">
+          <div class="summary-right-grouping">
+            <h3>{{ t('audit.auditDetailsDescription.leadAuditorLabel') }}</h3>
+            <span>{{ auditDetails().header.auditor }}</span>
+          </div>
+          <div class="summary-right-grouping">
+            <h3>{{ t('audit.auditDetailsDescription.auditorTeamLabel') }}</h3>
+            @for (auditor of auditDetails().header.auditorTeam; track auditor) {
+              <span>{{ auditor }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="buttons">
+          <shared-button
+            #planDownloadBtn
+            [icon]="'download'"
+            [isDisabled]="!auditDetails().header.auditPlanDocId.length"
+            [label]="t('audit.auditDetailsDescription.downloadPlanLabel')"
+            [type]="sharedButtonType.Secondary"
+            (clickEvent)="
+              handleDownload(auditDetails().header.auditPlanDocId, 'plan')
+            ">
+          </shared-button>
+
+          <shared-button
+            #reportDownloadBtn
+            [icon]="'download'"
+            [isDisabled]="!auditDetails().header.auditReportDocId.length"
+            [label]="t('audit.auditDetailsDescription.downloadReportLabel')"
+            [type]="sharedButtonType.Secondary"
+            (clickEvent)="
+              handleDownload(auditDetails().header.auditReportDocId, 'report')
+            ">
+          </shared-button>
+        </div>
+      </div>
+
+      <lib-audit-tab-view></lib-audit-tab-view>
+    </section>
+  </ng-container>
+}

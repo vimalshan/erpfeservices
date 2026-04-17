@@ -1,0 +1,30 @@
+@if (isPreferenceInitialized | async) {
+  <shared-grid
+    #grid
+    class="table-list"
+    dataKey="audit"
+    [columns]="cols"
+    [data]="auditListStoreService.auditItems()"
+    [displayClearButton]="auditListStoreService.hasActiveFilters()"
+    [displayColsReorderButton]="true"
+    [filterDelay]="0"
+    [filterOptions]="auditListStoreService.filterOptions()"
+    [filteringConfig$]="auditListStoreService.filteringConfig"
+    [hasActiveFilters]="auditListStoreService.hasActiveFilters()"
+    [isLoading]="auditListStoreService.isLoading()"
+    [paginator]="true"
+    [preferenceData]="preferenceData()"
+    [route]="'/audits/'"
+    [rowHover]="true"
+    [scrollable]="true"
+    [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [statusStatesMap]="statusStatesMap"
+    [totalRecords]="auditListStoreService.totalRecords()"
+    (exportExcel)="onExportExcelClick()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (savePreference)="onSavePreference($event)">
+  </shared-grid>
+}

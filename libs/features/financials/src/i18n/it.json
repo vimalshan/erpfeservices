@@ -1,0 +1,30 @@
+{
+  "invoicesList": {
+    "amount": "Importo",
+    "billingAddress": "Indirizzo di fatturazione",
+    "company": "Azienda",
+    "contact": "Persona da contattare",
+    "download": "Scaricamento",
+    "dueDate": "Data di scadenza",
+    "invoiceNumber": "N° di fattura",
+    "issueDate": "Data di emissione",
+    "originalInvoice": "N° di fattura originale",
+    "paymentDate": "Data di pagamento pianificata",
+    "referenceNumber": "Numero di riferimento",
+    "status": "Stato",
+    "updatePlannedPaymentDate": "Aggiorna la data pianificata per il pagamento"
+  },
+  "title": "Fatture",
+  "updatePlannedPaymentDate": {
+    "currentDetails": "Dettagli",
+    "header": "Aggiorna la data pianificata per il pagamento",
+    "invoiceNumber": "N° di fattura",
+    "newPlannedPaymentDate": "Nuova data di pagamento prevista",
+    "placeholder": "Inserisci la data in cui hai pianificato di effettuare il pagamento di questa fattura",
+    "referenceNumber": "Numero di riferimento",
+    "statusRestriction": "La data di pagamento pianificato dell'aggiornamento si applica solo agli stati \"Scaduto\", \"Parzialmente pagato\" e \"Non Pagato\".",
+    "tooltip": "Da compilare con una data futura in cui è previsto il pagamento a DNV per questa fattura",
+    "warning": "Modificando questa data non viene modificata in automatico la data di scadenza.",
+    "success": "Data di pagamento pianificata aggiornata con successo"
+  }
+}

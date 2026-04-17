@@ -1,0 +1,72 @@
+<ng-container *transloco="let t">
+  <div class="certificate-list-graph-content">
+    <section class="filters" role="region" [attr.aria-label]="t('filters')">
+      <shared-select-date-range-mod
+      [ariaLabel]="t('select.dateRange.custom')"
+      [customRange]="customDateRange()"
+      [isDisabled]="true"
+      [prefill]="selectedTimeRange()">
+    </shared-select-date-range-mod>
+
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.companies')"
+        [options]="certificateListGraphStoreService.dataCompanies()"
+        [placeholder]="t('select.multiSelect.companies')"
+        [prefill]="certificateListGraphStoreService.filterCompanies()"
+        (changeEvent)="onFilterChange($event, chartFilterType.Companies)">
+      </shared-select-multiple-mod>
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.services')"
+        [options]="certificateListGraphStoreService.dataServices()"
+        [placeholder]="t('select.multiSelect.services')"
+        [prefill]="certificateListGraphStoreService.filterServices()"
+        (changeEvent)="onFilterChange($event, chartFilterType.Services)">
+      </shared-select-multiple-mod>
+
+      <shared-tree-dropdown
+        [expandedState]="latestExpandedState"
+        [nodes]="siteData"
+        [selectedIds]="filterSites"
+        (expandedStateChange)="onExpandedStateChange($event)"
+        (selectionChange)="onSelectionChange($event)">
+      </shared-tree-dropdown>
+
+      <shared-button
+        class="reset-btn"
+        [label]="t('reset')"
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onReset()">
+      </shared-button>
+    </section>
+
+    <section class="tabs" role="region" [attr.aria-label]="t('tabs')">
+      <p-tabView
+        role="tablist"
+        [activeIndex]="activeTabIndex"
+        [scrollable]="true"
+        (onChange)="onTabChange($event)">
+        <p-tabPanel
+          id="certificates-status-tab"
+          role="tab"
+          [attr.aria-label]="
+            t('certificate.certificatesGraphsTabs.certificatesStatus')
+          "
+          [header]="t('certificate.certificatesGraphsTabs.certificatesStatus')">
+        </p-tabPanel>
+        <p-tabPanel
+          id="certificates-by-site-tab"
+          role="tab"
+          [attr.aria-label]="
+            t('certificate.certificatesGraphsTabs.certificatesBySite')
+          "
+          [header]="t('certificate.certificatesGraphsTabs.certificatesBySite')">
+        </p-tabPanel>
+      </p-tabView>
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</ng-container>

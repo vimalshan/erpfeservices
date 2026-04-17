@@ -1,0 +1,37 @@
+<ng-container *transloco="let t">
+  <section class="filters" role="region" [attr.aria-label]="t('filters')">
+    @if (overviewListStoreService.filtersLoaded()) {
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.companies')"
+        [options]="overviewListStoreService.dataCompanies()"
+        [placeholder]="t('select.multiSelect.companies')"
+        [prefill]="overviewListStoreService.filterCompanies()"
+        (changeEvent)="onFilterChange($event, overviewFilterType.Companies)">
+      </shared-select-multiple-mod>
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.services')"
+        [options]="overviewListStoreService.dataServices()"
+        [placeholder]="t('select.multiSelect.services')"
+        [prefill]="overviewListStoreService.filterServices()"
+        (changeEvent)="onFilterChange($event, overviewFilterType.Services)">
+      </shared-select-multiple-mod>
+
+      <shared-tree-dropdown
+        [expandedState]="latestExpandedState"
+        [nodes]="siteData"
+        [selectedIds]="filterSites"
+        (expandedStateChange)="onExpandedStateChange($event)"
+        (selectionChange)="onSelectionChange($event)">
+      </shared-tree-dropdown>
+      <shared-button
+        class="reset-btn"
+        [label]="t('reset')"
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onReset()">
+      </shared-button>
+    }
+  </section>
+</ng-container>

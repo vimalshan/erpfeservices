@@ -1,0 +1,33 @@
+<ng-container *transloco="let t">
+  <h3>{{ t('certificate.certificateDetails.sites.sites') }}</h3>
+
+  <shared-grid
+    [columns]="cols"
+    [data]="certificateDetailsStoreService.certificateSiteItems()"
+    [displayClearButton]="
+      certificateDetailsStoreService.siteItemsHasActiveFilters()
+    "
+    [displayColsReorderButton]="false"
+    [displayExportButton]="false"
+    [filterDelay]="0"
+    [filterOptions]="
+      certificateDetailsStoreService.certificateSitesFilterOptions()
+    "
+    [filteringConfig$]="certificateDetailsStoreService.siteItemsFilteringConfig"
+    [hasActiveFilters]="
+      certificateDetailsStoreService.siteItemsHasActiveFilters()
+    "
+    [isLoading]="certificateDetailsStoreService.isLoadingSites()"
+    [paginator]="true"
+    [rowHover]="true"
+    [scrollable]="true"
+    [shouldPersist]="false"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [totalRecords]="
+      certificateDetailsStoreService.certificateSitesTotalRecords()
+    "
+    (gridConfigChangedEvent)="onGridConfigChanged($event)">
+  </shared-grid>
+</ng-container>

@@ -1,0 +1,34 @@
+<ng-container *transloco="let t">
+  <p-tabView role="tablist" [scrollable]="true">
+    <p-tabPanel
+      id="manage-finding-tab"
+      role="tabpanel"
+      [attr.aria-label]="t('findings.findingDetails.manageFinding')"
+      [header]="t('findings.findingDetails.manageFinding')">
+      <ng-template pTemplate="content">
+        <lib-finding-manage-content></lib-finding-manage-content>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="previous-responses-tab"
+      role="tabpanel"
+      [attr.aria-label]="t('findings.findingDetails.previousResponses')"
+      [disabled]="!isResponseHistoryAvailable"
+      [header]="t('findings.findingDetails.previousResponses')">
+      <ng-template pTemplate="content">
+        <lib-finding-previous-responses></lib-finding-previous-responses>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="documents-tab"
+      role="tabpanel"
+      [attr.aria-label]="t('findings.findingDetails.documents')"
+      [header]="t('findings.findingDetails.documents')">
+      <ng-template pTemplate="content">
+        <lib-finding-documents></lib-finding-documents>
+      </ng-template>
+    </p-tabPanel>
+  </p-tabView>
+</ng-container>

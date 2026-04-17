@@ -1,0 +1,52 @@
+@use 'sass:color';
+
+@use 'pattern/colors' as colors;
+@use 'pattern/variables' as variables;
+
+p-progressSpinner::ng-deep {
+  .custom-spinner .p-progress-spinner-circle {
+    animation: customColors 2s linear infinite;
+  }
+
+  @keyframes customColors {
+    0%,
+    100% {
+      stroke: variables.$sky-breeze-blue;
+    }
+    60% {
+      stroke: variables.$fern-green;
+    }
+    66% {
+      stroke: variables.$deep-blue-shade;
+    }
+  }
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: color.scale(variables.$primary-dnv-dark-blue, $alpha: -60%);
+  z-index: 9999;
+}
+.spinner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--dnv-font-text-s);
+  color: colors.get-color('UiBlack');
+}
+
+.p-element {
+  background-color: colors.get-color('UiWhite');
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

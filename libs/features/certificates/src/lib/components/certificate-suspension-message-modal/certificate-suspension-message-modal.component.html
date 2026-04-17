@@ -1,0 +1,62 @@
+<ng-container *transloco="let t">
+  <div>
+    {{
+      t('certificate.certificateSuspension.certificateSuspensionRecipient', {
+        name: profileStoreService.profileInformation().firstName,
+      })
+    }}
+    <br />
+    <br />
+    {{ t('certificate.certificateSuspension.certificateSuspensionMessage1') }}
+  </div>
+  <div class="certificate-suspension-details">
+    <p>
+      <span>
+        {{ t('certificate.certificateSuspension.certificateNumber') }}:
+      </span>
+      <span>{{ config.data.certificateNumber }}</span>
+    </p>
+    <p>
+      <span>{{ t('certificate.certificateSuspension.scheme') }}:</span>
+      <span>{{ config.data.services }}</span>
+    </p>
+    <p>
+      <span>{{ t('certificate.certificateSuspension.accreditation') }}:</span>
+      <span>DNV Accreditation</span>
+    </p>
+    <p>
+      <span>
+        {{ t('certificate.certificateSuspension.suspensionReason') }}:
+      </span>
+      <span>Test Test Test</span>
+    </p>
+    <p>
+      <span>
+        {{ t('certificate.certificateSuspension.dateOfSuspension') }}:
+      </span>
+      <span>{{config.data.suspensionDate}}</span>
+    </p>
+  </div>
+  <div>
+    {{ t('certificate.certificateSuspension.certificateSuspensionMessage2') }}
+    <br />
+    <br />
+    {{ t('certificate.certificateSuspension.certificateSuspensionMessage3') }}
+    <br />
+    <br />
+    {{ t('certificate.certificateSuspension.certificateSuspensionMessage4') }}
+    <br />
+    <br />
+    {{ t('certificate.certificateSuspension.certificateSuspensionMessage5') }}
+    <br />
+    <br />
+    {{ t('certificate.certificateSuspension.certificateSuspensionMessage6') }}
+    <br />
+    <br />
+    {{
+      t('certificate.certificateSuspension.certificateSuspensionMessage7', {
+        email: 'test@email.com',
+      })
+    }}
+  </div>
+</ng-container>

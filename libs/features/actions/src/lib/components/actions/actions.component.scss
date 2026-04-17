@@ -1,0 +1,28 @@
+@use 'pattern/colors';
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+
+:host {
+  @extend %#{layout.$page-base-pattern};
+}
+
+.head {
+  @extend %#{layout.$page-base-head-pattern};
+  position: relative;
+
+  @include mixins.respond-to(tablet) {
+    flex-wrap: wrap;
+    gap: get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  }
+}
+
+.body {
+  @extend %#{layout.$page-base-body-pattern};
+}
+
+h1 {
+  @extend %#{typography.$heading-xl-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}

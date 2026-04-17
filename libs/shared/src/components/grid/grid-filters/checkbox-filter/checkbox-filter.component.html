@@ -1,0 +1,28 @@
+<ng-container *transloco="let t">
+  <p-listbox
+    [checkbox]="true"
+    [disabled]="false"
+    [filter]="filterFlag"
+    [listStyle]="{ 'max-height': maxHeight + 'px' }"
+    [multiple]="multiple"
+    [optionLabel]="optionLabel"
+    [options]="options"
+    [showToggleAll]="false"
+    [style]="{ width: width + 'px' }"
+    [styleClass]="filterFlag ? 'filter-header' : ''"
+    [(ngModel)]="selectedItems"
+    (onChange)="onChangeOption($event)">
+    <ng-template pTemplate="header">
+      <div class="checkbox-filter-header">
+        <p-checkbox
+          binary="true"
+          [attr.aria-label]="t('selectAll')"
+          [checkboxIcon]="selectAll === null ? 'pi pi-minus' : undefined"
+          [indeterminate]="selectAll === null"
+          [label]="t('all')"
+          [(ngModel)]="selectAll"
+          (onChange)="onChangeSelectAll($event)"></p-checkbox>
+      </div>
+    </ng-template>
+  </p-listbox>
+</ng-container>

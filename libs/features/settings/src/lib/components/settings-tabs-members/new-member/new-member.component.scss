@@ -1,0 +1,62 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+.new-member {
+  padding: utility.get-rem(32) utility.get-rem(24);
+
+  .form {
+    display: grid;
+    gap: utility.get-rem(24);
+
+    &__label {
+      @extend %#{typography.$label-l-pattern};
+      text-transform: uppercase;
+      color: colors.get-color('DarkBlue');
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      gap: utility.get-rem(8);
+    }
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: utility.get-rem(8);
+}
+
+.p-inputtext::ng-deep {
+  @extend %#{mixture.$input-text-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+p-dropdown.p-element::ng-deep {
+  @extend %#{mixture.$dropdown-element-pattern};
+  height: utility.get-rem(45);
+
+  .p-inputwrapper {
+    @extend %#{mixture.$dropdown-input-wrapper-pattern};
+  }
+
+  .p-inputtext {
+    @extend %#{typography.$text-l-pattern};
+  }
+
+  li.p-element {
+    @extend %#{mixture.$dropdown-option-pattern};
+  }
+
+  .p-dropdown-label {
+    padding: 0;
+  }
+
+  .p-overlay {
+    @extend %#{mixture.$shadow-modal-pattern};
+  }
+}

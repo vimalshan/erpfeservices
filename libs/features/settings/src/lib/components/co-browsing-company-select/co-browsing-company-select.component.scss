@@ -1,0 +1,130 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/colors' as colors;
+@use 'pattern/mixins' as mixins;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+:host {
+  grid-area: unset;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.co-browsing-header {
+  background-image: url('/assets/images/admin-view-banner.svg');
+  width: 100vw;
+  @include mixins.gutter-for(4, right, left);
+  @include mixins.gutter-for(2, top, bottom);
+  > h1 {
+    color: colors.get-color('UiWhite');
+    text-transform: uppercase;
+    @extend %#{typography.$heading-xxl-pattern};
+  }
+
+  p-button {
+    margin-left: utility.get-rem(-10);
+  }
+
+  ::ng-deep .p-button.p-button-link {
+    color: colors.get-color('SkyBlue80');
+  }
+}
+
+.settings-members {
+  &__actions {
+    background-color: colors.get-color('Sandstone95');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mixins.gutter-for(4, right, left);
+    @include mixins.gutter-for(top);
+
+    h2 {
+      color: colors.get-color('SeaBlue');
+      @extend %#{typography.$heading-l-pattern};
+    }
+  }
+
+  &__admins,
+  &__members {
+    > p {
+      color: colors.get-color('SeaBlue');
+      @include mixins.gutter-for(4, right, left);
+      @include mixins.gutter-for(top);
+      @extend %#{typography.$heading-m-pattern};
+    }
+
+    ::ng-deep shared-grid {
+      @include mixins.gutter-for(4, right, left);
+    }
+  }
+
+  &__admins {
+    background-color: colors.get-color('Sandstone95');
+    ::ng-deep shared-grid {
+      background-color: colors.get-color('Sandstone95');
+
+      .p-datatable-header {
+        background-color: colors.get-color('Sandstone95');
+      }
+    }
+  }
+}
+
+shared-button::ng-deep {
+  p-button.p-element {
+    .p-button-outlined {
+      background-color: transparent;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  .co-browsing-header {
+    @include mixins.gutter-for(2, right, left);
+    @include mixins.gutter-for(top, bottom);
+  }
+
+  .settings-members {
+    &__actions {
+      @include mixins.gutter-for(2, right, left);
+    }
+
+    &__admins,
+    &__members {
+      > p {
+        @include mixins.gutter-for(2, right, left);
+      }
+
+      ::ng-deep shared-grid {
+        @include mixins.gutter-for(2, right, left);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-md) {
+  .co-browsing-header {
+    @include mixins.gutter-for(right, left);
+  }
+
+  .settings-members {
+    &__actions {
+      @include mixins.gutter-for(right, left);
+    }
+
+    &__admins,
+    &__members {
+      > p {
+        @include mixins.gutter-for(right, left);
+      }
+
+      ::ng-deep shared-grid {
+        @include mixins.gutter-for(right, left);
+      }
+    }
+  }
+}

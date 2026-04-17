@@ -1,0 +1,66 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/utility' as utility;
+
+.update-payment-date {
+  &__header {
+    background-color: variables.$page-details-header-bg;
+    padding: utility.get-rem(24);
+  }
+
+  &__header-title {
+    color: variables.$primary-dnv-medium-blue;
+    font-size: utility.get-rem(20);
+    font-weight: 700;
+  }
+
+  &__header-infos {
+    display: flex;
+    flex-direction: row;
+    gap: utility.get-rem(40);
+    margin-top: utility.get-rem(12);
+
+    .update-payment-date__info {
+      padding-right: utility.get-rem(50);
+
+      &-heading {
+        font-size: utility.get-rem(12);
+        font-weight: 700;
+        color: variables.$primary-dnv-dark-blue;
+        line-height: utility.get-rem(16);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      &-detail {
+        font-size: utility.get-rem(16);
+        line-height: utility.get-rem(24);
+      }
+    }
+  }
+
+  &__body {
+    padding: utility.get-rem(32) utility.get-rem(24);
+
+    &-form {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+
+      label {
+        color: variables.$midnight-navy;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      ::ng-deep .p-dropdown {
+        width: 100%;
+      }
+    }
+  }
+}

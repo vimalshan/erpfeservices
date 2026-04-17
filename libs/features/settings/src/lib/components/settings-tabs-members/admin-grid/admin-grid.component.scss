@@ -1,0 +1,11 @@
+@use 'pattern/mixins';
+
+shared-grid {
+  @include mixins.gutter-for(right, bottom, left);
+}
+
+:host(.persist)shared-grid::ng-deep {
+  .p-paginator {
+    background-color: transparent;
+  }
+}

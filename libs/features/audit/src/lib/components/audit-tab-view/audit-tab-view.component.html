@@ -1,0 +1,47 @@
+<ng-container *transloco="let t">
+  <p-tabView role="tablist" [scrollable]="true">
+    <p-tabPanel
+      id="audit-tab-findings"
+      role="tab"
+      [attr.aria-label]="t('audit.auditDetailsDescription.findings')"
+      [cache]="false"
+      [header]="t('audit.auditDetailsDescription.findings')">
+      <ng-template pTemplate="content">
+        <lib-audit-finding-list></lib-audit-finding-list>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="audit-tab-sub-audits"
+      role="tab"
+      [attr.aria-label]="t('audit.auditDetailsDescription.subAudits')"
+      [cache]="false"
+      [header]="t('audit.auditDetailsDescription.subAudits')">
+      <ng-template pTemplate="content">
+        <lib-audit-sub-list></lib-audit-sub-list>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="audit-tab-sites"
+      role="tab"
+      [attr.aria-label]="t('audit.auditDetailsDescription.sites')"
+      [cache]="false"
+      [header]="t('audit.auditDetailsDescription.sites')">
+      <ng-template pTemplate="content">
+        <lib-audit-sites-list></lib-audit-sites-list>
+      </ng-template>
+    </p-tabPanel>
+
+    <p-tabPanel
+      id="audit-tab-documents"
+      role="tab"
+      [attr.aria-label]="t('audit.auditDetailsDescription.documents')"
+      [cache]="false"
+      [header]="t('audit.auditDetailsDescription.documents')">
+      <ng-template pTemplate="content">
+        <lib-audit-documents></lib-audit-documents>
+      </ng-template>
+    </p-tabPanel>
+  </p-tabView>
+</ng-container>

@@ -1,0 +1,31 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+
+@use 'pattern/utility';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+p-tabview.p-element::ng-deep {
+  .p-tabview-nav {
+    gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+    @include mixins.gutter-for(left);
+
+    @include mixins.only-for(desktop) {
+      @include mixins.gutter-for(2, left);
+    }
+  }
+
+  .p-tabview-nav-link {
+    @extend %#{typography.$button-l-pattern};
+    padding: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless))) 0;
+    color: colors.get-color('SeaBlue');
+  }
+
+  .p-tabview-panels {
+    padding: 0;
+  }
+}

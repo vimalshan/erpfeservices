@@ -1,0 +1,56 @@
+<ng-container *transloco="let t">
+  @if (dialogData) {
+    <div class="container">
+      <h5>{{ dialogData.label }}</h5>
+
+      <p-dropdown
+        appendTo="body"
+        [options]="dialogData.languages"
+        [(ngModel)]="selectedLanguage"
+        (onChange)="onUpdateLanguage($event)">
+        <ng-template let-language pTemplate="item">
+          {{ t(language.translationKey) }}
+        </ng-template>
+
+        <ng-template let-selectedLanguage pTemplate="selectedItem">
+          {{ t(selectedLanguage.translationKey) }}
+        </ng-template>
+      </p-dropdown>
+
+      @if (dialogData.isDownloadCertificationMark) {
+        <shared-button
+          [icon]="'download'"
+          [isDisabled]="!isViewCertificationGuidelinesEnabled"
+          [label]="t('certificate.downloadDialog.viewCertificationGuidelines')"
+          [type]="sharedButtonType.TextLink"
+          (clickEvent)="onViewCertificationMarkGuidelines()">
+        </shared-button>
+      }
+    </div>
+
+    <shared-button
+      class="close"
+      [label]="t('certificate.downloadDialog.cancel')"
+      [type]="sharedButtonType.Outline"
+      (clickEvent)="onClose()">
+    </shared-button>
+
+    @if (dialogData.isDownloadCertificationMark) {
+      <shared-button
+        class="submit"
+        [icon]="'download'"
+        [isDisabled]="!isCertmarkDownloadReady()"
+        [label]="t('certificate.downloadDialog.downloadMark')"
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onDownload()">
+      </shared-button>
+    } @else {
+      <shared-button
+        class="submit"
+        [label]="t('certificate.downloadDialog.download')"
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onDownload()">
+      </shared-button>
+    }
+  }
+</ng-container>

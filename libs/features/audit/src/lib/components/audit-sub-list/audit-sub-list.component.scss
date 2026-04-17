@@ -1,0 +1,18 @@
+@use 'pattern/colors';
+@use 'pattern/layout';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host {
+  @extend %#{layout.$page-base-body-subhead-pattern};
+  background-color: transparent;
+}
+
+h3 {
+  @extend %#{typography.$heading-m-pattern};
+  color: colors.get-color('SeaBlue');
+}
+
+shared-grid {
+  padding: 1px;
+}

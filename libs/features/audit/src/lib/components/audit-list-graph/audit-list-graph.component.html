@@ -1,0 +1,58 @@
+<ng-container *transloco="let t">
+  <section class="filters" role="region" [attr.aria-label]="t('filters')">
+    <shared-select-date-range-mod
+      [ariaLabel]="t('select.dateRange.custom')"
+      [customRange]="customDateRange()"
+      [isDisabled]="dateRangeIsDisabled"
+      [prefill]="selectedTimeRange()"
+      (changeEvent)="onDateRangeChange($event)">
+    </shared-select-date-range-mod>
+
+    <shared-select-multiple-mod
+      [appendTo]="'body'"
+      [ariaLabel]="t('select.multiSelect.companies')"
+      [options]="auditListGraphStoreService.dataCompanies()"
+      [placeholder]="t('select.multiSelect.companies')"
+      [prefill]="auditListGraphStoreService.filterCompanies()"
+      (changeEvent)="onFilterChange($event, chartFilterType.Companies)">
+    </shared-select-multiple-mod>
+
+    <shared-select-multiple-mod
+      [appendTo]="'body'"
+      [ariaLabel]="t('select.multiSelect.services')"
+      [options]="auditListGraphStoreService.dataServices()"
+      [placeholder]="t('select.multiSelect.services')"
+      [prefill]="auditListGraphStoreService.filterServices()"
+      (changeEvent)="onFilterChange($event, chartFilterType.Services)">
+    </shared-select-multiple-mod>
+
+    <shared-tree-dropdown
+      [expandedState]="latestExpandedState"
+      [nodes]="siteData"
+      [selectedIds]="filterSites"
+      (expandedStateChange)="onExpandedStateChange($event)"
+      (selectionChange)="onSelectionChange($event)">
+    </shared-tree-dropdown>
+    <shared-button
+      class="reset-btn"
+      [label]="t('reset')"
+      [type]="sharedButtonType.Outline"
+      (clickEvent)="onReset()">
+    </shared-button>
+  </section>
+  <p-tabView
+  [activeIndex]="activeTabIndex"
+  (onChange)="onTabChange($event)">
+  <p-tabPanel
+    id="audit-status-tab"
+    [attr.aria-label]="t('audit.auditChartsTabs.auditStatus')"
+    [header]="t('audit.auditChartsTabs.auditStatus')">
+  </p-tabPanel>
+  <p-tabPanel
+    id="audit-days-tab"
+    [attr.aria-label]="t('audit.auditChartsTabs.auditDays')"
+    [header]="t('audit.auditChartsTabs.auditDays')">
+  </p-tabPanel>
+</p-tabView>
+<router-outlet></router-outlet>
+</ng-container>

@@ -1,0 +1,9 @@
+<p-checkbox
+  [binary]="binary()"
+  [(ngModel)]="value"
+  [inputId]="inputId() ?? ''"
+  [disabled]="isDisabled || disabled()"
+  [styleClass]="checkboxClass() ?? ''"
+  (onChange)="onCheckedChange($event.checked)"
+></p-checkbox>
+<label *ngIf="label()" [for]="inputId() ?? ''">{{ label() }}</label>

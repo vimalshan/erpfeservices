@@ -1,0 +1,21 @@
+{
+  "name": "actions",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/features/actions/src",
+  "prefix": "customer-portal",
+  "projectType": "library",
+  "tags": ["type:feature", "domain:actions"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/features/actions/jest.config.ts",
+        "tsConfig": "libs/data-access/actions/tsconfig.spec.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+<ng-container *transloco="let t">
+  <form [formGroup]="form">
+    <div class="grouping">
+      <label for="organization-name">
+        {{ t('settings.form.companyDetails.organizationName') }}
+      </label>
+      <input
+        formControlName="organizationName"
+        id="organization-name"
+        pInputText
+        type="text" />
+    </div>
+
+    <div class="grouping">
+      <label for="address">
+        {{ t('settings.form.companyDetails.address') }}
+      </label>
+      <input formControlName="address" id="address" pInputText type="text" />
+    </div>
+
+    <div class="grouping">
+      <label for="zipcode">
+        {{ t('settings.form.companyDetails.zipcode') }}
+      </label>
+      <input formControlName="zipcode" id="zipcode" pInputText type="text" />
+    </div>
+
+    <div class="grouping">
+      <label for="city">
+        {{ t('settings.form.companyDetails.city') }}
+      </label>
+      <input formControlName="city" id="city" pInputText type="text" />
+    </div>
+
+    <div class="grouping">
+      <label for="country">
+        {{ t('settings.form.companyDetails.country') }}
+      </label>
+      <p-dropdown
+        formControlName="countryId"
+        id="country"
+        [ariaLabel]="t('settings.form.companyDetails.country')"
+        [filter]="true"
+        [options]="settingsStoreService.countryList()">
+      </p-dropdown>
+    </div>
+
+    <div class="grouping">
+      <label for="vat-number">
+        <span>{{ t('settings.form.companyDetails.vatNumber') }}</span>
+        <i
+          class="pi pi-info-circle"
+          tooltipPosition="top"
+          [attr.aria-label]="t('settings.form.companyDetails.vatNumberTooltip')"
+          [pTooltip]="t('settings.form.companyDetails.vatNumberTooltip')">
+        </i>
+      </label>
+      <input
+        formControlName="vatNumber"
+        id="vat-number"
+        pInputText
+        type="text" />
+    </div>
+
+    <div class="grouping">
+      <label for="po-number-required-true" id="po-number-required">
+        <span>{{ t('settings.form.companyDetails.poNumberRequired') }}</span>
+        <i
+          class="pi pi-info-circle"
+          tooltipPosition="top"
+          [attr.aria-label]="
+            t('settings.form.companyDetails.poNumberRequiredTooltip')
+          "
+          [pTooltip]="
+            t('settings.form.companyDetails.poNumberRequiredTooltip')
+          ">
+        </i>
+      </label>
+      <div
+        aria-labelledby="po-number-required"
+        class="wrapper"
+        role="radiogroup">
+        <p-radioButton
+          formControlName="poNumberRequired"
+          inputId="po-number-required-true"
+          variant="filled"
+          [value]="true" />
+        <label for="po-number-required-true">
+          {{ t('settings.form.companyDetails.poNumberRequiredValue.true') }}
+        </label>
+
+        <p-radioButton
+          formControlName="poNumberRequired"
+          inputId="po-number-required-false"
+          variant="filled"
+          [value]="false"/>
+        <label for="po-number-required-false">
+          {{ t('settings.form.companyDetails.poNumberRequiredValue.false') }}
+        </label>
+      </div>
+    </div>
+  </form>
+
+  <p>{{ t('settings.modal.companyDetails.information') }}</p>
+</ng-container>

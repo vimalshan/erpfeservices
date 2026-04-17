@@ -1,0 +1,32 @@
+<ng-container *transloco="let t">
+  <shared-select-multiple
+    [appendTo]="'body'"
+    [ariaLabel]="t('select.treeSelect.categories')"
+    [options]="notificationListStoreService.dataCategories()"
+    [placeholder]="t('select.treeSelect.categories')"
+    (changeEvent)="onFilterChange($event, filterTypes.Categories)">
+  </shared-select-multiple>
+
+  <shared-select-multiple
+    [appendTo]="'body'"
+    [ariaLabel]="t('select.treeSelect.services')"
+    [options]="notificationListStoreService.dataServices()"
+    [placeholder]="t('select.treeSelect.services')"
+    (changeEvent)="onFilterChange($event, filterTypes.Services)">
+  </shared-select-multiple>
+
+  <shared-select-multiple
+    [appendTo]="'body'"
+    [ariaLabel]="t('select.treeSelect.companies')"
+    [options]="notificationListStoreService.dataCompanies()"
+    [placeholder]="t('select.treeSelect.companies')"
+    (changeEvent)="onFilterChange($event, filterTypes.Companies)">
+  </shared-select-multiple>
+
+  <shared-select-tree [appendTo]="'body'" 
+    [ariaLabel]="t('select.treeSelect.sites')"
+    [options]="notificationListStoreService.dataSites()"
+    [placeholder]="t('select.treeSelect.sites')"
+    (changeEvent)="onFilterChange($event, filterTypes.Sites)">
+  </shared-select-tree>
+</ng-container>

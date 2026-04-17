@@ -1,0 +1,74 @@
+<ng-container *transloco="let t">
+  <div class="update-payment-date">
+    <div class="update-payment-date__header">
+      <p class="update-payment-date__header-title">
+        {{ t('invoices.updatePlannedPaymentDate.currentDetails') }}
+      </p>
+      <div class="update-payment-date__header-infos">
+        <div class="update-payment-date__info">
+          <p class="update-payment-date__info-heading">
+            {{ t('invoices.updatePlannedPaymentDate.invoiceNumber') }}
+          </p>
+          @for (invoice of invoices(); track invoice.invoiceId) {
+            <p class="update-payment-date__info-detail">
+              {{ invoice.invoiceId }}
+            </p>
+          }
+        </div>
+
+        <div class="update-payment-date__info">
+          <p class="update-payment-date__info-heading">
+            {{ t('invoices.updatePlannedPaymentDate.referenceNumber') }}
+          </p>
+          @for (invoice of invoices(); track invoice.invoiceId) {
+            <p class="update-payment-date__info-detail">
+              {{ invoice.referenceNumber }}
+            </p>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="update-payment-date__body">
+      <div class="update-payment-date__body-form">
+        <label class="font-bold block mb-2" for="dates" id="newPlannedPaymentDate">
+          {{ t('invoices.updatePlannedPaymentDate.newPlannedPaymentDate') }}
+          <i
+            class="pi pi-info-circle"
+            pTooltip="{{ t('invoices.updatePlannedPaymentDate.tooltip') }}">
+          </i>
+        </label>
+        <p-calendar
+          #calendar
+          appendTo="body"
+          aria-labelledby="newPlannedPaymentDate"
+          inputId="dates"
+          [autoZIndex]="true"
+          [iconDisplay]="'input'"
+          [minDate]="minimumDate"
+          placeholder="{{ t('invoices.updatePlannedPaymentDate.placeholder') }}"
+          [readonlyInput]="true"
+          [showIcon]="true"
+          [view]="viewMode"
+          [(ngModel)]="date"
+          (ngModelChange)="checkResponses()"
+          (onSelect)="onSelectDate($event)">
+          <ng-template let-clickCallBack="clickCallBack" pTemplate="inputicon">
+            <i
+              class="pi pi-angle-down pointer-events-none pointer-events-none"
+              tabindex="0"
+              (click)="clickCallBack($event)"
+              (keydown.enter)="clickCallBack($event)"
+              (keydown.space)="clickCallBack($event)"></i>
+          </ng-template>
+        </p-calendar>
+      </div>
+      <p class="update-payment-date__warning">
+        {{ t('invoices.updatePlannedPaymentDate.warning') }}
+      </p>
+      <p class="update-payment-date__status-restriction">
+        {{ t('invoices.updatePlannedPaymentDate.statusRestriction') }}
+      </p>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,18 @@
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/utility';
+
+:host {
+  @extend %#{layout.$page-base-body-section-filters-pattern};
+  grid-template-columns: repeat(4, calc((100% - utility.get-rem(36)) / 4));
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: 100%;
+  }
+}
+
+shared-select-tree {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}

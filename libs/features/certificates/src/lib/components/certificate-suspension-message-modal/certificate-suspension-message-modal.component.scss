@@ -1,0 +1,24 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/utility' as utility;
+
+:host {
+  font-size: utility.get-rem(12);
+}
+
+.certificate-suspension-details {
+  padding: utility.get-rem(16) 0;
+
+  p {
+    display: flex;
+    align-items: flex-start;
+    gap: utility.get-rem(10);
+    margin-bottom: utility.get-rem(10);
+
+    > span:first-child {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: colors.get-color('DarkBlue');
+      width: 45%;
+    }
+  }
+}

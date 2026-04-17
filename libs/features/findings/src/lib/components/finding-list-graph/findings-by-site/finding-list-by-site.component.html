@@ -1,0 +1,33 @@
+<ng-container *transloco="let t">
+  <h2 id="findings-by-site">
+    {{ t('findings.findingsBySite.title') }}
+  </h2>
+
+  @if (findingListGraphStoreService.findingsBySiteList().length) {
+    <shared-tree-table
+      aria-labelledby="findings-by-site"
+      [categoriesByColumn]="
+        findingListGraphStoreService.findingsBySiteListGradient()
+      "
+      [cols]="findingListGraphStoreService.findingsBySiteListColumns()"
+      [data]="findingListGraphStoreService.findingsBySiteList()"
+      [hideZeroValues]="true"
+      [isCellClickable]="true"
+      [isGlobalGradient]="false"
+      (cellClickedSendTreeNode)="onCellClick($event)"></shared-tree-table>
+  }
+
+  @if (
+    (findingListGraphStoreService.findingsBySiteListLoaded() &&
+      findingListGraphStoreService.findingsBySiteList().length === 0) ||
+    (!findingListGraphStoreService.findingsBySiteListLoaded() &&
+      !!findingListGraphStoreService.findingsBySiteListError())
+  ) {
+    <shared-no-data
+      [altText]="t('findings.findingsBySite.noData')"
+      [descriptionText]="t('findings.findingsBySite.noDataDescription')"
+      [error]="!!findingListGraphStoreService.findingsBySiteListError()"
+      [infoText]="t('findings.findingsBySite.noData')">
+    </shared-no-data>
+  }
+</ng-container>

@@ -1,0 +1,150 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/layout' as layout;
+@use 'pattern/mixins' as mixins;
+@use 'pattern/typography' as typography;
+@use 'pattern/variables' as variables;
+@use 'pattern/utility'  as utility;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  @include mixins.gutter-for(top, right, bottom, left);
+}
+
+p .head {
+  @extend %#{layout.$page-base-head-pattern};
+  position: relative;
+}
+
+.body {
+  @extend %#{layout.$page-base-body-pattern};
+}
+
+h2 {  
+  @extend %#{typography.$heading-m-pattern}; 
+}
+
+.no-margin {
+  grid-template-rows: 0;
+}
+
+.profile {
+  display: grid;
+  gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 6));
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    border-bottom: 1px solid variables.$sky-blue;
+  }
+
+  &__title {
+    @extend %#{typography.$heading-m-pattern};
+    color: colors.get-color('SeaBlue');
+  }
+
+  &__btn {
+    ::ng-deep {
+      .p-button-label {
+        @extend %#{typography.$button-l-pattern};
+        color: colors.get-color('SeaBlue');
+        cursor: pointer;
+      }
+      .p-button-icon {
+        color: colors.get-color('SeaBlue');
+        margin-left: utility.get-rem(calc(var(--dnv-gutter-base-unitless)));
+      }
+    }
+  }
+
+  &__section-details {
+    padding-top: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    display: grid;
+    gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+  }
+
+  &__section-text {
+    padding-top: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    display: grid;
+  }
+
+  &__section-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 7));
+  }
+
+  &__section-label {
+    @extend %#{typography.$text-m-pattern};
+    width: utility.get-rem(230);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__section-value {
+    font-size: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+  }
+}
+
+::ng-deep {
+  // TODO revisit this, as it's not ideal
+  .p-tooltip {
+    .p-tooltip-text {
+      word-break: normal;
+      background-color: colors.get-color('UiWhite');
+      color: colors.get-color('UiBlack');
+      width: 250px;
+      float: left;
+      display: flex;
+      padding-right: 20px;
+    }
+
+    .p-tooltip-arrow {
+      border-top-color: colors.get-color('UiWhite');
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-xl) {
+  .profile {
+    padding: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 5))
+      utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+
+    &__title {
+      font-size: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  .profile {
+    padding: 0;
+    &__title {
+      font-size: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+    }
+
+    &__section-label {
+      width: auto;
+    }
+
+    &__section-info {
+      display: grid;
+      grid-template-columns: utility.get-rem(140) 1fr;
+      gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+    }
+
+    &__section-value {
+      word-break: break-word;
+    }
+
+    &__section-text {
+      .profile__section-info {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

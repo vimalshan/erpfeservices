@@ -1,0 +1,31 @@
+<ng-container *transloco="let t">
+  <h2 id="findings-by-clause">
+    {{ t('findings.findingsByClause.title') }}
+  </h2>
+
+  @if (findingListGraphStoreService.findingsByClauseList().length) {
+    <shared-tree-table
+      aria-labelledby="findings-by-clause"
+      [categoriesByColumn]="
+        findingListGraphStoreService.findingsByClauseListGradient()
+      "
+      [cols]="findingListGraphStoreService.findingsByClauseListColumns()"
+      [data]="findingListGraphStoreService.findingsByClauseList()"
+      [hideZeroValues]="true"
+      [isCellClickable]="true"
+      [isGlobalGradient]="false"
+      (cellClickedSendTreeNode)="onCellClick($event)"></shared-tree-table>
+  }
+  @if ((findingListGraphStoreService.findingByClauseListLoaded() &&
+      findingListGraphStoreService.findingsByClauseList().length === 0) ||
+      (!findingListGraphStoreService.findingByClauseListLoaded() &&
+      !!findingListGraphStoreService.findingByClauseListError())) {
+    <shared-no-data
+      [altText]="t('findings.findingsByClause.noData')"
+      [descriptionText]="t('findings.findingsByClause.noDataDescription')"
+      [error]="!!findingListGraphStoreService.findingByClauseListError()"
+      [infoText]="t('findings.findingsByClause.noData')">
+    </shared-no-data>
+  }
+
+</ng-container>

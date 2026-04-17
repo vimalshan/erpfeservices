@@ -1,0 +1,64 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/utility' as utility;
+
+.responses {
+  display: flex;
+  flex-direction: column;
+  padding: utility.get-rem(32);
+  gap: utility.get-rem(28);
+  border-radius: 8px;
+  background: variables.$concrete;
+}
+
+.response {
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: utility.get-rem(14);
+    gap: utility.get-rem(5);
+  }
+
+  &__name {
+    font-weight: 700;
+    color: #000;
+    font-size: utility.get-rem(14);
+  }
+
+  &__date {
+    margin-left: auto;
+  }
+
+  &__date,
+  &__hour {
+    font-size: utility.get-rem(12);
+  }
+
+  &__text-container {
+    padding: utility.get-rem(16);
+    background: variables.$basic-tones-dnv-white;
+    color: variables.$black;
+    border-radius: utility.get-rem(10);
+    margin-top: utility.get-rem(12);
+    width: fit-content;
+  }
+
+  &__question {
+    color: variables.$primary-dnv-dark-blue;
+    font-size: utility.get-rem(14);
+    font-weight: 700;
+  }
+
+  &__answer:not(:last-child) {
+    margin-bottom: utility.get-rem(16);
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-md) {
+  .response {
+    &__date {
+      margin-left: 0;
+      display: block;
+    }
+  }
+}

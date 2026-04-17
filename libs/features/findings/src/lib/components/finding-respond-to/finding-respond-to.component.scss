@@ -1,0 +1,133 @@
+@use 'variables';
+@use 'pattern/mixins';
+@use 'pattern/utility';
+@use 'pattern/typography';
+
+::ng-deep {
+  .p-tooltip .p-tooltip-text {
+    background-color: white;
+    color: black;
+    word-break: normal;
+  }
+
+  .p-tooltip.p-tooltip-top .p-tooltip-arrow {
+    border-top-color: white;
+  }
+}
+
+.respond-to-finding {
+  background-color: variables.$concrete;
+  @include mixins.gutter-for(right, left);
+  @include mixins.gutter-for(0.5, top, bottom);
+
+.wrapper {
+  text-align: justify;
+  @include mixins.gutter-for(left, right);
+}
+
+  &__title-container {
+    display: flex;
+    align-items: center;
+    gap: utility.get-rem(16);
+  }
+
+  &__title {
+    font-size: utility.get-rem(24);
+    font-weight: 700;
+    color: variables.$primary-dnv-medium-blue;
+  }
+
+  &__details {
+    font-size: utility.get-rem(16);
+    line-height: utility.get-rem(24);
+  }
+
+  &__form {
+    padding: utility.get-rem(36) 0 utility.get-rem(32);
+    &__input {
+      display: flex;
+      flex-direction: column;
+      font-size: utility.get-rem(16);
+      font-weight: 700;
+
+      &:not(:last-child) {
+        margin-bottom: utility.get-rem(24);
+      }
+
+      > label {
+        @extend %#{typography.$button-l-pattern};
+        margin-bottom: utility.get-rem(8);
+        color: variables.$midnight-navy;
+        display: flex;
+        align-items: center;
+
+        i {
+          font-size: utility.get-rem(14);
+          margin-left: utility.get-rem(8);
+        }
+      }
+
+      ::ng-deep .p-inputtextarea {
+        @extend %#{typography.$text-l-pattern};
+        padding: utility.get-rem(12);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: utility.get-rem(8);
+  }
+
+  &__text {
+    @extend %#{typography.$text-l-pattern};
+    color: variables.$black;
+    line-height: utility.get-rem(24);
+  }
+
+  &__draft-created {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    height: fit-content;
+    padding: utility.get-rem(4) utility.get-rem(8);
+    gap: utility.get-rem(4);
+    border-radius: utility.get-rem(4);
+    background: variables.$basic-tones-dnv-white;
+    color: variables.$midnight-navy;
+    font-size: utility.get-rem(12);
+  }
+
+  &__label {
+    font-weight: 500;
+  }
+}
+
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  .respond-to-finding {
+    padding: utility.get-rem(32);
+    > div {
+      max-width: none;
+    }
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-md) {
+  .respond-to-finding {
+    padding: utility.get-rem(48) utility.get-rem(24);
+  }
+}
+
+@media screen and (max-width: variables.$breakpoint-sm) {
+  .respond-to-finding {
+    padding: utility.get-rem(48) utility.get-rem(16);
+
+    &__title-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: utility.get-rem(8);
+      margin-bottom: utility.get-rem(16);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@use 'pattern/utility';
+
+shared-grid {
+  padding: 1px;
+}
+
+shared-grid::ng-deep {
+  thead > tr > th {
+    padding-left: utility.get-rem(55);
+  }
+}

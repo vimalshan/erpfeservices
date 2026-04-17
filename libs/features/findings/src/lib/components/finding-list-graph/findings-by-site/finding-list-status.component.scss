@@ -1,0 +1,67 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/typography';
+
+@use 'pattern/utility';
+
+.charts {
+  grid-area: charts;
+  display: grid;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  grid-template-columns: 40% 1fr;
+  grid-template-rows: utility.get-rem(30) 70% 1fr;
+  grid-template-areas:
+    'h2 h2'
+    'doughnut bar'
+    '. bar';
+  @include mixins.gutter-for(top, right, bottom, left);
+
+  @include mixins.respond-to(tablet) {
+    grid-template-columns: 100%;
+    grid-template-rows: utility.get-rem(30) min-content;
+    grid-template-areas:
+      'h2'
+      'doughnut'
+      'bar';
+
+    .chart-bar {
+      margin-left: -24px;
+    }
+  }
+}
+
+.chart-doughnut {
+  grid-area: doughnut;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  min-height: utility.get-rem(400);
+}
+
+.chart-doughnut-graph {
+  @extend %#{mixture.$shadow-default-pattern};
+}
+
+h2 {
+  @extend %#{typography.$heading-m-pattern};
+  grid-area: h2;
+  color: colors.get-color('SeaBlue');
+}
+
+.chart-bar {
+  grid-area: bar;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+
+  h3 {
+    padding-left: utility.get-rem(24);
+  }
+}
+
+h3 {
+  @extend %#{typography.$label-l-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('SeaBlue');
+}

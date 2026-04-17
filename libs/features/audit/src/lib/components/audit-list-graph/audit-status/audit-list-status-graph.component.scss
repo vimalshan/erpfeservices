@@ -1,0 +1,79 @@
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/utility';
+@use 'pattern/typography';
+@use 'pattern/colors';
+@use 'pattern/mixture';
+
+.charts {
+    grid-area: charts;
+    display: grid;
+    gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: utility.get-rem(30) 70% 1fr;
+    grid-template-areas:
+        'h3 h3'
+        'doughnut bar'
+        '. bar';
+    @include mixins.gutter-for(top, right, bottom, left);
+
+    @include mixins.respond-to(phone) {
+        grid-template-columns: 100%;
+        grid-template-rows: utility.get-rem(30) min-content;
+        grid-template-areas:
+            'h3'
+            'doughnut'
+            'bar';
+    }
+}
+
+h2 {
+    @extend %#{typography.$heading-m-pattern};
+    grid-area: h3;
+    color: colors.get-color('SeaBlue');
+}
+
+h3 {
+    @extend %#{typography.$label-l-pattern};
+    text-transform: uppercase;
+    color: colors.get-color('SeaBlue');
+}
+
+.chart-doughnut {
+    grid-area: doughnut;
+    display: flex;
+    flex-direction: column;
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+    min-height: utility.get-rem(400);
+}
+
+.chart-doughnut-graph {
+    @extend %#{mixture.$shadow-default-pattern};
+}
+
+.chart-bar {
+    grid-area: bar;
+    display: flex;
+    flex-direction: column;
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+
+    h3 {
+        padding-left: utility.get-rem(24);
+    }
+
+    shared-chart::ng-deep {
+        ul {
+            gap: utility.get-rem(8) !important;
+        }
+    }
+}
+
+h3 {
+    @extend %#{typography.$label-l-pattern};
+    text-transform: uppercase;
+    color: colors.get-color('SeaBlue');
+}
+
+.grid {
+    gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+    @include mixins.gutter-for(top, right, bottom, left); }

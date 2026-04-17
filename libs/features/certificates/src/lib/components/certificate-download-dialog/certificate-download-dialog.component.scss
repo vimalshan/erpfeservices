@@ -1,0 +1,54 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+:host {
+  display: grid;
+  gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 3));
+  grid-template-rows: minmax(max-content, 1fr);
+  grid-template-areas:
+    'container container'
+    'close submit';
+}
+
+.container {
+  grid-area: container;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(4);
+}
+
+h5 {
+  @extend %#{typography.$button-l-pattern};
+  color: colors.get-color('DarkBlue');
+}
+
+.close {
+  grid-area: close;
+}
+
+.submit {
+  grid-area: submit;
+  place-self: end;
+}
+
+shared-button {
+  color: colors.get-color('SeaBlue');
+}
+
+p-dropdown.p-element::ng-deep {
+  .p-inputwrapper {
+    @extend %#{typography.$text-l-pattern};
+    height: utility.get-rem(45);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: utility.get-rem(12);
+    border: 1px solid colors.get-color('Sandstone80');
+    border-radius: 8px;
+  }
+
+  .p-dropdown-label {
+    padding: 0;
+  }
+}

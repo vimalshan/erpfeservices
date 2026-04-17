@@ -1,0 +1,9 @@
+{
+  "title": "Notifications",
+  "notificationList": {
+    "title": "notification",
+    "message": "message",
+    "receivedOn": "received on",
+    "arrow": "arrow"
+  }
+}

@@ -1,0 +1,50 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="contract-title" class="head">
+    <h1 id="contract-title">{{ t('contracts.title') }}</h1>
+  </section>
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    @if (isPreferenceInitialized | async) {
+      <shared-grid
+        #grid
+        class="table-list"
+        dataKey="contractId"
+        [columns]="cols"
+        [data]="contractsListStoreService.contracts()"
+        [displayClearButton]="contractsListStoreService.hasActiveFilters()"
+        [displayColsReorderButton]="true"
+        [filterDelay]="0"
+        [filterOptions]="contractsListStoreService.filterOptions()"
+        [filteringConfig$]="contractsListStoreService.filteringConfig"
+        [hasActiveFilters]="contractsListStoreService.hasActiveFilters()"
+        [isLoading]="contractsListStoreService.isLoading()"
+        [paginator]="true"
+        [preferenceData]="preferenceData()"
+        [rowHover]="true"
+        [scrollable]="true"
+        [selectable]="true"
+        [selectableSticky]="false"
+        [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+        [showCurrentPageReport]="true"
+        [sortMode]="'multiple'"
+        [sortable]="true"
+        [totalRecords]="contractsListStoreService.totalRecords()"
+        (exportExcel)="onExportExcelClick()"
+        (gridConfigChangedEvent)="onGridConfigChanged($event)"
+        (savePreference)="onSavePreference($event)"
+        (selectionChangeData)="onSelectionChangeData($event)"
+        (triggerFileAction)="onTriggerFileAction($event)">
+        <ng-template #buttonsCustomTemplate>
+          @if (shouldDisplayDownloadBtn) {
+            <shared-button
+              #bulkDownloadBtn
+              [icon]="'download'"
+              [label]="t('contracts.contractsList.download')"
+              [type]="sharedButtonType.Secondary"
+              (clickEvent)="downloadSelectedContracts()">
+            </shared-button>
+          }
+        </ng-template>
+      </shared-grid>
+    }
+  </section>
+</ng-container>

@@ -1,0 +1,51 @@
+@use 'pattern/colors';
+@use 'pattern/mixture';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+.card {
+  .financial-status-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      @extend %#{typography.$label-l-pattern};
+      color: colors.get-color('SeaBlue');
+      text-transform: uppercase;
+    }
+  }
+
+  .no-data-image {
+    @extend %#{mixture.$shadow-default-pattern};
+    background-color: colors.get-color('UiWhite');
+    height: utility.get-rem(153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: utility.get-rem(10);
+  }
+
+  shared-chart::ng-deep {
+    @extend %#{mixture.$shadow-default-pattern};
+    height: utility.get-rem(210);
+    .no-data {
+      .no-data__doughnut-outer {
+        background-color: colors.get-color('UiWhite');
+        p {
+          @extend %#{typography.$text-m-pattern};
+          background-color: colors.get-color('Sandstone95');
+          padding: utility.get-rem(5) utility.get-rem(10);
+          text-transform: lowercase;
+          border-radius: utility.get-rem(10);
+          max-width: max-content;
+        }
+      }
+    }
+  }
+
+  shared-button {
+    text-decoration: underline;
+    color: colors.get-color('SeaBlue');
+  }
+}

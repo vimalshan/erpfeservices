@@ -1,0 +1,130 @@
+@use 'pattern/colors' as colors;
+@use 'pattern/mixins' as mixins;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+:host {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  grid-template-areas:
+    'form'
+    'p';
+}
+
+form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+
+  @include mixins.respond-to(phone) {
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless)); 
+  }
+}
+
+label {
+  @extend %#{typography.$label-l-pattern};
+  display: flex;
+  align-items: center;
+  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  color: colors.get-color('DarkBlue');
+}
+
+i {
+  font-size: var(--dnv-font-text-l);
+}
+
+p {
+  @extend %#{typography.$text-m-pattern};
+}
+
+.grouping {
+  display: grid;
+  grid-template-columns: 35% auto;
+  align-items: center;
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: 100%;
+    gap: utility.get-rem(calc(0.5 * var(--dnv-gutter-base-unitless)));
+  }
+}
+
+.wrapper {
+  display: flex;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+}
+
+.p-inputtext::ng-deep {
+  @extend %#{mixture.$input-text-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+p-dropdown.p-element::ng-deep {
+  @extend %#{mixture.$dropdown-element-pattern};
+
+  .p-inputwrapper {
+    @extend %#{mixture.$dropdown-input-wrapper-pattern};
+  }
+
+  .p-disabled {
+    border-color: colors.get-color('Sandstone80');
+    background-color: colors.get-color('Sandstone95');
+    color: colors.get-color('Sandstone40');
+  }
+
+  .p-dropdown-filter.p-inputtext {
+    @extend %#{mixture.$input-text-pattern};
+  }
+
+  li.p-element {
+    @extend %#{mixture.$dropdown-option-pattern};
+  }
+
+  .p-dropdown-label {
+    padding: 0;
+  }
+
+  .p-dropdown-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    background-color: colors.get-color('Sandstone95');
+  }
+
+  .p-dropdown-filter-container {
+    display: flex;
+    align-items: center;
+    margin: utility.get-rem(var(--dnv-gutter-base-unitless));
+  }
+
+  .p-overlay {
+    @extend %#{mixture.$shadow-modal-pattern};
+  }
+}
+
+p-radiobutton.p-element::ng-deep {
+  .p-radiobutton {
+    height: auto;
+    width: auto;
+  }
+
+  .p-radiobutton-box {
+    height: utility.get-rem(24);
+    width: utility.get-rem(24);
+    border: 1px solid colors.get-color('Sandstone80');
+
+    &.p-highlight {
+      background-color: colors.get-color('UiWhite');
+
+      .p-radiobutton-icon {
+        height: utility.get-rem(18);
+        width: utility.get-rem(18);
+        background-color: colors.get-color('SeaBlue');
+      }
+    }
+  }
+}

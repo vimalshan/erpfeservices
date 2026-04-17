@@ -1,0 +1,121 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/colors' as colors;
+@use 'pattern/mixins' as mixins;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+::ng-deep {
+  .p-fileupload-buttonbar {
+    display: none;
+  }
+
+  .p-fileupload-files {
+    display: none;
+  }
+
+  .p-fileupload-content {
+    padding: 8px 0;
+    border: none;
+
+    p-progressbar,
+    p-messages {
+      display: none;
+    }
+
+    .upload-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      border: 2px dashed colors.get-color('Cyan');
+      background-color: colors.get-color('SkyBlue95');
+      @include mixins.gutter-for(top, bottom);
+    }
+
+    .upload-info-wrapper {
+      display: flex;
+      justify-content: center;
+
+      i.pi {
+        color: colors.get-color('Cyan');
+      }
+
+      &__text {
+        margin-left: 12px;
+
+        p:first-child {
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 700;
+        }
+
+        p:last-child {
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .upload-info-divider {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 16.5px 0;
+    }
+
+    .files-list {
+      @extend %#{mixture.$shadow-default-pattern};
+      border-radius: 10px;
+      margin-top: 24px;
+  
+      &__header {
+        @extend %#{typography.$text-m-pattern};
+        padding: 16px;
+        background-color: colors.get-color('Sandstone95');
+        border-start-start-radius: 10px;
+        border-start-end-radius: 10px;
+        text-transform: uppercase;
+      }
+
+      &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+      }
+
+      &__info {
+        max-width: calc(100% - 40px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__info-name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-word;
+      }
+
+      &__info-error {
+        font-size: 10px;
+        font-weight: 400;
+        color: colors.get-color('EnergyRed');
+        word-break: break-word;
+      }
+
+      &__item-remove {
+        margin-left: 16px;
+
+        i.pi {
+          color: colors.get-color('EnergyRed');
+        }
+      }
+
+      &__odd {
+        background-color: variables.$table-body-row-even-bg;
+      }
+    }
+  }
+}

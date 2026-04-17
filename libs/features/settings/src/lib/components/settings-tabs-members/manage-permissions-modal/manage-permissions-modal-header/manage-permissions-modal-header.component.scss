@@ -1,0 +1,11 @@
+@use '/src/styles/pattern/typography' as typography;
+
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  @extend %#{typography.$heading-m-pattern};
+}

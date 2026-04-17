@@ -1,0 +1,29 @@
+@if (isPreferenceInitialized | async) {
+  <shared-grid
+    class="table-list"
+    dataKey="contractId"
+    [columns]="cols"
+    [data]="settingsMembersStoreService.settingsAdminList()"
+    [displayClearButton]="settingsMembersStoreService.hasAdminActiveFilters()"
+    [displayColsReorderButton]="false"
+    [displayExportButton]="false"
+    [filterDelay]="0"
+    [filterOptions]="settingsMembersStoreService.adminFilterOptions()"
+    [filteringConfig$]="settingsMembersStoreService.adminFilteringConfig"
+    [hasActiveFilters]="settingsMembersStoreService.hasAdminActiveFilters()"
+    [paginator]="true"
+    [preferenceData]="preferenceData()"
+    [rowHover]="true"
+    [scrollable]="true"
+    [selectable]="false"
+    [selectableSticky]="false"
+    [shouldPersist]="shouldPersist()"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [totalRecords]="settingsMembersStoreService.adminTotalFilteredRecords()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (savePreference)="onSavePreference($event)"
+    (triggerEventAction)="onEventActionTrigger($event)">
+  </shared-grid>
+}

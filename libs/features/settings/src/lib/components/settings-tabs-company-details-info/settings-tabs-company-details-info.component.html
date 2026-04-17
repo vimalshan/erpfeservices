@@ -1,0 +1,110 @@
+<ng-container *transloco="let t">
+  @if (hasAccordion()) {
+    <div class="heading">
+      <p-button
+        [ariaLabel]="
+          hasAccordion() && isAccordionOpen
+            ? t('settings.button.collapseSection')
+            : t('settings.button.expandSection') + ' ' + title()
+        "
+        icon="pi pi-{{
+          hasAccordion() && isAccordionOpen ? 'chevron-up' : 'chevron-down'
+        }}"
+        [rounded]="true"
+        [text]="true"
+        (onClick)="onAccordionToggle()">
+      </p-button>
+      <span>{{ title() }}</span>
+    </div>
+  } @else {
+    <h3>{{ title() }}</h3>
+  }
+
+  @if (isUserAdmin()) {
+    <div class="edit-button-container">
+      @if (isButtonDisabled()) {
+        <i
+          class="pi pi-info-circle"
+          tooltipPosition="top"
+          [pTooltip]="t('settings.button.updateInProgress')">
+        </i>
+      }
+      @if (!isDnvUser()) {
+        <p-button
+          class="edit"
+          icon="pi pi-pencil"
+          iconPos="right"
+          [ariaLabel]="t('settings.button.requestChanges')"
+          [disabled]="isButtonDisabled()"
+          [label]="t('settings.button.requestChanges')"
+          [text]="true"
+          (onClick)="openServiceNowCompanySettingsSupport()">
+        </p-button>
+      }
+    </div>
+  }
+
+  @if (!hasAccordion() || (hasAccordion() && isAccordionOpen)) {
+    <hr />
+  }
+
+  <div
+    class="info"
+    [ngClass]="{ 'is-accordion-closed': hasAccordion() && !isAccordionOpen }">
+    @if (isOrganizationNameVisible()) {
+      <div class="grouping">
+        <span class="info-label">{{
+          t('settings.form.companyDetails.organizationName')
+        }}</span>
+        <span class="info-value">{{ data().organizationName }}</span>
+      </div>
+    }
+
+    <div class="grouping">
+      <span class="info-label">{{
+        t('settings.form.companyDetails.address')
+      }}</span>
+      <span class="info-value">{{ data().address }}</span>
+    </div>
+
+    <div class="grouping">
+      <span class="info-label">{{
+        t('settings.form.companyDetails.city')
+      }}</span>
+      <span class="info-value">{{ data().city }}</span>
+    </div>
+
+    <div class="grouping">
+      <span class="info-label">{{
+        t('settings.form.companyDetails.zipcode')
+      }}</span>
+      <span class="info-value">{{ data().zipcode }}</span>
+    </div>
+
+    <div class="grouping">
+      <span class="info-label">{{
+        t('settings.form.companyDetails.country')
+      }}</span>
+      <span class="info-value">{{ data().country }}</span>
+    </div>
+
+    <div class="grouping">
+      <span class="info-label">{{
+        t('settings.form.companyDetails.vatNumber')
+      }}</span>
+      <span class="info-value">{{ data().vatNumber }}</span>
+    </div>
+
+    <div class="grouping">
+      <span class="info-label">{{
+        t('settings.form.companyDetails.poNumberRequired')
+      }}</span>
+      <span class="info-value">{{
+        t(
+          'settings.form.companyDetails.poNumberRequiredValue.' +
+            data().poNumberRequired
+        )
+      }}</span>
+    </div>
+  </div>
+</ng-container>

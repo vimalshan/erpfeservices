@@ -1,0 +1,12 @@
+{
+  "title": "Azioni",
+  "errorMessage": "Qualcosa non ha funzionato, per favore riprova",
+  "highPriority": "Alta priorità",
+  "gridHeading": {
+    "actionName": "Azione",
+    "dueOn": "Scadenza",
+    "message": "Messaggio",
+    "service": "Servizio",
+    "site": "Sito"
+  }
+}

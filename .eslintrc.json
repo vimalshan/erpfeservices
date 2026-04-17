@@ -1,0 +1,48 @@
+{
+  "ignorePatterns": ["!**/src", "!**/test-setup.ts"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js"],
+      "rules": {}
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["**/*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.*.json"]
+      },
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "customerPortal",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "customer-portal",
+            "style": "kebab-case"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:@nx/angular-template"],
+      "rules": {}
+    }
+  ],
+  "extends": ["./.eslintrc.base.json"]
+}

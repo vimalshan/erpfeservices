@@ -1,0 +1,54 @@
+<ng-container *transloco="let t">
+  <h3>{{ t('certificate.certificateDetails.documents') }}</h3>
+
+  <shared-grid
+    dataKey="certificateDocuments"
+    [columns]="cols"
+    [data]="documentsList()"
+    [displayClearButton]="
+      certificateDetailsStoreService.certificateDocumentsHasActiveFilters()
+    "
+    [displayColsReorderButton]="false"
+    [displayExportButton]="false"
+    [displayFilterSummary]="true"
+    [filterDelay]="0"
+    [filterOptions]="
+      certificateDetailsStoreService.certificateDocumentsFilterOptions()
+    "
+    [filteringConfig$]="
+      certificateDetailsStoreService.certificateDocumentsFilteringConfig
+    "
+    [hasActiveFilters]="
+      certificateDetailsStoreService.certificateDocumentsHasActiveFilters()
+    "
+    [isDocumentsGrid]="true"
+    [isLoading]="certificateDetailsStoreService.isLoadingDocument()"
+    [isShowAddDocument]="false"
+    [paginator]="true"
+    [rowHover]="true"
+    [scrollable]="true"
+    [selectable]="true"
+    [selectableSticky]="false"
+    [shouldPersist]="false"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [totalRecords]="
+      certificateDetailsStoreService.certificateDocumentsTotalRecords()
+    "
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (selectionChangeData)="onSelectionChangeData($event)"
+    (triggerFileAction)="triggerFileAction($event)">
+    <ng-template #buttonsCustomTemplate>
+      @if (displayDownloadButton) {
+        <shared-button
+          #bulkDownloadBtn
+          [icon]="'download'"
+          [label]="t('certificate.attachedDocuments.downloadButton')"
+          [type]="sharedButtonType.Outline"
+          (clickEvent)="downloadSelectedDocuments()">
+        </shared-button>
+      }
+    </ng-template>
+  </shared-grid>
+</ng-container>

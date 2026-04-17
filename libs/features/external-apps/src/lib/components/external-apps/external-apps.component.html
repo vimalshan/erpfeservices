@@ -1,0 +1,19 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="external-apps-title" class="head">
+    <h1 id="external-apps-title">{{ t('apps.pageTitle') }}</h1>
+  </section>
+
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    <div class="container">
+      @for (app of externalApps; track app.id) {
+        <shared-custom-card
+          class="shared-card"
+          [imageUrl]="app.imageUrl"
+          [link]="app.link"
+          [subTitle]="t(app.subTitle)"
+          [title]="t(app.title)">
+        </shared-custom-card>
+      }
+    </div>
+  </section>
+</ng-container>

@@ -1,0 +1,93 @@
+{
+  "attachedDocuments": {
+    "dateAdded": "Data di aggiunta",
+    "downloadButton": "Scaricamento",
+    "fileName": "Nome del file",
+    "language": "Lingua",
+    "type": "Tipo",
+    "uploadedBy": "Caricato da"
+  },
+  "certificateDetails": {
+    "certificate": "Certificato",
+    "certificationMark": "Marchio di certificazione",
+    "date": {
+      "end": "Valido fino a {{date}}",
+      "start": "Data di emissione {{date}}",
+      "suspended": "Appuntamento sospeso",
+      "withdrawn": "Data ritirata {{date}}"
+    },
+    "documents": "Documenti",
+    "languagesLabel": "Lingue",
+    "newCertificateInProgress": "Nuovo certificato in corso",
+    "scope": "Scopo",
+    "sites": {
+      "pleaseCheckSiteScope": "Controlla le informazioni riguardo il sito e l’ambito del certificato e conferma o richiedi una modifica",
+      "siteAddress": "Indirizzo del sito",
+      "siteName": "Nome del sito",
+      "sites": "Siti",
+      "siteScope": "Scopo del sito",
+      "verifyYourInformation": "Verifica le informazioni"
+    },
+    "thisCertificateMightBeUpdated": "Questo certificato potrebbe essere aggiornato presto, un nuovo certificato è in corso",
+    "viewNewCertificate": "Visualizza il nuovo certificato"
+  },
+  "certificateDetailsDescription": {
+    "documents": "Documenti",
+    "sites": "Siti"
+  },
+  "certificateGraphs": {
+    "certificateByStatusTitle": "Certificati totali",
+    "certificateByTypeTitle": "Certificati per servizio",
+    "title": "Stato dei certificati",
+    "totalCertificates": "Certificati totali"
+  },
+  "certificateList": {
+    "certificateId": "Certificato ID",
+    "certificateNumber": "Certificato n°",
+    "city": "Città",
+    "company": "Azienda",
+    "issuedDate": "Data di emissione",
+    "noDataCertificatesTable": "Non ci sono certificati in questo momento",
+    "pageTitle": "Certificati",
+    "service": "Servizio",
+    "site": "Luogo",
+    "status": "Stato",
+    "validUntil": "Scadenza"
+  },
+  "downloadDialog": {
+    "cancel": "Cancellare",
+    "download": "Scarica il certificato",
+    "downloadMark": "Scarica il marchio",
+    "header": "Scarica il certificato",
+    "label": "Seleziona una lingua",
+    "markHeader": "Scarica il marchio di certificazione",
+    "viewCertificationGuidelines": "Manuale d'uso per i marchi di certificazione"
+  },
+  "header": {
+    "graphs": "Grafici",
+    "lists": "Lista"
+  },
+  "title": "Certificati",
+  "certificatesGraphsTabs": {
+    "certificatesStatus": "Stato dei certificati",
+    "certificatesBySite": "Certificati per sito"
+  },
+  "certificateSuspension": {
+    "certificateSuspensionTitle": "Sospensione del certificato",
+    "certificateSuspensionRecipient": "Dear {{name}}",
+    "certificateSuspensionMessage1": "Ci dispiace informarti che, a causa dei nostri requisiti di accreditamento e contrattuali, è necessario sospendere il tuo certificato.",
+    "certificateSuspensionMessage2": "Il certificato rimarrà in tuo possesso anche se sospeso.",
+    "certificateSuspensionMessage3": "Tuttavia, durante la sospensione il certificato è temporaneamente non valido e in questo periodo non è consentito fare riferimento al certificato o utilizzare il logo DNV o qualsiasi altro logo, ad esempio il logo dell'accreditamento o del titolare dello schema.",
+    "certificateSuspensionMessage4": "Si prega di notare che il tempo massimo di sospensione è indicato nel regolamento dello schema di certificazione. Se il motivo della sospensione non viene sanato, saremo costretti a ritirare il certificato.",
+    "certificateSuspensionMessage5": "Sia tu che DNV dovete informare tutte le richieste che il certificato è sospeso.",
+    "certificateSuspensionMessage6": "Lei ha il diritto di rispondere e presentare ricorso contro questa decisione entro ventuno (21) giorni dalla consegna della presente lettera.",
+    "certificateSuspensionMessage7": "Se avete domande, non esitate a contattarci inviando un'e-mail a {{email}}.",
+    "contactUs": "Contattaci",
+    "proceed": "Procedere",
+    "certificateNumber": "Numero del certificato",
+    "scheme": "Schema",
+    "accreditation": "Accreditamento",
+    "suspensionReason": "La sospensione è dovuta al seguente motivo",
+    "dateOfSuspension": "Data di sospensione"
+  }
+}

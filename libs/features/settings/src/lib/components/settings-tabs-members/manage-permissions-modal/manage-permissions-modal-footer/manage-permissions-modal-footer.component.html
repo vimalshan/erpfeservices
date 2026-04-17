@@ -1,0 +1,20 @@
+<ng-container *transloco="let t">
+  @if (showBackBtn) {
+    <shared-button
+      [icon]="'angle-left'"
+      [iconPos]="'left'"
+      [label]="t('settings.membersTab.memberDetails')"
+      [type]="sharedButtonType.Outline"
+      (clickEvent)="closeDialog()">
+    </shared-button>
+  } @else {
+    <div class="placeholder"></div>
+  }
+
+  <shared-button
+    [isDisabled]="isButtonDisabled()"
+    [label]="t('settings.membersTab.submit')"
+    [type]="sharedButtonType.Secondary"
+    (clickEvent)="onSubmit()">
+  </shared-button>
+</ng-container>

@@ -1,0 +1,20 @@
+<ng-container *transloco="let t">
+  <shared-button
+    [label]="t('schedules.confirm.cancel')"
+    [type]="sharedButtonType.Outline"
+    (clickEvent)="onCancel()">
+  </shared-button>
+  <ng-container *sharedHasAdminPermission="roles.Admin">
+    <shared-button 
+      class="request-changes-button"
+      [label]="t('serviceNow.requestChanges')" 
+      [type]="sharedButtonType.Outline"
+      (clickEvent)="onRequestChanges()">
+    </shared-button>
+  </ng-container>
+  <shared-button
+    [label]="t('schedules.confirm.submit')"
+    [type]="sharedButtonType.Secondary"
+    (clickEvent)="onSubmit()">
+  </shared-button>
+</ng-container>

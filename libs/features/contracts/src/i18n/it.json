@@ -1,0 +1,12 @@
+{
+  "contractsList": {
+    "company": "Azienda",
+    "contractName": "Nome del contratto",
+    "contractType": "Tipo di contratto",
+    "dateAdded": "Aggiunto in data",
+    "download": "Scarica",
+    "services": "Servizio",
+    "site": "Nome del sito"
+  },
+  "title": "Contratti"
+}

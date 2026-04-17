@@ -1,0 +1,112 @@
+@use 'pattern/colors';
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host {
+  @extend %#{layout.$page-base-pattern};
+
+  .load-more-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.head {
+  @extend %#{layout.$page-base-head-pattern};
+  position: relative;
+  gap: utility.get-rem(10);
+  align-items: flex-start;
+  flex-direction: column;
+  @include mixins.gutter-for(0.7, top, bottom)
+}
+
+.welcome-description {
+  color: colors.get-color('UiBlack');
+}
+
+.body {
+  @extend %#{layout.$page-base-body-pattern};
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-areas: 'left right';
+
+  @include mixins.respond-to(tablet) {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'left'
+      'right';
+  }
+}
+
+.left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * 2));
+  background-color: colors.get-color('UiWhite');
+  @include mixins.gutter-for(top, right, bottom, left);
+}
+
+.right {
+  grid-area: right;
+  background-color: colors.get-color('SkyBlue95');
+  padding: utility.get-rem(20);
+  gap: utility.get-rem(32);
+
+  @include mixins.respond-to(tablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: utility.get-rem(16);
+  }
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+h1 {
+  @extend %#{typography.$heading-xl-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+h3 {
+  @extend %#{typography.$heading-m-pattern};
+  color: colors.get-color('SeaBlue');
+}
+
+p {
+  @extend %#{typography.$text-l-pattern};
+  color: colors.get-color('DarkBlue');
+}
+
+.overview-no-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid colors.get-color('Sandstone90');
+  border-radius: utility.get-rem(10);
+  padding: utility.get-rem(40) 0;
+
+  span {
+    text-align: center;
+    max-width: 55%;
+    line-height: utility.get-rem(20);
+  }
+
+  span.no-services-info {
+    @extend %#{typography.$button-l-pattern};
+    color: colors.get-color('DarkBlue');
+    padding: utility.get-rem(20) 0 utility.get-rem(10) 0;
+  }
+
+  span.no-services-text {
+    font-size: var(--dnv-font-text-m);
+  }
+}
+
+ 

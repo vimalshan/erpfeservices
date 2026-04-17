@@ -1,0 +1,139 @@
+@use 'pattern/colors';
+@use 'pattern/typography';
+@use 'pattern/mixture';
+@use 'pattern/utility';
+
+.card {
+  height: utility.get-rem(306);
+  margin-top: utility.get-rem(20);
+
+  .training-status-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      color: colors.get-color('SeaBlue');
+      text-transform: uppercase;
+    }
+  }
+
+  .training-status-content {
+    @extend %#{mixture.$shadow-default-pattern};
+
+    p-card::ng-deep {
+      display: block;
+      padding: utility.get-rem(5) 0;
+
+      .p-card {
+        box-shadow: none;
+        border-bottom: 1px solid colors.get-color('SkyBlue90');
+        border-radius: 0;
+
+        .p-card-content {
+          padding: 0;
+        }
+      }
+    }
+
+    p-card:last-child {
+      padding-top: 0;
+      ::ng-deep {
+        
+        .p-card {
+          border-bottom: none;
+        }
+      }
+    }
+
+    .training-sub-content {
+      margin-top: utility.get-rem(10);
+      display: flex;
+
+      .child {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .no-data-image {
+    @extend %#{mixture.$shadow-default-pattern};
+    background-color: colors.get-color('UiWhite');
+    height: utility.get-rem(153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: utility.get-rem(10);
+  }
+
+  .left {
+    margin-right: utility.get-rem(10);
+  }
+
+  .flex-parent {
+    display: flex;
+  }
+
+  .flex-child {
+    .primary {
+      color: colors.get-color('UiBlack');
+      margin-left: utility.get-rem(3);
+    }
+
+    .secondary {
+      color: colors.get-color('Sandstone30');
+    }
+
+    .icon {
+      display: contents;
+    }
+
+    .heading {
+      @extend %#{typography.$label-l-pattern};
+    }
+
+    .sub-title {
+      @extend %#{typography.$text-s-pattern};
+    }
+
+    img {
+      width: utility.get-rem(36);
+      height: utility.get-rem(36);
+      border-radius: utility.get-rem(6);
+    }
+  }
+}
+
+shared-button {
+  text-decoration: underline;
+  color: colors.get-color('SeaBlue');
+}
+
+.overview-no-courses {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: utility.get-rem(10);
+  padding: utility.get-rem(40) 0;
+
+  span {
+    text-align: left;
+    max-width: 55%;
+    line-height: utility.get-rem(20);
+  }
+
+  span.no-courses-info {
+    @extend %#{typography.$text-m-pattern};
+    background-color: colors.get-color('Sandstone95');
+    padding: utility.get-rem(5) utility.get-rem(10);
+    text-transform: lowercase;
+    border-radius: utility.get-rem(10);
+  }
+
+  span.no-courses-text {
+    font-size: var(--dnv-font-text-m);
+  }
+}

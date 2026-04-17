@@ -1,0 +1,31 @@
+{
+  "name": "environments",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/environments/src",
+  "prefix": "customer-portal",
+  "projectType": "library",
+  "tags": ["type:environments", "domain:environments"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/environments",
+        "main": "libs/environments/src/index.ts",
+        "tsConfig": "libs/environments/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/environments/jest.config.ts",
+        "tsConfig": "libs/environments/tsconfig.spec.json"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

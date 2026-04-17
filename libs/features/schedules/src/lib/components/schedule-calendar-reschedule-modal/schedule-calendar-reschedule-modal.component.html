@@ -1,0 +1,101 @@
+<ng-container *transloco="let t">
+  <div class="head">
+    <h4>
+      {{
+        t('schedules.reschedule.heading', {
+          date: confirmScheduleDetailsStoreService.calendarDetails().startDate | customDate,
+        })
+      }}
+    </h4>
+
+    <div class="service">
+      <h6>{{ t('schedules.service') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().service
+      }}</span>
+    </div>
+
+    <div class="audit-type">
+      <h6>{{ t('schedules.auditType') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().auditType
+      }}</span>
+    </div>
+
+    <div class="auditor">
+      <h6>{{ t('schedules.auditor') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().auditor
+      }}</span>
+    </div>
+
+    <div class="site">
+      <h6>{{ t('schedules.site') }}</h6>
+      <span>{{
+        confirmScheduleDetailsStoreService.calendarDetails().site
+      }}</span>
+    </div>
+  </div>
+
+  <div class="body">
+      @if (rescheduleState === 'SupportRequest'){
+    <div class="disclaimer-container">
+      <p class="scheduleInfo">{{ t('schedules.reschedule.scheduleInfo') }}</p>
+      <p class="disclaimer">{{ t('schedules.reschedule.requestChangeDisclaimer') }}</p>
+      <p>{{ t('schedules.reschedule.chargesDisclaimer') }}</p>
+    </div>
+  }
+    @else{
+      <form [formGroup]="form">
+        <div class="grouping">
+          <label for="rescheduleDate">
+            {{ t('schedules.reschedule.dateLabel') }}
+          </label>
+          <p-calendar
+            appendTo="body"
+            dateFormat="dd-M-yy"
+            formControlName="weekRange"
+            id="rescheduleDate"
+            [ariaLabel]="t('schedules.reschedule.dateLabel')"
+            [defaultDate]="calendarDefaultDate"
+            [firstDayOfWeek]="1"
+            [minDate]="calendarMinDate"
+            [placeholder]="t('schedules.reschedule.datePlaceholder')"
+            [selectionMode]="'range'"
+            [showWeek]="true"
+            [startWeekFromFirstDayOfYear]="true"
+            (onSelect)="onSelectDate($event)">
+          </p-calendar>
+        </div>
+  
+        <div class="grouping">
+          <label for="rescheduleReason">
+            {{ t('schedules.reschedule.reasonLabel') }}
+          </label>
+          <p-dropdown
+            formControlName="rescheduleReason"
+            id="rescheduleReason"
+            [ariaLabel]="t('schedules.reschedule.reasonLabel')"
+            [options]="scheduleCalendarActionStoreService.rescheduleReasonList()"
+            [overlayOptions]="getOverlayOptions()"
+            [placeholder]="t('schedules.reschedule.reasonPlaceholder')">
+          </p-dropdown>
+        </div>
+  
+        <div class="grouping">
+          <label for="additionalComments">
+            {{ t('schedules.reschedule.commentsLabel') }}
+          </label>
+          <input
+            formControlName="additionalComments"
+            id="additionalComments"
+            pInputText
+            type="text"
+            [placeholder]="t('schedules.reschedule.commentsPlaceholder')" />
+        </div>
+      </form>
+  
+      <p>{{ t('schedules.reschedule.disclaimer') }}</p>
+    }
+  </div>
+</ng-container>

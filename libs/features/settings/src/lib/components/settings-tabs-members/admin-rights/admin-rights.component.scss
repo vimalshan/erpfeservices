@@ -1,0 +1,35 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/colors' as colors;
+@use 'pattern/mixture' as mixture;
+@use 'pattern/typography' as typography;
+@use '../../../../../../../../src/styles/pattern/utility' as utility;
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(4);
+}
+
+.admin-rights {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: utility.get-rem(45);
+  padding: utility.get-rem(12);
+  border: 1px solid colors.get-color('Sandstone80');
+  border-radius: utility.get-rem(8);
+  background-color: colors.get-color('UiWhite');
+  color: colors.get-color('UiBlack');
+  outline: 0;
+}
+
+label {
+  @extend %#{typography.$text-l-pattern};
+}
+
+h5 {
+  @extend %#{typography.$label-m-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}

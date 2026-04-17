@@ -1,0 +1,100 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'head'
+    'body';
+}
+
+.head {
+  grid-area: head;
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: max-content max-content auto;
+  grid-template-areas:
+    'h4 h4 shared-status'
+    'add-to-calendar share-invite .';
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  background-color: colors.get-color('SkyBlue95');
+  @include mixins.gutter-for(top, right, bottom, left);
+  @include mixins.gutter-for(0.5, top, bottom);
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: 100%;
+    grid-template-areas:
+      'h4'
+      'shared-status'
+      'add-to-calendar'
+      'share-invite';
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  }
+}
+
+.body {
+  grid-area: body;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  @include mixins.gutter-for(top, right, bottom, left);
+  @include mixins.gutter-for(0.5, top, bottom);
+
+  @include mixins.respond-to(phone) {
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless)); 
+  }
+}
+
+h2 {
+  @extend %#{typography.$heading-s-pattern};
+  grid-area: h4;
+  color: colors.get-color('SeaBlue');
+}
+
+h3 {
+  @extend %#{typography.$label-m-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+span {
+  @extend %#{typography.$text-l-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+p {
+  @extend %#{typography.$text-l-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+shared-status {
+  grid-area: shared-status;
+}
+
+shared-button {
+  color: colors.get-color('SeaBlue');
+}
+
+.add-to-calendar {
+  grid-area: add-to-calendar;
+}
+
+.share-invite {
+  grid-area: share-invite;
+}
+
+.grouping {
+  display: grid;
+  grid-template-columns: 35% auto;
+  align-items: center;
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: 100%;
+    gap: utility.get-rem(calc(0.5 * var(--dnv-gutter-base-unitless)));
+  }
+}

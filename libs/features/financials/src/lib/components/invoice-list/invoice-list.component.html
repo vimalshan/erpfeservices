@@ -1,0 +1,68 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="invoice-title" class="head">
+    <h1 id="invoice-title">{{ t('invoices.title') }}</h1>
+  </section>
+
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    @if (isPreferenceInitialized | async) {
+      <shared-grid
+        #grid
+        class="table-list"
+        dataKey="invoices"
+        [childIdentifier]="'invoiceId'"
+        [columns]="cols"
+        [data]="invoiceListStoreService.invoices()"
+        [displayClearButton]="invoiceListStoreService.hasActiveFilters()"
+        [displayColsReorderButton]="true"
+        [enableFileDownloadWithRowData]="true"
+        [filterDelay]="0"
+        [filterOptions]="invoiceListStoreService.filterOptions()"
+        [filteringConfig$]="invoiceListStoreService.filteringConfig"
+        [hasActiveFilters]="invoiceListStoreService.hasActiveFilters()"
+        [isLoading]="invoiceListStoreService.isLoading()"
+        [paginator]="true"
+        [preferenceData]="preferenceData()"
+        [rowHover]="true"
+        [scrollable]="true"
+        [selectable]="true"
+        [selectableSticky]="false"
+        [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+        [showCurrentPageReport]="true"
+        [sortMode]="'multiple'"
+        [sortable]="true"
+        [statusStatesMap]="statusMap"
+        [totalRecords]="invoiceListStoreService.totalRecords()"
+        (exportExcel)="onExportExcelClick()"
+        (gridConfigChangedEvent)="onGridConfigChanged($event)"
+        (savePreference)="onSavePreference($event)"
+        (selectionChangeData)="onSelectionChangeData($event)"
+        (triggerEventAction)="onTriggerEventAction($event)"
+        (triggerFileAction)="onTriggerFileAction($event)">
+        <ng-template #buttonsCustomTemplate>
+          <div class="buttons">
+            @if (displayDownloadButton) {
+              <shared-button
+                #bulkDownloadBtn
+                sharedDebounceClick
+                [debounceTime]="1000"
+                [icon]="'download'"
+                [label]="t('invoices.invoicesList.download')"
+                [type]="sharedButtonType.Outline"
+                (debounceClick)="downloadSelectedInvoices()">
+              </shared-button>
+            }
+
+            @if (displayUpdatePlannedPaymentDateButton) {
+              <shared-button
+                [icon]="'calendar'"
+                [label]="t('invoices.invoicesList.updatePlannedPaymentDate')"
+                [type]="sharedButtonType.Outline"
+                (clickEvent)="updateMultiplePlannedPaymentDate()">
+              </shared-button>
+            }
+          </div>
+        </ng-template>
+      </shared-grid>
+    }
+  </section>
+</ng-container>

@@ -1,0 +1,1 @@
+export const AUDITOR_USERNAME_PREFIX = 'DNV';

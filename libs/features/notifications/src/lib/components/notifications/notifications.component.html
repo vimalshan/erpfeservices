@@ -1,0 +1,10 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="notifications-title" class="head" tabindex="0">
+    <h1 id="notifications-title">{{ t('notifications.title') }}</h1>
+  </section>
+
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    <lib-notification-filter></lib-notification-filter>
+    <router-outlet></router-outlet>
+  </section>
+</ng-container>

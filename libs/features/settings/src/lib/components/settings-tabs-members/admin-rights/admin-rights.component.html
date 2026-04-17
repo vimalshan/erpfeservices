@@ -1,0 +1,13 @@
+<ng-container *transloco="let t">
+  <h5 class="form-label">{{ t('settings.form.members.adminRights') }}</h5>
+  <div class="admin-rights">
+    <label for="adminRights">{{
+      t('settings.form.members.manageMembersPermissions')
+    }}</label>
+    <p-checkbox
+      inputId="adminRights"
+      [binary]="true"
+      [ngModel]="isChecked()"
+      (onChange)="onChangeAdminRights($event)" />
+  </div>
+</ng-container>

@@ -1,0 +1,110 @@
+{
+  "attachedDocuments": {
+    "addDocument": "Aggiungi documento",
+    "addDocuments": "Aggiungi documenti",
+    "dateAdded": "Data di caricamento",
+    "fileName": "Nome del file",
+    "type": "Tipo",
+    "uploadedBy": "Caricato da",
+    "downloadButton": "Scaricamento"
+  },
+  "auditDetails": {
+    "findings": {
+      "acceptedDate": "Data di accettazione",
+      "auditNumber": "Audit #",
+      "category": "Categoria",
+      "city": "Città",
+      "closeDate": "Data di chiusura",
+      "dueDate": "Scadenza",
+      "findingNumber": "Findings #",
+      "company": "Azienda",
+      "openDate": "Data di apertura",
+      "services": "Servizi",
+      "site": "Sito",
+      "status": "Stato",
+      "title": "Titolo"
+    },
+    "sites": {
+      "addressLine": "Indirizzo",
+      "city": "Città",
+      "country": "Paese",
+      "postcode": "CAP",
+      "siteName": "Nome del sito"
+    },
+    "subAudits": {
+      "auditNumber": "Audit #",
+      "auditorTeam": "Auditor Team",
+      "city": "Città",
+      "endDate": "Data di fine",
+      "service": "Servizio",
+      "site": "Sito",
+      "startDate": "Data di inizio",
+      "status": "Stato"
+    }
+  },
+  "auditDetailsDescription": {
+    "auditorTeamLabel": "Auditor team",
+    "auditTitle": "Audit {{id}}",
+    "documents": "Documenti",
+    "downloadPlanLabel": "Piano di audit",
+    "downloadReportLabel": "Rapporto di audit",
+    "endLabel": "Fine {{date}}",
+    "findings": "Findings",
+    "leadAuditorLabel": "Lead auditor",
+    "scope": "Scopo",
+    "sites": "Siti",
+    "startLabel": "Inizio {{date}}",
+    "subAudits": "Attività"
+  },
+  "auditChartsTabs": {
+    "auditStatus": "Stato audit",
+    "auditDays": "Giorni di revisione"
+  },
+  "auditGraphs": {
+    "auditStatus": {
+      "title": "Audits per stato",
+      "titleBar": "Audit per tipo",
+      "totalAudits": "Totale audit"
+    },
+    "auditDays": {
+      "title": "Giorni di revisione",
+      "titleDoughnut": "Giornate di audit per servizi",
+      "titleBar": "Giorni di controllo per mese e servizi",
+      "totalAudits": "Total audits",
+      "bySite": {
+        "title": "Giorni di audit per sito",
+        "auditDays": "Giorni di Audit"
+      }
+    }
+  },
+  "auditList": {
+    "auditNumber": "Audit #",
+    "city": "Città",
+    "company": "Azienda",
+    "endDate": "Data di fine",
+    "leadAuthor": "Lead auditor",
+    "pageTitle": "Verifiche",
+    "service": "Servizio",
+    "site": "Sito",
+    "startDate": "Data di inizio",
+    "status": "Stato",
+    "type": "Tipo",
+    "country": "Paese"
+  },
+  "deleteDocument": {
+    "cancel": "Annulla",
+    "delete": "Annulla",
+    "header": "Cancellare il documento?",
+    "message": "Sei sicuro di voler cancellare il documento? Non potrai recuperarlo una volta eliminato."
+  },
+  "fileUpload": {
+    "fileUploadFailed": "Il upload {{filename}} non è andato a buon fine.",
+    "fileUploadGenericError": "{{filename}} non è andato a buon fine. Qualcosa non ha funzionato, per favore riprova.",
+    "fileUploadSuccess": "{{filename}} upload successful",
+    "fileUploadWrongName": "Il caricamento {{filename}} non è andato a buon fine. Esiste già un file con lo stesso nome.",
+    "fileUploadWrongNameLength": "Il caricamento {{filename}} non è andato a buon fine. Il nome del file supera il limite di 254 caratteri.",
+    "fileUploadWrongSize": "Il caricamento {{filename}} non è andato a buon fine. Il file supera il limite massimo di 4GB.",
+    "fileUploadWrongType": "Il caricamento {{filename}} non è andato a buon fine.Il tipo di file non è consentito."
+  },
+  "title": "Audits"
+}

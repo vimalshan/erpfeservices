@@ -1,0 +1,167 @@
+{
+  "name": "customer-portal",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "customer-portal",
+  "sourceRoot": "./src",
+  "tags": ["type:app"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/customer-portal",
+        "index": "./src/index.html",
+        "main": "./src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "./tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "./src/favicon.ico",
+          "./src/assets",
+          {
+            "glob": "web.config",
+            "input": "src",
+            "output": ""
+          }
+        ],
+        "styles": [
+          "./node_modules/@angular/cdk/overlay-prebuilt.css",
+          "./node_modules/primeicons/primeicons.css",
+          "./node_modules/primeng/resources/primeng.css",
+          "./src/styles/styles.scss"
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["./src/styles"]
+        },
+        "scripts": []
+      },
+      "configurations": {
+        "local": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "libs/environments/src/environment.ts",
+              "with": "libs/environments/src/environment.ts"
+            }
+          ]
+        },
+        "production": {
+          "optimization": {
+            "scripts": true,
+            "styles": {
+              "minify": true,
+              "inlineCritical": true
+            },
+            "fonts": {
+              "inline": false
+            }
+          },
+          "vendorChunk": true,
+          "commonChunk": true,
+          "namedChunks": false,
+          "aot": true,
+          "buildOptimizer": true,
+          "sourceMap": false,
+          "subresourceIntegrity": true,
+          "extractLicenses": true,
+          "statsJson": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "15mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "20kb",
+              "maximumError": "200kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "qa": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "libs/environments/src/environment.ts",
+              "with": "libs/environments/src/environment.ts"
+            }
+          ]
+        },
+        "localprod": {
+          "optimization": {
+            "scripts": true,
+            "styles": {
+              "minify": true,
+              "inlineCritical": true
+            },
+            "fonts": {
+              "inline": false
+            }
+          },
+          "vendorChunk": true,
+          "commonChunk": true,
+          "namedChunks": true,
+          "aot": true,
+          "buildOptimizer": true,
+          "sourceMap": false,
+          "subresourceIntegrity": true,
+          "extractLicenses": true,
+          "statsJson": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "15mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "20kb",
+              "maximumError": "200kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "libs/environments/src/environment.ts",
+              "with": "libs/environments/src/environment.ts"
+            }
+          ],
+          "outputHashing": "all"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "proxyConfig": "proxy.conf.json"
+      },
+      "configurations": {
+        "local": {
+          "buildTarget": "customer-portal:build:local"
+        },
+        "production": {
+          "buildTarget": "customer-portal:build:production"
+        },
+        "development": {
+          "buildTarget": "customer-portal:build:development"
+        },
+        "qa": {
+          "buildTarget": "customer-portal:build:qa"
+        }
+      },
+      "defaultConfiguration": "local"
+    },
+    "extract-i18n": {
+      "executor": "@nx/angular:extract-i18n",
+      "options": {
+        "buildTarget": "customer-portal:build"
+      }
+    }
+  }
+}

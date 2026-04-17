@@ -1,0 +1,26 @@
+<ng-container *transloco="let t">
+  <h3>{{ t('audit.auditDetailsDescription.sites') }}</h3>
+
+  <shared-grid
+    [columns]="cols"
+    [data]="auditDetailsStoreService.auditSiteItems()"
+    [displayClearButton]="auditDetailsStoreService.siteItemsHasActiveFilters()"
+    [displayColsReorderButton]="true"
+    [displayExportButton]="false"
+    [filterDelay]="0"
+    [filterOptions]="auditDetailsStoreService.auditSitesFilterOptions()"
+    [filteringConfig$]="auditDetailsStoreService.siteItemsFilteringConfig"
+    [hasActiveFilters]="auditDetailsStoreService.siteItemsHasActiveFilters()"
+    [isLoading]="auditDetailsStoreService.isLoadingSites()"
+    [paginator]="true"
+    [rowHover]="true"
+    [scrollable]="true"
+    [shouldPersist]="false"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [statusStatesMap]="statusStatesMap"
+    [totalRecords]="auditDetailsStoreService.auditSitesTotalRecords()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)">
+  </shared-grid>
+</ng-container>

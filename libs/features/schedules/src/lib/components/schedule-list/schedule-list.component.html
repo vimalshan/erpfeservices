@@ -1,0 +1,30 @@
+<ng-container *transloco="let t">
+  @if (isPreferenceInitialized | async) {
+    <shared-grid
+      class="table-list"
+      dataKey="schedules"
+      [columns]="cols"
+      [data]="scheduleListStoreService.schedules()"
+      [displayClearButton]="scheduleListStoreService.hasActiveFilters()"
+      [displayColsReorderButton]="true"
+      [filterDelay]="0"
+      [filterOptions]="scheduleListStoreService.filterOptions()"
+      [filteringConfig$]="scheduleListStoreService.filteringConfig"
+      [hasActiveFilters]="scheduleListStoreService.hasActiveFilters()"
+      [paginator]="true"
+      [preferenceData]="preferenceData()"
+      [rowHover]="true"
+      [scrollable]="true"
+      [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+      [showCurrentPageReport]="true"
+      [sortMode]="'multiple'"
+      [sortable]="true"
+      [statusStatesMap]="statusMap"
+      [totalRecords]="scheduleListStoreService.totalRecords()"
+      (exportExcel)="onExportExcelClick()"
+      (gridConfigChangedEvent)="onGridConfigChanged($event)"
+      (savePreference)="onSavePreference($event)"
+      (triggerEventAction)="triggerEventAction($event)">
+    </shared-grid>
+  }
+</ng-container>

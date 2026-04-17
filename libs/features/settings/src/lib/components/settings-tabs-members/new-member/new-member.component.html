@@ -1,0 +1,59 @@
+<ng-container *transloco="let t">
+  <div class="new-member">
+    <form class="new-member__form form" [formGroup]="form">
+      <div class="form__item">
+        <label class="form__label" for="first-name">
+          {{ t('settings.form.members.firstName') }}
+        </label>
+        <input
+          class="form__input"
+          formControlName="firstName"
+          id="first-name"
+          pInputText
+          type="text"
+          [placeholder]="t('settings.form.members.firstName')" />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="last-name">
+          {{ t('settings.form.members.lastName') }}
+        </label>
+        <input
+          class="form__input"
+          formControlName="lastName"
+          id="last-name"
+          pInputText
+          type="text"
+          [placeholder]="t('settings.form.members.lastName')" />
+      </div>
+      <div class="form__item">
+        <label class="form__label" for="email">
+          {{ t('settings.form.members.email') }}
+        </label>
+        <input
+          class="form__input"
+          formControlName="email"
+          id="email"
+          pInputText
+          type="text"
+          [placeholder]="t('settings.form.members.email')" />
+      </div>
+      <div class="form__item">
+        <label class="form__label info" for="role">
+          <span>{{ t('settings.form.members.role') }}</span>
+          <i
+            class="pi pi-info-circle"
+            pTooltip="{{ t('settings.form.members.roleInfo') }}">
+          </i>
+        </label>
+        <p-dropdown
+          appendTo="body"
+          class="form__dropdown"
+          formControlName="role"
+          inputId="role"
+          optionLabel="label"
+          [options]="roles"
+          [placeholder]="t('settings.form.members.rolePlaceholder')" />
+      </div>
+    </form>
+  </div>
+</ng-container>

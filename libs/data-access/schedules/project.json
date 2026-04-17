@@ -1,0 +1,10 @@
+{
+  "name": "schedules-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/data-access/schedules/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["type:data-access", "domain:schedules"],
+  "targets": {
+  }
+}

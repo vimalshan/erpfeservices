@@ -1,0 +1,13 @@
+@use 'pattern/utility' as utility;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+}
+
+::ng-deep {
+  .p-dialog {
+    max-width: 55vw;
+  }
+}

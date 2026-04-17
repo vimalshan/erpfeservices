@@ -1,0 +1,198 @@
+@use 'variables';
+
+@use 'pattern/colors';
+@use 'pattern/typography';
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/utility';
+
+.card {
+  height: utility.get-rem(380);
+
+  .upcoming-audits-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      @extend %#{typography.$label-l-pattern};
+      color: colors.get-color('SeaBlue');
+      text-transform: uppercase;
+    }
+  }
+
+  full-calendar ::ng-deep {
+    @extend %#{mixture.$shadow-default-pattern};
+    border-top-left-radius: utility.get-rem(5);
+    border-top-right-radius: utility.get-rem(5);
+    border-bottom-left-radius: utility.get-rem(0);
+    border-bottom-right-radius: utility.get-rem(0);
+    background-color: variables.$page-details-header-bg;
+
+    .fc-toolbar {
+      height: utility.get-rem(39);
+      margin-bottom: utility.get-rem(0);
+
+      .fc-toolbar-title {
+        @extend %#{typography.$label-l-pattern};
+        color: colors.get-color('DarkBlue');
+      }
+    }
+
+    .fc-dayGridMonth-view {
+      table {
+        background: colors.get-color('UiWhite');
+        border: none;
+        td,
+        th {
+          border: none;
+        }
+
+        th {
+          height: utility.get-rem(28);
+          padding-top: utility.get-rem(5);
+
+          .fc-scrollgrid-sync-inner {
+            color: colors.get-color('DarkBlue');
+            text-transform: uppercase;
+
+            a {
+              @extend %#{typography.$label-s-pattern};
+            }
+          }
+        }
+
+        .fc-daygrid-day-top {
+          justify-content: center;
+        }
+
+        .fc-daygrid-day-frame {
+          height: utility.get-rem(35);
+        }
+
+        .fc-scroller {
+          overflow: hidden;
+        }
+
+        .fc-daygrid-day.fc-day-today {
+          background-color: colors.get-color('UiWhite');
+          justify-content: center;
+          display: flex;
+
+          .fc-daygrid-day-top {
+            background-color: colors.get-color('SeaBlue');
+            border-radius: 50%;
+            height: utility.get-rem(26);
+            width: utility.get-rem(26);
+            color: colors.get-color('UiWhite');
+          }
+        }
+
+        .fc-daygrid-day-events {
+          top: -17px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: utility.get-rem(5);
+
+          .fc-daygrid-event-harness {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .fc-daygrid-event {
+              height: utility.get-rem(6);
+              width: utility.get-rem(6);
+            }
+
+            .fc-event-main {
+              color: transparent;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      background: variables.$page-details-header-bg;
+      border: none;
+      color: colors.get-color('DarkBlue');
+
+      .pi-angle-left,
+      .pi-angle-right {
+        &::before {
+          color: colors.get-color('DarkBlue');
+          font-family: 'primeicons';
+        }
+      }
+      &:active {
+        background: variables.$page-details-header-bg;
+      }
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  .calendar-legend {
+    @extend %#{mixture.$shadow-default-pattern};
+    background: colors.get-color('UiWhite');
+    display: flex;
+    flex-direction: row;
+    gap: utility.get-rem(8);
+    justify-content: space-between;
+    padding: utility.get-rem(13);
+    border-top: 1px solid colors.get-color('SkyBlue90');
+    border-bottom-left-radius: utility.get-rem(5);
+    border-bottom-right-radius: utility.get-rem(5);
+    border-top-left-radius: utility.get-rem(0);
+    border-top-right-radius: utility.get-rem(0);
+
+    .legend-item {
+      @extend %#{typography.$text-xs-pattern};
+      display: flex;
+      align-items: center;
+      gap: utility.get-rem(4);
+
+      .legend-text {
+        @extend %#{typography.$text-s-pattern};
+      }
+    }
+
+    .legend-color {
+      width: utility.get-rem(8);
+      height: utility.get-rem(8);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .legend-color.confirmed {
+      background-color: colors.get-color('SuccessGreen50');
+    }
+
+    .legend-color.to-be-confirmed {
+      background-color: colors.get-color('AttentionYellow50');
+    }
+
+    .legend-color.dnv-confirmed {
+      background-color: colors.get-color('Cyan');
+    }
+  }
+
+  @include mixins.respond-to(tablet) {
+    .calendar-legend {
+      padding: utility.get-rem(13) utility.get-rem(60);
+    }
+  }
+
+  @include mixins.respond-to(phone) {
+    .calendar-legend {
+      padding: utility.get-rem(13) utility.get-rem(20);
+    }
+  }
+}
+
+shared-button {
+  text-decoration: underline;
+  color: colors.get-color('SeaBlue');
+}

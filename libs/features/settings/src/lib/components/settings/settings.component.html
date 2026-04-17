@@ -1,0 +1,9 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="settings-title" class="head">
+    <h1 id="settings-title">{{ t('settings.title') }}</h1>
+  </section>
+
+  <section class="body" role="region" [attr.aria-label]="t('content')">
+    <lib-settings-tabs></lib-settings-tabs>
+  </section>
+</ng-container>

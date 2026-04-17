@@ -1,0 +1,76 @@
+<ng-container *transloco="let t">
+  <section class="responses">
+    @for (
+      response of findingDetailsStoreService.responseHistory();
+      track response;
+      let i = $index
+    ) {
+      <article class="response">
+        <header aria-level="4" class="response__header" role="heading">
+          @if (response.userName) {
+            <h4
+              class="response__name"
+              [attr.aria-label]="
+                t('findings.responseHistory.userName') +
+                ': ' +
+                response.userName
+              ">
+              {{ response.userName }}
+            </h4>
+            <p>
+              {{
+                response.isAuditor
+                  ? t('findings.responseHistory.replied')
+                  : t('findings.responseHistory.submittedResponse')
+              }}
+            </p>
+          }
+          <span
+            class="response__date"
+            role="status"
+            [attr.aria-label]="
+              t('findings.responseHistory.responseDate') +
+              ': ' +
+              response.responseDateTime
+            ">
+            {{ response.responseDateTime }}
+          </span>
+        </header>
+        @if (response.isAuditor) {
+          <div class="response__text-container">
+            <p>{{ response.auditorComment }}</p>
+          </div>
+        } @else {
+          <p-accordion
+            collapseIcon="pi pi-angle-up"
+            expandIcon="pi pi-angle-down"
+            [multiple]="true">
+            <p-accordionTab
+              iconPos="end"
+              [header]="tabHeader(i)"
+              (selectedChange)="onSelectedChange($event, i)">
+              @if (response.correction) {
+                <h5 class="response__question">
+                  {{ t('findings.findingDetails.respondToFindingQ1') }}
+                </h5>
+                <p class="response__answer">{{ response.correction }}</p>
+              }
+              @if (response.rootCause) {
+                <h5 class="response__question">
+                  {{ t('findings.findingDetails.respondToFindingQ2') }}
+                </h5>
+                <p class="response__answer">{{ response.rootCause }}</p>
+              }
+              @if (response.correctiveAction) {
+                <h5 class="response__question">
+                  {{ t('findings.findingDetails.respondToFindingQ3') }}
+                </h5>
+                <p class="response__answer">{{ response.correctiveAction }}</p>
+              }
+            </p-accordionTab>
+          </p-accordion>
+        }
+      </article>
+    }
+  </section>
+</ng-container>

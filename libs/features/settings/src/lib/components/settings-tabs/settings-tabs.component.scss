@@ -1,0 +1,46 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+@use 'pattern/utility';
+@use 'variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+p-tabview.p-element::ng-deep {
+  .p-tabview-nav {
+    gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+    @include mixins.gutter-for(left);
+  }
+
+  .p-tabview-nav-link {
+    @extend %#{typography.$button-l-pattern};
+    padding: utility.get-rem(20) 0;
+    color: colors.get-color('DarkBlue');
+  }
+
+  .p-highlight {
+    .p-tabview-nav-link {
+      color: colors.get-color('SeaBlue');
+    }
+  }
+
+  .p-tabview-panels {
+    padding: 0;
+  }
+}
+
+#settings-tabs-personal-information,
+#settings-tabs-company-details {
+  padding: 0 60px;
+  display: block;
+}
+
+@media screen and (max-width: variables.$breakpoint-lg) {
+  #settings-tabs-personal-information,
+  #settings-tabs-company-details {
+    padding: 0;
+  }
+}

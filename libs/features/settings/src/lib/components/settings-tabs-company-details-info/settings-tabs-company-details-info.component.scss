@@ -1,0 +1,101 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host {
+  display: grid;
+  align-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: 40% 1fr auto;
+  grid-template-areas:
+    'heading heading edit'
+    'hr hr hr'
+    'info . .';
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: auto 45%;
+    grid-template-areas:
+      'heading edit'
+      'hr hr'
+      'info info';
+  }
+}
+
+h3 {
+  @extend %#{typography.$heading-m-pattern};
+  grid-area: heading;
+  color: colors.get-color('SeaBlue');
+}
+
+hr {
+  grid-area: hr;
+  width: 100%;
+  border: 1px solid colors.get-color('SkyBlue80');
+  margin: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless))) 0;
+}
+
+.heading {
+  grid-area: heading;
+  display: flex;
+  align-items: center;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+}
+
+.edit {
+  grid-area: edit;
+}
+
+.info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  height: auto;
+
+  &.is-accordion-closed {
+    height: 0;
+  }
+}
+
+.info-label {
+  @extend %#{typography.$label-l-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+.info-value {
+  @extend %#{typography.$text-l-pattern};
+  color: colors.get-color('UiBlack');
+}
+
+.grouping {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+  align-items: center;
+}
+
+p-button.edit.p-element::ng-deep {
+  height: utility.get-rem(40);
+  display: flex;
+
+  .p-button {
+    @extend %#{typography.$button-l-pattern};
+    display: flex;
+    gap: utility.get-rem(8);
+    padding: utility.get-rem(8) utility.get-rem(16);
+    color: colors.get-color('SeaBlue');
+  }
+
+  .p-button-icon {
+    font-size: utility.get-rem(14);
+    margin: 0;
+  }
+}
+
+.edit-button-container {
+  display: flex;
+  align-items: center;
+}

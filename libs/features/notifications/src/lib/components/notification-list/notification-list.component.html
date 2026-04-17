@@ -1,0 +1,42 @@
+<ng-container *transloco="let t">
+  <shared-grid
+  class="table-list"
+  dataKey="notification"
+  [columns]="cols"
+  [data]="notificationListStoreService.notificationList()"
+  [displayExportButton]="false"
+  [filterDelay]="0"
+  [hasActiveFilters]="notificationListStoreService.hasActiveFilters()"
+  [isLoading]="notificationListStoreService.isLoading()"
+  [paginator]="true"
+  [preferenceData]="preferenceData()"
+  [rowHover]="true"
+  [rowsPerPageOptions]="[10, 20, 30]"
+  [scrollable]="true"
+  [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+  [showCurrentPageReport]="true"
+  [sortMode]="'multiple'"
+  [sortable]="true"
+  [statusStatesMap]="statusStatesMap"
+  [totalRecords]="notificationListStoreService.totalRecords()"
+  (gridConfigChangedEvent)="onGridConfigChanged($event)"
+  (triggerRedirectAction)="onNotificationRowClick($event)">
+  <ng-template #tdCustomTemplate let-colVal="colVal" let-datum="datum">
+      <span class="p-column-title">{{ colVal.displayName }}</span>
+    @if (datum?.iconTooltip.displayIcon) {
+      <i
+        class="text-highlight"
+        tabindex="0"
+        tooltipPosition="top"
+        [ariaLabel]="t(datum.iconTooltip.tooltipMessage)"
+        [pTooltip]="t(datum.iconTooltip.tooltipMessage)">
+      </i>
+    }
+    <span
+      class="text-highlight-font-alignment"
+      [ngClass]="{ 'text-with-highlight': datum.iconTooltip.displayIcon }"
+      >{{ datum[colVal.field] }}</span
+    >
+  </ng-template>
+</shared-grid>
+</ng-container>

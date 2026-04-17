@@ -1,0 +1,31 @@
+<ng-container *transloco="let t">
+  <h2 id="finding-trends-graph">{{ t('findings.trendsGraph.title') }}</h2>
+
+  <section
+    aria-labelledby="findings-by-category-chart"
+    class="trends-chart"
+    role="region">
+    <h3 id="findings-by-category-chart">
+      {{ t('findings.trendsGraph.titleLine') }}
+    </h3>
+
+    <shared-chart
+      [chartFilters]="findingTrendsChartFilters"
+      [data]="findingListGraphStoreService.findingsTrendsGraphData().data"
+      [options]="findingsGraphLineOptions"
+      [type]="lineType"
+      [useCustomLegend]="true"
+      (tooltipButtonClick)="
+        findingListGraphStoreService.navigateFromFindingListChartToListView($event)
+      ">
+    </shared-chart>
+  </section>
+
+  <section class="trends-grid" role="region">
+    <shared-tree-table
+      [cols]="findingListGraphStoreService.findingsTrendsColumns()"
+      [data]="findingListGraphStoreService.findingsTrendsData()"
+      [globalCategories]="findingListGraphStoreService.findingsTrendsGradient()">
+    </shared-tree-table>
+  </section>
+</ng-container>

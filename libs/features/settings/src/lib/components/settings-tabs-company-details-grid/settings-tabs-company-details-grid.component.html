@@ -1,0 +1,36 @@
+@if (isPreferenceInitialized | async) {
+  <shared-grid
+    [columns]="cols"
+    [data]="settingsStoreService.legalEntityList()"
+    [displayClearButton]="settingsStoreService.hasLegalEntityActiveFilters()"
+    [displayColsReorderButton]="false"
+    [displayExportButton]="false"
+    [filterDelay]="0"
+    [filterOptions]="settingsStoreService.legalEntityFilterOptions()"
+    [filteringConfig$]="settingsStoreService.legalEntityFilteringConfig"
+    [hasActiveFilters]="settingsStoreService.hasLegalEntityActiveFilters()"
+    [paginator]="true"
+    [preferenceData]="preferenceData()"
+    [rowHover]="true"
+    [scrollable]="true"
+    [selectable]="false"
+    [selectableSticky]="false"
+    [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+    [showCurrentPageReport]="true"
+    [sortMode]="'multiple'"
+    [sortable]="true"
+    [totalRecords]="settingsStoreService.totalLegalEntityList()"
+    (gridConfigChangedEvent)="onGridConfigChanged($event)"
+    (savePreference)="onSavePreference($event)">
+    <ng-template #tdCustomTemplate let-datum="datum">
+      <lib-settings-tab-company-details-info
+        [data]="datum"
+        [hasAccordion]="true"
+        [isLegalEntity]="isLegalEntity()"
+        [isUpdatePendingLegalEntity]="datum?.updatePending"
+        [isUserAdmin]="isUserAdmin()"
+        [title]="datum?.organizationName">
+      </lib-settings-tab-company-details-info>
+    </ng-template>
+  </shared-grid>
+}

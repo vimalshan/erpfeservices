@@ -1,0 +1,93 @@
+{
+  "attachedDocuments": {
+    "dateAdded": "Date added",
+    "downloadButton": "Download",
+    "fileName": "File name",
+    "language": "Language",
+    "type": "Type",
+    "uploadedBy": "Uploaded by"
+  },
+  "certificateDetails": {
+    "certificate": "Certificate",
+    "certificationMark": "Certification mark",
+    "date": {
+      "end": "Valid until {{date}}",
+      "start": "Issued date {{date}}",
+      "suspended": "Suspended date {{date}}",
+      "withdrawn": "Withdrawn date {{date}}"
+    },
+    "documents": "Documents",
+    "languagesLabel": "Languages",
+    "newCertificateInProgress": "New Certificate in progress",
+    "scope": "Scope",
+    "sites": {
+      "pleaseCheckSiteScope": "Please check the site scope information for the certificate, and verify or request a change",
+      "siteAddress": "Site address",
+      "siteName": "Site name",
+      "sites": "Sites",
+      "siteScope": "Site Scope",
+      "verifyYourInformation": "Verify your information"
+    },
+    "thisCertificateMightBeUpdated": "This certificate might be updated soon, a new certificate is in progress",
+    "viewNewCertificate": "View new certificate"
+  },
+  "certificateDetailsDescription": {
+    "documents": "Documents",
+    "sites": "Sites"
+  },
+  "certificateGraphs": {
+    "certificateByStatusTitle": "Total certificates",
+    "certificateByTypeTitle": "Certificates by services",
+    "title": "Certificates status",
+    "totalCertificates": "Total certificates"
+  },
+  "certificateList": {
+    "certificateId": "Certificate ID",
+    "certificateNumber": "Certificate #",
+    "city": "City",
+    "company": "Company",
+    "issuedDate": "Issued Date",
+    "noDataCertificatesTable": "There are no certificates for you at this time.",
+    "pageTitle": "Certificates",
+    "service": "Service",
+    "site": "Site",
+    "status": "Status",
+    "validUntil": "Valid Until"
+  },
+  "downloadDialog": {
+    "cancel": "Cancel",
+    "download": "Download certificate",
+    "downloadMark": "Download certification mark",
+    "header": "Download certificate",
+    "label": "Select a language",
+    "markHeader": "Download certification mark",
+    "viewCertificationGuidelines": "View certification mark guidelines"
+  },
+  "header": {
+    "graphs": "Graphs",
+    "lists": "Lists"
+  },
+  "title": "Certificates",
+  "certificatesGraphsTabs": {
+    "certificatesStatus": "Certificates status",
+    "certificatesBySite": "Certificates by site"
+  },
+  "certificateSuspension": {
+    "certificateSuspensionTitle": "Certificate suspension",
+    "certificateSuspensionRecipient": "Dear {{name}}",
+    "certificateSuspensionMessage1": "We regret to inform you that due to our accreditation and contractual requirements, it is necessary to suspend your certificate.",
+    "certificateSuspensionMessage2": "The certificate will remain in your possession even in its suspended state.",
+    "certificateSuspensionMessage3": "However, during suspension the certificate is temporarily invalid, and in this period you are not entitled to refer to the certificate or use the DNV logo or any other logo, i.e. accreditation or scheme owner logo.",
+    "certificateSuspensionMessage4": "Please note that the maximum time of suspension is indicated in the certification scheme regulations. If the reason for the suspension has not been remedied, we would be forced to withdraw the certificate.",
+    "certificateSuspensionMessage5": "Both you and DNV shall inform all enquiries that the certificate is suspended.",
+    "certificateSuspensionMessage6": " You have the right to respond and appeal this decision within twenty one (21) days of delivery of this letter.",
+    "certificateSuspensionMessage7": "If you have any questions, please do not hesitate to contact us by sending an email to {{email}}.",
+    "contactUs": "Contact us",
+    "proceed": "Proceed",
+    "certificateNumber": "Certificate number",
+    "scheme": "Scheme",
+    "accreditation": "Accreditation",
+    "suspensionReason": "The suspension is due to the following reason",
+    "dateOfSuspension": "Date of suspension"
+  }
+}

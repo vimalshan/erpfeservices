@@ -1,0 +1,77 @@
+@if (isScheduleInitialized()) {
+  <ng-container *transloco="let t">
+    <section class="filters" role="region" [attr.aria-label]="t('filters')">
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.companies')"
+        [options]="scheduleListCalendarStoreService.dataCompanies()"
+        [placeholder]="t('select.multiSelect.companies')"
+        [prefill]="scheduleListCalendarStoreService.filterCompanies()"
+        (changeEvent)="onFilterChange($event, filterTypes.Companies)">
+      </shared-select-multiple-mod>
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.services')"
+        [options]="scheduleListCalendarStoreService.dataServices()"
+        [placeholder]="t('select.multiSelect.services')"
+        [prefill]="scheduleListCalendarStoreService.filterServices()"
+        (changeEvent)="onFilterChange($event, filterTypes.Services)">
+      </shared-select-multiple-mod>
+
+      <shared-tree-dropdown
+        [expandedState]="latestExpandedState"
+        [nodes]="siteData"
+        [selectedIds]="filterSites"
+        (expandedStateChange)="onExpandedStateChange($event)"
+        (selectionChange)="onSelectionChange($event)">
+      </shared-tree-dropdown>
+
+      <shared-select-multiple-mod
+        [appendTo]="'body'"
+        [ariaLabel]="t('select.multiSelect.statuses')"
+        [options]="scheduleListCalendarStoreService.dataStatuses()"
+        [placeholder]="t('select.multiSelect.statuses')"
+        [prefill]="scheduleListCalendarStoreService.filterStatuses()"
+        (changeEvent)="onFilterChange($event, filterTypes.Statuses)">
+      </shared-select-multiple-mod>
+
+      <shared-button
+        class="reset-btn"
+        [label]="t('reset')"
+        [type]="sharedButtonType.Outline"
+        (clickEvent)="onReset()">
+      </shared-button>
+    </section>
+    <section class="calendar" role="region">
+      <div class="calendar-content">
+        @if (scheduleListCalendarStoreService.loaded() &&
+            (scheduleListCalendarStoreService.calendarSchedule().length === 0
+            || !!scheduleListCalendarStoreService.error()))
+         {
+          <shared-no-data
+            class="calendar-overlay"
+            [altText]="t('schedules.noValue')"
+            [descriptionText]="t('schedules.noServicesDescription')"
+            [error]="!!scheduleListCalendarStoreService.error()"
+            [infoText]="t('schedules.noServices')">
+          </shared-no-data>
+        }
+
+        <shared-custom-full-calendar
+          [calendarViewType]="calendarViewType()"
+          [class.calendar-dimmed]="
+            scheduleListCalendarStoreService.calendarSchedule().length === 0
+          "
+          [events]="scheduleListCalendarStoreService.calendarSchedule()"
+          [scheduleStatusMap]="scheduleStatusMap"
+          [selectedDate]="
+            overviewSharedStoreService.overviewUpcomingAuditSelectedDate()
+          "
+          (dateChange)="onChangeDate($event)"
+          (eventClick)="onClickEvent($event)">
+        </shared-custom-full-calendar>
+      </div>
+    </section>
+  </ng-container>
+}

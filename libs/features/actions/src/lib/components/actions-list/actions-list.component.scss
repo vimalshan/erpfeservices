@@ -1,0 +1,107 @@
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/colors';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+shared-grid ::ng-deep {
+  @include mixins.gutter-for(top, right, bottom, left);
+
+  .p-datatable-wrapper {
+    box-shadow: 0px calc(5 / var(--dnv-font-base-unitless) * 1rem) 
+      calc(3 / var(--dnv-font-base-unitless) * 1rem) 
+      calc(-4 / var(--dnv-font-base-unitless) * 1rem) rgba(15, 32, 75, 0.25);
+
+    .p-datatable-thead {
+      box-shadow:
+        0px 0 0px -4px rgba(0, 0, 0, 0.1),
+        0px 3px 5px -4px rgba(0, 0, 0, 0.1);
+
+      th {
+        background: colors.get-color('UiWhite');
+
+        &:first-child {
+          div {
+            padding-left: utility.get-rem(25);
+          }
+        }
+
+        span {
+          @extend %#{typography.$label-s-pattern};
+          color: colors.get-color('Sandstone40');
+          font-size: var(--dnv-font-text-s);
+          font-weight: 700;
+        }
+      }
+    }
+
+    .p-datatable-tbody {
+      box-shadow: 0px utility.get-rem(56) utility.get-rem(3) 0px 
+      rgba(15, 32, 75, 0.25);
+      border-radius: 10px;
+      border-top: 1px solid;
+
+      tr:first-child {
+        td:first-child {
+          border-top-left-radius: 10px;
+        }
+
+        td:last-child {
+          border-top-right-radius: 10px;
+        }
+      }
+
+      .grid-message {
+        td {
+          border-left: 1px solid colors.get-color('Sandstone90');
+          border-right: 1px solid colors.get-color('Sandstone90');
+        }
+      }
+    }
+
+    .p-selectable-row {
+      td:first-child {
+        border-left: 1px solid colors.get-color('Sandstone90');
+      }
+
+      td:last-child {
+        border-right: 1px solid colors.get-color('Sandstone90');
+      }
+    }
+
+    tr td p br {
+      display: none;
+    }
+  }
+
+  .p-datatable-thead th {
+    background: colors.get-color('UiWhite');
+  }
+
+  shared-text-with-icon {
+    .pi-circle-fill {
+      height: utility.get-rem(30);
+
+      &:before {
+        font-size: var(--dnv-gutter-base-unitless);
+        color: colors.get-color('LandGreen');
+      }
+    }
+
+    .pi-info-circle {
+      color: colors.get-color('AlertOrange50');
+    }
+  }
+
+  .checkbox-text {
+    display: contents;
+  }
+}
+
+::ng-deep{
+.p-dialog-header {
+  .p-dialog-title {
+      font-size: utility.get-rem(18);
+    }
+  }
+}

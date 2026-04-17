@@ -1,0 +1,62 @@
+@use 'pattern/variables' as variables;
+@use 'pattern/colors' as colors;
+@use 'pattern/mixture';
+@use 'pattern/typography' as typography;
+@use 'pattern/utility' as utility;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(4);
+}
+
+.access-areas {
+  border: 1px solid colors.get-color('Sandstone80');
+  border-radius: utility.get-rem(8);
+  outline: 0;
+  overflow: hidden;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: utility.get-rem(45);
+    padding: utility.get-rem(12);
+
+    &:nth-of-type(even) {
+      background: variables.$table-body-row-even-bg;
+    }
+  }
+
+  &__name {
+    @extend %#{typography.$text-l-pattern};
+  }
+
+  &__checkboxes {
+    display: flex;
+    gap: utility.get-rem(36);
+  }
+
+  &__placeholder {
+    width: utility.get-rem(24);
+    height: utility.get-rem(24);
+  }
+}
+
+.form-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: utility.get-rem(8);
+
+  &__checkboxes {
+    display: flex;
+    gap: utility.get-rem(40);
+  }
+}
+
+h5 {
+  @extend %#{typography.$label-m-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}

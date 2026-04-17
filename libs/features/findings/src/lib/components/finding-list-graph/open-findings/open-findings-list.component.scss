@@ -1,0 +1,128 @@
+@use 'pattern/colors';
+@use 'pattern/mixins';
+@use 'pattern/mixture';
+@use 'pattern/typography';
+@use 'pattern/utility';
+@use 'variables';
+
+:host {
+  display: grid;
+  grid-template-rows: auto auto minmax(max-content, 1fr);
+  grid-template-areas:
+    'header'
+    'chart-legend'
+    'charts';
+  @include mixins.gutter-for(top, right, bottom, left);
+  @include mixins.respond-to(phone) {
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(max-content, 1fr);
+  }
+}
+
+.chart-legend {
+  grid-area: chart-legend;
+  padding-left: utility.get-rem(12);
+
+  @include mixins.respond-to(tablet) {
+    padding-left: utility.get-rem(0);
+  }
+
+  @include mixins.respond-to(phone) {
+    margin-left: utility.get-rem(-12);
+  }
+}
+
+.charts {
+  grid-area: charts;
+  display: grid;
+  gap: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'chart-overdue chart-becoming-overdue'
+    'chart-in-progress chart-early-stage';
+  padding-top: utility.get-rem(calc(3 * var(--dnv-gutter-base-unitless)));
+
+  @include mixins.respond-to(phone) {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'chart-overdue'
+      'chart-becoming-overdue'
+      'chart-in-progress'
+      'chart-early-stage';
+  }
+
+  .chart {
+    min-height: utility.get-rem(400);
+  }
+
+  .chart-overdue {
+    grid-area: chart-overdue;
+  }
+
+  .chart-becoming-overdue {
+    grid-area: chart-becoming-overdue;
+  }
+
+  .chart-in-progress {
+    grid-area: chart-in-progress;
+  }
+
+  .chart-early-stage {
+    grid-area: chart-early-stage;
+  }
+}
+
+.chart-stacked-bar-graph {
+  @extend %#{mixture.$shadow-default-pattern};
+}
+
+.chart-bar {
+  display: flex;
+  flex-direction: column;
+  gap: utility.get-rem(calc(2 * var(--dnv-gutter-base-unitless)));
+}
+
+.header {
+  @extend %#{typography.$heading-m-pattern};
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .open-findings-title {
+    color: colors.get-color('SeaBlue');
+    font-size: utility.get-rem(24);
+  }
+
+  @include mixins.respond-to(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  }
+}
+
+.chart-header {
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  font-size: utility.get-rem(12);
+  font-weight: 700;
+  gap: utility.get-rem(var(--dnv-gutter-base-unitless));
+  line-height: utility.get-rem(16);
+  letter-spacing: 0.5px;
+  padding: 16px;
+  text-transform: uppercase;
+  color: variables.$primary-dnv-medium-blue;
+
+  &--overdue {
+    background-color: variables.$chart-header-overdue-bg;
+    color: variables.$chart-header-overdue-text;
+  }
+
+  &--becoming-overdue {
+    background-color: variables.$chart-header-becoming-overdue-bg;
+    color: variables.$chart-header-becoming-overdue-text;
+  }
+}

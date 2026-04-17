@@ -1,0 +1,126 @@
+{
+  "button": {
+    "collapseSection": "Chiudi sezione",
+    "expandSection": "Apri sezione",
+    "updateInProgress": "Richiesta aggiornamento in corso",
+    "requestChanges": "Richiedere modifiche"
+  },
+  "form": {
+    "companyDetails": {
+      "address": "Indirizzo",
+      "city": "Città",
+      "country": "Paese",
+      "organizationName": "Nome dell'organizzazione",
+      "poNumberRequired": "Numero Po obbligatorio",
+      "poNumberRequiredTooltip": "Hai bisogno di un numero di PO",
+      "poNumberRequiredValue": {
+        "false": "No",
+        "true": "Si"
+      },
+      "vatNumber": "Partita IVA",
+      "vatNumberTooltip": "Inserisci il numero di partita IVA della tua persona giuridica, se applicabile.",
+      "zipcode": "Il codice postale"
+    },
+    "profile": {
+      "cancel": "Cancellare",
+      "changePassword": "Puoi modificare la tua password in Veracity.",
+      "changesPortal": "Le mofidiche verranno automaticamente applicate nel Portale.",
+      "communicationLanguage": "Lingua per le comunicazioni",
+      "countryRegion": "Paese / regione",
+      "displayName": "Nome visualizzato",
+      "editInVeracity": "Modifica in Veracity",
+      "editInVeracityToolTip": "Le modifiche apportate a Veracity verranno aggiornate a breve nel Portale Clienti. Aggiorna o registra nuovamente per vederli.",
+      "editSettings": "Modifica impostazioni",
+      "email": "indirizzo e-mail",
+      "jobTitle": "Titolo professionale",
+      "myInformation": "Informazioni personali",
+      "name": "Nome",
+      "password": "Password",
+      "phone": "Numero di telefono",
+      "settings": "Impostazioni",
+      "settingsModal": {
+        "additionalInformation": "Dopo aver inviato le tue informazioni personali modificate, saranno esaminate da DNV. Riceverai una notifica una volta che le informazioni saranno state aggiornate.",
+        "header": "Modifica le impostazioni del Portale"
+      },
+      "submit": "Invia",
+      "title": "Il mio profilo"
+    },
+    "members": {
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Email",
+      "role": "Ruolo",
+      "jobTitle": "Titolo di lavoro",
+      "rolePlaceholder": "Seleziona il ruolo funzionale",
+      "roleInfo": "Ruolo funzionale dell'utente in azienda",
+      "company": "Azienda",
+      "services": "Servizi",
+      "sites": "Siti",
+      "adminRights": "Diritti di amministratore",
+      "manageMembersPermissions": "Gestione utenti e permessi",
+      "accessAreas": "Accesso alle aree",
+      "view": "Visualizza",
+      "edit": "Modifica",
+      "contracts": "Contratti",
+      "scheduleAuditsFindings": "Pianificazione, Audit, Findings",
+      "certificates": "Certificati",
+      "financials": "Finanziari"
+    }
+  },
+  "grid": {
+    "header": {
+      "organizationName": "Azienda"
+    }
+  },
+  "heading": {
+    "companyDetails": "Dettagli aziendali",
+    "legalEntities": "Ragioni sociali",
+    "parentCompany": "Azienda principale"
+  },
+  "membersTab": {
+    "access": "Accesso",
+    "addNewMember": "Aggiungi utente",
+    "admins": "Amministratori ({{ total }})",
+    "company": "Azienda",
+    "email": "Email",
+    "members": "Utenti ({{ total }})",
+    "name": "Nome",
+    "pendingVerification": "Veracity registration is pending. User to complete the process by checking email.",
+    "service": "Servizio",
+    "site": "Sito",
+    "addMember": "Aggiungi utente",
+    "cancel": "Cancellare",
+    "continueToPermissions": "Continua con i permessi",
+    "managePermissions": "Gestione dei permessi",
+    "memberDetails": "Dettagli utente",
+    "submit": "Invia",
+    "removeUser": {
+      "header": "Rimuovi membro",
+      "message": "Sei sicuro di voler rimuovere l'utente?",
+      "yes": "Si",
+      "no": "No"
+    }
+  },
+  "modal": {
+    "companyDetails": {
+      "button": {
+        "cancel": "Cancellare",
+        "submit": "Invia"
+      },
+      "information": "Una volta inviati i dettagli aziendali aggiornati, questi verranno esaminati da un rappresentante DNV. Se i dettagli del contratto o del certificato vengono interessati, potrebbe essere necessario svolgere ulteriori attività di audit prima di riemettere i certificati aggiornati. Riceverai una notifica una volta che le tue informazioni saranno state aggiornate.",
+      "title": "Modifica i dettagli dell'azienda"
+    }
+  },
+  "tabs": {
+    "companyDetails": "Dettagli dell'azienda",
+    "members": "Utenti",
+    "personalInformation": "Informazioni personali"
+  },
+  "title": "Impostazioni",
+  "discardDraftPopup": {
+    "header": "Scartare la bozza?",
+    "message": "Sei sicuro di voler scartare la tua bozza? \nNon sarai in grado di recuperare le modifiche.",
+    "continueEditing": "Continua a modificare",
+    "discard": "Scarta"
+  }
+}

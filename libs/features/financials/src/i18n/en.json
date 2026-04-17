@@ -1,0 +1,31 @@
+{
+  "invoicesList": {
+    "amount": "Amount",
+    "billingAddress": "Billing Address",
+    "company": "Company",
+    "contact": "Contact person",
+    "download": "Download",
+    "dueDate": "Due date",
+    "invoiceNumber": "Invoice #",
+    "issueDate": "Issue date",
+    "listTitle": "Financials",
+    "originalInvoice": "Original invoice #",
+    "paymentDate": "Planned payment date",
+    "referenceNumber": "Reference number",
+    "status": "Status",
+    "updatePlannedPaymentDate": "Update planned payment date"
+  },
+  "title": "Financials",
+  "updatePlannedPaymentDate": {
+    "currentDetails": "Current details",
+    "header": "Update planned payment date",
+    "invoiceNumber": "Invoice number",
+    "newPlannedPaymentDate": "New planned payment date",
+    "placeholder": "Enter the date you plan to pay this invoice",
+    "referenceNumber": "Reference number",
+    "statusRestriction": "The Update Planned Payment date only applies to \"Overdue\", \"Not Paid\" and \"Partially Paid\" status.",
+    "tooltip": "To be populated with a future date on when payment is expected to be made to DNV for this invoice",
+    "warning": "Changing this date does not automatically change the payment due date.",
+    "success": "Planned payment date successfully updated"
+  }
+}

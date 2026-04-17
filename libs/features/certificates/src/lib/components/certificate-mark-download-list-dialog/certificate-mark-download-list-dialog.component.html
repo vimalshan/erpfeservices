@@ -1,0 +1,18 @@
+<ng-container *transloco="let t">
+  <shared-grid
+    dataKey="certificateMarkList"
+    [columns]="cols"
+    [data]="certificationMarks()"
+    [displayExportButton]="false"
+    [hasActiveFilters]="false"
+    [rowHover]="true"
+    [shouldPersist]="!settingsCoBrowsingStoreService.isDnvUser()"
+    (triggerFileAction)="triggerFileAction($event)">
+  </shared-grid>
+
+  <shared-button
+    [label]="t('back')"
+    [type]="sharedButtonType.Outline"
+    (clickEvent)="onClose()">
+  </shared-button>
+</ng-container>

@@ -1,0 +1,60 @@
+<ng-container *transloco="let t">
+  <section aria-labelledby="audit-graphs-charts" class="charts" role="region">
+    <h2 id="audit-graphs-charts">
+      {{ t('audit.auditGraphs.auditDays.title') }}
+    </h2>
+
+    <div
+      aria-labelledby="audit-graphs-charts-doughnut"
+      class="chart-doughnut"
+      role="region">
+      <h3 id="audit-graphs-charts-doughnut">
+        {{ t('audit.auditGraphs.auditDays.titleDoughnut') }}
+      </h3>
+      <shared-chart
+        class="chart-doughnut-graph"
+        [chartFilters]="auditDoughnutFilter"
+        [data]="auditListGraphStoreService.auditsDaysDoughnutGraphData().data"
+        [options]="auditDaysDoughnutOptions"
+        [plugins]="doughnutTotalPlugin"
+        [tooltipTitle]="t('audit.auditGraphs.auditDays.titleDoughnut')"
+        [type]="doughnutType"
+        (chartClick)="onChartClick($event)"
+        (tooltipButtonClick)="
+          onTooltipDaysButtonClick($event, chartType.Doughnut)
+        ">
+      </shared-chart>
+    </div>
+
+    <div
+      aria-labelledby="audit-graphs-charts-bar"
+      class="chart-bar"
+      role="region">
+      <h3 id="audit-graphs-charts-bar">
+        {{ t('audit.auditGraphs.auditDays.titleBar') }}
+      </h3>
+      <shared-chart
+        [chartFilters]="auditDaysBarFilter"
+        [data]="auditListGraphStoreService.auditDaysBarGraphData().data"
+        [hasBorderIfNoData]="true"
+        [options]="auditDaysBarOptions"
+        [type]="barType"
+        [useCustomLegend]="true"
+        (chartClick)="onChartClick($event)"
+        (tooltipButtonClick)="onTooltipDaysButtonClick($event, chartType.Bar)">
+      </shared-chart>
+    </div>
+  </section>
+  <section aria-labelledby="audit-graphs-grid" class="grid" role="region">
+    <h3 id="audit-graph-sites">
+      {{ t('audit.auditGraphs.auditDays.bySite.title') }}
+    </h3>
+    <section class="trends-grid">
+      <shared-tree-table
+        [cols]="graphColumns"
+        [data]="auditListGraphStoreService.auditDaysGridData()"
+        [isCellClickable]="true"
+        (rowClicked)="onRowClicked($event)"></shared-tree-table>
+    </section>
+  </section>
+</ng-container>

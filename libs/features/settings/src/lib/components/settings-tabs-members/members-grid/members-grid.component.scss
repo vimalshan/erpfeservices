@@ -1,0 +1,14 @@
+@use 'pattern/mixture' as mixture;
+@use 'pattern/mixins' as mixins;
+
+
+shared-grid {
+  background-color: transparent;
+  @include mixins.gutter-for(right, bottom, left);
+}
+
+shared-grid::ng-deep {
+  .p-paginator {
+    background-color: transparent;
+  }
+}

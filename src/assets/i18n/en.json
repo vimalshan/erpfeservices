@@ -1,0 +1,51 @@
+{
+  "login": {
+    "title": "Login",
+    "username": "Username",
+    "password": "Password",
+    "deviceCode": "Device Code",
+    "loginButton": "Login",
+    "loggingIn": "Logging in...",
+    "loginSuccess": "Login successful! Access token received.",
+    "loginError": "Login failed. Please check your credentials.",
+    "placeholders": {
+      "username": "Enter your username",
+      "password": "Enter your password"
+    }
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "submit": "Submit"
+  },
+  "error": {
+    "fail": {
+      "message": "An error occurred while processing your request. Please try again later.",
+      "title": "Operation Failed"
+    }
+  },
+  "error": {
+    "fail": {
+      "message": "An error occurred. Please try again.",
+      "title": "Error"
+    }
+  },
+  "welcome": {
+    "title": "Welcome",
+    "subtitle": "to Customer Portal",
+    "description": "Access your certificates, schedules, and more.",
+    "subdescription": "Manage your DNV services efficiently.",
+    "getStarted": "Get Started",
+    "accessDeniedTitle": "Access Denied",
+    "accessDeniedDescription": "You do not have permission to access this application."
+  }
+}

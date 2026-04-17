@@ -1,0 +1,39 @@
+@use 'pattern/colors';
+@use 'pattern/layout';
+@use 'pattern/mixins';
+@use 'pattern/typography';
+@use 'pattern/utility';
+
+:host {
+  @extend %#{layout.$page-base-pattern};
+}
+
+.head {
+  @extend %#{layout.$page-base-head-pattern};
+  position: relative;
+}
+
+.body {
+  @extend %#{layout.$page-base-body-pattern};
+}
+
+h1 {
+  @extend %#{typography.$heading-xl-pattern};
+  text-transform: uppercase;
+  color: colors.get-color('DarkBlue');
+}
+
+shared-grid {
+  @include mixins.gutter-for(top, right, bottom, left);
+}
+
+.buttons {
+  display: flex;
+  gap: utility.get-rem(12);
+
+  @include mixins.respond-to(phone) {
+    flex-direction: column;
+    align-items: flex-start;
+    bottom: utility.get-rem(calc(var(--dnv-gutter-base-unitless) * -13));
+  }
+}

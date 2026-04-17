@@ -1,0 +1,135 @@
+<ng-container *transloco="let t">
+  <div class="profile">
+    <div class="profile__section">
+      <div class="profile__header">
+        <h2 aria-label="personal-information" class="profile__title">
+          {{ t('settings.form.profile.myInformation') }}
+        </h2>
+        @if (!isDnvUser()) {
+          <p-button
+            class="profile__btn"
+            icon="pi pi-external-link"
+            iconPos="right"
+            id="btnEditInVeracity_Profile"
+            tabindex="0"
+            tooltipPosition="top"
+            [label]="t('settings.form.profile.editInVeracity')"
+            [pTooltip]="t('settings.form.profile.editInVeracityToolTip')"
+            [text]="true"
+            (click)="onEditVeracityClick('profile')">
+          </p-button>
+        }
+      </div>
+      <div class="profile__section-details">
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.profile.name') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().firstName }}
+            {{ profileStoreService.profileInformation().lastName }}
+          </div>
+        </div>
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.profile.displayName') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().displayName }}
+          </div>
+        </div>
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.profile.countryRegion') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().country }}
+          </div>
+        </div>
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.profile.email') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().email }}
+          </div>
+        </div>
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.profile.phone') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().phone }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile__section">
+      <div class="profile__header">
+        <h2 aria-label="settings" class="profile__title">
+          {{ t('settings.form.profile.settings') }}
+        </h2>
+
+        @if (!isDnvUser()) {
+          <p-button
+            class="profile__btn"
+            icon="pi pi-pencil"
+            iconPos="right"
+            tabindex="0"
+            [label]="t('settings.form.profile.editSettings')"
+            [text]="true"
+            (click)="onClickEditSettings()">
+          </p-button>
+        }
+      </div>
+      <div class="profile__section-details">
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.profile.communicationLanguage') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().communicationLanguage }}
+          </div>
+        </div>
+        <div class="profile__section-info">
+          <div class="profile__section-label">
+            {{ t('settings.form.members.role') }}
+          </div>
+          <div class="profile__section-value">
+            {{ profileStoreService.profileInformation().jobTitle }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile__section">
+      <div class="profile__header">
+        <h2 aria-label="password" class="profile__title">
+          {{ t('settings.form.profile.password') }}
+        </h2>
+        @if (!isDnvUser()) {
+          <p-button
+            class="profile__btn"
+            icon="pi pi-external-link"
+            iconPos="right"
+            tabindex="0"
+            tooltipPosition="top"
+            [label]="t('settings.form.profile.editInVeracity')"
+            [pTooltip]="t('settings.form.profile.editInVeracityToolTip')"
+            [text]="true"
+            (click)="onEditVeracityClick('security')">
+          </p-button>
+        }
+      </div>
+      <div class="profile__section-text">
+        <div class="profile__section-info">
+          {{ t('settings.form.profile.changePassword') }}
+        </div>
+        <div class="profile__section-info">
+          {{ t('settings.form.profile.changesPortal') }}
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
