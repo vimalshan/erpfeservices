@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
-import { OverlayPanel, OverlayPanelModule } from 'primeng/overlaypanel';
+import { PopoverModule, Popover } from 'primeng/popover';
 
 import {
   ProfileLanguageStoreService,
@@ -21,7 +21,7 @@ import { NavbarButtonComponent } from '../navbar-button';
   imports: [
     CommonModule,
     TranslocoDirective,
-    OverlayPanelModule,
+    PopoverModule,
     NavbarButtonComponent,
   ],
   templateUrl: './navbar-settings.component.html',
@@ -29,6 +29,8 @@ import { NavbarButtonComponent } from '../navbar-button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarSettingsComponent {
+  @ViewChild('settingsPopover') settingsPopover!: Popover;
+
   public isButtonSettingsActive = signal<boolean>(false);
   public isLanguagePickerVisible = false;
   public languages = signal([Language.English, Language.Italian]);
@@ -55,20 +57,15 @@ export class NavbarSettingsComponent {
     this.isLanguagePickerVisible = value;
   }
 
-  onLogoutClick(overlayPanel: OverlayPanel, event: MouseEvent): void {
+  onLogoutClick(event: MouseEvent): void {
     this.authService.logout().subscribe(() => {
-      overlayPanel.onCloseClick(event);
+      this.settingsPopover.hide();
       window.location.href = `${environment.federatedLogoutUrl}${environment.baseUrl}${AppPagesEnum.Logout}`;
     });
   }
 
-  onNavigateTo(
-    route: string,
-    tab: string,
-    overlayPanel: OverlayPanel,
-    event: MouseEvent,
-  ): void {
-    overlayPanel.onCloseClick(event);
+  onNavigateTo(route: string, tab: string, event: MouseEvent): void {
+    this.settingsPopover.hide();
     this.router.navigate([`/${route}`], { queryParams: { tab } });
   }
 
@@ -80,7 +77,7 @@ export class NavbarSettingsComponent {
     }
   }
 
-  onToggleOverlayPanel(overlayPanel: OverlayPanel, event: MouseEvent): void {
-    overlayPanel.toggle(event);
+  onTogglePopover(event: MouseEvent): void {
+    this.settingsPopover?.toggle(event);
   }
 }

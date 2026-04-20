@@ -3,23 +3,23 @@
 @font-face {
   font-family: 'SuaadhyaDisplayLight';
   font-style: normal;
-  src: url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Light-Web.woff') format('truetype'),
-      url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Light-Web.woff2') format('truetype');
+  src: url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Light-Web.woff2') format('woff2'),
+      url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Light-Web.woff') format('woff');
   font-display: swap;    
 }
 
 @font-face {
   font-family: 'SuaadhyaDisplayMedium';
   font-style: normal;
-  src: url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Medium-Web.woff') format('truetype'),
-      url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Medium-Web.woff2') format('truetype');
+  src: url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Medium-Web.woff2') format('woff2'),
+      url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Medium-Web.woff') format('woff');
   font-display: swap;    
 }
 
 @font-face {
   font-family: 'SuaadhyaDisplayRegular';
   font-style: normal;
-  src: url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Regular-Web.woff') format('truetype'),
-      url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Regular-Web.woff2') format('truetype');
+  src: url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Regular-Web.woff2') format('woff2'),
+      url('../assets/fonts/SuaadhyaDisplay/SuaadhyaDisplay-Regular-Web.woff') format('woff');
   font-display: swap;
 }

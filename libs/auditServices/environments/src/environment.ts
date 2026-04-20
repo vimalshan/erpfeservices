@@ -9,16 +9,16 @@ export const environment: EnvironmentModel = {
   authApiUrl: 'http://localhost:5200',
   baseUrl: 'https://portal.dev.suaadhya.com',
   certificateGraphqlHost:
-    'http://localhost:5003/',
-  contactGraphqlHost: 'http://localhost:5004/',
+    'http://localhost:5003/graphql',
+  contactGraphqlHost: 'http://localhost:5004/graphql',
   suaadhyaLink: 'https://www.suaadhya.com/',
   documentsApi:
     '/docs-api',
   federatedLogoutUrl:
     'https://login.veracity.com/a68572e3-63ce-4bc1-acdc-b64943502e9d/oauth2/v2.0/logout?p=b2c_1a_signinwithadfsidp&post_logout_redirect_uri=https://www.veracity.com/auth/logout?redirectUri=',
-  findingGraphqlHost: 'http://localhost:5006/',
-  invoicesGraphqlHost: 'http://localhost:5005/',
-  auditGraphqlHost: 'http://localhost:5003/',
+  findingGraphqlHost: 'http://localhost:5006/graphql',
+  invoicesGraphqlHost: 'http://localhost:5005/graphql',
+  auditGraphqlHost: 'http://localhost:5003/graphql',
   powerBi: {
     accessToken: '',
     reportId: '4e19ccf9-1ff9-4a04-bd2d-1bab9cb1c029',
@@ -27,12 +27,12 @@ export const environment: EnvironmentModel = {
   },
   production: false,
   scheduleGraphqlHost:
-    'http://localhost:5008/',
+    'http://localhost:5008/graphql',
   veracityUrl: 'https://id.veracity.com/',
   notificationGraphqlHost:
-    'http://localhost:5007/',
+    'http://localhost:5007/graphql',
   settingsGraphqlHost:
-    'http://localhost:5009/',
+    'http://localhost:5009/graphql',
   lmsUrl:
     'https://suaadhyatest.seertechsolutions.com/auth/oauth2/authorization/veracity',
   serviceNow: {

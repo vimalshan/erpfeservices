@@ -4,15 +4,15 @@
     iconPosition="right"
     [isActive]="isButtonSettingsActive()"
     [label]="t('settings')"
-    (clickEvent)="onToggleOverlayPanel(settingsOverlay, $event)">
+    (clickEvent)="onTogglePopover($event)">
   </erp-services-navbar-button>
 
-  <p-overlayPanel
-    #settingsOverlay
-    styleClass="is-caret-hidden"
+  <p-popover
+    #settingsPopover
+    styleClass="navbar-settings-popover"
     (onHide)="onToggleButtonSettingsActive(false)"
     (onShow)="onToggleButtonSettingsActive(true)">
-    <ng-template pTemplate="content">
+    <ng-template pPopoverContent>
       <div
         class="container"
         tabindex="0"
@@ -39,40 +39,19 @@
             <erp-services-navbar-button
               icon="user"
               [label]="t('navbar.personalInformation')"
-              (clickEvent)="
-                onNavigateTo(
-                  'settings',
-                  settingsTab.PersonalInformation,
-                  settingsOverlay,
-                  $event
-                )
-              ">
+              (clickEvent)="onNavigateTo('settings', settingsTab.PersonalInformation, $event)">
             </erp-services-navbar-button>
 
             <erp-services-navbar-button
               icon="building"
               [label]="t('navbar.companyDetails')"
-              (clickEvent)="
-                onNavigateTo(
-                  'settings',
-                  settingsTab.CompanyDetails,
-                  settingsOverlay,
-                  $event
-                )
-              ">
+              (clickEvent)="onNavigateTo('settings', settingsTab.CompanyDetails, $event)">
             </erp-services-navbar-button>
 
             <erp-services-navbar-button
               icon="sitemap"
               [label]="t('navbar.members')"
-              (clickEvent)="
-                onNavigateTo(
-                  'settings',
-                  settingsTab.Members,
-                  settingsOverlay,
-                  $event
-                )
-              ">
+              (clickEvent)="onNavigateTo('settings', settingsTab.Members, $event)">
             </erp-services-navbar-button>
           </div>
 
@@ -89,12 +68,12 @@
               <erp-services-navbar-button
                 icon="sign-out"
                 [label]="t('navbar.logOut')"
-                (clickEvent)="onLogoutClick(settingsOverlay, $event)">
+                (clickEvent)="onLogoutClick($event)">
               </erp-services-navbar-button>
             }
           </div>
         }
       </div>
     </ng-template>
-  </p-overlayPanel>
+  </p-popover>
 </ng-container>

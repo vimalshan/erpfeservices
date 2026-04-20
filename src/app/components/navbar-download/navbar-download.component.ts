@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslocoDirective, TranslocoService } from '@jsverse/transloco';
-import { OverlayPanel, OverlayPanelModule } from 'primeng/overlaypanel';
+import { Popover, PopoverModule } from 'primeng/popover';
 
 import {
   DocumentDownloadTask,
@@ -23,7 +23,7 @@ import { NavbarButtonComponent } from '../navbar-button';
   imports: [
     CommonModule,
     TranslocoDirective,
-    OverlayPanelModule,
+    PopoverModule,
     NavbarButtonComponent,
   ],
   templateUrl: './navbar-download.component.html',
@@ -63,7 +63,7 @@ export class NavbarDownloadComponent implements OnInit {
       });
   }
 
-  onToggleDownloadOverlay(overlayPanel: OverlayPanel, event: MouseEvent): void {
-    overlayPanel.toggle(event);
+  onToggleDownloadOverlay(popover: Popover, event: MouseEvent): void {
+    popover.toggle(event);
   }
 }

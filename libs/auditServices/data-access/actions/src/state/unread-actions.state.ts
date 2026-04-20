@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action, State, StateContext } from '@ngxs/store';
-import { tap } from 'rxjs';
+import { catchError, EMPTY, tap } from 'rxjs';
 
 import { UnreadActionsDto } from '../dtos';
 import { UnreadActionsCountModel } from '../models';
@@ -37,6 +37,7 @@ export class UnreadActionsState {
 
         ctx.patchState({ actions: actionsCountResult });
       }),
+      catchError(() => EMPTY),
     );
   }
 }

@@ -1,9 +1,13 @@
 import { Route } from '@angular/router';
 
 import { allowNonSuaadhyaUserGuard } from '@erp-services/data-access/settings/guards';
-import { authGuard, RouteConfig } from '../../libs/auditServices/shared/src';
+import { RouteConfig } from '../../libs/auditServices/shared/src';
+import { cookieAuthGuard } from './guards/cookie-auth.guard';
 
-
+/**
+ * Application Routes with Cookie-based Authentication
+ * All routes except login require valid authentication token in cookies
+ */
 export const appRoutes: Route[] = [
   {
     path: RouteConfig.Login.path,
@@ -20,6 +24,7 @@ export const appRoutes: Route[] = [
         (m) => m.WelcomeComponent,
       ),
     title: RouteConfig.Welcome.title,
+    canActivate: [cookieAuthGuard], // Protect with cookie-based auth
   },
   {
     path: RouteConfig.Logout.path,
@@ -28,7 +33,7 @@ export const appRoutes: Route[] = [
         (m) => m.LogoutComponent,
       ),
     title: RouteConfig.Logout.title,
-    canActivate: [allowNonSuaadhyaUserGuard],
+    canActivate: [cookieAuthGuard, allowNonSuaadhyaUserGuard], // Protect and allow logout
   },
   {
     path: RouteConfig.Error.path,
@@ -42,7 +47,7 @@ export const appRoutes: Route[] = [
     path: 'dashboard',
     loadChildren: () =>
       import('./components/layout/layout.routes').then((r) => r.LAYOUT_ROUTES),
-    canMatch: [authGuard],
+    canMatch: [cookieAuthGuard], // Protect dashboard and all child routes
   },
   {
     path: '',

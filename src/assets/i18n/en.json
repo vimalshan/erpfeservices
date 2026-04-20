@@ -1,4 +1,41 @@
 {
+  "navbarSearch": "Search",
+  "toggleMenu": "Toggle Menu",
+  "actions": "Actions",
+  "notifications": "Notifications",
+  "settings": "Settings",
+  "loading": "Loading...",
+  "content": "Content",
+  "noDataAvailable": "No data available",
+  "filters": "Filters",
+  "closeMenu": "Close Menu",
+  "asideNavigation": "Navigation",
+  "back": "Back",
+  "reset": "Reset",
+  "serviceNow": {
+    "help": "Help"
+  },
+  "ariaLabel": {
+    "sidebar": "Navigation Sidebar"
+  },
+  "overview": {
+    "title": "Welcome, {{user}}",
+    "welcomeDescription": "Here is an overview of your services.",
+    "heading": "Your Services",
+    "loadMore": "Load More",
+    "hasAllServicesDisplayed": "All services displayed",
+    "noServices": "No services available",
+    "noServicesDescription": "You currently have no services assigned."
+  },
+  "select": {
+    "multiSelect": {
+      "companies": "Companies",
+      "services": "Services"
+    }
+  },
+  "exportDocument": {
+    "downloads": "Downloads"
+  },
   "login": {
     "title": "Login",
     "username": "Username",
@@ -25,18 +62,19 @@
     "success": "Success",
     "cancel": "Cancel",
     "save": "Save",
-    "submit": "Submit"
+    "submit": "Submit",
+    "content": "Content",
+    "noDataAvailable": "No data available",
+    "filters": "Filters"
   },
   "error": {
     "fail": {
       "message": "An error occurred while processing your request. Please try again later.",
       "title": "Operation Failed"
-    }
-  },
-  "error": {
-    "fail": {
-      "message": "An error occurred. Please try again.",
-      "title": "Error"
+    },
+    "initialization": {
+      "message": "An error occurred during initialization. Please refresh the page.",
+      "title": "Initialization Error"
     }
   },
   "navbar": {
@@ -44,7 +82,23 @@
     "companyDetails": "Company Details",
     "members": "Members",
     "language": "Language",
-    "logOut": "Log Out"
+    "logOut": "Log Out",
+    "navbarSearch": "Search",
+    "toggleMenu": "Toggle Menu",
+    "actions": "Actions",
+    "notifications": "Notifications",
+    "settings": "Settings"
+  },
+  "sidebar": {
+    "closeMenu": "Close Menu",
+    "asideNavigation": "Navigation"
+  },
+  "footer": {
+    "aboutUs": "About Us",
+    "privacyStatement": "Privacy Statement",
+    "termsOfUse": "Terms of Use",
+    "linkedin": "LinkedIn",
+    "copyright": "© 2026 All rights reserved."
   },
   "welcome": {
     "title": "Welcome",

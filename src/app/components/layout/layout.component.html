@@ -11,7 +11,7 @@
     </erp-services-navbar>
     <erp-services-sidebar></erp-services-sidebar>
     <erp-services-footer></erp-services-footer>
-    <main [ngClass]="{ 'no-breadcrumb': breadcrumbVisibility }">
+    <main [ngClass]="{ 'no-breadcrumb': breadcrumbVisibility() }">
       <erp-services-breadcrumb></erp-services-breadcrumb>
       <div class="content">
         <router-outlet></router-outlet>

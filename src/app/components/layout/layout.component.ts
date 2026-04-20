@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, DestroyRef, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { RouterModule } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
@@ -48,7 +48,7 @@ export class LayoutComponent implements OnInit {
   title = 'erp-services';
   isLoggedIn = false;
   isSuaadhyaUser = false;
-  breadcrumbVisibility = false;
+  breadcrumbVisibility = signal(false);
 
   constructor(
     public readonly coBrowsingSharedService: CoBrowsingSharedService,
@@ -61,7 +61,7 @@ export class LayoutComponent implements OnInit {
     this.breadcrumbService.breadcrumbVisibility$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((visibility: boolean) => {
-        this.breadcrumbVisibility = visibility;
+        this.breadcrumbVisibility.set(visibility);
       });
   }
 

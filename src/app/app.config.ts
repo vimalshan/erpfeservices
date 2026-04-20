@@ -57,7 +57,7 @@ import {
   GlobalErrorHandler,
 } from './interceptors';
 import { apiInterceptor } from './interceptors/api.interceptor';
-import { authTokenInterceptor } from './interceptors/auth-token.interceptor';
+import { cookieAuthTokenInterceptor } from './interceptors/cookie-auth-token.interceptor';
 import { TranslocoHttpLoader } from './transloco-http.loader';
 import { Language, LocaleService, registerLocales } from '../../libs/auditServices/shared/src';
 import { appInitializer, loggingInitializer } from '../../libs/auditServices/data-access/permissions/src';
@@ -100,7 +100,7 @@ export const appConfig: ApplicationConfig = {
     provideAppInitializer(loggingInitializer),
     provideHttpClient(
       withInterceptors([
-        authTokenInterceptor,
+        cookieAuthTokenInterceptor,
         apiInterceptor,
         customHeaderInterceptor,
         errorInterceptor,

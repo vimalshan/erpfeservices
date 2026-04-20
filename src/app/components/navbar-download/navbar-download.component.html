@@ -11,8 +11,8 @@
         </erp-services-navbar-button>
       }
 
-      <p-overlayPanel #downloadOverlay styleClass="is-caret-hidden">
-        <ng-template pTemplate="content">
+      <p-popover #downloadOverlay styleClass="is-caret-hidden">
+        <ng-template pPopoverContent>
           <div class="overlay-container" tabindex="0">
             <div class="overlay-grouping">
               @for (task of downloadTasks.slice().reverse(); track task) {
@@ -38,5 +38,5 @@
             </div>
           </div>
         </ng-template>
-      </p-overlayPanel>
+      </p-popover>
 </ng-container>

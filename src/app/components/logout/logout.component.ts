@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslocoDirective } from '@jsverse/transloco';
 
 import { environment } from '@erp-services/environments';
@@ -7,7 +8,7 @@ import {
   SharedButtonComponent,
   SharedButtonType,
 } from '@erp-services/shared/components/button';
-import { AuthService } from '@erp-services/shared/services';
+import { AuthServiceWithCookies } from '../../services/auth-with-cookies.service';
 
 @Component({
   selector: 'erp-services-logout',
@@ -20,14 +21,29 @@ export class LogoutComponent implements OnInit {
   suaadhyaLink = environment.suaadhyaLink;
   sharedButtonType = SharedButtonType;
 
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthServiceWithCookies,
+    private readonly router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.authService.resetLogoutState();
+    // Clear all authentication cookies and redirect to login
+    this.authService.logout().subscribe({
+      next: () => {
+        console.log('Logout successful');
+        this.router.navigate(['/login']);
+      },
+      error: (error) => {
+        console.error('Logout error:', error);
+        // Still clear local auth state even if server logout fails
+        this.authService.resetLogoutState();
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
   onLoginClick(): void {
-    this.authService.login();
+    this.router.navigate(['/login']);
   }
 
   onGoToSuaadhyaClick(): void {

@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService, LoginRequest, LoginResponse, LocalAuthService } from '@erp-services/shared';
 import { switchMap } from 'rxjs/operators';
+import { AuthServiceWithCookies } from '../../services/auth-with-cookies.service';
+import { LoginRequest, LoginResponse, LocalAuthService } from '@erp-services/shared';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent {
   loginSuccess = false;
 
   constructor(
-    private authService: AuthService,
+    private authService: AuthServiceWithCookies,
     private localAuthService: LocalAuthService,
     private router: Router
   ) {}
@@ -33,12 +34,12 @@ export class LoginComponent {
     this.loginError = '';
     this.loginSuccess = false;
 
-    // Step 1: POST /api/v1/Auth/login → get tokens
+    // Step 1: POST /api/v1/Auth/login → get tokens (saved to cookies)
     // Step 2: GET /api/v1/Auth/me → validate token & get user info
     // Step 3: Redirect to /dashboard
     this.authService.loginWithCredentials(this.loginRequest).pipe(
       switchMap((response: LoginResponse) => {
-        // Store tokens
+        // Store tokens in cookies (not localStorage)
         this.authService.storeLoginResponse(response);
         this.authService.storeLoginCredentials(this.loginRequest);
         // Validate token by calling /me
