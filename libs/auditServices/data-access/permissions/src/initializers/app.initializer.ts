@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, tap } from 'rxjs';
+import { defaultIfEmpty, Observable, tap } from 'rxjs';
 
 import { LoggingService } from '@erp-services/core/app-insights';
 
@@ -11,6 +11,7 @@ export const appInitializer = (): Observable<any> => {
   const router = inject(Router);
 
   return appInitializerService.initializePermissions().pipe(
+    defaultIfEmpty(true),
     tap(() => {
       router.initialNavigation();
     }),

@@ -39,6 +39,13 @@
       "title": "Error"
     }
   },
+  "navbar": {
+    "personalInformation": "Personal Information",
+    "companyDetails": "Company Details",
+    "members": "Members",
+    "language": "Language",
+    "logOut": "Log Out"
+  },
   "welcome": {
     "title": "Welcome",
     "subtitle": "to Customer Portal",

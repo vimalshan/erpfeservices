@@ -314,7 +314,7 @@ export class SessionTimeoutService implements OnDestroy {
     this.handleTokenRefresh().subscribe({
       next: (result: AuthServiceResponse) => {
         if (result.isUserAuthenticated) {
-          this.handleSuccessfulRefresh(new Date(result.expiryTimeUtc));
+          this.handleSuccessfulRefresh(new Date(result.expiryTimeUtc ?? new Date().toISOString()));
         } else {
           this.handleFailedRefresh('Not authenticated');
         }

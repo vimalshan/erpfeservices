@@ -14,6 +14,7 @@ export interface EnvironmentModel {
   findingGraphqlHost: string;
   invoicesGraphqlHost: string;
   auditGraphqlHost: string;
+  settingsGraphqlHost: string;
   powerBi?: PowerBiCredentials;
   production: boolean;
   scheduleGraphqlHost: string;

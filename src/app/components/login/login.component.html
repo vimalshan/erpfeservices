@@ -1,0 +1,38 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onLogin()">
+    <div>
+      <label for="usernameOrEmail">Username or Email:</label>
+      <input 
+        type="email" 
+        id="usernameOrEmail" 
+        name="usernameOrEmail"
+        [(ngModel)]="loginRequest.usernameOrEmail" 
+        required
+        placeholder="Enter your email"
+      />
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input 
+        type="password" 
+        id="password" 
+        name="password"
+        [(ngModel)]="loginRequest.password" 
+        required
+        placeholder="Enter your password"
+      />
+    </div>
+    <button type="submit" [disabled]="isLogging">
+      {{ isLogging ? 'Logging in...' : 'Login' }}
+    </button>
+  </form>
+  
+  <div *ngIf="loginError" class="error">
+    {{ loginError }}
+  </div>
+  
+  <div *ngIf="loginSuccess" class="success">
+    Login successful! Access token received.
+  </div>
+</div>

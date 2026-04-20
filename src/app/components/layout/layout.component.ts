@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 
 import { SessionTimeoutService, SpinnerComponent } from '@erp-services/core';
+import { ProfileStoreService } from '@erp-services/data-access/settings';
 import { CustomConfirmDialogComponent } from '@erp-services/shared/components/custom-confirm-dialog';
 import { CustomToastComponent } from '@erp-services/shared/components/custom-toast';
 import { AuthTokenConstants } from '@erp-services/shared/constants';
@@ -54,6 +55,7 @@ export class LayoutComponent implements OnInit {
     private readonly scriptLoader: ScriptLoaderService,
     private readonly sessionTimeoutService: SessionTimeoutService,
     private readonly breadcrumbService: BreadcrumbService,
+    private readonly profileStoreService: ProfileStoreService,
     private destroyRef: DestroyRef,
   ) {
     this.breadcrumbService.breadcrumbVisibility$
@@ -71,6 +73,7 @@ export class LayoutComponent implements OnInit {
     this.initializeScripts();
     this.initializeSession();
     this.initializeUserState();
+    this.profileStoreService.loadProfileData();
   }
 
   private initializeScripts(): void {

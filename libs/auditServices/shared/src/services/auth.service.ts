@@ -120,4 +120,13 @@ export class LocalAuthService {
       this.currentUserSubject.next(user);
     }
   }
+
+  /**
+   * Mark user as authenticated externally (e.g. after HTTP-based login)
+   */
+  setAuthenticated(user: User): void {
+    this.setCurrentUser(user);
+    this.isAuthenticatedSubject.next(true);
+    this.currentUserSubject.next(user);
+  }
 }

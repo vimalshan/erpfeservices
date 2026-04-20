@@ -1,123 +1,161 @@
-# Updated Auth Service Usage
+# AuthProvider API - Service Usage
 
 ## Overview
 
-The auth service has been updated to work with your local API at `http://localhost:7136/api/authorize`. 
+The auth service connects to the **AuthProvider API v1.0** running at `http://localhost:5200`.  
+Swagger UI: [http://localhost:5200/swagger/index.html](http://localhost:5200/swagger/index.html)  
+All endpoints require a Bearer JWT token (via `Authorization: Bearer {token}`) except login and register.
 
-## API Endpoints Mapping
+## API Endpoints
 
-| Old Endpoint | New Endpoint | Purpose |
-|-------------|-------------|---------|
-| `/Auth/login` | `/token` (POST) | Login with credentials |
-| `/Auth/GetAccessToken` | `/token` (GET) | Get access token |
-| `/Auth/UserAuthenticatedwithExpiry` | `/token` (GET) | Check authentication with expiry |
-| `/Auth/ValidateUser` | `/IsAuthenticated` | Validate user |
-| `/Auth/Status` | `/IsAuthenticated` | Get authentication status |
+### Auth
 
-## New Login Method
+| Method | Endpoint | Request Body | Response | Purpose |
+|--------|----------|-------------|----------|---------|
+| POST | `/api/v1/Auth/register` | `CreateUserDto` | `201` → `UserDto` | Register a new user |
+| POST | `/api/v1/Auth/login` | `LoginRequestDto` | `200` → `TokenResponseDto` | Login and get tokens |
+| POST | `/api/v1/Auth/refresh-token` | `RefreshTokenRequest` | `200` → `TokenResponseDto` | Refresh an expired access token |
+| POST | `/api/v1/Auth/revoke-token` | `RevokeTokenRequest` | `204` No Content | Revoke a refresh token (logout) |
+| GET | `/api/v1/Auth/me` | — | `200` → `UserDto` | Get current authenticated user |
 
-### 1. Basic Login with Credentials
+### Users
 
-```typescript
-import { AuthService, LoginRequest } from '@erp-services/shared';
+| Method | Endpoint | Parameters | Response | Purpose |
+|--------|----------|-----------|----------|---------|
+| GET | `/api/v1/Users` | `?page=1&pageSize=20` | `UserDtoPagedResult` | List users (paginated) |
+| GET | `/api/v1/Users/{id}` | `id` (UUID) | `UserDto` | Get user by ID |
+| PUT | `/api/v1/Users/{id}` | `UpdateUserDto` | `UserDto` | Update user |
+| DELETE | `/api/v1/Users/{id}` | `id` (UUID) | `204` No Content | Delete user |
+| GET | `/api/v1/Users/by-email` | `?email=` | `UserDto` | Find user by email |
+| POST | `/api/v1/Users/{id}/roles` | `AssignRoleDto` | `204` No Content | Assign role to user |
+| GET | `/api/v1/roles` | — | `RoleDto[]` | List all roles |
 
-const loginRequest: LoginRequest = {
-  userName: 'iyyanarmsec@gmail.com',
-  password: 'HelpMe@&2405',
-  deviceCode: '1'
-};
+### Health
 
-this.authService.loginWithCredentials(loginRequest).subscribe({
-  next: (response) => {
-    console.log('Login successful:', response);
-    
-    // Store the token data
-    this.authService.storeLoginResponse(response);
-    
-    // Redirect to dashboard
-    this.router.navigate(['/dashboard']);
-  },
-  error: (error) => {
-    console.error('Login failed:', error);
-  }
-});
-```
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| GET | `/api/v1/minimal/auth/health` | Health check |
+| GET | `/api/v1/minimal/auth/version` | Version info |
 
-### 2. Response Structure
+## DTOs / Schemas
 
-The login response will match your API response:
-
-```typescript
-interface LoginResponse {
-  hasVerifiedEmail: boolean;
-  tfaEnabled: boolean;
-  access_token: string;
-  token_type: string;
-  expires_in: number;
-  issued: string;
-  expires: string;
-  refreshToken: string;
-  resetToken?: string;
-  tfaToken?: string;
-  deviceCode?: string;
-  last4?: string;
+### LoginRequestDto
+```json
+{
+  "usernameOrEmail": "string",
+  "password": "string"
 }
 ```
 
-### 3. Token Management
-
-The service now provides methods to handle tokens:
-
-```typescript
-// Store login response (automatically called after successful login)
-this.authService.storeLoginResponse(loginResponse);
-
-// Get stored access token
-const token = this.authService.getStoredAccessToken();
-
-// Clear all token data (logout)
-this.authService.clearTokenData();
+### TokenResponseDto
+```json
+{
+  "accessToken": "string",
+  "refreshToken": "string",
+  "expiresAt": "2026-04-18T00:00:00Z",
+  "tokenType": "string"
+}
 ```
 
-### 4. HTTP Interceptor
-
-Use the provided `AuthTokenInterceptor` to automatically add Bearer tokens to HTTP requests:
-
-```typescript
-// In your app.config.ts or module
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
-
-providers: [
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthTokenInterceptor,
-    multi: true
-  }
-]
+### CreateUserDto
+```json
+{
+  "username": "string",
+  "email": "string",
+  "password": "string",
+  "firstName": "string",
+  "lastName": "string"
+}
 ```
 
-### 5. Environment Configuration
-
-The environment has been updated to use your local API:
-
-```typescript
-authApiUrl: 'http://localhost:7136/api/authorize'
+### UserDto
+```json
+{
+  "id": "uuid",
+  "username": "string",
+  "email": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "isActive": true,
+  "isEmailVerified": true,
+  "createdAt": "2026-04-18T00:00:00Z",
+  "lastLoginAt": "2026-04-18T00:00:00Z",
+  "roles": ["string"]
+}
 ```
 
-## Files Updated
+### UpdateUserDto
+```json
+{
+  "id": "uuid",
+  "firstName": "string",
+  "lastName": "string"
+}
+```
 
-1. `libs/environments/src/environment.ts` - Updated API URL
-2. `libs/shared/src/services/auth/auth.service.ts` - Updated endpoints and added new login method
-3. `libs/shared/src/models/auth-login.model.ts` - New interfaces for login
-4. `src/app/components/login/login.component.ts` - Example login component
-5. `src/app/interceptors/auth-token.interceptor.ts` - Token interceptor
+### RefreshTokenRequest / RevokeTokenRequest
+```json
+{
+  "refreshToken": "string"
+}
+```
 
-## Testing
+### AssignRoleDto
+```json
+{
+  "userId": "uuid",
+  "roleName": "string"
+}
+```
 
-Test the login functionality with:
-- Username: `iyyanarmsec@gmail.com`
-- Password: `HelpMe@&2405`
-- Device Code: `1`
+### RoleDto
+```json
+{
+  "id": "uuid",
+  "name": "string",
+  "description": "string"
+}
+```
 
-The expected response should include an access token that gets stored in localStorage and automatically used for subsequent API calls.
+### UserDtoPagedResult
+```json
+{
+  "items": [UserDto],
+  "totalCount": 0,
+  "page": 1,
+  "pageSize": 20
+}
+```
+
+## Frontend Endpoint Mapping
+
+The frontend `AuthService` methods need to map to the new API:
+
+| AuthService Method | Old Endpoint | New API Endpoint |
+|-------------------|-------------|-----------------|
+| `loginWithCredentials()` | `/token` (POST) | `/api/v1/Auth/login` (POST) |
+| `getToken()` | `/GetAccessToken` (GET) | `/api/v1/Auth/refresh-token` (POST) |
+| `isUserAuthenticatedWithExpiryInfo()` | `/UserAuthenticatedwithExpiry` (GET) | `/api/v1/Auth/me` (GET) |
+| `isUserAuthenticated()` | `/IsUserAuthenticated` (GET) | `/api/v1/Auth/me` (GET) |
+| `isUserValidated()` | `/ValidateUser` (GET) | `/api/v1/Auth/me` (GET) |
+| `getClientCredentialToken()` | `/Status` (GET) | `/api/v1/minimal/auth/health` (GET) |
+| `logout()` | `/Logout` (POST) | `/api/v1/Auth/revoke-token` (POST) |
+
+## Environment Configuration
+
+The environment `authApiUrl` is proxied through the dev server to avoid CORS issues:
+
+```typescript
+// environment.ts
+authApiUrl: '/auth-api'
+
+// proxy.conf.json routes /auth-api/* → http://localhost:5200/*
+```
+
+## Files
+
+1. `libs/auditServices/environments/src/environment.ts` — API URL configuration
+2. `libs/auditServices/shared/src/services/auth/auth.service.ts` — Auth service
+3. `libs/auditServices/shared/src/models/auth-login.model.ts` — Login request/response models
+4. `libs/auditServices/shared/src/models/auth-service.reponse.ts` — Auth check response model
+5. `proxy.conf.json` — Dev proxy configuration

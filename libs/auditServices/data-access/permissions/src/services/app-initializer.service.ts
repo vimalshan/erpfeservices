@@ -38,6 +38,7 @@ import {
   AuthService,
   CoBrowsingSharedService,
 } from '@erp-services/shared/services';
+import { AuthServiceResponse } from '@erp-services/shared/models';
 
 import { UserValidationSubcodes } from '../constants';
 
@@ -63,19 +64,28 @@ export class AppInitializerService {
       window.history.replaceState(null, '');
     }
 
+    // If no stored access token, skip auth check and let the router
+    // navigate to the login page via the default route.
+    const storedToken = this.authService.getStoredAccessToken();
+    if (!storedToken) {
+      return of(true);
+    }
+
     return this.authService.isUserAuthenticatedWithExpiryInfo().pipe(
       tap(() => this.coBrowsingSharedService.setCoBrowsingUserEmail(null)),
       catchError(() => {
-        this.router.navigate([RouteConfig.Error.path], {
-          state: {
-            message: 'fail',
-            entityType: 'Authentication',
-          },
-        });
-
-        return EMPTY;
+        // Auth failed (expired token, network error, etc.) —
+        // clear stale token data and let the router redirect to login.
+        this.authService.clearTokenData();
+        return of(null as unknown as AuthServiceResponse);
       }),
       switchMap((auth) => {
+        if (!auth) {
+          // Came from catchError — just let router.initialNavigation() run
+          // which will redirect to the login page via the default route.
+          return of(true);
+        }
+
         if (!auth.isUserAuthenticated) {
           if (this.authService.isLogOutInProgress()) {
             return of(true);
@@ -84,22 +94,18 @@ export class AppInitializerService {
           return from(this.router.navigateByUrl(AppPagesEnum.Welcome));
         }
 
-        this.updateTokenExpiry(new Date(auth.expiryTimeUtc));
+        this.updateTokenExpiry(new Date(auth.expiryTimeUtc ?? new Date().toISOString()));
 
         return this.settingsUserValidationService.getUserValidation().pipe(
           catchError(() => {
-            this.router.navigate([RouteConfig.Error.path], {
-              state: {
-                message: 'fail',
-                entityType: 'User Validation',
-              },
-            });
-
-            return EMPTY;
+            // Downstream service unavailable — clear auth and let
+            // router.initialNavigation() redirect to login.
+            this.authService.clearTokenData();
+            return of(null);
           }),
           switchMap((result) => {
             if (!result) {
-              return EMPTY;
+              return of(true);
             }
 
             if (result.isSuaadhyaUser) {
@@ -122,7 +128,7 @@ export class AppInitializerService {
             return this.checkLoadedStates().pipe(
               switchMap(() => this.checkErrors()),
               switchMap((success) =>
-                success ? this.loadApplicationData() : EMPTY,
+                success ? this.loadApplicationData() : of(true),
               ),
             );
           }),
@@ -198,9 +204,8 @@ export class AppInitializerService {
       switchMap(() => this.userTelemetryService.initializeUserTracking()),
       map(() => true),
       catchError(() => {
-        this.router.navigate([RouteConfig.Error.path]);
-
-        return EMPTY;
+        this.authService.clearTokenData();
+        return of(true);
       }),
     );
   }

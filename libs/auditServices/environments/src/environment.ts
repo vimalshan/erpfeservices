@@ -6,19 +6,19 @@ export const environment: EnvironmentModel = {
   appInsights: {
     instrumentationKey: '015e1a5d-853a-46b3-ab22-aa4019ea842e',
   },
-  authApiUrl: 'http://localhost:7136/api/authorize',
+  authApiUrl: 'http://localhost:5200',
   baseUrl: 'https://portal.dev.suaadhya.com',
   certificateGraphqlHost:
-    'https://testapi.suaadhya.com/ba-scecp-r2-certificateservice-dev',
-  contactGraphqlHost: 'https://testapi.suaadhya.com/ba-scecp-r2-contactservice-dev',
+    'http://localhost:5003/',
+  contactGraphqlHost: 'http://localhost:5004/',
   suaadhyaLink: 'https://www.suaadhya.com/',
   documentsApi:
-    'https://testapi.suaadhya.com/ba-scecpservices-r2-dev/v1/api/Documents',
+    '/docs-api',
   federatedLogoutUrl:
     'https://login.veracity.com/a68572e3-63ce-4bc1-acdc-b64943502e9d/oauth2/v2.0/logout?p=b2c_1a_signinwithadfsidp&post_logout_redirect_uri=https://www.veracity.com/auth/logout?redirectUri=',
-  findingGraphqlHost: 'https://testapi.suaadhya.com/ba-scecp-r2-findingservice-dev',
-  invoicesGraphqlHost: 'https://testapi.suaadhya.com/ba-scecp-financialservice-dev',
-  auditGraphqlHost: 'https://testapi.suaadhya.com/ba-scecp-r2-auditservice-dev',
+  findingGraphqlHost: 'http://localhost:5006/',
+  invoicesGraphqlHost: 'http://localhost:5005/',
+  auditGraphqlHost: 'http://localhost:5003/',
   powerBi: {
     accessToken: '',
     reportId: '4e19ccf9-1ff9-4a04-bd2d-1bab9cb1c029',
@@ -27,10 +27,12 @@ export const environment: EnvironmentModel = {
   },
   production: false,
   scheduleGraphqlHost:
-    'https://testapi.suaadhya.com/ba-scecp-r2-scheduleservice-dev',
+    'http://localhost:5008/',
   veracityUrl: 'https://id.veracity.com/',
   notificationGraphqlHost:
-    'https://testapi.suaadhya.com/ba-scecp-notificationservice-dev',
+    'http://localhost:5007/',
+  settingsGraphqlHost:
+    'http://localhost:5009/',
   lmsUrl:
     'https://suaadhyatest.seertechsolutions.com/auth/oauth2/authorization/veracity',
   serviceNow: {

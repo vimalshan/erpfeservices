@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 200 160">
+  <rect width="200" height="160" fill="#f8f9fa" rx="8"/>
+  <g transform="translate(100,60)" text-anchor="middle">
+    <circle cx="0" cy="-10" r="24" fill="none" stroke="#c0c4cc" stroke-width="2"/>
+    <line x1="-8" y1="-18" x2="8" y2="-2" stroke="#c0c4cc" stroke-width="2" stroke-linecap="round"/>
+    <line x1="8" y1="-18" x2="-8" y2="-2" stroke="#c0c4cc" stroke-width="2" stroke-linecap="round"/>
+    <text y="32" font-family="Arial, sans-serif" font-size="13" fill="#909399">No data available</text>
+  </g>
+</svg>

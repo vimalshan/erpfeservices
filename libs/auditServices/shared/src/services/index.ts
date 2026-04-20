@@ -5,7 +5,7 @@ export * from './loader';
 export * from './locale';
 export * from './breadcrumb';
 export { LocalAuthService, LoginCredentials, User } from './auth.service';
-export { LoginRequest, LoginResponse } from '../models/auth-login.model';
+export { LoginRequest, LoginResponse, AuthMeResponse } from '../models/auth-login.model';
 export { UserService } from './user.service';
 export { RoleService } from './role.service';
 export { MenuService, MenuItem } from './menu.service';
