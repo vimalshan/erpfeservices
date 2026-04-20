@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { catchError, map, Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 
 import { Language } from '@erp-services/shared';
 
 import { ProfileLanguageDto } from '../../../dtos';
 import {
   PROFILE_LANGUAGE_MUTATION,
-  PROFILE_LANGUAGE_QUERY,
 } from '../../../graphql';
 
 @Injectable({ providedIn: 'root' })
@@ -17,27 +16,11 @@ export class ProfileLanguageService {
   constructor(private readonly apollo: Apollo) {}
 
   getProfileLanguage(): Observable<ProfileLanguageDto | null> {
-    return this.apollo
-      .use(this.clientName)
-      .query({
-        query: PROFILE_LANGUAGE_QUERY,
-        variables: {},
-        fetchPolicy: 'no-cache',
-      })
-      .pipe(
-        map((result: any) => {
-          if (
-            result === undefined ||
-            result?.data === undefined ||
-            result.data?.userProfile?.isSuccess === false
-          ) {
-            return null;
-          }
-
-          return result.data?.userProfile;
-        }),
-        catchError((_) => of(null)),
-      );
+    // userProfile query (for language) is not available on the backend (port 5004)
+    return of({
+      data: { portalLanguage: 'en' },
+      isSuccess: true,
+    } as ProfileLanguageDto);
   }
 
   updateProfileLanguage(language: Language): Observable<ProfileLanguageDto> {

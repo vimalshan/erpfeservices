@@ -13,11 +13,8 @@ export const ACTION_CATEGORY_FILTER_QUERY = gql`
     ) {
       data {
         id
-        label
+        name
       }
-      isSuccess
-      message
-      errorCode
     }
   }
 `;

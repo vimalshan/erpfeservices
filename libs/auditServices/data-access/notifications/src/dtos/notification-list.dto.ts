@@ -1,26 +1,19 @@
-import { BaseApolloResponse } from '@erp-services/shared';
-
-export interface NotificationListDto 
-extends BaseApolloResponse<NotificationListItemData> {
-  data: NotificationListItemData;
+export interface NotificationListDto {
+  data: NotificationsDto[];
+  pageInfo: NotificationPageInfo;
 }
 
-export interface NotificationListItemData {
-  currentPage: number;
-  items: NotificationsDto[];
-  totalItems: number;
-  totalPages: number;
+export interface NotificationPageInfo {
+  pageNumber: number;
+  pageSize: number;
+  totalCount: number;
 }
 
 export interface NotificationsDto {
-  createdTime: string;
-  infoId: number;
+  id: number;
+  title: string;
   message: string;
-  notificationCategory: string;
-  readStatus: boolean;
-  subject: string;
-  entityType: string;
-  entityId: string;
-  language: string;
-  snowLink: string;
+  category: string;
+  createdDate: string;
+  isRead: boolean;
 }

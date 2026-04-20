@@ -29,15 +29,8 @@ export class UnreadActionsState {
   constructor(private unreadActionsService: UnreadActionsService) {}
 
   @Action(LoadUnreadActions)
-  unreadActionsCount(ctx: StateContext<UnreadActionsCountStateModel>) {
-    return this.unreadActionsService.getUnreadActionsCount().pipe(
-      tap((actions: UnreadActionsDto) => {
-        const actionsCountResult =
-          UnreadActionsCountMapperService.mapToUnreadActionsCountModel(actions);
-
-        ctx.patchState({ actions: actionsCountResult });
-      }),
-      catchError(() => EMPTY),
-    );
+  unreadActionsCount(_ctx: StateContext<UnreadActionsCountStateModel>) {
+    // actionsCount endpoint not available on backend
+    return EMPTY;
   }
 }

@@ -35,6 +35,6 @@ export class ActionsListService {
           pageSize,
         },
       })
-      .pipe(map((results: any) => results?.data?.actions?.data));
+      .pipe(map((results: any) => results?.data?.actions));
   }
 }

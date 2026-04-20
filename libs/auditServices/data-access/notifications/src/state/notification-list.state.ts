@@ -11,7 +11,6 @@ import {
   constructNavigation,
 } from '@erp-services/shared/helpers';
 import { SharedSelectTreeChangeEventOutput } from '@erp-services/shared/models';
-import { throwIfNotSuccess } from '@erp-services/shared/helpers/custom-operators';
 import {
   FilterOptions,
   FilterValue,
@@ -169,7 +168,6 @@ export class NotificationListState {
         currentpageSize,
       )
       .pipe(
-        throwIfNotSuccess(),
         tap((notificationsList: NotificationListDto) => {
           const notifications =
             NotificationsListMapperService.mapToNotificationsListModel(
@@ -177,7 +175,7 @@ export class NotificationListState {
               this.domSanitizer,
             );
 
-          const { totalItems } = notificationsList.data;
+          const totalItems = notificationsList.pageInfo?.totalCount ?? 0;
           ctx.patchState({
             notifications,
             totalItems,

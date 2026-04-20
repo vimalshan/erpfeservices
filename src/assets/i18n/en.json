@@ -12,6 +12,14 @@
   "asideNavigation": "Navigation",
   "back": "Back",
   "reset": "Reset",
+  "findings": "Findings",
+  "financials": "Financials",
+  "certificates": "Certificates",
+  "trainings": "Trainings",
+  "apps": "Apps",
+  "contracts": "Contracts",
+  "schedule": "Schedule",
+  "audits": "Audits",
   "serviceNow": {
     "help": "Help"
   },
@@ -19,6 +27,7 @@
     "sidebar": "Navigation Sidebar"
   },
   "overview": {
+    "label": "Overview",
     "title": "Welcome, {{user}}",
     "welcomeDescription": "Here is an overview of your services.",
     "heading": "Your Services",

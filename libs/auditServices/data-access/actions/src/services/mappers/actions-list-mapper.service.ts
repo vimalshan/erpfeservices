@@ -3,7 +3,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 import {
   convertToUtcDate,
-  mapApiResponseToPageName,
 } from '@erp-services/shared/helpers';
 
 import { iconMap } from '../../constants';
@@ -15,23 +14,21 @@ export class ActionsListMapperService {
     dto: ActionsListDto,
     domSanitizer: DomSanitizer,
   ): ActionsModel[] {
-    if (!dto?.items) {
+    if (!dto?.data) {
       return [];
     }
 
-    const { items } = dto;
-
-    return items.map((actions: ActionsDto) => ({
+    return dto.data.map((actions: ActionsDto) => ({
       id: actions.id,
       actionName: actions.subject,
       dueDate: convertToUtcDate(actions.dueDate),
       message:
         domSanitizer.sanitize(SecurityContext.HTML, actions.message) ?? '',
-      language: actions.language,
+      language: '',
       service: actions.service,
       site: actions.site,
-      entityType: mapApiResponseToPageName(actions.entityType),
-      entityId: actions.entityId,
+      entityType: actions.entityType ?? '',
+      entityId: actions.entityId ?? '',
       highPriority: actions.highPriority,
       actions: [
         {

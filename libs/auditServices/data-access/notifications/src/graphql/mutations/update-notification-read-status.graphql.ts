@@ -1,15 +1,12 @@
 import { gql } from 'apollo-angular';
 
 export const UPDATE_NOTIFICATION_READ_STATUS = gql`
-  mutation UpdateNotificationReadStatus($noticationId: Int!) {
-    updateNotificationReadStatus(noticationId: $noticationId) {
-      data {
-        statusMessage
-        isSuccess
-      }
-      isSuccess
-      message
-      errorCode
+  mutation MarkNotificationRead($notificationId: Int!, $userId: Int!) {
+    markNotificationRead(notificationId: $notificationId, userId: $userId) {
+      id
+      title
+      isRead
+      readDate
     }
   }
 `;

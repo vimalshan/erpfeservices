@@ -32,53 +32,42 @@ export class NotificationFilterService {
   }
 
   getNotificationServices(
-    categories: string[] = [],
-    companies: string[] = [],
-    sites: string[] = [],
+    _categories: string[] = [],
+    _companies: string[] = [],
+    _sites: string[] = [],
   ): Observable<NotificationResponseFilterDto> {
     return this.apollo
       .use(this.clientName)
       .query<{ servicesFilter: NotificationResponseFilterDto }>({
         query: NOTIFICATION_SERVICES_FILTER_QUERY,
-        variables: {
-          categories,
-          companies,
-          sites,
-        },
         fetchPolicy: 'no-cache',
       })
       .pipe(map((response) => response.data.servicesFilter));
   }
 
   getNotificationCompany(
-    categories: string[] = [],
-    services: string[] = [],
-    sites: string[] = [],
+    _categories: string[] = [],
+    _services: string[] = [],
+    _sites: string[] = [],
   ): Observable<NotificationResponseFilterDto> {
     return this.apollo
       .use(this.clientName)
       .query<{ companiesFilter: NotificationResponseFilterDto }>({
         query: NOTIFICATION_COMPANY_FILTER_QUERY,
-        variables: { categories, services, sites },
         fetchPolicy: 'no-cache',
       })
       .pipe(map((response) => response.data.companiesFilter));
   }
 
   getNotificationSites(
-    companies: number[] = [],
-    categories: number[] = [],
-    services: number[] = [],
+    _companies: number[] = [],
+    _categories: number[] = [],
+    _services: number[] = [],
   ): Observable<NotificationSitesFilterDto> {
     return this.apollo
       .use(this.clientName)
       .query<{ sitesFilter: NotificationSitesFilterDto }>({
         query: NOTIFICATION_SITES_FILTER_QUERY,
-        variables: {
-          companies,
-          categories,
-          services,
-        },
         fetchPolicy: 'no-cache',
       })
       .pipe(map((response) => response.data.sitesFilter));

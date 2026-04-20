@@ -29,17 +29,8 @@ export class UnreadNotificationsState {
   constructor(private unreadNotificationsService: UnreadNotificationsService) {}
 
   @Action(LoadUnreadNotifications)
-  unreadNotificationList(ctx: StateContext<UnreadNotificationsStateModel>) {
-    return this.unreadNotificationsService.getUnreadNotificationsCount().pipe(
-      tap((notifications: UnreadNotificationCountDto) => {
-        const notificationCountResult =
-          UnreadNotificationCountMapperService.mapToUnreadNotificationCountModel(
-            notifications,
-          );
-
-        ctx.patchState({ unreadNotificationsCount: notificationCountResult });
-      }),
-      catchError(() => EMPTY),
-    );
+  unreadNotificationList(_ctx: StateContext<UnreadNotificationsStateModel>) {
+    // informationCount endpoint not available on backend
+    return EMPTY;
   }
 }

@@ -38,53 +38,42 @@ export class ActionsFilterService {
   }
 
   getActionFilterServices(
-    companies: number[],
-    categories: number[],
-    sites: number[],
+    _companies: number[],
+    _categories: number[],
+    _sites: number[],
   ): Observable<ActionFilterResponseDto> {
     return this.apollo
       .use(this.clientName)
       .query<{ actionServicesFilter: ActionFilterResponseDto }>({
         query: ACTION_SERVICES_FILTER_QUERY,
-        variables: {
-          companies,
-          categories,
-          sites,
-        },
         fetchPolicy: 'no-cache',
       })
       .pipe(map((response) => response.data.actionServicesFilter));
   }
 
   getActionFilterCompanies(
-    categories: number[],
-    services: number[],
-    sites: number[],
+    _categories: number[],
+    _services: number[],
+    _sites: number[],
   ): Observable<ActionFilterResponseDto> {
     return this.apollo
       .use(this.clientName)
       .query<{ actionCompaniesFilter: ActionFilterResponseDto }>({
         query: ACTION_COMPANY_FILTER_QUERY,
-        variables: { categories, services, sites },
         fetchPolicy: 'no-cache',
       })
       .pipe(map((response) => response.data.actionCompaniesFilter));
   }
 
   getActionFilterSites(
-    companies: number[],
-    categories: number[],
-    services: number[],
+    _companies: number[],
+    _categories: number[],
+    _services: number[],
   ): Observable<ActionSitesFilterDto> {
     return this.apollo
       .use(this.clientName)
       .query<{ actionSitesFilter: ActionSitesFilterDto }>({
         query: ACTION_SITES_FILTER_QUERY,
-        variables: {
-          companies,
-          categories,
-          services,
-        },
         fetchPolicy: 'no-cache',
       })
       .pipe(map((response) => response.data.actionSitesFilter));

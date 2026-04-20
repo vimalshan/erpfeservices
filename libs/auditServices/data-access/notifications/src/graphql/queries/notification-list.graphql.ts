@@ -18,25 +18,18 @@ export const NOTIFICATIONS_DETAILS_QUERY = gql`
       pageSize: $pageSize
     ) {
       data {
-        currentPage
-        items {
-          createdTime
-          infoId
-          message
-          language
-          notificationCategory
-          readStatus
-          subject
-          entityType
-          entityId
-          snowLink
-        }
-        totalItems
-        totalPages
+        id
+        title
+        message
+        category
+        createdDate
+        isRead
       }
-      errorCode
-      isSuccess
-      message
+      pageInfo {
+        pageNumber
+        pageSize
+        totalCount
+      }
     }
   }
 `;

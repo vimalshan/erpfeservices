@@ -20,26 +20,22 @@ export const ACTIONS_LIST_QUERY = gql`
       pageSize: $pageSize
     ) {
       data {
-        currentPage
-        items {
-          action
-          dueDate
-          highPriority
-          id
-          message
-          language
-          service
-          site
-          entityType
-          entityId
-          subject
-        }
-        totalItems
-        totalPages
+        action
+        dueDate
+        highPriority
+        id
+        message
+        service
+        site
+        entityType
+        entityId
+        subject
       }
-      errorCode
-      isSuccess
-      message
+      pageInfo {
+        pageNumber
+        pageSize
+        totalCount
+      }
     }
   }
 `;

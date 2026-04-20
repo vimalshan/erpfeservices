@@ -1,7 +1,6 @@
 import { SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-import { mapApiResponseToPageName } from '@erp-services/shared/helpers';
 import { convertToUtcDate } from '@erp-services/shared/helpers/date';
 
 import { NotificationListDto, NotificationsDto } from '../../dtos';
@@ -12,24 +11,22 @@ export class NotificationsListMapperService {
     dto: NotificationListDto,
     domSanitizer: DomSanitizer,
   ): NotificationModel[] {
-    if (!dto) {
+    if (!dto?.data) {
       return [];
     }
 
-    const { items } = dto.data;
-
-    return items.map((notification: NotificationsDto) => ({
-      id: notification.infoId,
-      isRead: notification.readStatus,
+    return dto.data.map((notification: NotificationsDto) => ({
+      id: notification.id,
+      isRead: notification.isRead,
       actionName: 'navigateFromNotification',
-      title: notification.subject,
+      title: notification.title,
       message:
         domSanitizer.sanitize(SecurityContext.HTML, notification.message) ?? '',
-      language: notification.language,
-      receivedOn: convertToUtcDate(notification.createdTime),
-      entityType: mapApiResponseToPageName(notification.entityType),
-      entityId: notification.entityId,
-      snowLink: notification.snowLink,
+      language: '',
+      receivedOn: convertToUtcDate(notification.createdDate),
+      entityType: '',
+      entityId: '',
+      snowLink: '',
       actions: [
         {
           actionType: 'redirect',
@@ -39,7 +36,7 @@ export class NotificationsListMapperService {
         },
       ],
       iconTooltip: {
-        displayIcon: notification.readStatus === false,
+        displayIcon: notification.isRead === false,
         iconClass: '',
         iconPosition: '',
         tooltipMessage: 'Audit plan available',

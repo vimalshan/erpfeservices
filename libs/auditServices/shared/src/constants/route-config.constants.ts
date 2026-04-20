@@ -6,7 +6,7 @@ export const RouteConfig = {
   Overview: {
     path: 'overview',
     title: 'Overview Upcoming Audits',
-    i18nKey: 'overview',
+    i18nKey: 'overview.label',
     pageViewRequest: 'overview',
   },
   Findings: {

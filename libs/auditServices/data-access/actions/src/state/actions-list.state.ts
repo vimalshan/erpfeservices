@@ -184,7 +184,7 @@ export class ActionsListState {
               this.domSanitizer,
             );
 
-            const { totalItems } = actionsList;
+            const totalItems = actionsList.pageInfo?.totalCount ?? 0;
             ctx.patchState({ actions, totalItems });
           } else {
             ctx.patchState({ actions: [], totalItems: 0 });

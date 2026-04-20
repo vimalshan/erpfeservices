@@ -13,23 +13,20 @@ export class NotificationFilterMapperService {
     }
 
     return data.map((datum) => ({
-      label: datum.label,
+      label: datum.name,
       value: datum.id,
     }));
   }
 
   static mapToNotificationSitesFilter(data: NotificationSiteDto[]): TreeNode[] {
-    return this.mapTreeNodeToSite(data);
-  }
+    if (!data || data.length === 0) {
+      return [];
+    }
 
-  private static mapTreeNodeToSite(data: NotificationSiteDto[]): TreeNode[] {
     return data.map((datum) => ({
       data: datum.id,
-      key: `${datum.id}-${datum.label}`,
-      label: datum.label,
-      children: datum?.children?.length
-        ? this.mapTreeNodeToSite(datum.children)
-        : undefined,
+      key: `${datum.id}-${datum.name}`,
+      label: datum.name,
     }));
   }
 }
